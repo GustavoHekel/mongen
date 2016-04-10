@@ -13,6 +13,8 @@
 
 Route::get('/', 'HomeController@getLandingPage');
 
+Route::get('/test/{edad}', 'usuariosController@metodoPrueba');
+
 
 /*
 |--------------------------------------------------------------------------
