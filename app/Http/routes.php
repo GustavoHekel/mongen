@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -13,8 +12,11 @@
 
 Route::get('/', 'HomeController@getLandingPage');
 
-Route::get('/test/{edad}', 'usuariosController@metodoPrueba');
+Route::get('geo' , function(){
+	
+	echo '<pre>' , print_r(GeoIP::getLocation('201.235.205.117')) , '</pre>';
 
+});
 
 /*
 |--------------------------------------------------------------------------

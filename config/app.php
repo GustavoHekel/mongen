@@ -156,6 +156,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * External Service Providers ...
+         */
+        'Torann\GeoIP\GeoIPServiceProvider',
+
+
     ],
 
     /*
@@ -201,6 +207,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+         * External Aliases ...
+         */
+        'GeoIP' => 'Torann\GeoIP\GeoIPFacade',
 
     ],
 
