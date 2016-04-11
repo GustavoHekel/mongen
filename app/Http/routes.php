@@ -1,5 +1,5 @@
 <?php
-
+use GeoIP;
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -13,8 +13,9 @@
 
 Route::get('/', 'HomeController@getLandingPage');
 
-Route::get('/test/{edad}', 'usuariosController@metodoPrueba');
-
+Route::get('geo' , function(){
+	var_dump(GeoIP::getLocation());
+});
 
 /*
 |--------------------------------------------------------------------------
