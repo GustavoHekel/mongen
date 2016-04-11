@@ -1,1 +1,7 @@
-BIENVENIDO A PAGINA CORPORATIVA
+<html>
+
+
+@include('landing.header')
+@include('landing.body')
+
+</html>
