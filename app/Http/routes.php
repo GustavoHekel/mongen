@@ -12,6 +12,8 @@
 
 Route::get('/', 'HomeController@getLandingPage');
 
+Route::get('/01', 'Template01Controller@getTemplate');
+
 Route::get('geo' , function(){
 	
 	echo '<pre>' , print_r(GeoIP::getLocation('201.235.205.117')) , '</pre>';

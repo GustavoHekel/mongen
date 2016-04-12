@@ -10,70 +10,55 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-3 col-sm-6">
+			<div class="row" >
+				<div class="col-md-2 col-sm-6 col-md-offset-1">
 					<div class="price-box to-animate">
 						<h2 class="pricing-plan">Starter</h2>
 						<div class="price"><sup class="currency">$</sup>7<small>/mo</small></div>
 						<p>Basic customer support for small business</p>
 						<hr>
-						<ul class="pricing-info">
-							<li>10 projects</li>
-							<li>20 Pages</li>
-							<li>20 Emails</li>
-							<li>100 Images</li>
-						</ul>
-						<a href="#" class="btn btn-default btn-sm">Get started</a>
+						<a href="#" class="btn btn-default btn-xs">Get started</a>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-6">
+				<div class="col-md-2 col-sm-6">
 					<div class="price-box to-animate">
 						<h2 class="pricing-plan">Regular</h2>
 						<div class="price"><sup class="currency">$</sup>19<small>/mo</small></div>
 						<p>Basic customer support for small business</p>
 						<hr>
-						<ul class="pricing-info">
-							<li>15 projects</li>
-							<li>40 Pages</li>
-							<li>40 Emails</li>
-							<li>200 Images</li>
-						</ul>
-						<a href="#" class="btn btn-default btn-sm">Get started</a>
+						<a href="#" class="btn btn-default btn-xs">Get started</a>
 					</div>
 				</div>
 				<div class="clearfix visible-sm-block"></div>
-				<div class="col-md-3 col-sm-6 to-animate">
+				<div class="col-md-2 col-sm-6 to-animate">
 					<div class="price-box popular">
 						<div class="popular-text">Best value</div>
 						<h2 class="pricing-plan">Plus</h2>
 						<div class="price"><sup class="currency">$</sup>79<small>/mo</small></div>
 						<p>Basic customer support for small business</p>
 						<hr>
-						<ul class="pricing-info">
-							<li>Unlimitted projects</li>
-							<li>100 Pages</li>
-							<li>100 Emails</li>
-							<li>700 Images</li>
-						</ul>
-						<a href="#" class="btn btn-primary btn-sm">Get started</a>
+						<a href="#" class="btn btn-primary btn-xs">Get started</a>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-6">
+				<div class="col-md-2 col-sm-6">
 					<div class="price-box to-animate">
 						<h2 class="pricing-plan">Enterprise</h2>
 						<div class="price"><sup class="currency">$</sup>125<small>/mo</small></div>
 						<p>Basic customer support for small business</p>
 						<hr>
-						<ul class="pricing-info">
-							<li>Unlimitted projects</li>
-							<li>Unlimitted Pages</li>
-							<li>Unlimitted Emails</li>
-							<li>Unlimitted Images</li>
-						</ul>
-						<a href="#" class="btn btn-default btn-sm">Get started</a>
+						<a href="#" class="btn btn-default btn-xs">Get started</a>
 					</div>
 				</div>
-				
+                                <div class="col-md-2 col-sm-6">
+					<div class="price-box to-animate">
+						<h2 class="pricing-plan">Enterprise</h2>
+						<div class="price"><sup class="currency">$</sup>125<small>/mo</small></div>
+						<p>Basic customer support for small business</p>
+						<hr>
+						<a href="#" class="btn btn-default btn-xs">Get started</a>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
