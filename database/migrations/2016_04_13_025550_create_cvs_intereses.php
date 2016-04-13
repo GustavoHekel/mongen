@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModelosCv extends Migration
+class CreateCvsIntereses extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,8 @@ class CreateModelosCv extends Migration
      */
     public function up()
     {
-        Schema::create('modelos_cv', function (Blueprint $table) {
+        Schema::create('cvs.intereses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre' , 255)->unique();
-            $table->string('ruta' , 255);
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ class CreateModelosCv extends Migration
      */
     public function down()
     {
-        Schema::drop('modelos_cv');
+        Schema::drop('cvs.intereses');
     }
 }

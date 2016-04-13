@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlanes extends Migration
+class CreatePaises extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,10 @@ class CreatePlanes extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.planes', function (Blueprint $table) {
+        Schema::create('sistemas.paises', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre' , 50)->unique();
-            $table->string('duracion');
-            $table->string('invitacion');
-            $table->float('precio_ars');
-            $table->timestamps();
+            $table->string('nombre' , 255);
+            // $table->timestamps();
         });
     }
 
@@ -29,6 +26,6 @@ class CreatePlanes extends Migration
      */
     public function down()
     {
-        Schema::drop('planes');
+        Schema::drop('paises');
     }
 }
