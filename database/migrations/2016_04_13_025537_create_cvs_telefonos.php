@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlanes extends Migration
+class CreateCvsTelefonos extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,8 @@ class CreatePlanes extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.planes', function (Blueprint $table) {
+        Schema::create('cvs.telefonos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre' , 50)->unique();
-            $table->string('duracion');
-            $table->string('invitacion');
-            $table->float('precio_ars');
             $table->timestamps();
         });
     }
@@ -29,6 +25,6 @@ class CreatePlanes extends Migration
      */
     public function down()
     {
-        Schema::drop('planes');
+        Schema::drop('cvs.telefonos');
     }
 }

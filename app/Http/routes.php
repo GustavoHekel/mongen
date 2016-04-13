@@ -10,14 +10,54 @@
 |
 */
 
+/*
+|--------------------------------------------------------------------------
+| Landing page Routes
+|--------------------------------------------------------------------------
+|
+| Las siguientes rutas son todas las que se van a
+| utilizar para el manejo de la landing page.
+|
+*/
+
 Route::get('/', 'HomeController@getLandingPage');
 
 Route::get('/01', 'Template01Controller@getTemplate');
 
-Route::get('geo' , function(){
-	
-	echo '<pre>' , print_r(GeoIP::getLocation('201.235.205.117')) , '</pre>';
+/*
+|--------------------------------------------------------------------------
+| User admin page Routes
+|--------------------------------------------------------------------------
+|
+| Las siguientes rutas son todas las que se van a utilizar para el
+| manejo de la parte de administración por parte del usuario.
+|
+*/
 
+
+/*
+|--------------------------------------------------------------------------
+| Admin page Routes
+|--------------------------------------------------------------------------
+|
+| Las siguientes rutas son todas las que se van a utilizar para el manejo
+| de la parte de administración por parte del administrador.
+|
+*/
+
+
+/*
+|--------------------------------------------------------------------------
+| Test Routes
+|--------------------------------------------------------------------------
+|
+| Las siguientes rutas son todas las que 
+| se van a utilizar para testeo.
+|
+*/
+
+Route::get('geo' , function(){
+	echo '<pre>' , print_r(GeoIP::getLocation('201.235.205.117')) , '</pre>';
 });
 
 /*
@@ -34,4 +74,6 @@ Route::get('geo' , function(){
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+
 

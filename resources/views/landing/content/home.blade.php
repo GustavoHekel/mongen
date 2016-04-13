@@ -14,7 +14,7 @@
 						    </div>
 					    </div>
 					    <div class="col-md-4 col-md-push-1 col-sm-4 col-sm-push-1 iphone-image">
-					    	<div class="iphone to-animate-2"><img src="images/iphone-2.png" alt="Free HTML5 Template by FREEHTML5.co"></div>
+					    	<div class="iphone to-animate-2"><img src="{{ asset('dist/img/iphone-2.png')}}" alt="Free HTML5 Template by FREEHTML5.co"></div>
 					    </div>
 
 		    		</div>
@@ -34,14 +34,14 @@
 						    </div>
 					    </div>
 					    <div class="col-md-4 col-md-pull-7 col-sm-4 col-sm-pull-7 iphone-image">
-					    	<div class="iphone to-animate-2"><img src="images/iphone-1.png" alt="Free HTML5 Template by FREEHTML5.co"></div>
+					    	<div class="iphone to-animate-2"><img src="{{ asset('dist/img/iphone-1.png')}}" alt="Free HTML5 Template by FREEHTML5.co"></div>
 					    </div>
 
 		    		</div>
 		    	</div>
 		    </div>
 
-		    <div class="item" style="background-image:url(images/slide_5.jpg)">
+		    <div class="item" style="background-image:url({{ asset('dist/img/slide_5.jpg')}})">
 		    	<div class="overlay"></div>
 		    	<div class="container" style="position: relative;">
 		    		<div class="row">
