@@ -7,8 +7,5 @@
     @include('landing.content.meta')
     @include('landing.content.linkscss')
     
-    
-    
-    
 </head>
  
