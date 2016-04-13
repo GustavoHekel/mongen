@@ -15,6 +15,8 @@
 		            <li><a href="#" data-nav-section="features"><span>Features</span></a></li>
 		            <li><a href="#" data-nav-section="testimonials"><span>Testimonials</span></a></li>
 		            <li><a href="#" data-nav-section="pricing"><span>Pricing</span></a></li>
+		            <li><a href="#" data-nav-section="examples"><span>Examples</span></a></li>
+
 		            <!--<li><a href="#" data-nav-section="press"><span>Press</span></a></li>-->
 		          </ul>
 		        </div>

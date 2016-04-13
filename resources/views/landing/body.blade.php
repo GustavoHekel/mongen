@@ -12,8 +12,13 @@
 
 	@include('landing.content.pricing')
 
+        @include('landing.content.examples')
+
+        
 	@include('landing.content.footer')
 
+        
+        
 	@include('landing.content.js')
 
 </body>

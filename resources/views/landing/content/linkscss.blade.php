@@ -32,4 +32,3 @@ You can change the style.css (default color purple) to one of these styles
 <link rel="stylesheet" id="theme-switch" href="{{{ asset('/dist/plugins/crew/css/style.css')}}}">
 <!-- End demo purposes only -->
 
-<link rel="stylesheet" href="{{{ asset('/css/style.css')}}}">
