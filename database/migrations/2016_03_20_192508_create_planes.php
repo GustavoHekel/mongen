@@ -29,6 +29,6 @@ class CreatePlanes extends Migration
      */
     public function down()
     {
-        Schema::drop('planes');
+        Schema::drop('sistema.planes');
     }
 }

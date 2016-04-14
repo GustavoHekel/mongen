@@ -27,6 +27,6 @@ class CreateProvincias extends Migration
      */
     public function down()
     {
-        Schema::drop('provincias');
+        Schema::drop('sistema.provincias');
     }
 }

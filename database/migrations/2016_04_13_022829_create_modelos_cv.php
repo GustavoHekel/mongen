@@ -28,6 +28,6 @@ class CreateModelosCv extends Migration
      */
     public function down()
     {
-        Schema::drop('modelos_cv');
+        Schema::drop('sistema.modelos_cv');
     }
 }

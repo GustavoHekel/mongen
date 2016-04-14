@@ -40,6 +40,6 @@ class CreateUsuarios extends Migration
      */
     public function down()
     {
-        Schema::drop('usuarios');
+        Schema::drop('sistema.usuarios');
     }
 }

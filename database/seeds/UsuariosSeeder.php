@@ -12,8 +12,9 @@ class UsuariosSeeder extends Seeder
     public function run()
     {
         DB::table('sistema.usuarios')->insert([
+        	[
 				'email' => 'gustavo.hekel@gmail.com',
-				'password' => bcrypt('Homero');
+				'password' => bcrypt('Homero'),
 				'nombre' => 'GUSTAVO D. HEKEL',
 				'fecha_nacimiento' => '1988-10-15',
 				'modelo_cv' => 1,
@@ -26,9 +27,9 @@ class UsuariosSeeder extends Seeder
 				'updated_at' => date('Y-m-d H:i:s')
         	],[
         		'email' => 'merlojuanmartin@gmail.com',
-				'password' => bcrypt('Gimnasia');
+				'password' => bcrypt('Gimnasia'),
 				'nombre' => 'JUAN MARTÍN MERLO',
-				'fecha_nacimiento' => '1988-18-11',
+				'fecha_nacimiento' => '1988-11-18',
 				'modelo_cv' => 1,
 				'url' => 'juan',
 				'plan' => 1,
@@ -37,6 +38,7 @@ class UsuariosSeeder extends Seeder
 				'provincia' => 1,
 				'created_at' => date('Y-m-d H:i:s'),
 				'updated_at' => date('Y-m-d H:i:s')
-        	])
+        	]
+        ]);
     }
 }

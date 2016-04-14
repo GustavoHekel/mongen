@@ -26,6 +26,6 @@ class CreatePaises extends Migration
      */
     public function down()
     {
-        Schema::drop('paises');
+        Schema::drop('sistema.paises');
     }
 }
