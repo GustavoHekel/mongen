@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSistemaRedesSociales extends Migration
+class CreateTipoTelefono extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,10 @@ class CreateSistemaRedesSociales extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.redes_sociales', function (Blueprint $table) {
+        Schema::create('sistema.tipo_telefono', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('descripcion')->unique();
+            // $table->timestamps();
         });
     }
 
@@ -25,6 +26,6 @@ class CreateSistemaRedesSociales extends Migration
      */
     public function down()
     {
-        Schema::drop('sistema.redes_sociales');
+        Schema::drop('sistema.tipo_telefono');
     }
 }

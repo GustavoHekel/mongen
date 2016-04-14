@@ -14,7 +14,11 @@ class CreateCvsPremios extends Migration
     {
         Schema::create('cvs.premios', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('usuario');
+            $table->string('descripcion' , 255);
             $table->timestamps();
+
+            $table->foreign('usuario')->references('id')->on('sistema.usuarios');
         });
     }
 

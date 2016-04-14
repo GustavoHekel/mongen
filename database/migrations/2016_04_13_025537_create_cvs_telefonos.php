@@ -14,7 +14,13 @@ class CreateCvsTelefonos extends Migration
     {
         Schema::create('cvs.telefonos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('usuario');
+            $table->integer('tipo');
+            $table->string('numero' , 15);
             $table->timestamps();
+
+            $table->foreign('usuario')->references('id')->on('sistema.usuarios');
+            $table->foreign('tipo')->references('id')->on('sistema.tipo_telefono');
         });
     }
 

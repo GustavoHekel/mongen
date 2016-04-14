@@ -14,7 +14,15 @@ class CreateCvsTrabajos extends Migration
     {
         Schema::create('cvs.trabajos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('usuario');
+            $table->string('lugar' , 255);
+            $table->string('puesto' , 255);
+            $table->integer('desde');
+            $table->integer('hasta');
+            $table->text('detalle');
             $table->timestamps();
+
+            $table->foreign('usuario')->references('id')->on('sistema.usuarios');
         });
     }
 

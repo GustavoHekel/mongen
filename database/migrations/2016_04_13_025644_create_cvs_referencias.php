@@ -14,7 +14,13 @@ class CreateCvsReferencias extends Migration
     {
         Schema::create('cvs.referencias', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('usuario');
+            $table->integer('referente');
+            $table->text('mensaje');
             $table->timestamps();
+
+            $table->foreign('usuario')->references('id')->on('sistema.usuarios');
+            $table->foreign('referente')->references('id')->on('sistema.usuarios');
         });
     }
 

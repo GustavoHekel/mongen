@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCvsSkills extends Migration
+class CreateRedesSociales extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,11 @@ class CreateCvsSkills extends Migration
      */
     public function up()
     {
-        Schema::create('cvs.skills', function (Blueprint $table) {
+        Schema::create('sistema.redes_sociales', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('usuario');
             $table->string('nombre' , 255);
-            $table->smallInteger('nivel');
-            $table->timestamps();
-
-            $table->foreign('usuario')->references('id')->on('sistema.usuarios');
+            $table->string('icono' , 255);
+            // $table->timestamps();
         });
     }
 
@@ -30,6 +27,6 @@ class CreateCvsSkills extends Migration
      */
     public function down()
     {
-        Schema::drop('cvs.skills');
+        Schema::drop('sistema.redes_sociales');
     }
 }

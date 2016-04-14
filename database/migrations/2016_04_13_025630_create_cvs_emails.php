@@ -14,7 +14,11 @@ class CreateCvsEmails extends Migration
     {
         Schema::create('cvs.emails', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('usuario');
+            $table->string('email' , 255);
             $table->timestamps();
+
+            $table->foreign('usuario')->references('id')->on('sistema.usuarios');
         });
     }
 

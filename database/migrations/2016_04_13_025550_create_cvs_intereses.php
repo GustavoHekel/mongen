@@ -14,7 +14,11 @@ class CreateCvsIntereses extends Migration
     {
         Schema::create('cvs.intereses', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('usuario');
+            $table->string('descripcion');
             $table->timestamps();
+
+            $table->foreign('usuario')->references('id')->on('sistema.usuarios');
         });
     }
 

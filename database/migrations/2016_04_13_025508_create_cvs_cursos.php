@@ -14,7 +14,15 @@ class CreateCvsCursos extends Migration
     {
         Schema::create('cvs.cursos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('usuario');
+            $table->string('instituto' , 255);
+            $table->string('nombre' , 255);
+            $table->integer('desde');
+            $table->integer('hasta');
+            $table->text('detalle')->nullable();
             $table->timestamps();
+
+            $table->foreign('usuario')->references('id')->on('sistema.usuarios');
         });
     }
 
