@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePaises extends Migration
+class CreateSchemas extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,8 @@ class CreatePaises extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.paises', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombre' , 255);
-            // $table->timestamps();
-        });
+        DB::statement('create schema sistema');
+        DB::statement('create schema cvs');
     }
 
     /**
@@ -26,6 +23,7 @@ class CreatePaises extends Migration
      */
     public function down()
     {
-        Schema::drop('paises');
+        DB::statement('drop schema sistema cascade');
+        DB::statement('drop schema cvs cascade');
     }
 }
