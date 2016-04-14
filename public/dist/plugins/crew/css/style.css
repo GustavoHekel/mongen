@@ -1239,86 +1239,25 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-#examples,
-#fh5co-press {
-  background: #f4f4f4;
+#examples{
+    background: #245269;
 }
 
-#examples .box {
-  padding: 30px;
-  background: #fff;
-  text-align: center;
-  color: #7f7f7f;
-  margin-bottom: 70px;
-  position: relative;
+#examples h2{
+    
+    color:#ECEEF0;
+    
 }
-@media screen and (max-width: 992px) {
-  #examples .box {
-    min-height: inherit;
-    margin-bottom: 60px;
-  }
-}
-#examples .box .icon {
-  width: 85px;
-  height: 85px;
-  margin: 0 auto;
-  top: 0;
-  margin-top: -70px;
-  margin-bottom: 30px;
-  position: relative;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-  display: table;
-  text-align: center;
-}
-#examples .box .icon > span {
-  display: table-cell;
-  vertical-align: middle;
-}
-#examples .box .icon > span i {
-  font-size: 40px;
-  color: #fff !important;
-  margin: 0;
-  padding: 0;
-}
-#examples .box .icon.colored-1 {
-  background: #2aaf67;
-}
-#examples .box .icon.colored-2 {
-  background: #00bff3;
-}
-#examples .box .icon.colored-3 {
-  background: #f26522;
-}
-#examples .box .icon.colored-4 {
-  background: #e52b50;
-}
-#examples .box .icon.colored-5 {
-  background: #2fc5cc;
-}
-#examples .box .icon.colored-6 {
-  background: #6173f4;
-}
-#examples .box .step-number {
-  font-size: 16px;
-  display: block;
-  color: #d1d1d1;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-#examples .box h3 {
+
+#examples h3 {
   margin: 0 0 20px 0;
   padding: 0;
   font-weight: 400;
   font-size: 20px;
-  color: #444;
+  color: #DDD;
 }
 
-.example-img img{
+.examples-img img{
     
     padding: 20px;
     opacity: 0.3;
@@ -1328,9 +1267,15 @@ h1, h2, h3, h4, h5, h6 {
     height: 400px;
 }
 
-.example-img img:hover{
+.examples-img img:hover{
     
     opacity: 1;
     
     
+}
+
+.examples-col{
+    
+    text-align: center;
+        
 }

@@ -436,6 +436,41 @@
 		}
 
 	};
+        
+        // Examples
+	var examplesAnimate = function() {
+
+		if ( $('#examples').length > 0 ) {	
+			$('#examples .to-animate').each(function( k ) {
+				
+				var el = $(this);
+				
+				setTimeout ( function () {
+					el.addClass('fadeInUp animated');
+				},  k * 200, 'easeInOutExpo' );
+				
+			});
+		}
+
+	};
+	var examplesWayPoint = function() {
+
+		if ( $('#examples').length > 0 ) {
+			$('#examples').waypoint( function( direction ) {
+										
+				if( direction === 'down' && !$(this).hasClass('animated') ) {
+
+
+					setTimeout(examplesAnimate, 200);
+
+					
+					$(this.element).addClass('animated');
+						
+				}
+			} , { offset: '95%' } );
+		}
+
+	};
 
 
 	
@@ -457,6 +492,7 @@
 		testimonialsWayPoint();
 		pricingWayPoint();
 		pressWayPoint();
+                examplesWayPoint();
 
 	});
 
