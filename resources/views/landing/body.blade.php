@@ -14,11 +14,10 @@
 
         @include('landing.content.examples')
 
+        @include('landing.content.contact')
         
 	@include('landing.content.footer')
 
-        
-        
 	@include('landing.content.js')
 
 </body>

@@ -1262,20 +1262,59 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
     opacity: 0.3;
     border-radius:50px;
-    transition: 1s opacity;
-    width: 360px;
-    height: 400px;
+    width: 250px;
+    height: 300px;
+    -webkit-transition:all 0.7s ease;
+    -moz-transition:all 0.7s ease;
+   
 }
 
 .examples-img img:hover{
-    
+    position: relative;
     opacity: 1;
-    
-    
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+
 }
 
 .examples-col{
     
     text-align: center;
         
+}
+
+#contact{
+    background: cadetblue;
+}
+
+#contact h2{
+    
+    color:#ECEEF0;
+    
+}
+
+#contact h3 {
+  margin: 0 0 20px 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 20px;
+  color: #DDD;
+}
+
+.text-font-contact,
+.tel-mail-box h1,
+.tel-mail-box h4{
+    color:#ECEEF0;
+    
+    
+}
+
+.icon-box{
+    padding: 10px;  
+}
+
+.tel-mail-box{
+    
+    text-align: center;
+    
 }

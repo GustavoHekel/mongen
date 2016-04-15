@@ -51,3 +51,5 @@
 
 	<!-- Main JS (Do not remove) -->
 	<script src="{{{ asset('/dist/plugins/crew/js/main.js')}}}"></script>
+        
+        <script src="{{{ asset('/dist/plugins/crew/js/javascript.js')}}}"></script>
