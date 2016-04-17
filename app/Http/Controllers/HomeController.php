@@ -13,6 +13,6 @@ class HomeController extends Controller
      * @return null
      */
     public function getLandingPage(){
-    	return view ('landing.index');
+    	return view ('landing-guide.index');
     }
 }
