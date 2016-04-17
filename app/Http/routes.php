@@ -20,9 +20,10 @@
 |
 */
 
-Route::get('/', 'HomeController@getLandingPage');
+Route::get('/', 'HomeController@getLandingIndex');
+Route::get('/precios' , 'HomeController@getLandingPrecios');
 
-Route::get('/01', 'Template01Controller@getTemplate');
+// Route::get('/01', 'Template01Controller@getTemplate');
 
 /*
 |--------------------------------------------------------------------------
