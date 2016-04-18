@@ -21,7 +21,11 @@
 	<div class="fh5co-loader"></div>
 	<div id="fh5co-page">
 		@include('landing-guide.includes.index.header')
-		
+		@include('landing-guide.includes.pricing.hero')
+		@include('landing-guide.includes.pricing.pricing')
+		@include('landing-guide.includes.pricing.faq')
+		@include('landing-guide.includes.index.testimonials')
+		@include('landing-guide.includes.index.subscribe')
 		@include('landing-guide.includes.index.footer')
 		@include('landing-guide.includes.body.js')
 	</div>

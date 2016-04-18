@@ -20,8 +20,8 @@
 |
 */
 
-Route::get('/', 'HomeController@getLandingIndex');
-Route::get('/precios' , 'HomeController@getLandingPrecios');
+Route::get('/', 'HomeController@getLandingIndex')->name('index');
+Route::get('precios' , 'HomeController@getLandingPrecios');
 
 // Route::get('/01', 'Template01Controller@getTemplate');
 
