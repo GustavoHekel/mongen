@@ -17,11 +17,18 @@ class HomeController extends Controller
     }
 
     /**
-     *
-     *
-     *
+     * Devuelve la vista de precios
+     * @return null
      */
     public function getLandingPrecios(){
     	return view('landing-guide.pricing');
+    }
+
+    /**
+     * Devuelve el formulario de login
+     * @return null
+     */
+    public function getLandingLogin(){
+        return view('landing-guide.login');
     }
 }

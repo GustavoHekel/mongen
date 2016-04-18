@@ -21,7 +21,8 @@
 */
 
 Route::get('/', 'HomeController@getLandingIndex')->name('index');
-Route::get('precios' , 'HomeController@getLandingPrecios');
+Route::get('precios' , 'HomeController@getLandingPrecios')->name('precios');
+Route::get('login' , 'HomeController@getLandingLogin')->name('login');
 
 // Route::get('/01', 'Template01Controller@getTemplate');
 
