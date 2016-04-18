@@ -8,9 +8,10 @@
 					<p>Probá nuestro servicio por 1 mes sin cargo.</p>
 					<hr>
 					<ul class="pricing-info">
-						<li>20 Pages</li>
-						<li>20 Emails</li>
-						<li>100 Images</li>
+						<li>URL Personalizada</li>
+						<li>Invitaciones</li>
+						<li>Envio de emails</li>
+						<li>PDF</li>
 						<li>Extendé tu período de prueba invitando amigos.</li>
 					</ul>
 					<a href="#" class="btn btn-default btn-sm">Get started</a>
@@ -24,10 +25,10 @@
 					<p>Basic customer support for small business</p>
 					<hr>
 					<ul class="pricing-info">
-						<li>10 projects</li>
-						<li>20 Pages</li>
-						<li>20 Emails</li>
-						<li>100 Images</li>
+						<li>URL Personalizada</li>
+						<li>Invitaciones</li>
+						<li>Envio de emails</li>
+						<li>PDF</li>
 					</ul>
 					<a href="#" class="btn btn-default btn-sm">Get started</a>
 				</div>
