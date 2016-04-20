@@ -8,7 +8,7 @@
 			</ul>
 			<h1 id="fh5co-logo"><a href="{{ route('index') }}">Mongen<span>.</span></a></h1>
 			<ul class="pull-right right-menu">
-				<li class="fh5co-cta-btn"><a href="{{ route('registrar') }}">Registrarse</a></li>
+				<li><a href="{{ route('login') }}">Ingresar</a></li>
 			</ul>
 		</nav>
 	</div>

@@ -20,10 +20,9 @@
 	<!-- Loader -->
 	<div class="fh5co-loader"></div>
 	<div id="fh5co-page">
-		@include('landing-guide.includes.login.header')
-		@include('landing-guide.includes.login.form')
+		@include('landing-guide.includes.register.header')
+		@include('landing-guide.includes.register.form')
 		@include('landing-guide.includes.index.footer')
 		@include('landing-guide.includes.body.js')
-		@include('landing-guide.includes.login.js')
 	</div>
 </body>

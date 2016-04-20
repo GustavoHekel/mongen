@@ -20,11 +20,12 @@
 |
 */
 
-Route::get('/', 'HomeController@getLandingIndex')->name('index');
-Route::get('precios' , 'HomeController@getLandingPrecios')->name('precios');
-Route::get('login' , 'HomeController@getLandingLogin')->name('login');
-
-// Route::get('/01', 'Template01Controller@getTemplate');
+Route::get('/', 'LandingController@getIndex')->name('index');
+Route::get('precios' , 'LandingController@getPrecios')->name('precios');
+Route::get('login' , 'LandingController@getLogin')->name('login');
+Route::post('login' , 'LandingController@postLogin');
+Route::get('registrar' , 'LandingController@getRegistrar')->name('registrar');
+Route::get('about' , 'LandingController@getAbout')->name('about');
 
 /*
 |--------------------------------------------------------------------------
@@ -78,4 +79,6 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 
+Route::auth();
 
+Route::get('/home', 'HomeController@index');

@@ -24,6 +24,7 @@ class CreateUsuarios extends Migration
             $table->timestamp('fecha_vencimiento');
             $table->smallInteger('pais');
             $table->smallInteger('provincia');
+            $table->rememberToken();
             $table->timestamps(); 
 
             $table->foreign('modelo_cv')->references('id')->on('sistema.modelos_cv');

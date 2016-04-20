@@ -1,8 +1,6 @@
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="favicon.ico">
-
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,600,400italic,700' rel='stylesheet' type='text/css'>
-
 <!-- Animate.css -->
 <link rel="stylesheet" href="{{ asset("dist/plugins/guide/css/animate.css")}}">
 <!-- Flexslider -->
