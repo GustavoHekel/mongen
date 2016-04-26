@@ -121,6 +121,12 @@
 				padding-top: 5px;
 				/*display: block;*/
 			}
+                        
+                        .colormio{
+                            color:#dfdfdf; 
+                           
+                            
+                        }
 
 		</style>
 	</head>
@@ -162,30 +168,30 @@
 						<div class="section-content">
 							
 							<div class="row">
-								<div class="col-md-4 dates">
+								<div class="col-md-4 col-sm-4 col-xs-4 dates">
 									(2010 - 2015)
 								</div>
-								<div class="col-md-8 timeline">
+								<div class="col-md-8 col-sm-8 col-xs-8 timeline">
 									Ingeniería en sistemas de información
 									<p class="entidad">Universidad Tecnológica Nacional</p>
 								</div>
-							</div>
+							
 
-							<div class="row">
-								<div class="col-md-4 dates">
+							
+								<div class="col-md-4 col-sm-4 col-xs-4 dates">
 									(2010 - 2015)
 								</div>
-								<div class="col-md-8 timeline">
+								<div class="col-md-8 col-sm-8 col-xs-8 timeline">
 									Ingeniería en Electrónica
 									<p class="entidad">Universidad Tecnológica Nacional</p>
 								</div>
-							</div>
+							
 
-							<div class="row">
-								<div class="col-md-4 dates">
+							
+								<div class="col-md-4 col-sm-4 col-xs-4 dates">
 									(2010 - 2015)
 								</div>
-								<div class="col-md-8 timeline">
+								<div class="col-md-8 col-sm-8 col-xs-8 timeline">
 									Tecnicatura en Adm. de empresas
 									<p class="entidad">E.N.E.T. Nº 24 Defensa de Buenos Aires</p>
 								</div>
@@ -203,38 +209,76 @@
 						<div class="section-content">
 							
 							<div class="row">
-								<div class="col-md-4 dates">
+								<div class="col-md-4 col-sm-4 col-xs-4 dates">
 									(2010 - 2015)
 								</div>
-								<div class="col-md-8 timeline">
+								<div class="col-md-8 col-sm-8 col-xs-8 timeline">
 									Desarrollador PHP
 									<p class="entidad">Ministerio de Salud de la Nación</p>
 								</div>
 							</div>
 
 							<div class="row">
-								<div class="col-md-4 dates">
+								<div class="col-md-4 col-sm-4 col-xs-4 dates">
 									(2010 - 2015)
 								</div>
-								<div class="col-md-8 timeline">
+								<div class="col-md-8 col-sm-8 col-xs-8 timeline">
 									Analista Funcional
 									<p class="entidad">Prüne</p>
 								</div>
 							</div>
 
 							<div class="row">
-								<div class="col-md-4 dates">
+								<div class="col-md-4 col-sm-4 col-xs-4 dates">
 									(2010 - 2015)
 								</div>
-								<div class="col-md-8 timeline">
+								<div class="col-md-8 col-sm-8 col-xs-8 timeline">
 									Soporte Técnico
 									<p class="entidad">IP Address</p>
 								</div>
 							</div>
 
 						</div>
+                                                <div class="section">
+							<span class="fa-stack fa-2x icon">
+								<i class="fa fa-circle fa-stack-2x icon-background"></i>
+								<i class="fa fa-university fa-stack-1x icon-main"></i>
+							</span>
+							<span class="section-name">CONOCIMIENTOS</span>
+						</div>
+                                                <div class="section-content">
+							
+							<div class="row">
+								<div class="col-md-4 col-sm-4 col-xs-4 dates">
+									(2010 - 2015)
+								</div>
+								<div class="col-md-8 col-sm-8 col-xs-8 timeline">
+									Desarrollador PHP
+									<p class="entidad">Ministerio de Salud de la Nación</p>
+								</div>
+							</div>
 
+							<div class="row">
+								<div class="col-md-4 col-sm-4 col-xs-4 dates">
+									(2010 - 2015)
+								</div>
+								<div class="col-md-8 col-sm-8 col-xs-8 timeline">
+									Analista Funcional
+									<p class="entidad">Prüne</p>
+								</div>
+							</div>
 
+							<div class="row">
+								<div class="col-md-4 col-sm-4 col-xs-4 dates">
+									(2010 - 2015)
+								</div>
+								<div class="col-md-8 col-sm-8 col-xs-8 timeline">
+									Soporte Técnico
+									<p class="entidad">IP Address</p>
+								</div>
+							</div>
+
+						</div>
 					</div>
 					<div class="col-md-4 right-col">
 						
@@ -340,6 +384,27 @@
 									</div>
 								</div>
 							</div>
+						</div>
+                                            
+                                            <div class="section">
+							<div class="section-header">
+								<span class="fa-stack fa-2x icon">
+									<i class="fa fa-circle fa-stack-2x icon-background"></i>
+									<i class="fa fa-money fa-stack-1x icon-main"></i>
+								</span>
+								<span class="section-name">Salario Bruto</span>
+							</div>
+							<div class="section-content">
+								<div class="contact-item">
+									<span class="fa-stack icon-small">
+										<i class="fa fa-circle fa-stack-2x icon-background"></i>
+										<i class="fa fa-usd fa-stack-1x icon-main"></i>
+									</span>
+									<span class="contact-text">99999</span>
+								</div>
+							</div>
+							
+							
 						</div>
 
 					</div>
