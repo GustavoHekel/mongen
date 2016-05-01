@@ -14,4 +14,4 @@
 <!-- Main style -->
 <link rel="stylesheet" href="{{ asset("dist/plugins/guide/css/style.css")}}">
 <!-- Font Awesome -->
-<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">

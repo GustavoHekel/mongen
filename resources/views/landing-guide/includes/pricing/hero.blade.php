@@ -4,16 +4,15 @@
 		<div class="fh5co-intro no-js-fullheight">
 			<div class="fh5co-intro-text">
 				<div class="fh5co-center-position">
-					<h2 class="animate-box">Plans for Everyone</h2>
-					<h3 class="animate-box">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there.</h3>
-
+					<h2 class="animate-box">Planes de todo tipo</h2>
+					<h3 class="animate-box">Mongen<span class="mongen-point">.</span> ofrece una variedad de subscripciones que se adecuan a la necesidad de todos los usarios.</h3>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="fh5co-learn-more animate-box">
 		<a href="#" class="scroll-btn">
-			<span class="text">See our plans and get started today</span>
+			<span class="text">Mirá nuestros planes y comenzá a usar Mongen<span class="mongen-point">.</span></span>
 			<span class="arrow"><i class="icon-chevron-down"></i></span>
 		</a>
 	</div>

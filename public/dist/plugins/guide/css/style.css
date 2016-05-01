@@ -680,7 +680,7 @@ body {
   margin-bottom: 10px;
 }
 
-#fh5co-features-2, #fh5co-features-3, #fh5co-features-4 {
+#fh5co-features-2, #fh5co-features-3, #fh5co-features-4, #fh5co-testimonials{
   background: #f9f9f9;
   overflow: hidden;
 }
@@ -852,7 +852,7 @@ body {
 }
 
 #fh5co-subscribe {
-  background: #f9f9f9;
+  /*background: #f9f9f9;*/
   padding: 3em 0;
 }
 #fh5co-subscribe h3 {
@@ -1440,3 +1440,12 @@ body {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/**
+ * ESTILOS AGREGADOS 
+ */
+.mongen-point {
+  color: #8dc63f;
+  font-size: 20px;
+  font-weight: bold;
+}

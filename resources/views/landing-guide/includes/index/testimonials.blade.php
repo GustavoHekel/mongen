@@ -2,8 +2,8 @@
 	<div class="container">
 		<div class="row row-bottom-padded-sm">
 			<div class="col-md-6 col-md-offset-3 text-center">
-				<div class="fh5co-label animate-box">Testimonials</div>
-				<h2 class="fh5co-lead animate-box">Join the 1 Million Users using Our Products </h2>
+				<div class="fh5co-label animate-box">Testimonios</div>
+				<h2 class="fh5co-lead animate-box">Unite a los usuarios que usan Mongen<span class="mongen-point">.</span></h2>
 			</div>
 		</div>
 		<div class="row">

@@ -24,7 +24,7 @@
 		@include('landing-guide.includes.index.hero')
 		@include('landing-guide.includes.index.projects')
 		@include('landing-guide.includes.index.features')
-		@include('landing-guide.includes.index.features_2')
+		<!-- @include('landing-guide.includes.index.features_2') -->
 		@include('landing-guide.includes.index.testimonials')
 		@include('landing-guide.includes.index.subscribe')
 		@include('landing-guide.includes.index.footer')
