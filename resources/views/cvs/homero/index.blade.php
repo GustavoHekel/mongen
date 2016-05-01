@@ -144,7 +144,19 @@
 			<div class="col-md-8 col-md-offset-2 main">
 				<div class="row">
 					<div class="col-md-8 left-col">
-
+                                                <div class="section">
+							<div class="section-header">
+								<span class="fa-stack fa-2x icon">
+									<i class="fa fa-circle fa-stack-2x icon-background"></i>
+									<i class="fa fa-user fa-stack-1x icon-main"></i>
+								</span>
+								<span class="section-name">INFORMACIÓN PERSONALS</span>
+							</div>
+							<div class="section-content">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam libero mauris, pretium eget scelerisque sit amet, porta et quam. Pellentesque in nunc vitae orci porttitor commodo a in nunc. Duis et gravida lacus. Vestibulum porta ornare lacus, id aliquet felis facilisis id. Donec bibendum nec risus et fermentum. Cras et dui ornare dui placerat finibus. Pellentesque posuere odio ipsum. Duis at massa non nisl interdum rhoncus a vitae arcu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+							</div>
+						</div>
+                                            
 						<div class="section">
 							<div class="section-header">
 								<span class="fa-stack fa-2x icon">
@@ -282,60 +294,7 @@
 					</div>
 					<div class="col-md-4 right-col">
 						
-						<div class="section">
-							
-							<div class="section-header">
-								<span class="fa-stack fa-2x icon">
-									<i class="fa fa-circle fa-stack-2x icon-background"></i>
-									<i class="fa fa-location-arrow fa-stack-1x icon-main"></i>
-								</span>
-								<span class="section-name">CONTACTO</span>
-							</div>
-
-							<div class="section-content">
-								
-								<div class="contact-item">
-									<span class="fa-stack icon-small">
-										<i class="fa fa-circle fa-stack-2x icon-background"></i>
-										<i class="fa fa-phone fa-stack-1x icon-main"></i>
-									</span>
-									<span class="contact-text">11 30 12 15 10</span>
-								</div>
-
-								<div class="contact-item">
-									<span class="fa-stack icon-small">
-										<i class="fa fa-circle fa-stack-2x icon-background"></i>
-										<i class="fa fa-laptop fa-stack-1x icon-main"></i>
-									</span>
-									<span class="contact-text">www.gustavohekel.com.ar</span>
-								</div>
-
-								<div class="contact-item">
-									<span class="fa-stack icon-small">
-										<i class="fa fa-circle fa-stack-2x icon-background"></i>
-										<i class="fa fa-envelope fa-stack-1x icon-main"></i>
-									</span>
-									<span class="contact-text">gustavo.hekel@gmail.com</span>
-								</div>
-
-								<div class="contact-item">
-									<span class="fa-stack icon-small">
-										<i class="fa fa-circle fa-stack-2x icon-background"></i>
-										<i class="fa fa-map-marker fa-stack-1x icon-main"></i>
-									</span>
-									<span class="contact-text">Ciudad Autónoma de Buenos Aires</span>
-								</div>
-
-								<div class="contact-item">
-									<span class="fa-stack icon-small">
-										<i class="fa fa-circle fa-stack-2x icon-background"></i>
-										<i class="fa fa-globe fa-stack-1x icon-main"></i>
-									</span>
-									<span class="contact-text">Argentina</span>
-								</div>
-
-							</div>
-						</div>
+					
 
 						<div class="section">
 							<div class="section-header">
@@ -405,10 +364,71 @@
 							</div>
 							
 							
+                                            </div>
+                                            
+                                            	<div class="section">
+							
+							<div class="section-header">
+								<span class="fa-stack fa-2x icon">
+									<i class="fa fa-circle fa-stack-2x icon-background"></i>
+									<i class="fa fa-location-arrow fa-stack-1x icon-main"></i>
+								</span>
+								<span class="section-name">CONTACTO</span>
+							</div>
+
+							<div class="section-content">
+								
+								<div class="contact-item">
+									<span class="fa-stack icon-small">
+										<i class="fa fa-circle fa-stack-2x icon-background"></i>
+										<i class="fa fa-phone fa-stack-1x icon-main"></i>
+									</span>
+									<span class="contact-text">11 30 12 15 10</span>
+								</div>
+
+								<div class="contact-item">
+									<span class="fa-stack icon-small">
+										<i class="fa fa-circle fa-stack-2x icon-background"></i>
+										<i class="fa fa-laptop fa-stack-1x icon-main"></i>
+									</span>
+									<span class="contact-text">www.gustavohekel.com.ar</span>
+								</div>
+
+								<div class="contact-item">
+									<span class="fa-stack icon-small">
+										<i class="fa fa-circle fa-stack-2x icon-background"></i>
+										<i class="fa fa-envelope fa-stack-1x icon-main"></i>
+									</span>
+									<span class="contact-text">gustavo.hekel@gmail.com</span>
+								</div>
+
+								<div class="contact-item">
+									<span class="fa-stack icon-small">
+										<i class="fa fa-circle fa-stack-2x icon-background"></i>
+										<i class="fa fa-map-marker fa-stack-1x icon-main"></i>
+									</span>
+									<span class="contact-text">Ciudad Autónoma de Buenos Aires</span>
+								</div>
+
+								<div class="contact-item">
+									<span class="fa-stack icon-small">
+										<i class="fa fa-circle fa-stack-2x icon-background"></i>
+										<i class="fa fa-globe fa-stack-1x icon-main"></i>
+									</span>
+									<span class="contact-text">Argentina</span>
+								</div>
+                                                            
+                                                            
+
+							</div>
 						</div>
 
 					</div>
 				</div>
+                            
+                            
+							
+                            
 			</div>
 		</div>
 		

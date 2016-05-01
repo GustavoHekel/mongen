@@ -27,6 +27,7 @@ Route::post('login' , 'LandingController@postLogin');
 Route::get('registrar' , 'LandingController@getRegistrar')->name('registrar');
 Route::get('about' , 'LandingController@getAbout')->name('about');
 
+
 /*
 |--------------------------------------------------------------------------
 | User admin page Routes

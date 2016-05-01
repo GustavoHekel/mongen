@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-md-6 col-sm-6 animate-box">
 				<div class="price-box">
-					<h2 class="pricing-plan">Gratiuito</h2>
+					<h2 class="pricing-plan">Gratuito</h2>
 					<div class="price"><sup class="currency">$</sup>0<small>/mes</small></div>
 					<p>Probá nuestro servicio por 1 mes sin cargo.</p>
 					<hr>
