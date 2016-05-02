@@ -6,6 +6,10 @@
 	@include('user-site.includes.header.css')
 </head>
 <body>
-	
+	<div class="wrapper">
+		@include('user-site.includes.body.sidebar');
+		@include('user-site.includes.body.main');
+		@include('user-site.includes.body.js');
+	</div>
 </body>
 </html>

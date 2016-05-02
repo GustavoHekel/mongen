@@ -3,22 +3,22 @@
 <script type="text/javascript" src="{{ asset("dist/plugins/light_bootstrap/assets/js/bootstrap.min.js")}}"></script>
 
 <!--  Checkbox, Radio & Switch Plugins -->
-<script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
+<script src="{{ asset("dist/plugins/light_bootstrap/assets/js/bootstrap-checkbox-radio-switch.js")}}"></script>
 
 <!--  Charts Plugin -->
-<script src="assets/js/chartist.min.js"></script>
+<script src="{{ asset("dist/plugins/light_bootstrap/assets/js/chartist.min.js")}}"></script>
 
 <!--  Notifications Plugin    -->
-<script src="assets/js/bootstrap-notify.js"></script>
+<script src="{{ asset("dist/plugins/light_bootstrap/assets/js/bootstrap-notify.js")}}"></script>
 
 <!--  Google Maps Plugin    -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
 <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-<script src="assets/js/light-bootstrap-dashboard.js"></script>
+<script src="{{ asset("dist/plugins/light_bootstrap/assets/js/light-bootstrap-dashboard.js")}}"></script>
 
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-<script src="assets/js/demo.js"></script>
+<script src="{{ asset("dist/plugins/light_bootstrap/assets/js/demo.js")}}"></script>
 
 <script type="text/javascript">
    $(document).ready(function(){

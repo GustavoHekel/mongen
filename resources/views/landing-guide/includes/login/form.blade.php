@@ -7,7 +7,18 @@
 					<h3 class="animate-box fadeInUp animated">Login</h3>
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3">
-							<form action="#" method="post" class="animate-box fadeInUp animated">
+							<form action="login" method="post" class="animate-box fadeInUp animated">
+								@if (isset($errors))
+									@if (count($errors) > 0)
+										<div class="alert alert-danger">
+									        <ul>
+									            @foreach ($errors as $error)
+									                <li>{{ $error }}</li>
+									            @endforeach
+									        </ul>
+								        </div>
+								    @endif
+							    @endif
 								<div class="form-group" style="text-align: left !important">
 									<label>Email</label>
 									<input type="email" class="form-control" placeholder="Ingrese su email" id="email" name="email">
@@ -23,7 +34,9 @@
 									</label>
 								</div>
 								<input type="submit" value="Enviar" class="btn btn-primary">
+								{{ csrf_field() }}
 							</form>
+							<a href="">Olvidé mi contraseña</a>
 						</div>
 					</div>
 				</div>
