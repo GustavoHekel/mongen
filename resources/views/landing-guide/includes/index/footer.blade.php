@@ -1,7 +1,7 @@
 <footer id="fh5co-footer">
 	<div class="container">
 		<div class="row row-bottom-padded-md">
-			<div class="col-md-3 col-sm-6 col-xs-12 animate-box">
+			<div class="col-md-4 col-sm-6 col-xs-12 animate-box">
 				<div class="fh5co-footer-widget">
 					<h3>Mongen<span class="mongen-point">.</span></h3>
 					<ul class="fh5co-links">
@@ -25,7 +25,7 @@
 				</div>
 			</div> -->
 
-			<div class="col-md-3 col-sm-6 col-xs-12 animate-box">
+			<div class="col-md-4 col-sm-6 col-xs-12 animate-box">
 				<div class="fh5co-footer-widget">
 					<h3>Contacto</h3>
 					<p>
@@ -37,7 +37,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-6 col-xs-12 animate-box">
+			<div class="col-md-4 col-sm-6 col-xs-12 animate-box">
 				<div class="fh5co-footer-widget">
 					<h3>Redes sociales</h3>
 					<ul class="fh5co-social">

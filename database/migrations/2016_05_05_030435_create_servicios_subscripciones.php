@@ -15,7 +15,7 @@ class CreateServiciosSubscripciones extends Migration
         Schema::create('servicios.subscripciones', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email' , 255);
-            $table->boolean('activo');
+            $table->smallInteger('activo');
             $table->timestamps();
         });
     }

@@ -14,6 +14,8 @@ Route::get('zohoverify/verifyforzoho.html' , function(){
 	return view('verifyforzoho');
 });
 
+Route::post('newsletter' , 'LandingController@postNewsletter');
+
 /*
 |--------------------------------------------------------------------------
 | User admin page Routes
@@ -65,4 +67,5 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('login' , 'LandingController@getLogin')->name('login');
 	Route::post('login' , 'UsuariosController@postLogin');
 	Route::get('dashboard' , 'UsuariosController@getDashboard')->name('dashboard');
+
 });

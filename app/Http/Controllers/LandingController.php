@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Models\Subscripcion;
+
 class LandingController extends Controller
 {
 	/**
@@ -46,5 +48,20 @@ class LandingController extends Controller
 	 */
 	public function getAbout(){
 		return view('landing-guide.about');
+	}
+
+	/**
+	 * Registra un nuevo correo electrónico
+	 * en la base de datos de newsletter.
+	 * @param Request $r
+	 * @return json
+	 */
+	public function postNewsletter(Request $r){
+		$s = new Subscripcion;
+		$s->email = $r->email;
+		$s->activo = 1;
+		$s->save();
+
+		return response()->json(['activo' => true]);
 	}
 }
