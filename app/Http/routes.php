@@ -11,7 +11,7 @@
 */
 
 Route::get('zohoverify' , function(){
-	return view('verifyforzoho')
+	return view('verifyforzoho');
 });
 
 /*
