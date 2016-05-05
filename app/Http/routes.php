@@ -10,6 +10,10 @@
 |
 */
 
+Route::get('zohoverify' , function(){
+	return view('verifyforzoho')
+});
+
 /*
 |--------------------------------------------------------------------------
 | User admin page Routes
