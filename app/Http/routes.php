@@ -10,7 +10,7 @@
 |
 */
 
-Route::get('zohoverify' , function(){
+Route::get('zohoverify/verifyforzoho.html' , function(){
 	return view('verifyforzoho');
 });
 
