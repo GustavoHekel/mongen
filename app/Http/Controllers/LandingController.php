@@ -57,11 +57,17 @@ class LandingController extends Controller
 	 * @return json
 	 */
 	public function postNewsletter(Request $r){
-		$s = new Subscripcion;
-		$s->email = $r->email;
-		$s->activo = 1;
-		$s->save();
+		$existe = Subscripcion::where('email' , $r->email)->count();
 
-		return response()->json(['activo' => true]);
+		if (! $existe) {
+			$s = new Subscripcion;
+			$s->email = $r->email;
+			$s->activo = 1;
+			$s->save();
+			return response()->json(['activo' => true]);
+		} else {
+			return response()->json(['activo' => false]);
+		}
+
 	}
 }

@@ -20,22 +20,46 @@
 <script>
 	$(document).ready(function(){
 
-		$('#subscripcion-div-mensaje').hide();
+		$('#subscripcion-div-mensaje-true').hide();
+		$('#subscripcion-div-mensaje-false').hide();
+
 		$('#subscripciones').validate({
 			rules : {
 				email : {
 					required: true,
-					email: true,
-					// remote: 'checkemail-exists'
+					email: true
 				}
+			},
+			messages : {
+				email : {
+					required : '',
+					email: ''
+				}
+			},
+			errorClass: "btn-danger",
+			validClass: "btn-primary",
+			errorPlacement: function(error, element) {
+				$('#errores').html(error);
+			},
+			highlight: function(element, errorClass, validClass) {
+				$(element).addClass(errorClass).removeClass(validClass);
+				$(element.form).find("label[for=" + element.id + "]")
+				.addClass(errorClass);
+			},
+			unhighlight: function(element, errorClass, validClass) {
+				$(element).removeClass(errorClass).addClass(validClass);
+				$(element.form).find("label[for=" + element.id + "]")
+				.removeClass(errorClass);
 			},
 			submitHandler : function(form){
 				$.post('newsletter', $(form).serializeArray(), function(data){
+					$('#subscripcion-cuerpo').hide();
 					if (data.activo == true) {
-						$('#subscripcion-cuerpo').hide();
-						$('#subscripcion-div-mensaje').fadeIn();
+						$('#subscripcion-div-mensaje-false').hide();
+						$('#subscripcion-div-mensaje-true').fadeIn();
 					} else {
-						
+						$('#subscripcion-div-mensaje-true').hide();
+						$('#subscripcion-div-mensaje-false').fadeIn();
 					}
 				})
 			}
