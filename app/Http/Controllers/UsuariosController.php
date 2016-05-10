@@ -6,8 +6,8 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-// use App\Http\Requests;
 use App\Models\Usuario;
+use App\Models\Usuario\MenuUsuario as Menu;
 
 class UsuariosController extends Controller
 {
@@ -38,7 +38,12 @@ class UsuariosController extends Controller
 	 * @return null
 	 */
 	public function getDashboard(){
-		return view('user-site.index');
+		$menu = Menu::all();
+		$data = [
+			'items' => $menu
+		];
+
+		return view('user-site.index' , $data);
 	}
 
 }

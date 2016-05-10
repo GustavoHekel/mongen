@@ -5,9 +5,16 @@
                 Mongen
             </a>
         </div>
-
         <ul class="nav">
-            <li class="active">
+            @foreach ($items as $item)
+            <li class="">
+                <a href="{{ $item->ruta }}">
+                    <i class="{{ $item->icono }}"></i>
+                    <p>{{ $item->descripcion }}</p>
+                </a>
+            </li>
+            @endforeach
+            <!-- <li class="active">
                 <a href="dashboard.html">
                     <i class="pe-7s-graph"></i>
                     <p>Dashboard</p>
@@ -48,7 +55,7 @@
                     <i class="pe-7s-bell"></i>
                     <p>Notifications</p>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>
