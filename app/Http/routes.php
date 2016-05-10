@@ -12,9 +12,7 @@
 
 Route::get('/', 'LandingController@getIndex')->name('index');
 Route::get('precios' , 'LandingController@getPrecios')->name('precios');
-Route::get('registrar' , 'LandingController@getRegistrar')->name('registrar');
 Route::get('about' , 'LandingController@getAbout')->name('about');
-Route::get('login' , 'LandingController@getLogin')->name('login');
 Route::post('newsletter' , 'LandingController@postNewsletter');
 Route::get('zohoverify/verifyforzoho.html' , function(){
 	return view('verifyforzoho');
@@ -65,6 +63,8 @@ Route::get('zohoverify/verifyforzoho.html' , function(){
 
 Route::group(['middleware' => ['web']], function () {
 	
+	Route::get('registrar' , 'LandingController@getRegistrar')->name('registrar');
+	Route::get('login' , 'LandingController@getLogin')->name('login');
 	Route::post('login' , 'UsuariosController@postLogin');
 	Route::get('dashboard' , 'UsuariosController@getDashboard')->name('dashboard');
 	Route::get('mi-cv' , 'CurriculumController@getIndex');
