@@ -127,6 +127,11 @@
                            
                             
                         }
+                        
+                        .negrita{
+                            
+                            font-weight: bold; 
+                        }
 
 		</style>
 	</head>
@@ -144,19 +149,7 @@
 			<div class="col-md-8 col-md-offset-2 main">
 				<div class="row">
 					<div class="col-md-8 left-col">
-                                                <div class="section">
-							<div class="section-header">
-								<span class="fa-stack fa-2x icon">
-									<i class="fa fa-circle fa-stack-2x icon-background"></i>
-									<i class="fa fa-user fa-stack-1x icon-main"></i>
-								</span>
-								<span class="section-name">INFORMACIÓN PERSONALS</span>
-							</div>
-							<div class="section-content">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam libero mauris, pretium eget scelerisque sit amet, porta et quam. Pellentesque in nunc vitae orci porttitor commodo a in nunc. Duis et gravida lacus. Vestibulum porta ornare lacus, id aliquet felis facilisis id. Donec bibendum nec risus et fermentum. Cras et dui ornare dui placerat finibus. Pellentesque posuere odio ipsum. Duis at massa non nisl interdum rhoncus a vitae arcu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-							</div>
-						</div>
-                                            
+                                                                                            
 						<div class="section">
 							<div class="section-header">
 								<span class="fa-stack fa-2x icon">
@@ -261,10 +254,10 @@
                                                 <div class="section-content">
 							
 							<div class="row">
-								<div class="col-md-4 col-sm-4 col-xs-4 dates">
+								<div  class="col-md-4 col-sm-4 dates">
 									(2010 - 2015)
 								</div>
-								<div class="col-md-8 col-sm-8 col-xs-8 timeline">
+								<div class="col-md-8 col-sm-8 timeline">
 									Desarrollador PHP
 									<p class="entidad">Ministerio de Salud de la Nación</p>
 								</div>
@@ -295,78 +288,53 @@
 					<div class="col-md-4 right-col">
 						
 					
-
-						<div class="section">
+                                            <div class="section">
+							
 							<div class="section-header">
 								<span class="fa-stack fa-2x icon">
 									<i class="fa fa-circle fa-stack-2x icon-background"></i>
-									<i class="fa fa-comments fa-stack-1x icon-main"></i>
+									<i class="fa fa-location-arrow fa-stack-1x icon-main"></i>
 								</span>
-								<span class="section-name">LENGUAJES</span>
+								<span class="section-name">DATOS PERSONALES</span>
 							</div>
+                                                
 							<div class="section-content">
+								
 								<div class="row">
-									<div class="col-md-5">
-										Inglés
+									<div class="col-md-offset-1 col-sm-offset-2 col-md-5 col-sm-4 negrita">
+                                                                            <h2>Edad</h2>
 									</div>
-									<div class="col-md-7">
-										<div style="width: 100%; height: 15px; border-radius: 10px; border: solid 2px #20201e;">
-											<div style="width: 90%; background-color: #20201e; height: 11px; border-radius: 10px;">
-											</div>
-										</div>
+									<div class="col-md-6 col-sm-6">
+                                                                            <h2>27 años</h2>
 									</div>
 								</div>
-							</div>
-							<div class="section-content">
-								<div class="row">
-									<div class="col-md-5">
-										Francés
-									</div>
-									<div class="col-md-7">
-										<div style="width: 100%; height: 15px; border-radius: 10px; border: solid 2px #20201e;">
-											<div style="width: 60%; background-color: #20201e; height: 11px; border-radius: 10px;">
-											</div>
-										</div>
+                                                            
+                                                                <div class="row">
+									<div class="col-md-offset-1 col-sm-offset-2 col-md-5 col-sm-4 negrita">
+                                                                            Nacionalidad									
+                                                                        </div>
+									<div class="col-md-6 col-sm-6">
+										Argentina
 									</div>
 								</div>
-							</div>
-							<div class="section-content">
-								<div class="row">
-									<div class="col-md-5">
-										Italiano
+
+								<div class="row"> 
+									<div class=" col-md-offset-1 col-sm-offset-2 col-md-5 col-sm-4 negrita">
+                                                                            <strong>Estado civil</strong>
 									</div>
-									<div class="col-md-7">
-										<div style="width: 100%; height: 15px; border-radius: 10px; border: solid 2px #20201e;">
-											<div style="width: 40%; background-color: #20201e; height: 11px; border-radius: 10px;">
-											</div>
-										</div>
+									<div class="col-md-6 col-sm-6">
+										Concubinato
 									</div>
 								</div>
+
+							
+                                                            
+                                                            
+
 							</div>
 						</div>
                                             
                                             <div class="section">
-							<div class="section-header">
-								<span class="fa-stack fa-2x icon">
-									<i class="fa fa-circle fa-stack-2x icon-background"></i>
-									<i class="fa fa-money fa-stack-1x icon-main"></i>
-								</span>
-								<span class="section-name">Salario Bruto</span>
-							</div>
-							<div class="section-content">
-								<div class="contact-item">
-									<span class="fa-stack icon-small">
-										<i class="fa fa-circle fa-stack-2x icon-background"></i>
-										<i class="fa fa-usd fa-stack-1x icon-main"></i>
-									</span>
-									<span class="contact-text">99999</span>
-								</div>
-							</div>
-							
-							
-                                            </div>
-                                            
-                                            	<div class="section">
 							
 							<div class="section-header">
 								<span class="fa-stack fa-2x icon">
@@ -421,7 +389,60 @@
                                                             
 
 							</div>
+						</div>    
+
+						<div class="section">
+							<div class="section-header">
+								<span class="fa-stack fa-2x icon">
+									<i class="fa fa-circle fa-stack-2x icon-background"></i>
+									<i class="fa fa-comments fa-stack-1x icon-main"></i>
+								</span>
+								<span class="section-name">LENGUAJES</span>
+							</div>
+							<div class="section-content">
+								<div class="row">
+									<div class="col-md-4 col-sm-4 col-md-offset-1 col-sm-offset-1 negrita">
+                                                                            Inglés
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<div style="width: 100%; height: 15px; border-radius: 10px; border: solid 2px #20201e;">
+											<div style="width: 90%; background-color: #20201e; height: 11px; border-radius: 10px;">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="section-content">
+								<div class="row">
+									<div class="col-md-4 col-sm-4 col-md-offset-1 col-sm-offset-1 negrita">
+										Francés
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<div style="width: 100%; height: 15px; border-radius: 10px; border: solid 2px #20201e;">
+											<div style="width: 60%; background-color: #20201e; height: 11px; border-radius: 10px;">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="section-content">
+								<div class="row">
+									<div class="col-md-4 col-sm-4 col-md-offset-1 col-sm-offset-1 negrita">
+										Italiano
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<div style="width: 100%; height: 15px; border-radius: 10px; border: solid 2px #20201e;">
+											<div style="width: 40%; background-color: #20201e; height: 11px; border-radius: 10px;">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
+                                            
+                                           
+                                                
+                                            	
 
 					</div>
 				</div>
