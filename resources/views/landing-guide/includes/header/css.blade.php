@@ -15,3 +15,5 @@
 <link rel="stylesheet" href="{{ asset("dist/plugins/guide/css/style.css")}}">
 <!-- Font Awesome -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+
+<link rel="shortcut icon" type="image/png" href="{{ asset("dist/img/leaf.ico")}}"/>

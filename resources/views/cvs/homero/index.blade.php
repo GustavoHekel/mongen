@@ -132,7 +132,8 @@
                             
                             font-weight: bold; 
                         }
-
+                        
+                      
 		</style>
 	</head>
 	<body>
@@ -147,8 +148,8 @@
 		</div>
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 main">
-				<div class="row">
-					<div class="col-md-8 left-col">
+				
+					<div class="row col-md-8 left-col">
                                                                                             
 						<div class="section">
 							<div class="section-header">
@@ -215,7 +216,7 @@
 							
 							<div class="row">
 								<div class="col-md-4 col-sm-4 col-xs-4 dates">
-									(2010 - 2015)
+                                                                    (2010 - 2015)
 								</div>
 								<div class="col-md-8 col-sm-8 col-xs-8 timeline">
 									Desarrollador PHP
@@ -285,7 +286,7 @@
 
 						</div>
 					</div>
-					<div class="col-md-4 right-col">
+					<div class="row col-md-4 right-col">
 						
 					
                                             <div class="section">
@@ -302,10 +303,10 @@
 								
 								<div class="row">
 									<div class="col-md-offset-1 col-sm-offset-2 col-md-5 col-sm-4 negrita">
-                                                                            <h2>Edad</h2>
+                                                                            Edad
 									</div>
 									<div class="col-md-6 col-sm-6">
-                                                                            <h2>27 años</h2>
+                                                                            27 años
 									</div>
 								</div>
                                                             
@@ -445,7 +446,7 @@
                                             	
 
 					</div>
-				</div>
+				
                             
                             
 							
