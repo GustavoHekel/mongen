@@ -1,4 +1,4 @@
-<section id="fh5co-hero" class="js-fullheight" style="background-image: url({{ asset("dist/plugins/guide/images/hero_bg.jpg")}});" data-next="yes">
+<section id="fh5co-hero" class="js-fullheight" style="background-image: url({{ asset("dist/img/portada-3.jpg")}});" data-next="yes">
 	<div class="fh5co-overlay"></div>
 	<div class="container">
 		<div class="fh5co-intro js-fullheight">
@@ -36,7 +36,7 @@
 								<input type="submit" value="Enviar" class="btn btn-primary">
 								{{ csrf_field() }}
 							</form>
-							<a href="">Olvidé mi contraseña</a>
+							<a href="{{ route('recover') }}">Olvidé mi contraseña</a>
 						</div>
 					</div>
 				</div>

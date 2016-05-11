@@ -10,13 +10,15 @@
 |
 */
 
-Route::get('/', 'LandingController@getIndex')->name('index');
-Route::get('precios' , 'LandingController@getPrecios')->name('precios');
-Route::get('about' , 'LandingController@getAbout')->name('about');
-Route::post('newsletter' , 'LandingController@postNewsletter');
 Route::get('zohoverify/verifyforzoho.html' , function(){
 	return view('verifyforzoho');
 });
+
+Route::get('/', 'LandingController@getIndex')->name('index');
+Route::get('precios' , 'LandingController@getPrecios')->name('precios');
+Route::get('about' , 'LandingController@getAbout')->name('about');
+Route::get('recover' , 'LandingController@getRecover')->name('recover');
+Route::post('newsletter' , 'LandingController@postNewsletter');
 
 /*
 |--------------------------------------------------------------------------
