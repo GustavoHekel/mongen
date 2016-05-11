@@ -3,7 +3,7 @@
 		<div class="row row-bottom-padded-lg">
 			<div class="col-md-6 col-md-offset-3 text-center">
 				<div class="fh5co-label animate-box">FAQ</div>
-				<h2 class="fh5co-lead animate-box">Frequently Ask Questions</h2>
+				<h2 class="fh5co-lead animate-box">Preguntas frecuentes</h2>
 			</div>
 		</div>
 		<div class="row">
