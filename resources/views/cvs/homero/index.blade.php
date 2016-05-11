@@ -105,10 +105,12 @@
 
 			.dates {
 				text-align: right;
+				font-size: 1.3em;
 			}
 
 			.timeline {
 				border-left: solid 2px #e2ac32;
+				font-size: 1.3em;
 			}
 
 			.contact-item {
@@ -121,6 +123,7 @@
 				padding-top: 5px;
 				/*display: block;*/
 			}
+<<<<<<< HEAD
                         
                         .colormio{
                             color:#dfdfdf; 
@@ -134,6 +137,20 @@
                         }
                         
                       
+=======
+
+			.colormio{
+				color:#dfdfdf; 
+
+
+			}
+
+			.negrita{
+
+				font-weight: bold; 
+			}
+
+>>>>>>> 871dbb02a1bf8e4938091bbddfc11d2a4d7f06ea
 		</style>
 	</head>
 	<body>
@@ -148,9 +165,15 @@
 		</div>
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 main">
+<<<<<<< HEAD
 				
 					<div class="row col-md-8 left-col">
                                                                                             
+=======
+				<div class="row">
+					<div class="col-md-8 left-col">
+
+>>>>>>> 871dbb02a1bf8e4938091bbddfc11d2a4d7f06ea
 						<div class="section">
 							<div class="section-header">
 								<span class="fa-stack fa-2x icon">
@@ -181,9 +204,9 @@
 									Ingeniería en sistemas de información
 									<p class="entidad">Universidad Tecnológica Nacional</p>
 								</div>
-							
 
-							
+
+
 								<div class="col-md-4 col-sm-4 col-xs-4 dates">
 									(2010 - 2015)
 								</div>
@@ -191,9 +214,9 @@
 									Ingeniería en Electrónica
 									<p class="entidad">Universidad Tecnológica Nacional</p>
 								</div>
-							
 
-							
+
+
 								<div class="col-md-4 col-sm-4 col-xs-4 dates">
 									(2010 - 2015)
 								</div>
@@ -245,14 +268,14 @@
 							</div>
 
 						</div>
-                                                <div class="section">
+						<div class="section">
 							<span class="fa-stack fa-2x icon">
 								<i class="fa fa-circle fa-stack-2x icon-background"></i>
 								<i class="fa fa-university fa-stack-1x icon-main"></i>
 							</span>
 							<span class="section-name">CONOCIMIENTOS</span>
 						</div>
-                                                <div class="section-content">
+						<div class="section-content">
 							
 							<div class="row">
 								<div  class="col-md-4 col-sm-4 dates">
@@ -288,8 +311,8 @@
 					</div>
 					<div class="row col-md-4 right-col">
 						
-					
-                                            <div class="section">
+
+						<div class="section">
 							
 							<div class="section-header">
 								<span class="fa-stack fa-2x icon">
@@ -298,22 +321,29 @@
 								</span>
 								<span class="section-name">DATOS PERSONALES</span>
 							</div>
-                                                
+
 							<div class="section-content">
 								
 								<div class="row">
 									<div class="col-md-offset-1 col-sm-offset-2 col-md-5 col-sm-4 negrita">
+<<<<<<< HEAD
                                                                             Edad
 									</div>
 									<div class="col-md-6 col-sm-6">
                                                                             27 años
+=======
+										<h2>Edad</h2>
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<h2>27 años</h2>
+>>>>>>> 871dbb02a1bf8e4938091bbddfc11d2a4d7f06ea
 									</div>
 								</div>
-                                                            
-                                                                <div class="row">
+
+								<div class="row">
 									<div class="col-md-offset-1 col-sm-offset-2 col-md-5 col-sm-4 negrita">
-                                                                            Nacionalidad									
-                                                                        </div>
+										Nacionalidad									
+									</div>
 									<div class="col-md-6 col-sm-6">
 										Argentina
 									</div>
@@ -321,21 +351,21 @@
 
 								<div class="row"> 
 									<div class=" col-md-offset-1 col-sm-offset-2 col-md-5 col-sm-4 negrita">
-                                                                            <strong>Estado civil</strong>
+										<strong>Estado civil</strong>
 									</div>
 									<div class="col-md-6 col-sm-6">
 										Concubinato
 									</div>
 								</div>
 
-							
-                                                            
-                                                            
+
+
+
 
 							</div>
 						</div>
-                                            
-                                            <div class="section">
+
+						<div class="section">
 							
 							<div class="section-header">
 								<span class="fa-stack fa-2x icon">
@@ -386,8 +416,8 @@
 									</span>
 									<span class="contact-text">Argentina</span>
 								</div>
-                                                            
-                                                            
+
+
 
 							</div>
 						</div>    
@@ -403,7 +433,7 @@
 							<div class="section-content">
 								<div class="row">
 									<div class="col-md-4 col-sm-4 col-md-offset-1 col-sm-offset-1 negrita">
-                                                                            Inglés
+										Inglés
 									</div>
 									<div class="col-md-6 col-sm-6">
 										<div style="width: 100%; height: 15px; border-radius: 10px; border: solid 2px #20201e;">
@@ -440,19 +470,17 @@
 								</div>
 							</div>
 						</div>
-                                            
-                                           
-                                                
-                                            	
-
 					</div>
+<<<<<<< HEAD
 				
                             
                             
 							
                             
+=======
+				</div>
+>>>>>>> 871dbb02a1bf8e4938091bbddfc11d2a4d7f06ea
 			</div>
 		</div>
-		
 	</body>
 </html>
