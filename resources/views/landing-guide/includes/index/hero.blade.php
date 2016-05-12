@@ -6,17 +6,6 @@
 				<div class="fh5co-left-position">
 					<h2 class="animate-box">Armá tu CV y tenelo online en minutos.</h2>
 					<p class="animate-box">
-						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						<!-- Primer publicidad -->
-						<ins 
-							class="adsbygoogle" style="display:block"
-							data-ad-client="ca-pub-3666016266097716"
-							data-ad-slot="1923242384"
-							data-ad-format="auto">
-						</ins>
-						<script>
-							(adsbygoogle = window.adsbygoogle || []).push({});
-						</script>
 						<!-- <a href="https://vimeo.com/channels/staffpicks/93951774" class="btn btn-outline popup-vimeo btn-video"><i class="icon-play2"></i> Watch video</a>  -->
 						<a href="{{ route('registrar') }}" class="btn btn-primary">Registrate en Mongen</a>
 					</p>
