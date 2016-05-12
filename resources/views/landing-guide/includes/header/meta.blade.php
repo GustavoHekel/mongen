@@ -2,8 +2,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Crea tu CV de manera profesional" />
-<meta name="keywords" content="free cvs template mogen trabajo jobs job online" />
-<meta name="author" content="mongen" />
+<meta name="keywords" content="free, cvs, template, mongen, trabajo, trabajos, curriculum, vitae, profesional" />
+<meta name="author" content="Gustavo D. Hekel, Juan M. Merlo" />
 
 <!-- 
 	//////////////////////////////////////////////////////
