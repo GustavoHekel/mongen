@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Route;
-use App\Classes\Menu;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
-
+use App\Http\Requests;
+use App\Classes\Menu;
 use App\Models\Usuario;
-// use App\Models\Usuario\MenuUsuario as Menu;
 
 class UsuariosController extends Controller
 {
@@ -45,7 +43,7 @@ class UsuariosController extends Controller
 			'items' => Menu::getMenuUsuario($ruta)
 		];
 
-		return view('user-site.index' , $data);
+		return view('user-site.dashboard.index' , $data);
 	}
 
 }

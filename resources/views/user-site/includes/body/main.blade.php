@@ -1,5 +1,9 @@
 <div class="main-panel">
 	@include('user-site.includes.body.main.navbar')
-	@include('user-site.includes.body.main.content')
+	<div class="content">
+		<div class="container-fluid">
+			@yield('content')
+		</div>
+	</div>
 	@include('user-site.includes.body.main.footer')
 </div>
