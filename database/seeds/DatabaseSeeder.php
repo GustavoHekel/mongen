@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PlanesSeeder::class);
         $this->call(UsuariosSeeder::class);
         $this->call(MenuUsuarioSeeder::class);
+        $this->call(SeccionesCvSeeder::class);
     }
 }
