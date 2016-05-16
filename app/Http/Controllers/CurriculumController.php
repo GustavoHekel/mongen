@@ -10,6 +10,8 @@ use App\Http\Requests;
 
 use App\Classes\Menu;
 
+use App\Models\Seccion;
+
 class CurriculumController extends Controller
 {
     /**
@@ -20,8 +22,10 @@ class CurriculumController extends Controller
      */
     public function getIndex(){
     	$ruta = Route::getCurrentRoute()->getPath();
+        $secciones = Seccion::all();
 		$data = [
-			'items' => Menu::getMenuUsuario($ruta)
+			'items' => Menu::getMenuUsuario($ruta),
+            'secciones' => $secciones
 		];
 
 		return view('user-site.mi-cv.index' , $data);

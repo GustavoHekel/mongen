@@ -1,12 +1,8 @@
 @extends('user-site.index')
 @section('content')
-<div class="list-group">
-	<a href="#" class="list-group-item active">
-		Cras justo odio
-	</a>
-	<a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-	<a href="#" class="list-group-item">Morbi leo risus</a>
-	<a href="#" class="list-group-item">Porta ac consectetur ac</a>
-	<a href="#" class="list-group-item">Vestibulum at eros</a>
-</div>
+	<div class="list-group">
+	@foreach ($secciones as $seccion)
+		<a href="{{ $seccion->url }}" class="list-group-item"><i class="fa {{ $seccion->icono }}"></i> {{ $seccion->descripcion }}</a>
+	@endforeach
+	</div>
 @endsection

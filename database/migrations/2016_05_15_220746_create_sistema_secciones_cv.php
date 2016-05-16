@@ -12,7 +12,7 @@ class CreateSistemaSeccionesCv extends Migration
      */
     public function up()
     {
-        Schema::create('secciones_cv', function (Blueprint $table) {
+        Schema::create('sistema.secciones_cv', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descripcion' , 255);
             $table->string('url' , 255);
@@ -28,6 +28,6 @@ class CreateSistemaSeccionesCv extends Migration
      */
     public function down()
     {
-        Schema::drop('secciones_cv');
+        Schema::drop('sistema.secciones_cv');
     }
 }
