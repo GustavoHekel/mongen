@@ -11,8 +11,8 @@
             <li class="active">
             @else
             <li>
-                @endif
-                <a href="{{ $item->ruta }}">
+            @endif
+                <a href="{{ url($item->ruta) }}">
                     <i class="{{ $item->icono }}"></i>
                     <p>{{ $item->descripcion }}</p>
                 </a>

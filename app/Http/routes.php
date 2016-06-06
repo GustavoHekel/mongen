@@ -69,11 +69,16 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('login' , 'LandingController@getLogin')->name('login');
 	Route::post('login' , 'UsuariosController@postLogin');
 	Route::get('dashboard' , 'UsuariosController@getDashboard')->name('dashboard');
-	Route::get('mi-cv' , 'CurriculumController@getIndex');
 	Route::get('estadisticas' , 'EstadisticasController@getIndex');
 	Route::get('mensajes' , 'InboxController@getIndex');
 	Route::get('mi-cuenta' , 'CuentasController@getIndex');
 	Route::get('facturacion' , 'FacturacionController@getIndex');
 	Route::get('ayuda' , 'AyudaController@getIndex');
+
+	/**
+	 * MI CV
+	 */
+	Route::get('mi-cv', 'CurriculumController@getIndex');
+	Route::get('mi-cv/estado', 'CurriculumController@getEstado');
 
 });

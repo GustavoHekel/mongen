@@ -18,4 +18,13 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
      * @var string
      */
     protected $table = 'sistema.usuarios';
+
+    /**
+     * Traigo el estado actual 
+     * del usuario con la
+     * relación "estado"
+     */
+    public function estado(){
+    	return $this->hasOne('App\Models\Usuario\Estado', 'usuario', 'id');
+    }
 }

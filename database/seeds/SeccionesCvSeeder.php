@@ -13,43 +13,48 @@ class SeccionesCvSeeder extends Seeder
     {
         DB::table('sistema.secciones_cv')->insert([
         	[
+                'descripcion' => 'Estado',
+                'url' => 'mi-cv/estado',
+                'icono' => 'fa-diamond'
+            ] ,
+            [
         		'descripcion' => 'Estudios',
-        		'url' => 'cv-estudios',
+        		'url' => 'mi-cv/estudios',
         		'icono' => 'fa-graduation-cap'
     		] ,
         	[
         		'descripcion' => 'Trabajos',
-        		'url' => 'cv-trabajos',
+        		'url' => 'mi-cv/trabajos',
         		'icono' => 'fa-briefcase'
     		] ,
         	[
         		'descripcion' => 'Skills',
-        		'url' => 'cv-skills',
+        		'url' => 'mi-cv/skills',
         		'icono' => 'fa-star-half-o'
     		] ,
         	[
         		'descripcion' => 'Intereses',
-        		'url' => 'cv-intereses',
+        		'url' => 'mi-cv/intereses',
         		'icono' => 'fa-globe'
     		] ,
         	[
         		'descripcion' => 'Idiomas',
-        		'url' => 'cv-idiomas',
+        		'url' => 'mi-cv/idiomas',
         		'icono' => 'fa-language'
     		] ,
         	[
         		'descripcion' => 'Referencias',
-        		'url' => 'cv-referencias',
-        		'icono' => 'fa-commenting'
+        		'url' => 'mi-cv/referencias',
+        		'icono' => 'fa-comments-o'
     		] ,
         	[
         		'descripcion' => 'Datos personales',
-        		'url' => 'cv-personal',
+        		'url' => 'mi-cv/personal',
         		'icono' => 'fa-user'
 			] ,
         	[
         		'descripcion' => 'Contacto',
-        		'url' => 'cv-contacto',
+        		'url' => 'mi-cv/contacto',
         		'icono' => 'fa-mobile'
     		]
         ]);

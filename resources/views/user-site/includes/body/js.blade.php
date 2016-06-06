@@ -3,7 +3,7 @@
 <script type="text/javascript" src="{{ asset("dist/plugins/light_bootstrap/assets/js/bootstrap.min.js")}}"></script>
 
 <!--  Checkbox, Radio & Switch Plugins -->
-<script src="{{ asset("dist/plugins/light_bootstrap/assets/js/bootstrap-checkbox-radio-switch.js")}}"></script>
+<script src="{{ asset("dist/bower_components/iCheck/icheck.js")}}"></script>
 
 <!--  Charts Plugin -->
 <script src="{{ asset("dist/plugins/light_bootstrap/assets/js/chartist.min.js")}}"></script>
@@ -18,21 +18,7 @@
 <script src="{{ asset("dist/plugins/light_bootstrap/assets/js/light-bootstrap-dashboard.js")}}"></script>
 
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-<script src="{{ asset("dist/plugins/light_bootstrap/assets/js/demo.js")}}"></script>
+<!-- <script src="{{ asset("dist/plugins/light_bootstrap/assets/js/demo.js")}}"></script> -->
 
-<script type="text/javascript">
-   $(document).ready(function(){
-
-       demo.initChartist();
-
-       $.notify({
-           icon: 'pe-7s-gift',
-           message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-
-       },{
-        type: 'info',
-        timer: 4000
-    });
-
-   });
-</script>
+<!-- Font Awesome -->
+<script src="https://use.fontawesome.com/17da7fb56b.js"></script>
