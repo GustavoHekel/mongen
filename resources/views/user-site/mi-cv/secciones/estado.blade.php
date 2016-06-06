@@ -23,14 +23,14 @@
                                 @endif
                             </span>
                             <span class="text-{{ $estado->estilo }}">
-                                {{$estado->descripcion}}
+                                {{ $estado->descripcion }}
                             </span>
                         </li>
                     @endforeach
                 </ul>
             </div>
             <div class="footer">
-                
+                <input class="btn btn-success btn-fill" type="button" value="Guardar">
             </div>
         </div>
     </div>
