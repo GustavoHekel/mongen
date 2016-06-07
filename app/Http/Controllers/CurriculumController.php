@@ -24,14 +24,12 @@ class CurriculumController extends Controller
      * @param null
      * @return null
      */
-    public function getIndex(){
-    	$ruta = Route::getCurrentRoute()->getPath();
+    public function getIndex(Request $r){
         $secciones = Seccion::all();
-		$data = [
-			'items' => Menu::getMenuUsuario($ruta),
+        $data = [
+			'items' => $r->attributes->menu,
             'secciones' => $secciones
 		];
-
 		return view('user-site.mi-cv.index' , $data);
     }
 
