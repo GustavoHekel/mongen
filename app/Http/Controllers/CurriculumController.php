@@ -13,7 +13,6 @@ use App\Classes\Menu;
 
 use App\Models\Seccion;
 use App\Models\EstadoUsuario;
-
 use App\Models\Usuario;
 
 class CurriculumController extends Controller
@@ -24,10 +23,10 @@ class CurriculumController extends Controller
      * @param null
      * @return null
      */
-    public function getIndex(Request $r){
+    public function getIndex(){
+
         $secciones = Seccion::all();
         $data = [
-			'items' => $r->attributes->menu,
             'secciones' => $secciones
 		];
 		return view('user-site.mi-cv.index' , $data);
@@ -40,12 +39,10 @@ class CurriculumController extends Controller
      * @return null
      */
     public function getEstado(){
-        $ruta = Route::getCurrentRoute()->getPath();
         $secciones = Seccion::all();
         $estados = EstadoUsuario::orderBy('id','desc')->get();
         $usuario = Usuario::with('estado')->find(Auth::user()->id);
         $data = [
-            'items' => Menu::getMenuUsuario($ruta),
             'secciones' => $secciones,
             'estados' => $estados,
             'usuario' => $usuario

@@ -19,8 +19,9 @@ class MenuMiddleware
     public function handle($request, Closure $next)
     {
         $ruta = Route::getCurrentRoute()->getPath();
-        $menu = Menu::getMenuUsuario($ruta);
-        $request->attributes->menu = $menu;
+        $ruta = explode('/' , $ruta);
+        $menu = Menu::getMenuUsuario($ruta[0]);
+        $request->session()->put('menu', $menu);
         return $next($request);
     }
 }

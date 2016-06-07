@@ -9,16 +9,29 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('zohoverify/verifyforzoho.html' , function(){
 	return view('verifyforzoho');
 });
 
-Route::get('/', 'LandingController@getIndex')->name('index');
-Route::get('precios' , 'LandingController@getPrecios')->name('precios');
-Route::get('about' , 'LandingController@getAbout')->name('about');
-Route::get('recover' , 'LandingController@getRecover')->name('recover');
-Route::post('newsletter' , 'LandingController@postNewsletter');
+/*
+|--------------------------------------------------------------------------
+| Landing page Routes
+|--------------------------------------------------------------------------
+|
+| Las siguientes rutas son todas las que se van a utilizar para el
+| manejo de la landing page.
+|
+*/
+Route::group(['middleware' => ['landing']] , function() {
+	Route::get('/', 'LandingController@getIndex')->name('index');
+	Route::get('precios' , 'LandingController@getPrecios')->name('precios');
+	Route::get('about' , 'LandingController@getAbout')->name('about');
+	Route::get('recover' , 'LandingController@getRecover')->name('recover');
+	Route::post('newsletter' , 'LandingController@postNewsletter');
+	Route::get('registrar' , 'LandingController@getRegistrar')->name('registrar');
+	Route::get('login' , 'LandingController@getLogin')->name('login');
+	Route::post('login' , 'UsuariosController@postLogin');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +65,7 @@ Route::post('newsletter' , 'LandingController@postNewsletter');
 |
 */
 
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -65,9 +79,6 @@ Route::post('newsletter' , 'LandingController@postNewsletter');
 
 Route::group(['middleware' => ['web']], function () {
 	
-	Route::get('registrar' , 'LandingController@getRegistrar')->name('registrar');
-	Route::get('login' , 'LandingController@getLogin')->name('login');
-	Route::post('login' , 'UsuariosController@postLogin');
 	Route::get('dashboard' , 'UsuariosController@getDashboard')->name('dashboard');
 	Route::get('estadisticas' , 'EstadisticasController@getIndex');
 	Route::get('mensajes' , 'InboxController@getIndex');

@@ -6,7 +6,7 @@
             </a>
         </div>
         <ul class="nav">
-        @foreach ($items as $item)
+        @foreach (session('menu') as $item)
             @if ($item->activo)
             <li class="active">
             @else

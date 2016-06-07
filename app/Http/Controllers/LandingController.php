@@ -10,6 +10,7 @@ use App\Models\Subscripcion;
 
 class LandingController extends Controller
 {
+
 	/**
 	 * Devuelve la vista principal de la landing page
 	 * @return null
