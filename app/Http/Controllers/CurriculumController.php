@@ -18,6 +18,26 @@ use App\Models\Usuario;
 class CurriculumController extends Controller
 {
     /**
+     * Devuelve un objeto con las secciones
+     * para mostrarlas en una lista.
+     * @param string $route
+     * @return json
+     */
+    private function getSecciones($route){
+        // $route = explode('/', $route);
+        // if (count($route) > 1){
+        //     $route = $route[1];
+        // }
+
+        $items = Seccion::all();
+        foreach ($items as $item){
+            echo $item->ruta;
+            $item->activo = $item->url == $route ? 'active' : '';
+        }
+        return $items;
+    }
+
+    /**
      * Devuelve la vista principal 
      * de la opción mi-cv. 
      * @param null
@@ -25,9 +45,9 @@ class CurriculumController extends Controller
      */
     public function getIndex(){
 
-        $secciones = Seccion::all();
+        $ruta = Route::getCurrentRoute()->getPath();
         $data = [
-            'secciones' => $secciones
+            'secciones' => $this->getSecciones($ruta)
 		];
 		return view('user-site.mi-cv.index' , $data);
     }
@@ -39,14 +59,24 @@ class CurriculumController extends Controller
      * @return null
      */
     public function getEstado(){
-        $secciones = Seccion::all();
+        $ruta = Route::getCurrentRoute()->getPath();
         $estados = EstadoUsuario::orderBy('id','desc')->get();
         $usuario = Usuario::with('estado')->find(Auth::user()->id);
         $data = [
-            'secciones' => $secciones,
+            'secciones' => $this->getSecciones($ruta),
             'estados' => $estados,
             'usuario' => $usuario
         ];
         return view('user-site.mi-cv.secciones.estado', $data);
+    }
+
+    /**
+     * Actualiza el estado del usuario
+     * @param Request $r
+     * @return string
+     */
+    public function postEstado(Request $r){
+        $usuario = EstadoUsuario::firstOrNew('usuario' , Auth::user()->id)->get();
+        return json_encode($usuario);
     }
 }

@@ -91,5 +91,6 @@ Route::group(['middleware' => ['web']], function () {
 	 */
 	Route::get('mi-cv', 'CurriculumController@getIndex');
 	Route::get('mi-cv/estado', 'CurriculumController@getEstado');
+	Route::post('mi-cv/estado', 'CurriculumController@postEstado');
 
 });

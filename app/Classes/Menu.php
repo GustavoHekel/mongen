@@ -29,7 +29,7 @@ class Menu {
 	public static function getMenuUsuario($route){
 		$items = MenuUsuario::all();
 		foreach ($items as $item){
-			$item->activo = $item->ruta == $route ? true : false;
+			$item->activo = $item->ruta == $route ? 'active' : '';
 		}
 		return $items;
 	}

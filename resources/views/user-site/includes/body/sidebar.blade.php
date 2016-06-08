@@ -7,11 +7,7 @@
         </div>
         <ul class="nav">
         @foreach (session('menu') as $item)
-            @if ($item->activo)
-            <li class="active">
-            @else
-            <li>
-            @endif
+            <li class="{{$item->activo}}">
                 <a href="{{ url($item->ruta) }}">
                     <i class="{{ $item->icono }}"></i>
                     <p>{{ $item->descripcion }}</p>

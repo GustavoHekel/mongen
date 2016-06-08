@@ -11,27 +11,29 @@
             </p>
         </div>
         <div class="content">
-            <div>
-                <ul class="list-group">
-                    @foreach($estados as $estado)
-                        <li class="list-group-item">
-                            <span>
-                                @if ($usuario->estado->estado == $estado->id)
-                                    <input type="radio" name="estado" checked="checked">
-                                @else
-                                    <input type="radio" name="estado">
-                                @endif
-                            </span>
-                            <span class="text-{{ $estado->estilo }}">
-                                {{ $estado->descripcion }}
-                            </span>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-            <div class="footer">
-                <input class="btn btn-success btn-fill" type="button" value="Guardar">
-            </div>
+            <form id="cv-estado">
+                <div>
+                    <ul class="list-group">
+                        @foreach($estados as $estado)
+                            <li class="list-group-item">
+                                <span>
+                                    @if ($usuario->estado->estado == $estado->id)
+                                        <input value="{{$estado->id}}" type="radio" name="estado" checked="checked">
+                                    @else
+                                        <input value="{{$estado->id}}" type="radio" name="estado">
+                                    @endif
+                                </span>
+                                <span class="text-{{ $estado->estilo }}">
+                                    {{ $estado->descripcion }}
+                                </span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="footer">
+                    <input id="submit-cv-estado" class="btn btn-success btn-fill" type="button" value="Guardar">
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -39,10 +41,18 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $("input").iCheck({
+        $('input').iCheck({
             checkboxClass: 'icheckbox_minimal-green',
             radioClass: 'iradio_minimal-green',
             increaseArea: '20%' // optional
+        });
+
+        $('#submit-cv-estado').click(function(event){
+            event.preventDefault();
+            // console.log($('#cv-estado').serialize());
+            $.post('estado', $('#cv-estado').serialize(), function(data){
+                console.log(data);
+            })
         });
     });
 </script>
