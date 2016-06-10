@@ -13,3 +13,6 @@
 
 <!-- iCheck -->
 <link href="{{ asset("dist/bower_components/iCheck/skins/minimal/green.css")}}" rel="stylesheet" type='text/css'>
+
+<!-- Loading -->
+<link rel="stylesheet" type="text/css" href="{{ asset("dist/css/loading.css")}}">

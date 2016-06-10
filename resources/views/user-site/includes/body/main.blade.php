@@ -5,5 +5,6 @@
 			@yield('content')
 		</div>
 	</div>
+	<div class="loading-modal"></div>
 	@include('user-site.includes.body.main.footer')
 </div>

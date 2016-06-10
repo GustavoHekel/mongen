@@ -22,3 +22,18 @@
 
 <!-- Font Awesome -->
 <script src="https://use.fontawesome.com/17da7fb56b.js"></script>
+
+<!-- Seteo de directivas -->
+<script type="text/javascript">
+ 	
+ 	$.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+ 	$(document).on({
+        ajaxStart: function() { $('body').addClass("loading"); },
+        ajaxStop: function() { $('body').removeClass("loading"); }    
+    });
+</script>

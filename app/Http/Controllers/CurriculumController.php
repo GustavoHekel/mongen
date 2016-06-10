@@ -15,6 +15,8 @@ use App\Models\Seccion;
 use App\Models\EstadoUsuario;
 use App\Models\Usuario;
 
+use App\Models\Usuario\Estado as CvEstado;
+
 class CurriculumController extends Controller
 {
     /**
@@ -76,7 +78,9 @@ class CurriculumController extends Controller
      * @return string
      */
     public function postEstado(Request $r){
-        $usuario = EstadoUsuario::firstOrNew('usuario' , Auth::user()->id)->get();
-        return json_encode($usuario);
+        $estado = CvEstado::firstOrNew(['usuario' => Auth::user()->id]);
+        $estado->estado = $r->estado;
+        $estado->save();
+        return 'pl';
     }
 }
