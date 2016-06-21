@@ -19,6 +19,19 @@ use App\Models\Usuario\Estado as CvEstado;
 
 class CurriculumController extends Controller
 {
+
+    private 
+        $_return_success = [
+            'css' => 'success',
+            'info' => 'Se han realizado los cambios solicitados',
+            'icon' => 'fa fa-check'
+        ],
+        $_return_error = [
+            'css' => 'danger',
+            'info' => 'Ha ocurrido un error',
+            'icon' => 'fa fa-exclamation-triangle'
+        ];
+
     /**
      * Devuelve un objeto con las secciones
      * para mostrarlas en una lista.
@@ -80,7 +93,28 @@ class CurriculumController extends Controller
     public function postEstado(Request $r){
         $estado = CvEstado::firstOrNew(['usuario' => Auth::user()->id]);
         $estado->estado = $r->estado;
-        $estado->save();
-        return 'pl';
+        if ($estado->save()){
+            return response()->json($this->_return_success);
+        } else {
+            return response()->json($this->_return_error);
+        }
+    }
+
+    /**
+     * Devuelve la vista "Estudios"
+     * en las opciones de "Mi CV"
+     * @param null
+     * @return null
+     */
+    public function getEstudios(){
+        $ruta = Route::getCurrentRoute()->getPath();
+        $estados = EstadoUsuario::orderBy('id','desc')->get();
+        $usuario = Usuario::with('estado')->find(Auth::user()->id);
+        $data = [
+            'secciones' => $this->getSecciones($ruta),
+            'estados' => $estados,
+            'usuario' => $usuario
+        ];
+        return view('user-site.mi-cv.secciones.estado', $data);   
     }
 }

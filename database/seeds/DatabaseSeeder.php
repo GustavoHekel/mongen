@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SeccionesCvSeeder::class);
         $this->call(EstadosUsuariosSeeder::class);
         $this->call(CVEstadoUsuarioSeeder::class);
+        $this->call(CvEstudiosUsuarioSeeder::class);
     }
 }

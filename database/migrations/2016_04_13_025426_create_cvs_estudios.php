@@ -18,7 +18,7 @@ class CreateCvsEstudios extends Migration
             $table->string('instituto' , 255);
             $table->string('carrera' , 255);
             $table->integer('desde');
-            $table->integer('hasta');
+            $table->integer('hasta')->nullable();
             $table->float('promedio')->nullable();
             $table->timestamps();
 

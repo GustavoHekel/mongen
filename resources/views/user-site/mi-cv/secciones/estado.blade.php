@@ -1,5 +1,7 @@
 @extends('user-site.mi-cv.index')
 @section('seccion')
+
+
 <div class="row">
     <div class="card">
         <div class="header">
@@ -49,9 +51,14 @@
 
         $('#submit-cv-estado').click(function(event){
             event.preventDefault();
-            // console.log($('#cv-estado').serialize());
             $.post('estado', $('#cv-estado').serialize(), function(data){
-                console.log(data);
+                $.notify({
+                    icon: data.icon,
+                    message: data.info
+                    
+                },{
+                    type: data.css
+                });
             })
         });
     });
