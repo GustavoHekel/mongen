@@ -160,8 +160,7 @@ return [
          * External Service Providers ...
          */
         'Torann\GeoIP\GeoIPServiceProvider',
-
-
+        Yajra\Datatables\DatatablesServiceProvider::class,
     ],
 
     /*
@@ -212,6 +211,7 @@ return [
          * External Aliases ...
          */
         'GeoIP' => 'Torann\GeoIP\GeoIPFacade',
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
 
     ],
 

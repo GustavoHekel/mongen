@@ -20,11 +20,22 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
     protected $table = 'sistema.usuarios';
 
     /**
-     * Traigo el estado actual 
-     * del usuario con la
-     * relación "estado"
+     * Traigo el estado actual del usuario 
+     * con la relación "estado".
+     * @param null
+     * @return null
      */
     public function estado(){
     	return $this->hasOne('App\Models\Usuario\Estado', 'usuario', 'id');
+    }
+
+    /**
+     * Traigo los estudios del usuario 
+     * con la relación "estudios".
+     * @param null
+     * @return null
+     */
+    public function estudios(){
+        return $this->hasMany('App\Models\Usuario\Estudio', 'usuario', 'id');
     }
 }

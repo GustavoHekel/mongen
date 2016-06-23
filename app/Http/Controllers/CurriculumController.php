@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Route;
 use Auth;
+use Datatables;
 
 use App\Http\Requests;
 
@@ -16,6 +17,7 @@ use App\Models\EstadoUsuario;
 use App\Models\Usuario;
 
 use App\Models\Usuario\Estado as CvEstado;
+use App\Models\Usuario\Estudio as CvEstudio;
 
 class CurriculumController extends Controller
 {
@@ -39,10 +41,6 @@ class CurriculumController extends Controller
      * @return json
      */
     private function getSecciones($route){
-        // $route = explode('/', $route);
-        // if (count($route) > 1){
-        //     $route = $route[1];
-        // }
 
         $items = Seccion::all();
         foreach ($items as $item){
@@ -108,13 +106,20 @@ class CurriculumController extends Controller
      */
     public function getEstudios(){
         $ruta = Route::getCurrentRoute()->getPath();
-        $estados = EstadoUsuario::orderBy('id','desc')->get();
-        $usuario = Usuario::with('estado')->find(Auth::user()->id);
+        $usuario = Usuario::with('estudios')->find(Auth::user()->id);
         $data = [
             'secciones' => $this->getSecciones($ruta),
-            'estados' => $estados,
-            'usuario' => $usuario
         ];
-        return view('user-site.mi-cv.secciones.estado', $data);   
+        return view('user-site.mi-cv.secciones.estudios', $data);
+    }
+
+    /**
+     * Devuelve el listado de estudios para un 
+     * usuario determinado.
+     * @param int $usuario
+     * @return json
+     */
+    public function getEstudiosUsuario($usuario){
+        return Datatables::of(CvEstudio::query())->make(true);
     }
 }

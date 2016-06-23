@@ -1,7 +1,5 @@
 @extends('user-site.mi-cv.index')
 @section('seccion')
-
-
 <div class="row">
     <div class="card">
         <div class="header">
