@@ -22,7 +22,7 @@ use App\Models\Usuario\Estudio as CvEstudio;
 class CurriculumController extends Controller
 {
 
-    private 
+    private
         $_return_success = [
             'css' => 'success',
             'info' => 'Se han realizado los cambios solicitados',
@@ -51,8 +51,8 @@ class CurriculumController extends Controller
     }
 
     /**
-     * Devuelve la vista principal 
-     * de la opción mi-cv. 
+     * Devuelve la vista principal
+     * de la opción mi-cv.
      * @param null
      * @return null
      */
@@ -62,7 +62,7 @@ class CurriculumController extends Controller
         $data = [
             'secciones' => $this->getSecciones($ruta)
 		];
-		return view('user-site.mi-cv.index' , $data);
+		return view('user-site-pro.mi-cv.index' , $data);
     }
 
     /**
@@ -80,7 +80,7 @@ class CurriculumController extends Controller
             'estados' => $estados,
             'usuario' => $usuario
         ];
-        return view('user-site.mi-cv.secciones.estado', $data);
+        return view('user-site-pro.mi-cv.secciones.estado', $data);
     }
 
     /**
@@ -110,16 +110,62 @@ class CurriculumController extends Controller
         $data = [
             'secciones' => $this->getSecciones($ruta),
         ];
-        return view('user-site.mi-cv.secciones.estudios', $data);
+        return view('user-site-pro.mi-cv.secciones.estudios', $data);
     }
 
     /**
-     * Devuelve el listado de estudios para un 
-     * usuario determinado.
+     * Devuelve el listado de estudios 
+     * para un usuario determinado.
      * @param int $usuario
      * @return json
      */
-    public function getEstudiosUsuario($usuario){
+    public function getEstudiosUsuario(){
         return Datatables::of(CvEstudio::query())->make(true);
+    }
+
+    public function getEstudiosUsuario2(){
+        $estudios = [
+            "total" => 12,
+            "rows" => [
+                [
+                    "instituto" => "Gallioni"
+                ],
+                [
+                    "instituto" => "Dellepiane"
+                ],
+                [
+                    "instituto" => "Alguno mas"
+                ],
+                [
+                    "instituto" => "Gallioni"
+                ],
+                [
+                    "instituto" => "Dellepiane"
+                ],
+                [
+                    "instituto" => "Alguno mas"
+                ],
+                [
+                    "instituto" => "Gallioni"
+                ],
+                [
+                    "instituto" => "Dellepiane"
+                ],
+                [
+                    "instituto" => "Alguno mas"
+                ],
+                [
+                    "instituto" => "Gallioni"
+                ],
+                [
+                    "instituto" => "Dellepiane"
+                ],
+                [
+                    "instituto" => "Alguno mas"
+                ],
+            ]
+        ];
+
+        return json_encode($estudios);
     }
 }

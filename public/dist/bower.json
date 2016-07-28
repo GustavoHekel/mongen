@@ -1,0 +1,22 @@
+{
+  "name": "Mongen",
+  "homepage": "https://github.com/GustavoHekel/mongen",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Gustavo H."
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "datatables.net": "^1.10.12",
+    "iCheck": "icheck#^1.0.2",
+    "jquery-validation": "^1.15.0"
+  }
+}

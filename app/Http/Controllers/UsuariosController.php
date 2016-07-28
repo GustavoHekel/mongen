@@ -44,7 +44,6 @@ class UsuariosController extends Controller
      */
     public function getDashboard(Request $r)
     {
-        return view('user-site.dashboard.index');
+        return view('user-site-pro.dashboard.index');
     }
-
 }
