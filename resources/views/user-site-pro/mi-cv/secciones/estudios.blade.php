@@ -13,9 +13,10 @@
         <div class="content">
             <table class="table table-bordered" id="table"
                 data-toggle="table"
-                data-url="estudios/listado2"
+                data-url="estudios/listado"
                 data-side-pagination="server"
-                data-pagination="true">
+                data-pagination="true"
+                data-search="true">
                 <thead>
                     <tr>
                         <th data-field="instituto">Instituto</th>
@@ -30,18 +31,12 @@
 @push('scripts')
 <script>
 $(function() {
-    // $('#table').bootstrapTable({
-        // processing: true,
-        // serverSide: true,
-        // url: 'estudios/listado'
-    // });
-
-    // $('#table').dataTable({
-    //     ajax: 'estudios/listado',
-    //     columns: [
-    //         { data: 'instituto'}
-    //     ]
-    // });
+    $('#table').dataTable({
+        ajax: 'estudios/listado',
+        columns: [
+            { data: 'instituto' }
+        ]
+    })
 });
 </script>
 @endpush

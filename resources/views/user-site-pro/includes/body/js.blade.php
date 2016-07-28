@@ -40,8 +40,9 @@
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery.bootstrap.wizard.min.js")}}"></script>
 
 <!--  Datatable Plugin    -->
-<script src="{{ asset("dist/plugins/light_bootstrap_pro/js/bootstrap-table.js")}}"></script>
-<!-- <script src="{{ asset("dist/bower_components/datatables.net/js/jquery.dataTables.js")}}"></script> -->
+<!-- <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/bootstrap-table.js")}}"></script> -->
+<script src="{{ asset("dist/bower_components/datatables.net/js/jquery.dataTables.js")}}"></script>
+<script src="{{ asset("dist/bower_components/datatables.net-bs/js/dataTables.bootstrap.js")}}"></script>
 
 <!--  Full Calendar Plugin    -->
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/fullcalendar.min.js")}}"></script>

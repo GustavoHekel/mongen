@@ -121,6 +121,7 @@ class CurriculumController extends Controller
      */
     public function getEstudiosUsuario(){
         return Datatables::of(CvEstudio::query())->make(true);
+        // return CvEstudio::paginate(1);
     }
 
     public function getEstudiosUsuario2(){
