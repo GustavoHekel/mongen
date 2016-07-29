@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Route;
+use Auth;
 
 use App\Classes\Menu;
 
@@ -22,6 +23,7 @@ class MenuMiddleware
         $ruta = explode('/' , $ruta);
         $menu = Menu::getMenuUsuario($ruta[0]);
         $request->session()->put('menu', $menu);
+        $request->session()->put('name', Auth::user()->nombre);
         return $next($request);
     }
 }

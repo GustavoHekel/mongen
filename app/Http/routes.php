@@ -24,13 +24,13 @@ Route::get('zohoverify/verifyforzoho.html' , function(){
 */
 Route::group(['middleware' => ['landing']] , function() {
 	Route::get('/', 'LandingController@getIndex')->name('index');
-	Route::get('precios' , 'LandingController@getPrecios')->name('precios');
-	Route::get('about' , 'LandingController@getAbout')->name('about');
-	Route::get('recover' , 'LandingController@getRecover')->name('recover');
-	Route::post('newsletter' , 'LandingController@postNewsletter');
-	Route::get('registrar' , 'LandingController@getRegistrar')->name('registrar');
-	Route::get('login' , 'LandingController@getLogin')->name('login');
-	Route::post('login' , 'UsuariosController@postLogin');
+	Route::get('precios', 'LandingController@getPrecios')->name('precios');
+	Route::get('about', 'LandingController@getAbout')->name('about');
+	Route::get('recover', 'LandingController@getRecover')->name('recover');
+	Route::post('newsletter', 'LandingController@postNewsletter');
+	Route::get('registrar', 'LandingController@getRegistrar')->name('registrar');
+	Route::get('login', 'LandingController@getLogin')->name('login');
+	Route::post('login', 'UsuariosController@postLogin');
 });
 
 /*
@@ -79,12 +79,12 @@ Route::group(['middleware' => ['landing']] , function() {
 
 Route::group(['middleware' => ['web']], function () {
 	
-	Route::get('dashboard' , 'UsuariosController@getDashboard')->name('dashboard');
-	Route::get('estadisticas' , 'EstadisticasController@getIndex');
-	Route::get('mensajes' , 'InboxController@getIndex');
-	Route::get('mi-cuenta' , 'CuentasController@getIndex');
-	Route::get('facturacion' , 'FacturacionController@getIndex');
-	Route::get('ayuda' , 'AyudaController@getIndex');
+	Route::get('dashboard', 'UsuariosController@getDashboard')->name('dashboard');
+	Route::get('estadisticas', 'EstadisticasController@getIndex');
+	Route::get('mensajes', 'InboxController@getIndex');
+	Route::get('mi-cuenta', 'CuentasController@getIndex');
+	Route::get('facturacion', 'FacturacionController@getIndex');
+	Route::get('ayuda', 'AyudaController@getIndex');
 
 	/**
 	 * MI CV
@@ -97,6 +97,5 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('mi-cv/estudios', 'CurriculumController@getEstudios');
 	Route::post('mi-cv/estudios', 'CurriculumController@postEstudios');
 	Route::get('mi-cv/estudios/listado', 'CurriculumController@getEstudiosUsuario');
-	Route::get('mi-cv/estudios/listado2', 'CurriculumController@getEstudiosUsuario2');
 
 });

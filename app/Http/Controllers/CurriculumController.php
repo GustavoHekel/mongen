@@ -120,53 +120,19 @@ class CurriculumController extends Controller
      * @return json
      */
     public function getEstudiosUsuario(){
-        return Datatables::of(CvEstudio::query())->make(true);
-        // return CvEstudio::paginate(1);
+
+        $estudios = CvEstudio::where('usuario', Auth::user()->id);
+
+        return Datatables::of($estudios)
+            ->addColumn('actions', function($estudio){
+                return '
+                <a rel="tooltip" title="Ver" class="btn btn-simple btn-info btn-icon table-action view" data-original-title="View"><i class="fa fa-image"></i></a>
+                <a rel="tooltip" title="Editar" class="btn btn-simple btn-warning btn-icon table-action edit" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                <a rel="tooltip" title="Eliminar" class="btn btn-simple btn-danger btn-icon table-action remove" data-original-title="Remove"><i class="fa fa-remove"></i></a>
+                ';
+            })
+            ->make(true);
     }
 
-    public function getEstudiosUsuario2(){
-        $estudios = [
-            "total" => 12,
-            "rows" => [
-                [
-                    "instituto" => "Gallioni"
-                ],
-                [
-                    "instituto" => "Dellepiane"
-                ],
-                [
-                    "instituto" => "Alguno mas"
-                ],
-                [
-                    "instituto" => "Gallioni"
-                ],
-                [
-                    "instituto" => "Dellepiane"
-                ],
-                [
-                    "instituto" => "Alguno mas"
-                ],
-                [
-                    "instituto" => "Gallioni"
-                ],
-                [
-                    "instituto" => "Dellepiane"
-                ],
-                [
-                    "instituto" => "Alguno mas"
-                ],
-                [
-                    "instituto" => "Gallioni"
-                ],
-                [
-                    "instituto" => "Dellepiane"
-                ],
-                [
-                    "instituto" => "Alguno mas"
-                ],
-            ]
-        ];
-
-        return json_encode($estudios);
-    }
+    
 }

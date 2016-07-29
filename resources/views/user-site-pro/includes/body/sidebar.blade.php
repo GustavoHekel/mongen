@@ -12,14 +12,14 @@
             </div>
             <div class="info">
                 <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-                    Tania Andrew
+                    {{ session('name') }}
                     <b class="caret"></b>
                 </a>
                 <div class="collapse" id="collapseExample">
                     <ul class="nav">
-                        <li><a href="#">My Profile</a></li>
-                        <li><a href="#">Edit Profile</a></li>
-                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Perfil</a></li>
+                        <li><a href="#">Ajustes</a></li>
+                        <li><a href="#">Salir</a></li>
                     </ul>
                 </div>
             </div>

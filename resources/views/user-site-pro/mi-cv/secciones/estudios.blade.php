@@ -2,24 +2,30 @@
 @section('seccion')
 <div class="row">
     <div class="card">
-        <div class="header">
-            <h4 class="title">
-                Titulo estudios
-            </h4>
-            <p class="category">
-                Subtitulo estudios
-            </p>
-        </div>
         <div class="content">
-            <table class="table table-bordered" id="table"
-                data-toggle="table"
-                data-url="estudios/listado"
-                data-side-pagination="server"
-                data-pagination="true"
-                data-search="true">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="header">
+                        <h4 class="title">
+                            Titulo estudios
+                        </h4>
+                        <p class="category">
+                            Subtitulo estudios
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pull-right" style="padding-top:7px;">
+                        <button class="btn btn-success">Nuevo estudio</button>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-hover" id="table">
                 <thead>
                     <tr>
-                        <th data-field="instituto">Instituto</th>
+                        <th>Instituto</th>
+                        <th>Carrera</th>
+                        <th>Acciones</th>
                     </tr>                    
                 </thead>
             </table>
@@ -34,7 +40,9 @@ $(function() {
     $('#table').dataTable({
         ajax: 'estudios/listado',
         columns: [
-            { data: 'instituto' }
+            { data: 'instituto' },
+            { data: 'carrera' },
+            { data: 'actions', className: 'td-actions text-right'}
         ]
     })
 });
