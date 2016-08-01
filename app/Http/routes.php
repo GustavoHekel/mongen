@@ -103,4 +103,13 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('mi-cv/skills', 'CurriculumController@getSkills');
 	Route::get('mi-cv/skills/listado', 'CurriculumController@getSkillsTable');
 
+	Route::get('mi-cv/intereses', 'CurriculumController@getIntereses');
+	Route::get('mi-cv/intereses/listado', 'CurriculumController@getInteresesTable');
+
+	Route::get('mi-cv/idiomas', 'CurriculumController@getIdiomas');
+	Route::get('mi-cv/idiomas/listado', 'CurriculumController@getIdiomasTable');
+
+	Route::get('mi-cv/referencias', 'CurriculumController@getReferencias');
+	Route::get('mi-cv/referencias/listado', 'CurriculumController@getReferenciasTable');
+
 });

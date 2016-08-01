@@ -7,23 +7,23 @@
                 <div class="col-md-8">
                     <div class="header">
                         <h4 class="title">
-                            Titulo skills
+                            Titulo idiomas
                         </h4>
                         <p class="category">
-                            Subtitulo skills
+                            Subtitulo idiomas
                         </p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="pull-right" style="padding-top:7px;">
-                        <button class="btn btn-success">Nuevo skill</button>
+                        <button class="btn btn-success">Nuevo idioma</button>
                     </div>
                 </div>
             </div>
             <table class="table table-hover" id="table">
                 <thead>
                     <tr>
-                        <th>Skill</th>
+                        <th>Idioma</th>
                         <th>Nivel</th>
                         <th>Acciones</th>
                     </tr>                    
@@ -38,9 +38,9 @@
 <script>
 $(function() {
     $('#table').dataTable({
-        ajax: 'skills/listado',
+        ajax: 'idiomas/listado',
         columns: [
-            { data: 'nombre' },
+            { data: 'idioma' },
             { data: 'level' },
             { data: 'actions', className: 'td-actions text-right'}
         ]
