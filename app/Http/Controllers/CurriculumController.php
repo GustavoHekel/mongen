@@ -18,6 +18,8 @@ use App\Models\Usuario;
 
 use App\Models\Usuario\Estado as CvEstado;
 use App\Models\Usuario\Estudio as CvEstudio;
+use App\Models\Usuario\Trabajo as CvTrabajo;
+use App\Models\Usuario\Skills as CvSkills;
 
 class CurriculumController extends Controller
 {
@@ -53,7 +55,7 @@ class CurriculumController extends Controller
     /**
      * Devuelve la vista principal
      * de la opción mi-cv.
-     * @param null
+     * 
      * @return null
      */
     public function getIndex(){
@@ -68,7 +70,7 @@ class CurriculumController extends Controller
     /**
      * Devuelve la vista de "Estado"
      * en las opciones de "Mi CV"
-     * @param null
+     * 
      * @return null
      */
     public function getEstado(){
@@ -101,12 +103,11 @@ class CurriculumController extends Controller
     /**
      * Devuelve la vista "Estudios"
      * en las opciones de "Mi CV"
-     * @param null
+     * 
      * @return null
      */
     public function getEstudios(){
         $ruta = Route::getCurrentRoute()->getPath();
-        $usuario = Usuario::with('estudios')->find(Auth::user()->id);
         $data = [
             'secciones' => $this->getSecciones($ruta),
         ];
@@ -116,11 +117,10 @@ class CurriculumController extends Controller
     /**
      * Devuelve el listado de estudios 
      * para un usuario determinado.
-     * @param int $usuario
+     * 
      * @return json
      */
-    public function getEstudiosUsuario(){
-
+    public function getEstudiosTable(){
         $estudios = CvEstudio::where('usuario', Auth::user()->id);
 
         return Datatables::of($estudios)
@@ -132,6 +132,74 @@ class CurriculumController extends Controller
                 ';
             })
             ->make(true);
+    }
+
+    /**
+     * 
+     */
+    public function getTrabajos(){
+        $ruta = Route::getCurrentRoute()->getPath();
+        $data = [
+            'secciones' => $this->getSecciones($ruta)
+        ];
+        return view('user-site-pro.mi-cv.secciones.trabajos', $data);
+    }
+
+    /**
+     * 
+     */
+    public function getTrabajosTable(){
+        $trabajos = CvTrabajo::where('usuario', Auth::user()->id);
+
+        return Datatables::of($trabajos)
+            ->addColumn('actions', function($trabajo){
+                return '
+                <a rel="tooltip" title="Ver" class="btn btn-simple btn-info btn-icon table-action view" data-original-title="View"><i class="fa fa-image"></i></a>
+                <a rel="tooltip" title="Editar" class="btn btn-simple btn-warning btn-icon table-action edit" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                <a rel="tooltip" title="Eliminar" class="btn btn-simple btn-danger btn-icon table-action remove" data-original-title="Remove"><i class="fa fa-remove"></i></a>
+                ';
+            })
+            ->make(true);
+    }
+
+    /**
+     * [getSkills description]
+     * @return [type] [description]
+     */
+    public function getSkills(){
+        $ruta = Route::getCurrentRoute()->getPath();
+        $data = [
+            'secciones' => $this->getSecciones($ruta)
+        ];
+        return view('user-site-pro.mi-cv.secciones.skills', $data);
+    }
+
+    /**
+     * [getSkillsTable description]
+     * @return [type] [description]
+     */
+    public function getSkillsTable(){
+        $skills = CvSkills::where('usuario', Auth::user()->id);
+
+        return Datatables::of($skills)
+            ->addColumn('level', function($skill){
+                return '
+                <div class="progress">
+                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:' . $skill->nivel * 10 . '%">
+                    ' . $skill->nivel * 10 . '%
+                  </div>
+                </div>
+                ';
+            })
+            ->addColumn('actions', function($skill){
+                return '
+                <a rel="tooltip" title="Ver" class="btn btn-simple btn-info btn-icon table-action view" data-original-title="View"><i class="fa fa-image"></i></a>
+                <a rel="tooltip" title="Editar" class="btn btn-simple btn-warning btn-icon table-action edit" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                <a rel="tooltip" title="Eliminar" class="btn btn-simple btn-danger btn-icon table-action remove" data-original-title="Remove"><i class="fa fa-remove"></i></a>
+                ';
+            })
+            ->make(true);
+
     }
 
     
