@@ -5,7 +5,6 @@
     </a>
   </div>
   <div class="sidebar-wrapper">
-
         <div class="user">
             <div class="photo">
                 <img src="{{ asset("dist/plugins/light_bootstrap_pro/img/default-avatar.png")}}" />
@@ -27,8 +26,8 @@
 
         <ul class="nav">
           @foreach (session('menu') as $item)
-              <li class="{{$item->activo}}">
-                  <a href="{{ url($item->ruta) }}">
+              <li>
+                  <a href="{{ $item->ruta }}">
                       <i class="{{ $item->icono }}"></i>
                       <p>{{ $item->descripcion }}</p>
                   </a>

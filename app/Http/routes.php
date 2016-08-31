@@ -1,4 +1,5 @@
 <?php
+use Auth;
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -31,6 +32,7 @@ Route::group(['middleware' => ['landing']] , function() {
 	Route::get('registrar', 'LandingController@getRegistrar')->name('registrar');
 	Route::get('login', 'LandingController@getLogin')->name('login');
 	Route::post('login', 'UsuariosController@postLogin');
+
 });
 
 /*
@@ -60,7 +62,7 @@ Route::group(['middleware' => ['landing']] , function() {
 | Test Routes
 |--------------------------------------------------------------------------
 |
-| Las siguientes rutas son todas las que 
+| Las siguientes rutas son todas las que
 | se van a utilizar para testeo.
 |
 */
@@ -78,7 +80,11 @@ Route::group(['middleware' => ['landing']] , function() {
 */
 
 Route::group(['middleware' => ['web']], function () {
-	
+
+	Route::get('logout', function(){
+		Auth::logout();
+	});
+
 	Route::get('dashboard', 'UsuariosController@getDashboard')->name('dashboard');
 	Route::get('estadisticas', 'EstadisticasController@getIndex');
 	Route::get('mensajes', 'InboxController@getIndex');
@@ -90,12 +96,12 @@ Route::group(['middleware' => ['web']], function () {
 	 * MI CV
 	 */
 	Route::get('mi-cv', 'CurriculumController@getIndex');
-	
-	Route::get('mi-cv/estado', 'CurriculumController@getEstado');
-	Route::post('mi-cv/estado', 'CurriculumController@postEstado');
-	
-	Route::get('mi-cv/estudios', 'CurriculumController@getEstudios');
-	Route::get('mi-cv/estudios/listado', 'CurriculumController@getEstudiosTable');
+
+	Route::get('mi-cv/estado', 'EstadoController@getEstado');
+	Route::post('mi-cv/estado', 'EstadoController@postEstado');
+
+	Route::get('mi-cv/estudios', 'EstudioController@getEstudios');
+	Route::get('mi-cv/estudios/listado', 'EstudioController@getEstudiosTable');
 
 	Route::get('mi-cv/trabajos', 'CurriculumController@getTrabajos');
 	Route::get('mi-cv/trabajos/listado', 'CurriculumController@getTrabajosTable');

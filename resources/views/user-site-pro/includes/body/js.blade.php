@@ -1,7 +1,10 @@
 <!--   Core JS Files and PerfectScrollbar library inside jquery.ui   -->
-<script type="text/javascript" src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery.min.js")}}"></script>
-<script type="text/javascript" src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery-ui.min.js")}}"></script>
-<script type="text/javascript" src="{{ asset("dist/plugins/light_bootstrap_pro/js/bootstrap.min.js")}}"></script>
+<script src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery.min.js")}}"></script>
+<script src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery-ui.min.js")}}"></script>
+<script src="{{ asset("dist/plugins/light_bootstrap_pro/js/bootstrap.min.js")}}"></script>
+
+<!-- Defaults y funciones -->
+<script src="{{ asset("dist/js/mongen.js")}}"></script>
 
 <!--  Forms Validations Plugin -->
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery.validate.min.js")}}"></script>

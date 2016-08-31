@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
+use App\Models\Usuario\Menu;
 
 class UsuariosController extends Controller
 {
@@ -26,6 +27,7 @@ class UsuariosController extends Controller
     public function postLogin(Request $r)
     {
         if (Auth::attempt(['email' => $r->email, 'password' => $r->pass])) {
+            $r->session()->put('menu', Menu::all());
             return redirect('dashboard');
         } else {
             $data = [
