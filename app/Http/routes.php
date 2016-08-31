@@ -103,19 +103,19 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('mi-cv/estudios', 'EstudioController@getEstudios');
 	Route::get('mi-cv/estudios/listado', 'EstudioController@getEstudiosTable');
 
-	Route::get('mi-cv/trabajos', 'CurriculumController@getTrabajos');
-	Route::get('mi-cv/trabajos/listado', 'CurriculumController@getTrabajosTable');
+	Route::get('mi-cv/trabajos', 'TrabajoController@getTrabajos');
+	Route::get('mi-cv/trabajos/listado', 'TrabajoController@getTrabajosTable');
 
-	Route::get('mi-cv/skills', 'CurriculumController@getSkills');
-	Route::get('mi-cv/skills/listado', 'CurriculumController@getSkillsTable');
+	Route::get('mi-cv/skills', 'SkillController@getSkills');
+	Route::get('mi-cv/skills/listado', 'SkillController@getSkillsTable');
 
-	Route::get('mi-cv/intereses', 'CurriculumController@getIntereses');
-	Route::get('mi-cv/intereses/listado', 'CurriculumController@getInteresesTable');
+	Route::get('mi-cv/intereses', 'InteresController@getIntereses');
+	Route::get('mi-cv/intereses/listado', 'InteresController@getInteresesTable');
 
-	Route::get('mi-cv/idiomas', 'CurriculumController@getIdiomas');
-	Route::get('mi-cv/idiomas/listado', 'CurriculumController@getIdiomasTable');
+	Route::get('mi-cv/idiomas', 'IdiomaController@getIdiomas');
+	Route::get('mi-cv/idiomas/listado', 'IdiomaController@getIdiomasTable');
 
-	Route::get('mi-cv/referencias', 'CurriculumController@getReferencias');
-	Route::get('mi-cv/referencias/listado', 'CurriculumController@getReferenciasTable');
+	Route::get('mi-cv/referencias', 'ReferenciaController@getReferencias');
+	Route::get('mi-cv/referencias/listado', 'ReferenciaController@getReferenciasTable');
 
 });
