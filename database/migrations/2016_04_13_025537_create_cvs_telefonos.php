@@ -13,14 +13,14 @@ class CreateCvsTelefonos extends Migration
     public function up()
     {
         Schema::create('cvs.telefonos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('usuario');
-            $table->integer('tipo');
+            $table->increments('id_telefono');
+            $table->integer('id_usuario');
+            $table->integer('id_tipo_telefono');
             $table->string('numero' , 15);
             $table->timestamps();
 
-            $table->foreign('usuario')->references('id')->on('sistema.usuarios');
-            $table->foreign('tipo')->references('id')->on('sistema.tipo_telefono');
+            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
+            $table->foreign('id_tipo_telefono')->references('id_tipo_telefono')->on('sistema.tipo_telefono');
         });
     }
 

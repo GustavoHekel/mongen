@@ -13,24 +13,24 @@ class CreateUsuarios extends Migration
     public function up()
     {
         Schema::create('sistema.usuarios', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_usuario');
             $table->string('email' , 255)->unique();
             $table->string('password' , 100);
             $table->string('nombre' , 255);
             $table->date('fecha_nacimiento');
-            $table->smallInteger('modelo_cv');
+            $table->smallInteger('id_modelo');
             $table->string('url')->unique();
-            $table->smallInteger('plan');
+            $table->smallInteger('id_plan');
             $table->timestamp('fecha_vencimiento');
-            $table->smallInteger('pais');
-            $table->smallInteger('provincia');
+            $table->smallInteger('id_pais');
+            $table->smallInteger('id_provincia');
             $table->rememberToken();
-            $table->timestamps(); 
+            $table->timestamps();
 
-            $table->foreign('modelo_cv')->references('id')->on('sistema.modelos_cv');
-            $table->foreign('plan')->references('id')->on('sistema.planes');
-            $table->foreign('pais')->references('id')->on('sistema.paises');
-            $table->foreign('provincia')->references('id')->on('sistema.provincias');
+            $table->foreign('id_modelo')->references('id_modelo')->on('sistema.modelos_cv');
+            $table->foreign('id_plan')->references('id_plan')->on('sistema.planes');
+            $table->foreign('id_pais')->references('id_pais')->on('sistema.paises');
+            $table->foreign('id_provincia')->references('id_provincia')->on('sistema.provincias');
         });
     }
 

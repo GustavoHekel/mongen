@@ -18,9 +18,9 @@
                             <li class="list-group-item">
                                 <span>
                                     @if ($usuario->estado->estado == $estado->id)
-                                        <input value="{{$estado->id}}" type="radio" name="estado" checked="checked">
+                                        <input value="{{$estado->id_estado}}" type="radio" name="estado" checked="checked">
                                     @else
-                                        <input value="{{$estado->id}}" type="radio" name="estado">
+                                        <input value="{{$estado->id_estado}}" type="radio" name="estado">
                                     @endif
                                 </span>
                                 <span class="text-{{ $estado->estilo }}">

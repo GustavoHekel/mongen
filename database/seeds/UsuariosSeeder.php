@@ -17,12 +17,12 @@ class UsuariosSeeder extends Seeder
 				'password' => bcrypt('Homero'),
 				'nombre' => 'GUSTAVO D. HEKEL',
 				'fecha_nacimiento' => '1988-10-15',
-				'modelo_cv' => 1,
+				'id_modelo' => 1,
 				'url' => 'gustavo',
-				'plan' => 1,
+				'id_plan' => 1,
 				'fecha_vencimiento' => '2100-01-01',
-				'pais' => 1,
-				'provincia' => 1,
+				'id_pais' => 1,
+				'id_provincia' => 1,
 				'created_at' => date('Y-m-d H:i:s'),
 				'updated_at' => date('Y-m-d H:i:s')
         	],[
@@ -30,12 +30,12 @@ class UsuariosSeeder extends Seeder
 				'password' => bcrypt('Gimnasia'),
 				'nombre' => 'JUAN MARTÍN MERLO',
 				'fecha_nacimiento' => '1988-11-18',
-				'modelo_cv' => 1,
+				'id_modelo' => 1,
 				'url' => 'juan',
-				'plan' => 1,
+				'id_plan' => 1,
 				'fecha_vencimiento' => '2100-01-01',
-				'pais' => 1,
-				'provincia' => 1,
+				'id_pais' => 1,
+				'id_provincia' => 1,
 				'created_at' => date('Y-m-d H:i:s'),
 				'updated_at' => date('Y-m-d H:i:s')
         	]

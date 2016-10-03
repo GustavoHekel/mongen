@@ -2,7 +2,6 @@
 
 namespace App\Classes;
 
-use Auth;
 use Route;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -20,8 +19,8 @@ class Menu {
 	}
 
 	/**
-	 * Devuelve un array para armar el menú 
-	 * y recibe la ruta actual para 
+	 * Devuelve un array para armar el menú
+	 * y recibe la ruta actual para
 	 * asignarle la clase activo.
 	 * @param string $route
 	 * @return array

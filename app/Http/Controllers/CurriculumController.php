@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Auth;
 use Datatables;
 
 use App\Http\Requests;
@@ -33,7 +32,7 @@ class CurriculumController extends Controller
      * @return null
      */
     public function getIndex(Request $r){
-        $r->session()->put('secciones_mi_cv', Seccion::all());
-		return view('user-site-pro.mi-cv.index');
+      $r->session()->put('secciones_mi_cv', Seccion::all());
+	     return view('user-site-pro.mi-cv.index');
     }
 }

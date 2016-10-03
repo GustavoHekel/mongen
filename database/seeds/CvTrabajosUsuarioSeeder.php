@@ -13,7 +13,7 @@ class CvTrabajosUsuarioSeeder extends Seeder
     {
         DB::table('cvs.trabajos')->insert([
         	[
-        		'usuario' => 1,
+        		'id_usuario' => 1,
         		'lugar' => 'PEDRO GENTA',
         		'puesto' => 'DESARROLLADOR PHP SR.',
         		'desde' => 201604,
@@ -21,7 +21,7 @@ class CvTrabajosUsuarioSeeder extends Seeder
         		'detalle' => 'LABURABA CON VACAS SUCIAS'
         	],
         	[
-        		'usuario' => 1,
+        		'id_usuario' => 1,
         		'lugar' => 'MINISTERIO DE SALUD DE LA NACIÓN',
         		'puesto' => 'DESARROLLADOR PHP SR.',
         		'desde' => 201110,

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use App\Models\Usuario\Menu;
+use App\Models\Usuario;
 
 class UsuariosController extends Controller
 {
@@ -47,5 +48,15 @@ class UsuariosController extends Controller
     public function getDashboard(Request $r)
     {
         return view('user-site-pro.dashboard.index');
+    }
+
+    /**
+     * [getPersonalInfoCv description]
+     * @param  Request $r [description]
+     * @return [type]     [description]
+     */
+    public function getPersonalInfoCv(Request $r)
+    {
+
     }
 }

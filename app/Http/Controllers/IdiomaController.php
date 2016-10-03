@@ -26,7 +26,7 @@ class IdiomaController extends Controller
      * @return [type] [description]
      */
     public function getIdiomasTable(){
-        $idiomas = CvIdiomas::where('usuario', Auth::user()->id);
+        $idiomas = CvIdiomas::where('id_usuario', Auth::user()->id_usuario);
 
         return Datatables::of($idiomas)
             ->addColumn('level', function($idioma){

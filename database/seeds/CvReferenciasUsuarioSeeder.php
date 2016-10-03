@@ -13,8 +13,8 @@ class CvReferenciasUsuarioSeeder extends Seeder
     {
         DB::table('cvs.referencias')->insert([
         	[
-        		'usuario' => 1,
-        		'referente' => 2,
+        		'id_usuario' => 1,
+        		'id_referente' => 2,
         		'mensaje' => 'GUSTAVO ES UN VAGO DE MIERDA. SE LA RASCA A MAS NO PODER.'
         	],
     	]);

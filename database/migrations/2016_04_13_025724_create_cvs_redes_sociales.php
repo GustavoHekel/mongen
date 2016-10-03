@@ -13,14 +13,14 @@ class CreateCvsRedesSociales extends Migration
     public function up()
     {
         Schema::create('cvs.redes_sociales', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('usuario');
-            $table->integer('red');
-            $table->string('link' , 255);
+            $table->increments('id_red_usuario');
+            $table->integer('id_usuario');
+            $table->integer('id_red');
+            $table->string('url' , 255);
             $table->timestamps();
 
-            $table->foreign('usuario')->references('id')->on('sistema.usuarios');
-            $table->foreign('red')->references('id')->on('sistema.redes_sociales');
+            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
+            $table->foreign('id_red')->references('id_red')->on('sistema.redes_sociales');
         });
     }
 

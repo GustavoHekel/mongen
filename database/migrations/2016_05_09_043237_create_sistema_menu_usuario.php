@@ -13,7 +13,7 @@ class CreateSistemaMenuUsuario extends Migration
     public function up()
     {
         Schema::create('sistema.menu_usuario', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_menu');
             $table->string('descripcion')->unique();
             $table->string('icono')->unique();
             $table->string('ruta')->unique();

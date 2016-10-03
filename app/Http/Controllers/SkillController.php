@@ -26,7 +26,7 @@ class SkillController extends Controller
      * @return [type] [description]
      */
     public function getSkillsTable(){
-        $skills = CvSkills::where('usuario', Auth::user()->id);
+        $skills = CvSkills::where('id_usuario', Auth::user()->id_usuario);
 
         return Datatables::of($skills)
             ->addColumn('level', function($skill){

@@ -13,13 +13,13 @@ class CreateCvsSkills extends Migration
     public function up()
     {
         Schema::create('cvs.skills', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('usuario');
+            $table->increments('id_skill');
+            $table->integer('id_usuario');
             $table->string('nombre' , 255);
             $table->smallInteger('nivel');
             $table->timestamps();
 
-            $table->foreign('usuario')->references('id')->on('sistema.usuarios');
+            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
         });
     }
 

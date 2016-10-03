@@ -13,8 +13,8 @@ class CreateCvsEstudios extends Migration
     public function up()
     {
         Schema::create('cvs.estudios', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('usuario');
+            $table->increments('id_estudio');
+            $table->integer('id_usuario');
             $table->string('instituto' , 255);
             $table->string('carrera' , 255);
             $table->integer('desde');
@@ -22,7 +22,7 @@ class CreateCvsEstudios extends Migration
             $table->float('promedio')->nullable();
             $table->timestamps();
 
-            $table->foreign('usuario')->references('id')->on('sistema.usuarios');
+            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
 
         });
     }

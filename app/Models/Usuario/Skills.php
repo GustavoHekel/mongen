@@ -12,4 +12,12 @@ class Skills extends Model
      * @var string
      */
     protected $table = 'cvs.skills';
+
+    /**
+	 * The table's primary key
+	 *
+	 * @var string
+	 */
+	protected $primaryKey = 'id_skill';
+
 }

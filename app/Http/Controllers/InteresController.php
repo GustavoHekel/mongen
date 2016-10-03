@@ -26,7 +26,7 @@ class InteresController extends Controller
      * @return [type] [description]
      */
     public function getInteresesTable(){
-        $interes = CvInteres::where('usuario', Auth::user()->id);
+        $interes = CvInteres::where('id_usuario', Auth::user()->id_usuario);
 
         return Datatables::of($interes)
             ->addColumn('actions', function($intere){

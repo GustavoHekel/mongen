@@ -13,7 +13,7 @@ class CreateModelosCv extends Migration
     public function up()
     {
         Schema::create('sistema.modelos_cv', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_modelo');
             $table->string('nombre' , 255)->unique();
             $table->string('ruta' , 255);
             $table->jsonb('planes')->nullable();

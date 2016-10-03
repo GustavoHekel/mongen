@@ -26,7 +26,7 @@
                         <th>Referente</th>
                         <th>Mensaje</th>
                         <th>Acciones</th>
-                    </tr>                    
+                    </tr>
                 </thead>
             </table>
         </div>

@@ -12,4 +12,12 @@ class Estado extends Model
      * @var string
      */
     protected $table = 'cvs.estados_usuarios';
+
+    /**
+	 * The table's primary key
+	 *
+	 * @var string
+	 */
+	protected $primaryKey = 'id_estado';
+
 }

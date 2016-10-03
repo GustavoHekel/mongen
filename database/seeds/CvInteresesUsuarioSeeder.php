@@ -13,19 +13,19 @@ class CvInteresesUsuarioSeeder extends Seeder
     {
         DB::table('cvs.intereses')->insert([
         	[
-        		'usuario' => 1,
+        		'id_usuario' => 1,
         		'descripcion' => 'POPIAR'
         	],
         	[
-        		'usuario' => 1,
+        		'id_usuario' => 1,
         		'descripcion' => 'COMER'
         	],
         	[
-        		'usuario' => 1,
+        		'id_usuario' => 1,
         		'descripcion' => 'BIRRA'
         	],
         	[
-        		'usuario' => 1,
+        		'id_usuario' => 1,
         		'descripcion' => 'HAMBUGUESAS'
         	],
     	]);

@@ -12,4 +12,12 @@ class Estudio extends Model
      * @var string
      */
     protected $table = 'cvs.estudios';
+
+    /**
+	 * The table's primary key
+	 *
+	 * @var string
+	 */
+	protected $primaryKey = 'id_estudio';
+
 }

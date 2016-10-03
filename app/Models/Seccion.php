@@ -12,4 +12,12 @@ class Seccion extends Model
      * @var string
      */
     protected $table = 'sistema.secciones_cv';
+
+    /**
+	 * The table's primary key
+	 *
+	 * @var string
+	 */
+	protected $primaryKey = 'id_seccion';
+
 }

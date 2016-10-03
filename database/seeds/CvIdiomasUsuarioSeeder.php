@@ -13,12 +13,12 @@ class CvIdiomasUsuarioSeeder extends Seeder
     {
         DB::table('cvs.idiomas')->insert([
         	[
-        		'usuario' => 1,
+        		'id_usuario' => 1,
         		'idioma' => 'INGLÉS',
         		'nivel' => 9
         	],
         	[
-        		'usuario' => 1,
+        		'id_usuario' => 1,
         		'idioma' => 'RUSO',
         		'nivel' => 1
         	],

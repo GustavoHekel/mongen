@@ -12,4 +12,12 @@ class Menu extends Model
      * @var string
      */
     protected $table = 'sistema.menu_usuario';
+
+    /**
+	 * The table's primary key
+	 *
+	 * @var string
+	 */
+	protected $primaryKey = 'id_menu';
+
 }

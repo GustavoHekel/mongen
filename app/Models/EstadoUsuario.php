@@ -12,4 +12,12 @@ class EstadoUsuario extends Model
      * @var string
      */
     protected $table = 'sistema.estados_usuarios';
+
+    /**
+	 * The table's primary key
+	 *
+	 * @var string
+	 */
+	protected $primaryKey = 'id_estado_usuario';
+
 }

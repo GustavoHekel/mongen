@@ -30,7 +30,7 @@ class EstudioController extends Controller
      * @return json
      */
     public function getEstudiosTable(){
-        $estudios = CvEstudio::where('usuario', Auth::user()->id);
+        $estudios = CvEstudio::where('id_usuario', Auth::user()->id_usuario);
 
         return Datatables::of($estudios)
             ->addColumn('actions', function($estudio){

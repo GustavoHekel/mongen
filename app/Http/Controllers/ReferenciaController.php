@@ -26,7 +26,7 @@ class ReferenciaController extends Controller
      * @return [type] [description]
      */
     public function getReferenciasTable(){
-        $referencias = CvReferencias::where('usuario', Auth::user()->id)->with('referente');
+        $referencias = CvReferencias::where('id_usuario', Auth::user()->id_usuario)->with('referente');
 
         return Datatables::of($referencias)
             ->addColumn('actions', function($referencia){

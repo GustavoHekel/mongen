@@ -13,7 +13,7 @@ class CreatePlanes extends Migration
     public function up()
     {
         Schema::create('sistema.planes', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_plan');
             $table->string('nombre' , 50)->unique();
             $table->string('duracion');
             $table->string('invitacion');

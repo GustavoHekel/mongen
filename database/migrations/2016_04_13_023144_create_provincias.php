@@ -13,8 +13,8 @@ class CreateProvincias extends Migration
     public function up()
     {
         Schema::create('sistema.provincias', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('pais');
+            $table->increments('id_provincia');
+            $table->integer('id_pais');
             $table->string('nombre' , 255);
             // $table->timestamps();
         });

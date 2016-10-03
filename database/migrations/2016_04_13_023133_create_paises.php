@@ -13,7 +13,7 @@ class CreatePaises extends Migration
     public function up()
     {
         Schema::create('sistema.paises', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_pais');
             $table->string('nombre' , 255);
             // $table->timestamps();
         });

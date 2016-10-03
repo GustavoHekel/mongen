@@ -13,7 +13,7 @@ class CreateEstadosUsuario extends Migration
     public function up()
     {
         Schema::create('sistema.estados_usuarios', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_estado');
             $table->string('descripcion' , 255);
             $table->string('estilo' , 255);
             $table->timestamps();

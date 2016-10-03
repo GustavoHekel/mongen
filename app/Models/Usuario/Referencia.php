@@ -14,10 +14,18 @@ class Referencia extends Model
     protected $table = 'cvs.referencias';
 
     /**
+	 * The table's primary key
+	 *
+	 * @var string
+	 */
+	protected $primaryKey = 'id_referencia';
+
+
+    /**
      * Devuelve el referente
      * @return Json
      */
     public function referente(){
-    	return $this->hasOne('App\Models\Usuario', 'id', 'referente');
+    	return $this->hasOne('App\Models\Usuario', 'id_usuario', 'id_referente');
     }
 }

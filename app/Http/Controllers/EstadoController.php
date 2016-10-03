@@ -36,13 +36,14 @@ class EstadoController extends Controller
      * @return null
      */
     public function getEstado(){
-        $estados = EstadoUsuario::orderBy('id','desc')->get();
-        $usuario = Usuario::with('estado')->find(Auth::user()->id);
+        $estados = EstadoUsuario::orderBy('id_estado','desc')->get();
+        $usuario = Usuario::with('estado')->find(Auth::user()->id_usuario);
         $data = [
             'secciones' => Seccion::all(),
             'estados' => $estados,
             'usuario' => $usuario
         ];
+
         return view('user-site-pro.mi-cv.secciones.estado', $data);
     }
 
@@ -52,7 +53,7 @@ class EstadoController extends Controller
      * @return string
      */
     public function postEstado(Request $r){
-        $estado = CvEstado::firstOrNew(['usuario' => Auth::user()->id]);
+        $estado = CvEstado::firstOrNew(['id_usuario' => Auth::user()->id]);
         $estado->estado = $r->estado;
         if ($estado->save()){
             return response()->json($this->_return_success);

@@ -1,5 +1,4 @@
 <?php
-use Auth;
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -81,10 +80,6 @@ Route::group(['middleware' => ['landing']] , function() {
 
 Route::group(['middleware' => ['web']], function () {
 
-	Route::get('logout', function(){
-		Auth::logout();
-	});
-
 	Route::get('dashboard', 'UsuariosController@getDashboard')->name('dashboard');
 	Route::get('estadisticas', 'EstadisticasController@getIndex');
 	Route::get('mensajes', 'InboxController@getIndex');
@@ -117,5 +112,7 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('mi-cv/referencias', 'ReferenciaController@getReferencias');
 	Route::get('mi-cv/referencias/listado', 'ReferenciaController@getReferenciasTable');
+
+	Route::get('mi-cv/personal', 'UsuariosController@getPersonalInfoCv');
 
 });

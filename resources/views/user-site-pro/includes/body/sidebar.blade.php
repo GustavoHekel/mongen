@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="orange" data-image="{{ asset("dist/plugins/light_bootstrap_pro/img/full-screen-image-3.jpg")}}">
+<div class="sidebar" data-color="green" data-image="{{ asset("dist/plugins/light_bootstrap_pro/img/full-screen-image-3.jpg")}}">
   <div class="logo">
     <a href="http://www.creative-tim.com" class="logo-text">
       Mongen
@@ -27,7 +27,7 @@
         <ul class="nav">
           @foreach (session('menu') as $item)
               <li>
-                  <a href="{{ $item->ruta }}">
+                  <a href="{{ url($item->ruta) }}">
                       <i class="{{ $item->icono }}"></i>
                       <p>{{ $item->descripcion }}</p>
                   </a>

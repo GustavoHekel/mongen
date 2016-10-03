@@ -12,4 +12,12 @@ class Interes extends Model
      * @var string
      */
     protected $table = 'cvs.intereses';
+
+    /**
+	 * The table's primary key
+	 *
+	 * @var string
+	 */
+	protected $primaryKey = 'id_interes';
+
 }

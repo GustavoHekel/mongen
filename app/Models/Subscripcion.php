@@ -12,4 +12,12 @@ class Subscripcion extends Model
      * @var string
      */
     protected $table = 'servicios.subscripciones';
+
+    /**
+	 * The table's primary key
+	 *
+	 * @var string
+	 */
+	protected $primaryKey = 'id_subscripcion';
+
 }

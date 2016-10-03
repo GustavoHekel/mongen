@@ -12,4 +12,12 @@ class Trabajo extends Model
      * @var string
      */
     protected $table = 'cvs.trabajos';
+
+    /**
+	 * The table's primary key
+	 *
+	 * @var string
+	 */
+	protected $primaryKey = 'id_trabajo';
+
 }

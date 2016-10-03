@@ -13,13 +13,13 @@ class CreateCvsIdiomas extends Migration
     public function up()
     {
         Schema::create('cvs.idiomas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('usuario');
+            $table->increments('id_idioma');
+            $table->integer('id_usuario');
             $table->string('idioma' , 255);
             $table->smallInteger('nivel');
             $table->timestamps();
 
-            $table->foreign('usuario')->references('id')->on('sistema.usuarios');
+            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
         });
     }
 
