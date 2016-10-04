@@ -14,19 +14,20 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 
     /**
      * The table associated with the model.
-     *
-     * @var string
      */
     protected $table = 'sistema.usuarios';
 
 	/**
 	 * The table's primary key
-	 *
-	 * @var string
 	 */
 	protected $primaryKey = 'id_usuario';
 
-    /**
+	/**
+     * The attributes that should be mutated to dates.
+     */
+    protected $dates = ['created_at', 'updated_at', 'fecha_nacimiento'];
+
+	/**
      * Traigo el estado actual del usuario
      * con la relación "estado".
      * @param null
@@ -45,4 +46,20 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
     public function estudios(){
         return $this->hasMany('App\Models\Usuario\Estudio', 'id_usuario', 'id_usuario');
     }
+
+	/**
+	 * Devuelve el pais
+	 */
+	public function pais()
+	{
+		return $this->hasOne('App\Models\Pais', 'id_pais', 'id_pais');
+	}
+
+	/**
+	 * Devuelve la provincia
+	 */
+	public function provincia()
+	{
+		return $this->hasOne('App\Models\Provincia', 'id_provincia', 'id_provincia');
+	}
 }

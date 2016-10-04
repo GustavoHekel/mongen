@@ -115,4 +115,6 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('mi-cv/personal', 'UsuariosController@getPersonalInfoCv');
 
+	Route::get('mi-cv/contacto', 'UsuariosController@getContacto');
+
 });

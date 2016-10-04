@@ -11,6 +11,13 @@ class TipoTelefonoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('sistema.tipo_telefono')->insert([
+            [
+                'descripcion' => 'CELULAR'
+            ],
+            [
+                'descripcion' => 'FIJO'
+            ]
+        ]);
     }
 }

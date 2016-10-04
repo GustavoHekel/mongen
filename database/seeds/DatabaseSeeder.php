@@ -26,5 +26,8 @@ class DatabaseSeeder extends Seeder
         $this->call(CvInteresesUsuarioSeeder::class);
         $this->call(CvIdiomasUsuarioSeeder::class);
         $this->call(CvReferenciasUsuarioSeeder::class);
+        $this->call(TipoTelefonoSeeder::class);
+        $this->call(CvTelefonosSeeder::class);
+        $this->call(CvEmailsSeeder::class);
     }
 }
