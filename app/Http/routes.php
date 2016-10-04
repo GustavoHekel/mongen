@@ -97,9 +97,11 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('mi-cv/estudios', 'EstudioController@getEstudios');
 	Route::get('mi-cv/estudios/listado', 'EstudioController@getEstudiosTable');
+	Route::get('mi-cv/estudios/{id_estudio}', 'EstudioController@getEstudio');
 
 	Route::get('mi-cv/trabajos', 'TrabajoController@getTrabajos');
 	Route::get('mi-cv/trabajos/listado', 'TrabajoController@getTrabajosTable');
+	Route::get('mi-cv/trabajos/{id_trabajo}', 'TrabajoController@getTrabajo');
 
 	Route::get('mi-cv/skills', 'SkillController@getSkills');
 	Route::get('mi-cv/skills/listado', 'SkillController@getSkillsTable');
@@ -112,6 +114,7 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('mi-cv/referencias', 'ReferenciaController@getReferencias');
 	Route::get('mi-cv/referencias/listado', 'ReferenciaController@getReferenciasTable');
+	Route::get('mi-cv/referencias/{id_referencia}', 'ReferenciaController@getReferencia');
 
 	Route::get('mi-cv/personal', 'UsuariosController@getPersonalInfoCv');
 
