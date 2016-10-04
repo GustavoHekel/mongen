@@ -30,7 +30,7 @@ Route::group(['middleware' => ['landing']] , function() {
 	Route::post('newsletter', 'LandingController@postNewsletter');
 	Route::get('registrar', 'LandingController@getRegistrar')->name('registrar');
 	Route::get('login', 'LandingController@getLogin')->name('login');
-	Route::post('login', 'UsuariosController@postLogin');
+	Route::post('login', 'UsuarioController@postLogin');
 
 });
 
@@ -80,8 +80,8 @@ Route::group(['middleware' => ['landing']] , function() {
 
 Route::group(['middleware' => ['web']], function () {
 
-	Route::get('dashboard', 'UsuariosController@getDashboard')->name('dashboard');
-	Route::get('estadisticas', 'EstadisticasController@getIndex');
+	Route::get('dashboard', 'UsuarioController@getDashboard')->name('dashboard');
+	Route::get('estadisticas', 'EstadisticaController@getIndex');
 	Route::get('mensajes', 'InboxController@getIndex');
 	Route::get('mi-cuenta', 'CuentasController@getIndex');
 	Route::get('facturacion', 'FacturacionController@getIndex');
@@ -97,7 +97,8 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('mi-cv/estudios', 'EstudioController@getEstudios');
 	Route::get('mi-cv/estudios/listado', 'EstudioController@getEstudiosTable');
-	Route::get('mi-cv/estudios/{id_estudio}', 'EstudioController@getEstudio');
+	Route::get('mi-cv/estudios/{id_estudio}/ver', 'EstudioController@getEstudio');
+	Route::get('mi-cv/estudios/{id_estudio}/editar', 'EstudioController@editEstudio');
 
 	Route::get('mi-cv/trabajos', 'TrabajoController@getTrabajos');
 	Route::get('mi-cv/trabajos/listado', 'TrabajoController@getTrabajosTable');
@@ -116,8 +117,8 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('mi-cv/referencias/listado', 'ReferenciaController@getReferenciasTable');
 	Route::get('mi-cv/referencias/{id_referencia}', 'ReferenciaController@getReferencia');
 
-	Route::get('mi-cv/personal', 'UsuariosController@getPersonalInfoCv');
+	Route::get('mi-cv/personal', 'UsuarioController@getPersonalInfoCv');
 
-	Route::get('mi-cv/contacto', 'UsuariosController@getContacto');
+	Route::get('mi-cv/contacto', 'UsuarioController@getContacto');
 
 });

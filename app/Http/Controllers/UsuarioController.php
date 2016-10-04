@@ -11,7 +11,7 @@ use App\Models\Usuario\Telefono as CvTelefono;
 
 use App\Models\Usuario;
 
-class UsuariosController extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Create a new authentication controller instance.

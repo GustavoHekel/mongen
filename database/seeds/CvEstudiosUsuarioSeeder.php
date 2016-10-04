@@ -26,6 +26,13 @@ class CvEstudiosUsuarioSeeder extends Seeder
         		'desde' => 201203,
         		'hasta' => null,
         		'promedio' => null
+        	],[
+        		'id_usuario' => 2,
+        		'instituto' => 'UNIVERSIDAD TECNOLÓGICA NACIONAL',
+        		'carrera' => 'INGENIERÍA EN SISTEMAS DE INFORMACIÓN',
+        		'desde' => 201203,
+        		'hasta' => null,
+        		'promedio' => null
         	]
     	]);
     }

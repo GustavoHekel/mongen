@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class EstadisticasController extends Controller
+class EstadisticaController extends Controller
 {
     //
 }
