@@ -33,6 +33,7 @@ class UsuarioController extends Controller
     {
         if (Auth::attempt(['email' => $r->email, 'password' => $r->pass])) {
             $r->session()->put('menu', Menu::all());
+            $r->session()->put('name', Auth::user()->nombre);
             return redirect('dashboard');
         } else {
             $data = [

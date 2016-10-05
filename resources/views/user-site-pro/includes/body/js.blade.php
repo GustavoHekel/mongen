@@ -19,7 +19,7 @@
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/bootstrap-selectpicker.js")}}"></script>
 
 <!--  Checkbox, Radio, Switch and Tags Input Plugins -->
-<!-- <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/bootstrap-checkbox-radio-switch-tags.js")}}"></script> -->
+<script src="{{ asset("dist/plugins/light_bootstrap_pro/js/bootstrap-checkbox-radio-switch-tags.js")}}"></script>
 
 <!--  Checkbox, Radio & Switch Plugins -->
 <script src="{{ asset("dist/bower_components/iCheck/icheck.js")}}"></script>

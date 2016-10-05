@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="green" data-image="{{ asset("dist/plugins/light_bootstrap_pro/img/full-screen-image-3.jpg")}}">
+<div class="sidebar" data-color="black" data-image="{{ asset("dist/plugins/light_bootstrap_pro/img/full-screen-image-2.jpg")}}">
   <div class="logo">
     <a href="http://www.creative-tim.com" class="logo-text">
       Mongen

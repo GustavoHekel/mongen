@@ -16,7 +16,7 @@ $light-blue:                 rgba($color-blue, .2);
 $light-azure:                rgba($color-azure, .2);
 $light-green:                rgba($color-green, .2);
 $light-orange:               rgba($color-orange, .2);
-$light-red:                  rgba($color-red, .2); 
+$light-red:                  rgba($color-red, .2);
 
 
 $default-color:              #888888 !default;
@@ -78,7 +78,7 @@ $filter-blue:         darken($color-blue, 10%);
 $filter-azure:        darken($color-azure, 10%);
 $filter-green:        darken($color-green, 10%);
 $filter-orange:       darken($color-orange, 10%);
-$filter-red:          darken($color-red, 10%);  
+$filter-red:          darken($color-red, 10%);
 
 
 $white-navbar:              rgba(#FFFFFF, .96);
@@ -110,7 +110,7 @@ $transparent-bg:             transparent !default;
 
 
 $default-bg:                 $default-color !default;
-$default-states-color:       darken($default-color, 6%) !default; 
+$default-states-color:       darken($default-color, 6%) !default;
 
 $primary-color:              $color-blue !default;
 $primary-bg:                 $color-blue !default;
@@ -122,7 +122,7 @@ $info-states-color:          darken($color-azure, 6%) !default;
 
 $success-color:              $color-green !default;
 $success-bg:                 $color-green !default;
-$success-states-color:       darken($color-green, 5%) !default; 
+$success-states-color:       darken($color-green, 5%) !default;
 
 $warning-color:              $color-orange !default;
 $warning-bg:                 $color-orange !default;
@@ -186,7 +186,7 @@ $height-base:                  40px !default;
 
 $font-size-base:               14px !default;
 $font-size-small:              12px !default;
-$font-size-medium:             16px !default; 
+$font-size-medium:             16px !default;
 $font-size-large:              18px !default;
 $font-size-large-navbar:       20px !default;
 
@@ -200,7 +200,7 @@ $font-paragraph:               16px !default;
 $font-size-navbar:             16px !default;
 $font-size-small:              12px !default;
 
-$font-weight-light:          300 !default; 
+$font-weight-light:          300 !default;
 $font-weight-normal:         400 !default;
 $font-weight-semi:           500 !default;
 $font-weight-bold:           600 !default;
@@ -219,7 +219,7 @@ $dropdown-shadow:          1px 2px 3px rgba(0, 0, 0, 0.125);
 
 $general-transition-time:  300ms !default;
 
-$slow-transition-time:           370ms !default; 
+$slow-transition-time:           370ms !default;
 $dropdown-coordinates:      29px -50px !default;
 
 $fast-transition-time:           150ms !default;
@@ -246,11 +246,11 @@ $navbar-padding-a-icons:         6px 15px;
 $navbar-margin-a-icons:          6px  3px;
 
 $navbar-padding-brand:           15px 15px;
-$navbar-margin-brand:             5px  0px;
+$navbar-margin-brand:             7px  0px;
 
 $navbar-margin-brand-icons:      12px auto;
 
-$navbar-margin-btn:              15px  3px;
+$navbar-margin-btn:              10px  3px;
 
 $height-icon:					 64px !default;
 $width-icon:					 64px !default;
@@ -317,4 +317,3 @@ $screen-lg-desktop:          $screen-lg-min !default;
 $screen-xs-max:              ($screen-sm-min - 1) !default;
 $screen-sm-max:              ($screen-md-min - 1) !default;
 $screen-md-max:              ($screen-lg-min - 1) !default;
-

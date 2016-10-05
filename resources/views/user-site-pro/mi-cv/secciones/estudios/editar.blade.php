@@ -1,0 +1,93 @@
+@extends('user-site-pro.index')
+@section('content')
+	<div class="row">
+		<div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    Detalle de estudio
+                    <a href="editar" class="btn btn-primary pull-right">Editar</a>
+                </div>
+                <div class="content">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Instituto</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="instituto" placeholder="Instituto" class="form-control" value="{{ $estudio->instituto }}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Carrera</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="carrera" placeholder="Carrera" class="form-control" value="{{ $estudio->carrera }}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Desde</label>
+                            <div class="col-sm-8">
+                                @include('user-site-pro.includes.misc.select-period',
+                                    [
+                                        'name' => 'desde',
+                                        'anio' => substr($estudio->desde, 0, 4),
+                                        'mes' => substr($estudio->desde, 4, 2)
+                                    ])
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Hasta</label>
+                            <div class="col-sm-8">
+                                @include('user-site-pro.includes.misc.select-period',
+                                    [
+                                        'name' => 'hasta',
+                                        'anio' => substr($estudio->hasta, 0, 4),
+                                        'mes' => substr($estudio->hasta, 4, 2)
+                                    ])
+                            </div>
+                            <div class="col-sm-2">
+                                <label class="checkbox">
+                                    <span class="icons">
+                                        <span class="first-icon fa fa-square-o"></span>
+                                        <span class="second-icon fa fa-check-square-o"></span>
+                                    </span>
+                                    <input type="checkbox" name="en_curso" data-toggle="checkbox" @if(is_null($estudio->hasta)) checked @endif>En curso
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Promedio</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="promedio" placeholder="Promedio" class="form-control" value="{{ $estudio->promedio }}">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="footer">
+                    <div class="stats">
+                        <i class="fa fa-history"></i> Created {{ $estudio->created_at->diffForHumans() }}
+                        <br />
+                        <i class="fa fa-history"></i> Updated {{ $estudio->updated_at->diffForHumans() }}
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+@endsection
+
+@push('scripts')
+<script>
+$(function(){
+
+	if ($('input[name="en_curso"]').is(':checked')) {
+		$('#anio-hasta, #mes-hasta').attr('disabled', 'disabled');
+	}
+
+	$('input[name="en_curso"]').on('toggle', function(){
+		$('#anio-hasta, #mes-hasta').prop('disabled', function(i, v) { return !v; });
+	});
+
+});
+</script>
+@endpush

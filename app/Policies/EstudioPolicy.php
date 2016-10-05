@@ -34,7 +34,7 @@ class EstudioPolicy
     }
 
     /**
-     * Determinar si el estudio puede ser visto por el usuario.
+     * Determinar si el estudio puede ser editado por el usuario.
      *
      * @param  \App\Usuario  $user
      * @param  \App\Usuario\Estudio  $post
@@ -44,4 +44,5 @@ class EstudioPolicy
     {
         return $usuario->id_usuario === $estudio->id_usuario;
     }
+
 }

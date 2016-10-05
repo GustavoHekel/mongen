@@ -1,9 +1,8 @@
 $(function(){
     var pageUrl = window.location.href.substr(window.location.href.lastIndexOf("/") + 1).split('?', 1);
-    console.log(pageUrl);
     $('.sidebar-wrapper .nav li a').each(function(){
-        console.log($(this).attr('href'));
-        if ($(this).attr('href') == pageUrl){
+        var anchorUrl = $(this).attr('href').substr($(this).attr('href').lastIndexOf("/") + 1);
+        if (anchorUrl == pageUrl){
             $(this).parent().addClass('active');
         }
     });

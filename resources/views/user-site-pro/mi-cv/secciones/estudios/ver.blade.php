@@ -26,14 +26,14 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Desde</label>
                             <div class="col-sm-10">
-                                <p class="form-control-static">{{ $estudio->desde }}</p>
+                                <p class="form-control-static">{{ $estudio->desde_text }}</p>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Hasta</label>
                             <div class="col-sm-10">
-                                <p class="form-control-static">{{ $estudio->hasta }}</p>
+                                <p class="form-control-static">{{ $estudio->hasta_text }}</p>
                             </div>
                         </div>
 

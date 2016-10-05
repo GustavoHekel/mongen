@@ -580,6 +580,21 @@ demo = {
             }
          });
 
+         $('.datepicker').datetimepicker({
+            format: 'MM/DD/YYYY',
+            icons: {
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-chevron-up",
+                down: "fa fa-chevron-down",
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: 'fa fa-screenshot',
+                clear: 'fa fa-trash',
+                close: 'fa fa-remove'
+            }
+         });
+
          $('.timepicker').datetimepicker({
 //          format: 'H:mm',    // use this format if you want the 24hours timepicker
             format: 'h:mm A',    //use this format if you want the 12hours timpiecker with AM/PM toggle
@@ -616,7 +631,7 @@ demo = {
 			selectHelper: true,
 			titleFormat: {
                 month: 'MMMM YYYY', // September 2015
-                week: "MMMM YYYY", // September 2015
+                week: "MMMM D YYYY", // September 2015
                 day: 'D MMM, YYYY'  // Tuesday, Sep 8, 2015
             },
 			select: function(start, end) {
@@ -703,8 +718,8 @@ demo = {
 				},
 				{
 					title: 'Click for Google',
-					start: new Date(y, m, 21),
-					end: new Date(y, m, 22),
+					start: new Date(y, m, 23),
+					end: new Date(y, m, 23),
 					url: 'http://www.creative-tim.com/',
 					className: 'event-orange'
 				}

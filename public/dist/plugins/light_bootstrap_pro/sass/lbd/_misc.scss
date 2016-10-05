@@ -47,9 +47,8 @@ input:focus {
 .form-control,
 .input-group-addon,
 .tagsinput,
-.navbar,
 .navbar .alert,
-.panel-collapse{
+.panel-collapse.collapse-hover {
     @include transition($general-transition-time, $transition-linear);
 }
 

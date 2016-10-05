@@ -1,3 +1,37 @@
+/*! =========================================================
+ *
+ * Light Bootstrap Dashboard PRO - V1.3.0
+ *
+ * =========================================================
+ *
+ * Copyright 2016 Creative Tim
+ * Available with purchase of license from http://www.creative-tim.com/product/light-bootstrap-dashboard-pro
+ *
+ *                       _oo0oo_
+ *                      o8888888o
+ *                      88" . "88
+ *                      (| -_- |)
+ *                      0\  =  /0
+ *                    ___/`---'\___
+ *                  .' \\|     |// '.
+ *                 / \\|||  :  |||// \
+ *                / _||||| -:- |||||- \
+ *               |   | \\\  -  /// |   |
+ *               | \_|  ''\---/''  |_/ |
+ *               \  .-\__  '-'  ___/-. /
+ *             ___'. .'  /--.--\  `. .'___
+ *          ."" '<  `.___\_<|>_/___.' >' "".
+ *         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *         \  \ `_.   \_ __\ /__ _/   .-` /  /
+ *     =====`-.____`.___ \_____/___.-`___.-'=====
+ *                       `=---='
+ *
+ *     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *
+ *               Buddha Bless:  "No Bugs"
+ *
+ * ========================================================= */
+
 var searchVisible = 0;
 var transparent = true;
 
@@ -8,19 +42,19 @@ var mobile_menu_visible = 0,
     mobile_menu_initialized = false,
     toggle_initialized = false,
     bootstrap_nav_initialized = false,
-    $sidebar;
-
+    $sidebar,
+    isWindows;
 
 (function(){
-    var mac = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) ? true : false;
+    isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
-    if (!mac){
+    if (isWindows && !$('body').hasClass('sidebar-mini')){
        // if we are on windows OS we activate the perfectScrollbar function
        $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
 
-       $('body').addClass('windows-os');
+       $('html').addClass('perfect-scrollbar-on');
    } else {
-       $('body').addClass('mac-os');
+       $('html').addClass('perfect-scrollbar-off');
    }
 })();
 
@@ -32,19 +66,13 @@ $(document).ready(function(){
     // check if there is an image set for the sidebar's background
     lbd.checkSidebarImage();
 
-    // Init navigation toggle for small screens
-    if(window_width <= 991){
-        if($sidebar.length != 0){
-
-            // we inith the sidebar if we we are in a page that contains the sidebar
-            lbd.initSidebarMenu();
-        } else {
-
-            // if we don't have a sidebar we transform the regular navbar from bootstrap into a side menu for mobile
-            lbd.initBootstrapNavbarMenu();
-        }
-
+    if($('body').hasClass('sidebar-mini')){
+        lbd.misc.sidebar_mini_active = true;
     }
+
+    lbd.initSidebarsCheck();
+
+    lbd.initMinimizeSidebar();
 
     $('.form-control').on("focus", function(){
         $(this).parent('.input-group').addClass("input-group-focus");
@@ -72,16 +100,19 @@ $(document).ready(function(){
 
 // activate mobile menus when the windows is resized
 $(window).resize(function(){
-    if($(window).width() <= 991){
-        if($sidebar.length != 0){
-            lbd.initSidebarMenu();
-        } else {
-            lbd.initBootstrapNavbarMenu();
-        }
-    }
+    lbd.initSidebarsCheck();
 });
 
+
 lbd = {
+
+    misc:{
+        navbar_menu_visible: 0,
+        active_collapse: true,
+        disabled_collapse_init: 0,
+
+    },
+
     checkSidebarImage: function(){
         $sidebar = $('.sidebar');
         image_src = $sidebar.data('image');
@@ -89,8 +120,81 @@ lbd = {
         if(image_src !== undefined){
             sidebar_container = '<div class="sidebar-background" style="background-image: url(' + image_src + ') "/>'
             $sidebar.append(sidebar_container);
+        } else if(mobile_menu_initialized == true){
+            // reset all the additions that we made for the sidebar wrapper only if the screen is bigger than 991px
+            $sidebar_wrapper.find('.navbar-form').remove();
+            $sidebar_wrapper.find('.nav-mobile-menu').remove();
+
+            mobile_menu_initialized = false;
         }
     },
+
+    initSidebarsCheck: function(){
+        if($(window).width() <= 991){
+            if($sidebar.length != 0){
+                lbd.initSidebarMenu();
+
+            } else {
+                lbd.initBootstrapNavbarMenu();
+            }
+        }
+
+    },
+
+    initMinimizeSidebar: function(){
+
+        // when we are on a Desktop Screen and the collapse is triggered we check if the sidebar mini is active or not. If it is active then we don't let the collapse to show the elements because the elements from the collapse are showing on the hover state over the icons in sidebar mini, not on the click.
+        $('.sidebar .collapse').on('show.bs.collapse',function(){
+            if($(window).width() > 991){
+                if(lbd.misc.sidebar_mini_active == true){
+                    return false;
+                } else{
+                    return true;
+                }
+            }
+        });
+
+        $('#minimizeSidebar').click(function(){
+            var $btn = $(this);
+
+            if(lbd.misc.sidebar_mini_active == true){
+                $('body').removeClass('sidebar-mini');
+                lbd.misc.sidebar_mini_active = false;
+
+                if(isWindows){
+                    $('.sidebar .sidebar-wrapper').perfectScrollbar();
+                }
+
+            }else{
+
+                $('.sidebar .collapse').collapse('hide').on('hidden.bs.collapse',function(){
+                    $(this).css('height','auto');
+                });
+
+                if(isWindows){
+                    $('.sidebar .sidebar-wrapper').perfectScrollbar('destroy');
+                }
+
+                setTimeout(function(){
+                    $('body').addClass('sidebar-mini');
+
+                    $('.sidebar .collapse').css('height','auto');
+                    lbd.misc.sidebar_mini_active = true;
+                },300);
+            }
+
+            // we simulate the window Resize so the charts will get updated in realtime.
+            var simulateWindowResize = setInterval(function(){
+                window.dispatchEvent(new Event('resize'));
+            },180);
+
+            // we stop the simulation of Window Resize after the animations are completed
+            setTimeout(function(){
+                clearInterval(simulateWindowResize);
+            },1000);
+        });
+    },
+
 
     checkFullPageBackgroundImage: function(){
         $page = $('.full-page');
@@ -105,6 +209,8 @@ lbd = {
     initSidebarMenu: debounce(function(){
         $sidebar_wrapper = $('.sidebar-wrapper');
 
+        //console.log('aici se face meniu in dreapta');
+
         if(!mobile_menu_initialized){
 
             $navbar = $('nav').find('.navbar-collapse').first().clone(true);
@@ -113,31 +219,45 @@ lbd = {
             mobile_menu_content = '';
 
             //add the content from the regular header to the mobile menu
+            //pas = 1;
             $navbar.children('ul').each(function(){
+
                 content_buff = $(this).html();
                 nav_content = nav_content + content_buff;
+                //console.log('pas:' + pas);
+
+                //pas = pas+1;
             });
 
             nav_content = '<ul class="nav nav-mobile-menu">' + nav_content + '</ul>';
+
             $navbar_form = $('nav').find('.navbar-form').clone(true);
 
             $sidebar_nav = $sidebar_wrapper.find(' > .nav');
 
             // insert the navbar form before the sidebar list
-            $navbar_form.insertBefore($sidebar_nav);
-            $navbar_form.after(nav_content);
+            $nav_content = $(nav_content);
+            $nav_content.insertBefore($sidebar_nav);
+            $navbar_form.insertBefore($nav_content);
 
             $(".sidebar-wrapper .dropdown .dropdown-menu > li > a").click(function(event) {
                 event.stopPropagation();
+
             });
 
             mobile_menu_initialized = true;
         } else {
-
-            if($(window).width > 991){
+            console.log('window with:' + $(window).width());
+            if($(window).width() > 991){
                 // reset all the additions that we made for the sidebar wrapper only if the screen is bigger than 991px
                 $sidebar_wrapper.find('.navbar-form').remove();
                 $sidebar_wrapper.find('.nav-mobile-menu').remove();
+
+                console.log(lbd.misc.sidebar_mini_active);
+
+                // if(lbd.misc.sidebar_mini_active == true){
+                //     $('body').addClass('sidebar-mini');
+                // }
 
                 mobile_menu_initialized = false;
             }
@@ -161,6 +281,7 @@ lbd = {
                     setTimeout(function(){
                         $toggle.addClass('toggled');
                     }, 430);
+
 
                     main_panel_height = $('.main-panel')[0].scrollHeight;
                     $layer = $('<div class="close-layer"></div>');
@@ -194,7 +315,9 @@ lbd = {
         }
     }, 500),
 
+
     initBootstrapNavbarMenu: debounce(function(){
+
         if(!bootstrap_nav_initialized){
             $navbar = $('nav').find('.navbar-collapse').first().clone(true);
 
@@ -207,7 +330,7 @@ lbd = {
                 nav_content = nav_content + content_buff;
             });
 
-            nav_content = '<ul class="nav navbar-nav">' + nav_content + '</ul>';
+            nav_content = '<ul class="nav nav-mobile-menu">' + nav_content + '</ul>';
 
             $navbar.html(nav_content);
             $navbar.addClass('bootstrap-navbar');
@@ -242,6 +365,7 @@ lbd = {
                     setTimeout(function(){
                         $layer.addClass('visible');
                     }, 100);
+
 
                     $layer.click(function() {
                         $('html').removeClass('nav-open');
