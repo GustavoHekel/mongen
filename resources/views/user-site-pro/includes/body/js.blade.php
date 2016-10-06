@@ -31,21 +31,23 @@
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/bootstrap-notify.js")}}"></script>
 
 <!-- Sweet Alert 2 plugin -->
-<!-- <script src="../assets/js/sweetalert2.js"></script> -->
+<script src="{{ asset("dist/plugins/light_bootstrap_pro/js/sweetalert2.js")}}"></script>
+
 
 <!-- Vector Map plugin -->
 <!-- <script src="../assets/js/jquery-jvectormap.js"></script> -->
 
 <!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js"></script> -->
 
 <!-- Wizard Plugin    -->
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery.bootstrap.wizard.min.js")}}"></script>
 
+<!--  Bootstrap Table Plugin    -->
+<script src="{{ asset("dist/plugins/light_bootstrap_pro/js/bootstrap-table.js")}}"></script>
+
 <!--  Datatable Plugin    -->
-<!-- <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/bootstrap-table.js")}}"></script> -->
-<script src="{{ asset("dist/bower_components/datatables.net/js/jquery.dataTables.js")}}"></script>
-<script src="{{ asset("dist/bower_components/datatables.net-bs/js/dataTables.bootstrap.js")}}"></script>
+<script src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery.datatables.js")}}"></script>
 
 <!--  Full Calendar Plugin    -->
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/fullcalendar.min.js")}}"></script>

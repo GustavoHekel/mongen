@@ -100,6 +100,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('mi-cv/estudios/listado', 'EstudioController@getEstudiosTable');
 	Route::get('mi-cv/estudios/{id_estudio}/ver', 'EstudioController@getEstudio');
 	Route::get('mi-cv/estudios/{id_estudio}/editar', 'EstudioController@editEstudio');
+	Route::post('mi-cv/estudios/{id_estudio}/eliminar', 'EstudioController@deleteEstudio');
 	Route::get('mi-cv/estudios/nuevo', 'EstudioController@newEstudio');
 
 	Route::get('mi-cv/trabajos', 'TrabajoController@getTrabajos');

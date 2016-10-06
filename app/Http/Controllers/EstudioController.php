@@ -35,9 +35,9 @@ class EstudioController extends Controller
         return Datatables::of($estudios)
             ->addColumn('actions', function($estudio){
                 return '
-                <a href="estudios/' . $estudio->id_estudio . '/ver" rel="tooltip" title="Ver" class="btn btn-simple btn-info btn-icon table-action view" data-original-title="View"><i class="fa fa-image"></i></a>
+                <a href="estudios/' . $estudio->id_estudio . '/ver" rel="tooltip" title="Ver" class="btn btn-simple btn-info btn-icon table-action view" data-original-title="Ver"><i class="fa fa-image"></i></a>
                 <a href="estudios/' . $estudio->id_estudio . '/editar" rel="tooltip" title="Editar" class="btn btn-simple btn-warning btn-icon table-action edit" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                <a href="" rel="tooltip" title="Eliminar" class="btn btn-simple btn-danger btn-icon table-action remove" data-original-title="Remove"><i class="fa fa-remove"></i></a>
+                <a id-estudio="' . $estudio->id_estudio . '" rel="tooltip" title="Eliminar" class="btn btn-simple btn-danger btn-icon table-action remove" data-original-title="Remove"><i class="fa fa-remove"></i></a>
                 ';
             })
             ->make(true);
@@ -83,6 +83,15 @@ class EstudioController extends Controller
         return view('user-site-pro.mi-cv.secciones.estudios.editar', $data);
 
 
+    }
+
+    public function deleteEstudio($id_estudio)
+    {
+        if (CvEstudio::destroy($id_estudio)) {
+            return response()->json(['mensaje' => 'Registro eliminado'], 200);
+        } else {
+            return response()->json(['mensaje' => 'Registro no encontrado'], 404);
+        }
     }
 
     /**

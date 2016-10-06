@@ -29,14 +29,26 @@
 @push('scripts')
 <script>
 $(function() {
-    $('#table').dataTable({
+    $('#table').DataTable({
         ajax: 'estudios/listado',
         columns: [
             { data: 'instituto' },
             { data: 'carrera' },
             { data: 'actions', className: 'td-actions text-right'}
         ]
-    })
+    });
+
+    $('#table').on('click', '.remove', function(e){
+        e.preventDefault();
+        var idEstudio = $(this).attr('id-estudio');
+        $.post('estudios/' + idEstudio + '/eliminar', function(data){
+            swal(
+                'Good job!',
+                'You clicked the button!',
+                'success'
+            )
+        })
+    });
 });
 </script>
 @endpush

@@ -12,6 +12,16 @@ class SeccionesCvSeeder extends Seeder
     public function run()
     {
         DB::table('sistema.secciones_cv')->insert([
+            [
+                'descripcion' => 'Datos personales',
+                'url' => 'mi-cv/personal',
+                'icono' => 'fa-user'
+            ] ,
+            [
+                'descripcion' => 'Foto de perfil',
+                'url' => 'mi-cv/foto-perfil',
+                'icono' => 'fa-camera-retro'
+            ] ,
         	[
                 'descripcion' => 'Estado',
                 'url' => 'mi-cv/estado',
@@ -48,15 +58,15 @@ class SeccionesCvSeeder extends Seeder
         		'icono' => 'fa-comments-o'
     		] ,
         	[
-        		'descripcion' => 'Datos personales',
-        		'url' => 'mi-cv/personal',
-        		'icono' => 'fa-user'
-			] ,
-        	[
         		'descripcion' => 'Contacto',
         		'url' => 'mi-cv/contacto',
         		'icono' => 'fa-mobile'
-    		]
+    		],
+            [
+                'descripcion' => 'Modelo CV',
+                'url' => 'mi-cv/modelo',
+                'icono' => 'fa-file-text'
+            ] ,
         ]);
     }
 }

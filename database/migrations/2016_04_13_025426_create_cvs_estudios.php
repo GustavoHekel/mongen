@@ -21,6 +21,7 @@ class CreateCvsEstudios extends Migration
             $table->integer('hasta')->nullable();
             $table->float('promedio')->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
 
