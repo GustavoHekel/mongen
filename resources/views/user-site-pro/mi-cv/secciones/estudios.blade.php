@@ -29,7 +29,7 @@
 @push('scripts')
 <script>
 $(function() {
-    $('#table').DataTable({
+    var estudiosTable = $('#table').DataTable({
         ajax: 'estudios/listado',
         columns: [
             { data: 'instituto' },
@@ -41,13 +41,31 @@ $(function() {
     $('#table').on('click', '.remove', function(e){
         e.preventDefault();
         var idEstudio = $(this).attr('id-estudio');
-        $.post('estudios/' + idEstudio + '/eliminar', function(data){
-            swal(
-                'Good job!',
-                'You clicked the button!',
-                'success'
-            )
-        })
+
+        swal({
+            title: "Estás seguro?",
+    	    text: "No vas a poder deshacer esta acción",
+    	    type: "warning",
+    	    showCancelButton: true,
+    	    confirmButtonText: "Si, eliminar!",
+    	    cancelButtonText: "No, cancelar!",
+    	    closeOnConfirm: false,
+    	    closeOnCancel: false,
+            showLoaderOnConfirm: true
+        }, function(isConfirm) {
+            if (isConfirm) {
+                $.post('estudios/' + idEstudio + '/eliminar', function(data){
+                    estudiosTable.ajax.reload();
+                    swal(
+                        'Eliminado!',
+                        'El estudio fue borrado.',
+                        'success'
+                    );
+                });
+            } else {
+                swal("Cancelado", "Tu estudio no fue eliminado :)", "error");
+            }
+        });
     });
 });
 </script>
