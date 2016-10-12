@@ -113,7 +113,19 @@ class EstudioController extends Controller
      */
     public function store(Request $r)
     {
+        $estudio = new CvEstudio;
+        $estudio->id_usuario = Auth::user()->id_usuario;
+        $estudio->instituto = $r->instituto;
+        $estudio->carrera = $r->carrera;
+        $estudio->desde = $r->anio_desde . $r->mes_desde;
+        $estudio->promedio = $r->promedio;
 
+        if (isset ($r->en_curso)) {
+            $estudio->hasta = null;
+        } else {
+            $estudio->hasta = $r->anio_hasta . $r->mes_hasta;
+        }
+        $estudio->save();
     }
 
     /**
@@ -136,6 +148,5 @@ class EstudioController extends Controller
             $estudio->hasta = $r->anio_hasta . $r->mes_hasta;
         }
         $estudio->save();
-
     }
 }
