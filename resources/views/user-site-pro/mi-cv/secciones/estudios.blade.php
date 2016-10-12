@@ -54,13 +54,17 @@ $(function() {
             showLoaderOnConfirm: true
         }, function(isConfirm) {
             if (isConfirm) {
-                $.post('estudios/' + idEstudio + '/eliminar', function(data){
-                    estudiosTable.ajax.reload();
-                    swal(
-                        'Eliminado!',
-                        'El estudio fue borrado.',
-                        'success'
-                    );
+                $.ajax({
+                    method: 'delete',
+                    url: 'estudios/' + idEstudio,
+                    success: function(data) {
+                        estudiosTable.ajax.reload();
+                        swal(
+                            'Eliminado!',
+                            'El estudio fue borrado.',
+                            'success'
+                        );
+                    }
                 });
             } else {
                 swal("Cancelado", "Tu estudio no fue eliminado :)", "error");

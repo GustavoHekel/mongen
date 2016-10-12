@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="header">
                     Detalle de estudio
-                    <a href="editar" class="btn btn-primary pull-right">Editar</a>
+                    <a href="{{ $estudio->id_estudio }}/editar" class="btn btn-primary pull-right">Editar</a>
                 </div>
                 <div class="content">
                     <form class="form-horizontal">

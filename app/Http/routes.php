@@ -90,38 +90,52 @@ Route::group(['middleware' => ['web']], function () {
 	/**
 	 * MI CV
 	 */
-	Route::get('mi-cv', 'CurriculumController@getIndex');
+ 	Route::get('mi-cv', 'CurriculumController@getIndex');
+	Route::group(['prefix' => 'mi-cv'], function () {
 
-	Route::get('mi-cv/estado', 'EstadoController@getEstado');
-	Route::post('mi-cv/estado', 'EstadoController@postEstado');
+		// Estado
+		Route::get('estado', 'EstadoController@getEstado');
+		Route::post('estado', 'EstadoController@postEstado');
 
-	Route::get('mi-cv/estudios', 'EstudioController@getEstudios');
-	Route::post('mi-cv/estudios', 'EstudioController@postEstudio');
-	Route::get('mi-cv/estudios/listado', 'EstudioController@getEstudiosTable');
-	Route::get('mi-cv/estudios/{id_estudio}/ver', 'EstudioController@getEstudio');
-	Route::get('mi-cv/estudios/{id_estudio}/editar', 'EstudioController@editEstudio');
-	Route::post('mi-cv/estudios/{id_estudio}/eliminar', 'EstudioController@deleteEstudio');
-	Route::get('mi-cv/estudios/nuevo', 'EstudioController@newEstudio');
+		// Estudios
+		Route::get('estudios', 'EstudioController@index');
+		Route::get('estudios/create', 'EstudioController@create');
+		Route::get('estudios/listado', 'EstudioController@list');
+		Route::get('estudios/{id_estudio}', 'EstudioController@show');
+		Route::get('estudios/{id_estudio}/editar', 'EstudioController@edit');
+		Route::post('estudios', 'EstudioController@store');
+		Route::put('estudios/{id_estudio}', 'EstudioController@update');
+		Route::delete('estudios/{id_estudio}', 'EstudioController@destroy');
+	});
 
+
+
+	// Trabajos
 	Route::get('mi-cv/trabajos', 'TrabajoController@getTrabajos');
 	Route::get('mi-cv/trabajos/listado', 'TrabajoController@getTrabajosTable');
 	Route::get('mi-cv/trabajos/{id_trabajo}', 'TrabajoController@getTrabajo');
 
+	// Skills
 	Route::get('mi-cv/skills', 'SkillController@getSkills');
 	Route::get('mi-cv/skills/listado', 'SkillController@getSkillsTable');
 
+	// Intereses
 	Route::get('mi-cv/intereses', 'InteresController@getIntereses');
 	Route::get('mi-cv/intereses/listado', 'InteresController@getInteresesTable');
 
+	// Idiomas
 	Route::get('mi-cv/idiomas', 'IdiomaController@getIdiomas');
 	Route::get('mi-cv/idiomas/listado', 'IdiomaController@getIdiomasTable');
 
+	// Referencias
 	Route::get('mi-cv/referencias', 'ReferenciaController@getReferencias');
 	Route::get('mi-cv/referencias/listado', 'ReferenciaController@getReferenciasTable');
 	Route::get('mi-cv/referencias/{id_referencia}', 'ReferenciaController@getReferencia');
 
+	// Personal
 	Route::get('mi-cv/personal', 'UsuarioController@getPersonalInfoCv');
 
+	// Contacto
 	Route::get('mi-cv/contacto', 'UsuarioController@getContacto');
 
 });

@@ -45,6 +45,7 @@
 							'mes' => substr($estudio->hasta, 4, 2)
 							])
 						</div>
+
 						<div class="col-sm-2">
 							<label class="checkbox">
 								<span class="icons">
@@ -91,10 +92,28 @@ $(function(){
 
 	$('#edit-estudio').validate({
 		instituto: {
+			required: true,
+			maxlength: 255
+		},
+		carrera: {
+			required: true,
+			maxlength: 255
+		},
+		mes_desde: {
+			required: true
+		},
+		anio_desde: {
 			required: true
 		},
 		submitHandler: function(form) {
-			console.log(form);
+			$.ajax({
+				method: 'put',
+				url: '/estudios/{{ $estudio->id_estudio }}',
+				data: $(form).serialize(),
+				success: function (data) {
+					swal('Actualizado', 'Los datos fueron actualizados', 'success');
+				}
+			})
 		}
 	});
 
