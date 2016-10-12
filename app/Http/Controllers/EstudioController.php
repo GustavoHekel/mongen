@@ -81,10 +81,13 @@ class EstudioController extends Controller
         ];
 
         return view('user-site-pro.mi-cv.secciones.estudios.editar', $data);
-
-
     }
 
+    /**
+     * [destroy description]
+     * @param  [type] $id_estudio [description]
+     * @return [type]             [description]
+     */
     public function destroy($id_estudio)
     {
         if (CvEstudio::destroy($id_estudio)) {
@@ -100,7 +103,7 @@ class EstudioController extends Controller
      */
     public function create()
     {
-
+        return view('user-site-pro.mi-cv.secciones.estudios.nuevo');
     }
 
     /**
@@ -110,6 +113,29 @@ class EstudioController extends Controller
      */
     public function store(Request $r)
     {
+
+    }
+
+    /**
+     * [update description]
+     * @param  Request $r          [description]
+     * @param  [type]  $id_estudio [description]
+     * @return [type]              [description]
+     */
+    public function update(Request $r, $id_estudio)
+    {
+        $estudio = CvEstudio::findOrFail($id_estudio);
+        $estudio->instituto = $r->instituto;
+        $estudio->carrera = $r->carrera;
+        $estudio->desde = $r->anio_desde . $r->mes_desde;
+        $estudio->promedio = $r->promedio;
+
+        if (isset ($r->en_curso)) {
+            $estudio->hasta = null;
+        } else {
+            $estudio->hasta = $r->anio_hasta . $r->mes_hasta;
+        }
+        $estudio->save();
 
     }
 }

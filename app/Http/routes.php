@@ -99,7 +99,7 @@ Route::group(['middleware' => ['web']], function () {
 
 		// Estudios
 		Route::get('estudios', 'EstudioController@index');
-		Route::get('estudios/create', 'EstudioController@create');
+		Route::get('estudios/nuevo', 'EstudioController@create');
 		Route::get('estudios/listado', 'EstudioController@list');
 		Route::get('estudios/{id_estudio}', 'EstudioController@show');
 		Route::get('estudios/{id_estudio}/editar', 'EstudioController@edit');

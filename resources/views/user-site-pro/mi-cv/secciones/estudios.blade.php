@@ -5,7 +5,7 @@
         <div class="header">
             <h4 class="title">
                 Titulo estudios
-                <a href="#" class="btn btn-success pull-right">Agregar estudio</a>
+                <a href="/mi-cv/estudios/nuevo" class="btn btn-success pull-right">Agregar estudio</a>
             </h4>
             <p class="category">
                 Subtitulo estudios

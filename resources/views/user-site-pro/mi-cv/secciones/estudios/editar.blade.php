@@ -108,7 +108,7 @@ $(function(){
 		submitHandler: function(form) {
 			$.ajax({
 				method: 'put',
-				url: '/estudios/{{ $estudio->id_estudio }}',
+				url: '/mi-cv/estudios/{{ $estudio->id_estudio }}',
 				data: $(form).serialize(),
 				success: function (data) {
 					swal('Actualizado', 'Los datos fueron actualizados', 'success');
