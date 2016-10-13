@@ -111,7 +111,14 @@ $(function(){
 				url: '/mi-cv/estudios/{{ $estudio->id_estudio }}',
 				data: $(form).serialize(),
 				success: function (data) {
-					swal('Actualizado', 'Los datos fueron actualizados', 'success');
+					swal({
+						title: 'Actualizado',
+						text: 'Los datos fueron actualizados',
+						type: 'success',
+						confirmButtonText: 'Ok'
+					}, function (isConfirm) {
+						window.location.href = '/mi-cv/estudios';
+					});
 				}
 			})
 		}

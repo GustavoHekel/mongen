@@ -45,4 +45,16 @@ class EstudioPolicy
         return $usuario->id_usuario === $estudio->id_usuario;
     }
 
+    /**
+     * Determinar si el estudio puede ser eliminado por el usuario.
+     *
+     * @param  \App\Usuario  $user
+     * @param  \App\Usuario\Estudio  $post
+     * @return bool
+     */
+    public function eliminar(Usuario $usuario, Estudio $estudio)
+    {
+        return $usuario->id_usuario === $estudio->id_usuario;
+    }
+
 }

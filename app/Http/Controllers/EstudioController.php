@@ -52,6 +52,7 @@ class EstudioController extends Controller
     {
         $estudio = CvEstudio::findOrFail($id_estudio);
         $this->authorize('ver', $estudio);
+
         $estudio->desde_text = Carbon::createFromFormat('Ym', $estudio->desde)->format('M, Y');
         if (is_null($estudio->hasta)) {
             $estudio->hasta_text = 'En curso';
@@ -90,7 +91,10 @@ class EstudioController extends Controller
      */
     public function destroy($id_estudio)
     {
-        if (CvEstudio::destroy($id_estudio)) {
+        $estudio = CvEstudio::findOrFail($id_estudio);
+        $this->authorize('eliminar', $estudio);
+
+        if ($estudio->delete()) {
             return response()->json(['mensaje' => 'Registro eliminado'], 200);
         } else {
             return response()->json(['mensaje' => 'Registro no encontrado'], 404);
@@ -137,6 +141,8 @@ class EstudioController extends Controller
     public function update(Request $r, $id_estudio)
     {
         $estudio = CvEstudio::findOrFail($id_estudio);
+        $this->authorize('editar', $estudio);
+
         $estudio->instituto = $r->instituto;
         $estudio->carrera = $r->carrera;
         $estudio->desde = $r->anio_desde . $r->mes_desde;

@@ -107,7 +107,14 @@ $(function(){
 				url: '/mi-cv/estudios',
 				data: $(form).serialize(),
 				success: function (data) {
-					swal('Ingresado', 'Se ha agregado un nuevo estudio!', 'success');
+					swal({
+						title: 'Ingresado',
+						text: 'Se ha agregado un nuevo estudio!',
+						type: 'success',
+						confirmButtonText: 'Ok'
+					}, function (isConfirm) {
+						window.location.href = '/mi-cv/estudios';
+					});
 				}
 			})
 		}
