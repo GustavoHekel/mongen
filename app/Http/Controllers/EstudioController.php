@@ -25,6 +25,15 @@ class EstudioController extends Controller
     }
 
     /**
+     * [newEstudio description]
+     * @return [type] [description]
+     */
+    public function create()
+    {
+        return view('user-site-pro.mi-cv.secciones.estudios.nuevo');
+    }
+
+    /**
      * Devuelve el listado de estudios
      * para un usuario determinado.
      * @return json
@@ -85,32 +94,6 @@ class EstudioController extends Controller
     }
 
     /**
-     * [destroy description]
-     * @param  [type] $id_estudio [description]
-     * @return [type]             [description]
-     */
-    public function destroy($id_estudio)
-    {
-        $estudio = CvEstudio::findOrFail($id_estudio);
-        $this->authorize('eliminar', $estudio);
-
-        if ($estudio->delete()) {
-            return response()->json(['mensaje' => 'Registro eliminado'], 200);
-        } else {
-            return response()->json(['mensaje' => 'Registro no encontrado'], 404);
-        }
-    }
-
-    /**
-     * [newEstudio description]
-     * @return [type] [description]
-     */
-    public function create()
-    {
-        return view('user-site-pro.mi-cv.secciones.estudios.nuevo');
-    }
-
-    /**
      * [postEstudio description]
      * @param  Request $r [description]
      * @return [type]     [description]
@@ -154,5 +137,23 @@ class EstudioController extends Controller
             $estudio->hasta = $r->anio_hasta . $r->mes_hasta;
         }
         $estudio->save();
+    }
+
+
+    /**
+     * [destroy description]
+     * @param  [type] $id_estudio [description]
+     * @return [type]             [description]
+     */
+    public function destroy($id_estudio)
+    {
+        $estudio = CvEstudio::findOrFail($id_estudio);
+        $this->authorize('eliminar', $estudio);
+
+        if ($estudio->delete()) {
+            return response()->json(['mensaje' => 'Registro eliminado'], 200);
+        } else {
+            return response()->json(['mensaje' => 'Registro no encontrado'], 404);
+        }
     }
 }

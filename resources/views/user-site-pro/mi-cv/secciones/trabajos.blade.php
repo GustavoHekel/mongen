@@ -4,11 +4,11 @@
     <div class="card">
         <div class="header">
             <h4 class="title">
-                Titulo trabajos
-                <a href="#" class="btn btn-success pull-right">Agregar trabajo</a>
+                Mis trabajos
+                <a href="/mi-cv/trabajos/nuevo" class="btn btn-success pull-right">Agregar trabajo</a>
             </h4>
             <p class="category">
-                Subtitulo trabajos
+                Aquí se muestran todos tus trabajos registrados.
             </p>
         </div>
         <div class="content">
@@ -29,7 +29,7 @@
 @push('scripts')
 <script>
 $(function() {
-    $('#table').dataTable({
+    var trabajosTable = $('#table').DataTable({
         ajax: 'trabajos/listado',
         columns: [
             { data: 'lugar' },
@@ -37,6 +37,40 @@ $(function() {
             { data: 'actions', className: 'td-actions text-right'}
         ]
     })
+
+    $('#table').on('click', '.remove', function(e){
+        e.preventDefault();
+        var idTrabajo = $(this).attr('id-trabajo');
+
+        swal({
+            title: "Estás seguro?",
+    	    text: "No vas a poder deshacer esta acción",
+    	    type: "warning",
+    	    showCancelButton: true,
+    	    confirmButtonText: "Si, eliminar!",
+    	    cancelButtonText: "No, cancelar!",
+    	    closeOnConfirm: false,
+    	    closeOnCancel: false,
+            showLoaderOnConfirm: true
+        }, function(isConfirm) {
+            if (isConfirm) {
+                $.ajax({
+                    method: 'delete',
+                    url: 'trabajos/' + idTrabajo,
+                    success: function(data) {
+                        trabajosTable.ajax.reload();
+                        swal(
+                            'Eliminado!',
+                            'El trabajo fue borrado.',
+                            'success'
+                        );
+                    }
+                });
+            } else {
+                swal("Cancelado", "Tu trabajo no fue eliminado :)", "error");
+            }
+        });
+    });
 });
 </script>
 @endpush

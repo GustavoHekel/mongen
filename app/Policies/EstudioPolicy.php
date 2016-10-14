@@ -25,7 +25,7 @@ class EstudioPolicy
      * Determinar si el estudio puede ser visto por el usuario.
      *
      * @param  \App\Usuario  $user
-     * @param  \App\Usuario\Estudio  $post
+     * @param  \App\Usuario\Estudio  $estudio
      * @return bool
      */
     public function ver(Usuario $usuario, Estudio $estudio)
@@ -37,7 +37,7 @@ class EstudioPolicy
      * Determinar si el estudio puede ser editado por el usuario.
      *
      * @param  \App\Usuario  $user
-     * @param  \App\Usuario\Estudio  $post
+     * @param  \App\Usuario\Estudio  $estudio
      * @return bool
      */
     public function editar(Usuario $usuario, Estudio $estudio)
@@ -49,7 +49,7 @@ class EstudioPolicy
      * Determinar si el estudio puede ser eliminado por el usuario.
      *
      * @param  \App\Usuario  $user
-     * @param  \App\Usuario\Estudio  $post
+     * @param  \App\Usuario\Estudio  $estudio
      * @return bool
      */
     public function eliminar(Usuario $usuario, Estudio $estudio)

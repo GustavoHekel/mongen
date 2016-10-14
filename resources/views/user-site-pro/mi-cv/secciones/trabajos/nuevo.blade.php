@@ -3,23 +3,23 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="card">
-			<form class="form-horizontal" id="new-estudio">
+			<form class="form-horizontal" id="new-trabajo">
 				<div class="header">
-					Nuevo estudio
+					Nuevo trabajo
 					<input type="submit" class="btn btn-warning pull-right save-edit" value="Guardar">
 				</div>
 				<div class="content">
 					<div class="form-group">
-						<label class="col-sm-2 control-label">Instituto</label>
+						<label class="col-sm-2 control-label">Lugar de trabajo</label>
 						<div class="col-sm-10">
-							<input type="text" name="instituto" placeholder="Instituto" class="form-control">
+							<input type="text" name="lugar" placeholder="Lugar de trabajo" class="form-control">
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-2 control-label">Carrera</label>
+						<label class="col-sm-2 control-label">Puesto</label>
 						<div class="col-sm-10">
-							<input type="text" name="carrera" placeholder="Carrera" class="form-control">
+							<input type="text" name="puesto" placeholder="Puesto" class="form-control">
 						</div>
 					</div>
 
@@ -52,15 +52,15 @@
 									<span class="first-icon fa fa-square-o"></span>
 									<span class="second-icon fa fa-check-square-o"></span>
 								</span>
-								<input type="checkbox" name="en_curso" data-toggle="checkbox">En curso
+								<input type="checkbox" name="trabajo_actual" data-toggle="checkbox">Trabajo actual
 							</label>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-2 control-label">Promedio</label>
+						<label class="col-sm-2 control-label">Descripción</label>
 						<div class="col-sm-10">
-							<input type="text" name="promedio" placeholder="Promedio" class="form-control">
+							<input type="text" name="detalle" placeholder="Descripcion" class="form-control">
 						</div>
 					</div>
 				</div>
@@ -77,21 +77,21 @@
 <script>
 $(function(){
 
-	if ($('input[name="en_curso"]').is(':checked')) {
+	if ($('input[name="trabajo_actual"]').is(':checked')) {
 		$('#anio-hasta, #mes-hasta').attr('disabled', 'disabled');
 	}
 
-	$('input[name="en_curso"]').on('toggle', function(){
+	$('input[name="trabajo_actual"]').on('toggle', function(){
 		$('#anio-hasta, #mes-hasta').prop('disabled', function(i, v) { return !v; });
 	});
 
 
-	$('#new-estudio').validate({
-		instituto: {
+	$('#new-trabajo').validate({
+		lugar: {
 			required: true,
 			maxlength: 255
 		},
-		carrera: {
+		puesto: {
 			required: true,
 			maxlength: 255
 		},
@@ -104,7 +104,7 @@ $(function(){
 		submitHandler: function(form) {
 			$.ajax({
 				method: 'post',
-				url: '/mi-cv/estudios',
+				url: '/mi-cv/trabajos',
 				data: $(form).serialize(),
 				success: function (data) {
 					swal({
@@ -113,7 +113,7 @@ $(function(){
 						type: 'success',
 						confirmButtonText: 'Ok'
 					}, function (isConfirm) {
-						window.location.href = '/mi-cv/estudios';
+						window.location.href = '/mi-cv/trabajos';
 					});
 				}
 			})

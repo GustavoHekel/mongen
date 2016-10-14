@@ -106,14 +106,20 @@ Route::group(['middleware' => ['web']], function () {
 		Route::post('estudios', 'EstudioController@store');
 		Route::put('estudios/{id_estudio}', 'EstudioController@update');
 		Route::delete('estudios/{id_estudio}', 'EstudioController@destroy');
+
+		// Trabajos
+		Route::get('trabajos', 'TrabajoController@index');
+		Route::get('trabajos/nuevo', 'TrabajoController@create');
+		Route::get('trabajos/listado', 'TrabajoController@list');
+		Route::get('trabajos/{id_trabajo}', 'TrabajoController@show');
+		Route::get('trabajos/{id_trabajo}/editar', 'TrabajoController@edit');
+		Route::post('trabajos', 'TrabajoController@store');
+		Route::put('trabajos/{id_trabajo}', 'TrabajoController@update');
+		Route::delete('trabajos/{id_trabajo}', 'TrabajoController@destroy');
 	});
 
 
 
-	// Trabajos
-	Route::get('mi-cv/trabajos', 'TrabajoController@getTrabajos');
-	Route::get('mi-cv/trabajos/listado', 'TrabajoController@getTrabajosTable');
-	Route::get('mi-cv/trabajos/{id_trabajo}', 'TrabajoController@getTrabajo');
 
 	// Skills
 	Route::get('mi-cv/skills', 'SkillController@getSkills');

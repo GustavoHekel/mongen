@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Carbon\Carbon;
+
 class CvTrabajosUsuarioSeeder extends Seeder
 {
     /**
@@ -18,7 +20,9 @@ class CvTrabajosUsuarioSeeder extends Seeder
         		'puesto' => 'DESARROLLADOR PHP SR.',
         		'desde' => 201604,
         		'hasta' => 201607,
-        		'detalle' => 'LABURABA CON VACAS SUCIAS'
+        		'detalle' => 'LABURABA CON VACAS SUCIAS',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
         	],
         	[
         		'id_usuario' => 1,
@@ -26,7 +30,9 @@ class CvTrabajosUsuarioSeeder extends Seeder
         		'puesto' => 'DESARROLLADOR PHP SR.',
         		'desde' => 201110,
         		'hasta' => 201603,
-        		'detalle' => 'LABURABA UN POCO PARA OCULTAR MI CONDICIÓN DE ÑOQUI'
+        		'detalle' => 'LABURABA UN POCO PARA OCULTAR MI CONDICIÓN DE ÑOQUI',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
         	]
     	]);
     }

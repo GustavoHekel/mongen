@@ -18,9 +18,10 @@ class CreateCvsTrabajos extends Migration
             $table->string('lugar' , 255);
             $table->string('puesto' , 255);
             $table->integer('desde');
-            $table->integer('hasta');
-            $table->text('detalle');
+            $table->integer('hasta')->nullable();
+            $table->text('detalle')->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
         });

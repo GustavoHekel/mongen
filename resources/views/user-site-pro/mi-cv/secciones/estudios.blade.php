@@ -4,11 +4,11 @@
     <div class="card">
         <div class="header">
             <h4 class="title">
-                Titulo estudios
+                Mis estudios
                 <a href="/mi-cv/estudios/nuevo" class="btn btn-success pull-right">Agregar estudio</a>
             </h4>
             <p class="category">
-                Subtitulo estudios
+                Aquí se muestran todos tus estudios registrados.
             </p>
         </div>
         <div class="content">
