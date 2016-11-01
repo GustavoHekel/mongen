@@ -22,8 +22,11 @@
     </logging>
 
     <filter>
-        <whitelist>
-            <directory suffix=".php">app/</directory>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../app/</directory>
+            <exclude>
+                <file>../bootstrap/autoload.php</file>
+            </exclude>
         </whitelist>
     </filter>
 
