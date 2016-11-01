@@ -262,7 +262,7 @@
  </target>
 
  <target name="-check-failure">
-  <fail message="PHPUnit did not finish successfully">
+  <fail message="PHPUnit did not finish successfully, fuck!">
    <condition>
     <not>
      <equals arg1="${result.phpunit}" arg2="0"/>
