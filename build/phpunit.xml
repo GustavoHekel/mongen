@@ -22,7 +22,7 @@
     </logging>
 
     <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
+        <whitelist>
             <directory suffix=".php">app/</directory>
         </whitelist>
     </filter>
