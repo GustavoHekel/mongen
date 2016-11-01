@@ -153,7 +153,7 @@
     </target>
 
     <target name="phpunit" description="Run unit tests with PHPUnit">
-        <exec executable=".composer/vendor/bin/phpunit" failonerror="true">
+        <exec executable="./vendor/bin/phpunit" failonerror="true">
             <arg value="-c" />
             <arg value="${basedir}/phpunit.xml" />
             <arg value="--coverage-html" />
