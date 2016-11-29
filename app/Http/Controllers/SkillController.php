@@ -9,7 +9,7 @@ use Datatables;
 
 use App\Http\Requests;
 
-use App\Models\Usuario\Skills as CvSkills;
+use App\Models\Usuario\Skill as CvSkill;
 
 class SkillController extends Controller
 {
@@ -17,16 +17,22 @@ class SkillController extends Controller
      * [getSkills description]
      * @return [type] [description]
      */
-    public function getSkills(){
-        return view('user-site-pro.mi-cv.secciones.skills');
+    public function index(){
+
+        $skills = CvSkill::where('id_usuario', Auth::user()->id_usuario)->orderBy('id_skill', 'desc')->get();
+        $data = [
+            'skills' => $skills
+        ];
+
+        return view('user-site-pro.mi-cv.secciones.skills', $data);
     }
 
     /**
      * [getSkillsTable description]
      * @return [type] [description]
      */
-    public function getSkillsTable(){
-        $skills = CvSkills::where('id_usuario', Auth::user()->id_usuario);
+    public function list(){
+        $skills = CvSkill::where('id_usuario', Auth::user()->id_usuario);
 
         return Datatables::of($skills)
             ->addColumn('level', function($skill){
@@ -46,5 +52,24 @@ class SkillController extends Controller
                 ';
             })
             ->make(true);
+    }
+
+    /**
+     * [update description]
+     * @param  Request $r        [description]
+     * @param  [type]  $id_skill [description]
+     * @return [type]            [description]
+     */
+    public function update(Request $r, $id_skill)
+    {
+        $skill = CvSkill::findOrFail($id_skill);
+        $this->authorize('editar', $skill);
+
+        $skill->nivel = $r->nivel;
+        if ($skill->save()) {
+            return response()->json(['message' => 'Skill updated'], 200);
+        } else {
+            return response()->json(['message' => 'Skill not updated'], 400);
+        }
     }
 }

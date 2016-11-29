@@ -116,14 +116,13 @@ Route::group(['middleware' => ['web']], function () {
 		Route::post('trabajos', 'TrabajoController@store');
 		Route::put('trabajos/{id_trabajo}', 'TrabajoController@update');
 		Route::delete('trabajos/{id_trabajo}', 'TrabajoController@destroy');
+
+		// Skills
+		Route::get('skills', 'SkillController@index');
+		Route::get('skills/listado', 'SkillController@list');
+		Route::put('skills/{id_skill}', 'SkillController@update');
+
 	});
-
-
-
-
-	// Skills
-	Route::get('mi-cv/skills', 'SkillController@getSkills');
-	Route::get('mi-cv/skills/listado', 'SkillController@getSkillsTable');
 
 	// Intereses
 	Route::get('mi-cv/intereses', 'InteresController@getIntereses');

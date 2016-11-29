@@ -18,5 +18,8 @@
 <!-- DataTables -->
 <!-- <link rel="stylesheet" type="text/css" href="{{ asset("dist/bower_components/datatables.net-bs/css/dataTables.bootstrap.css") }}"> -->
 
+<!-- Toastr -->
+<link rel="stylesheet" type="text/css" href="{{ asset("dist/bower_components/toastr/toastr.css")}}"></script>
+
 <!-- Loading -->
 <link rel="stylesheet" type="text/css" href="{{ asset("dist/css/loading.css")}}">
