@@ -67,9 +67,9 @@ class SkillController extends Controller
 
         $skill->nivel = $r->nivel;
         if ($skill->save()) {
-            return response()->json(['message' => 'Skill updated'], 200);
+            return response()->success(['message' => 'Skill updated']);
         } else {
-            return response()->json(['message' => 'Skill not updated'], 400);
+            return response()->error(['message' => 'Skill not updated']);
         }
     }
 }
