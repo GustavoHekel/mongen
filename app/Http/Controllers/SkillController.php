@@ -72,4 +72,37 @@ class SkillController extends Controller
             return response()->error(['message' => 'Skill not updated']);
         }
     }
+
+    /**
+     * [destroy description]
+     * @param  [type] $id_skill [description]
+     * @return [type]           [description]
+     */
+    public function destroy($id_skill)
+    {
+        $skill = CvSkill::findOrFail($id_skill);
+        if ($skill->delete()) {
+            return response()->success(['message' => 'Skill deleted']);
+        } else {
+            return response()->error(['message' => 'Skill not deleted']);
+        }
+    }
+
+    /**
+     * [store description]
+     * @param  Request $r [description]
+     * @return [type]     [description]
+     */
+    public function store(Request $r)
+    {
+        $skill = new CvSkill;
+        $skill->nombre = $r->nombre;
+        $skill->nivel = $r->nivel;
+        $skill->id_usuario = $r->user()->id_usuario;
+        if ($skill->save()) {
+            return response()->created(['message' => 'Skill created']);
+        } else {
+            return response()->error(['message' => 'Skill not created']);
+        }
+    }
 }

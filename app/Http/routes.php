@@ -120,7 +120,9 @@ Route::group(['middleware' => ['web']], function () {
 		// Skills
 		Route::get('skills', 'SkillController@index');
 		Route::get('skills/listado', 'SkillController@list');
+		Route::post('skills', 'SkillController@store');
 		Route::put('skills/{id_skill}', 'SkillController@update');
+		Route::delete('skills/{id_skill}', 'SkillController@destroy');
 
 	});
 
