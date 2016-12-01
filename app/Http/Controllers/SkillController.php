@@ -18,7 +18,7 @@ class SkillController extends Controller
      */
     public function index(){
 
-        $skills = CvSkill::fromUser()->get();
+        $skills = CvSkill::fromUser()->orderBy('id_skill', 'asc')->get();
         $data = [
             'skills' => $skills
         ];

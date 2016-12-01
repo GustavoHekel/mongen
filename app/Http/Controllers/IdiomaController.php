@@ -19,7 +19,7 @@ class IdiomaController extends Controller
      */
     public function index()
     {
-        $idiomas = CvIdioma::fromUser()->get();
+        $idiomas = CvIdioma::fromUser()->orderBy('id_idioma', 'asc')->get();
         $data = [
             'idiomas' => $idiomas
         ];
@@ -53,7 +53,15 @@ class IdiomaController extends Controller
      */
     public function update(Request $r, $id_idioma)
     {
+        $idioma = CvIdioma::findOrFail($id_idioma);
+        $this->authorize('editar', $idioma);
 
+        $idioma->nivel = $r->nivel;
+        if ($idioma->save()) {
+            return response()->success(['message' => 'Idioma updated']);
+        } else {
+            return response()->error(['message' => 'Idioma not updated']);
+        }
     }
 
     /**
@@ -63,6 +71,11 @@ class IdiomaController extends Controller
      */
     public function destroy($id_idioma)
     {
-
+        $idioma = CvIdioma::findOrFail($id_idioma);
+        if ($idioma->delete()) {
+            return response()->success(['message' => 'Idioma deleted']);
+        } else {
+            return response()->error(['message' => 'Idioma not deleted']);
+        }
     }
 }
