@@ -20,4 +20,13 @@ class Skill extends Model
 	 */
 	protected $primaryKey = 'id_skill';
 
+    /**
+     * [setNombre description]
+     * @param [type] $value [description]
+     */
+    public function setNombreAttribute($value)
+    {
+        $this->attributes['nombre'] = strtoupper($value);
+    }
+
 }

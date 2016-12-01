@@ -19,7 +19,7 @@ class SkillController extends Controller
      */
     public function index(){
 
-        $skills = CvSkill::where('id_usuario', Auth::user()->id_usuario)->orderBy('id_skill', 'desc')->get();
+        $skills = CvSkill::where('id_usuario', Auth::user()->id_usuario)->orderBy('id_skill', 'asc')->get();
         $data = [
             'skills' => $skills
         ];
@@ -100,7 +100,7 @@ class SkillController extends Controller
         $skill->nivel = $r->nivel;
         $skill->id_usuario = $r->user()->id_usuario;
         if ($skill->save()) {
-            return response()->created(['message' => 'Skill created']);
+            return response()->created(['message' => 'Skill created', 'data' => $skill]);
         } else {
             return response()->error(['message' => 'Skill not created']);
         }
