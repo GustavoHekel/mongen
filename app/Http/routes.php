@@ -119,10 +119,15 @@ Route::group(['middleware' => ['web']], function () {
 
 		// Skills
 		Route::get('skills', 'SkillController@index');
-		Route::get('skills/listado', 'SkillController@list');
 		Route::post('skills', 'SkillController@store');
 		Route::put('skills/{id_skill}', 'SkillController@update');
 		Route::delete('skills/{id_skill}', 'SkillController@destroy');
+
+		// Idiomas
+		Route::get('idiomas', 'IdiomaController@index');
+		Route::post('idiomas', 'IdiomaController@store');
+		Route::put('idiomas/{id_idioma}', 'IdiomaController@update');
+		Route::delete('idiomas/{id_idioma}', 'IdiomaController@destroy');
 
 	});
 
@@ -130,9 +135,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('mi-cv/intereses', 'InteresController@getIntereses');
 	Route::get('mi-cv/intereses/listado', 'InteresController@getInteresesTable');
 
-	// Idiomas
-	Route::get('mi-cv/idiomas', 'IdiomaController@getIdiomas');
-	Route::get('mi-cv/idiomas/listado', 'IdiomaController@getIdiomasTable');
+	
 
 	// Referencias
 	Route::get('mi-cv/referencias', 'ReferenciaController@getReferencias');

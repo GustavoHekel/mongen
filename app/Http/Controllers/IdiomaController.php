@@ -9,42 +9,60 @@ use Datatables;
 
 use App\Http\Requests;
 
-use App\Models\Usuario\Idioma as CvIdiomas;
+use App\Models\Usuario\Idioma as CvIdioma;
 
 class IdiomaController extends Controller
 {
     /**
-     * [getIdiomas description]
+     * [index description]
      * @return [type] [description]
      */
-    public function getIdiomas(){
-        return view('user-site-pro.mi-cv.secciones.idiomas');
+    public function index()
+    {
+        $idiomas = CvIdioma::fromUser()->get();
+        $data = [
+            'idiomas' => $idiomas
+        ];
+
+        return view('user-site-pro.mi-cv.secciones.idiomas', $data);
     }
 
     /**
-     * [getIdiomasTable description]
-     * @return [type] [description]
+     * [store description]
+     * @param  Request $r [description]
+     * @return [type]     [description]
      */
-    public function getIdiomasTable(){
-        $idiomas = CvIdiomas::where('id_usuario', Auth::user()->id_usuario);
+    public function store(Request $r)
+    {
+        $idioma = new CvIdioma;
+        $idioma->idioma = $r->nombre;
+        $idioma->nivel = $r->nivel;
+        $idioma->id_usuario = $r->user()->id_usuario;
+        if ($idioma->save()) {
+            return response()->created(['message' => 'Idioma created', 'data' => $idioma]);
+        } else {
+            return response()->error(['message' => 'Idioma not created']);
+        }
+    }
 
-        return Datatables::of($idiomas)
-            ->addColumn('level', function($idioma){
-                return '
-                <div class="progress">
-                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:' . $idioma->nivel * 10 . '%">
-                    ' . $idioma->nivel * 10 . '%
-                  </div>
-                </div>
-                ';
-            })
-            ->addColumn('actions', function($skill){
-                return '
-                <a rel="tooltip" title="Ver" class="btn btn-simple btn-info btn-icon table-action view" data-original-title="View"><i class="fa fa-image"></i></a>
-                <a rel="tooltip" title="Editar" class="btn btn-simple btn-warning btn-icon table-action edit" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                <a rel="tooltip" title="Eliminar" class="btn btn-simple btn-danger btn-icon table-action remove" data-original-title="Remove"><i class="fa fa-remove"></i></a>
-                ';
-            })
-            ->make(true);
+    /**
+     * [update description]
+     * @param  Request $r         [description]
+     * @param  [type]  $id_idioma [description]
+     * @return [type]             [description]
+     */
+    public function update(Request $r, $id_idioma)
+    {
+
+    }
+
+    /**
+     * [destroy description]
+     * @param  [type] $id_idioma [description]
+     * @return [type]            [description]
+     */
+    public function destroy($id_idioma)
+    {
+
     }
 }

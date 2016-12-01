@@ -4,6 +4,8 @@ namespace App\Models\Usuario;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Auth;
+
 class Skill extends Model
 {
     /**
@@ -22,11 +24,22 @@ class Skill extends Model
 
     /**
      * [setNombre description]
+     *
      * @param [type] $value [description]
      */
     public function setNombreAttribute($value)
     {
-        $this->attributes['nombre'] = strtoupper($value);
+        $this->attributes['nombre'] = mb_strtoupper($value);
+    }
+
+    /**
+     * [scopeFromUser description]
+     * @param  [type] $query [description]
+     * @return [type]        [description]
+     */
+    public function scopeFromUser($query)
+    {
+        return $query->where('id_usuario', Auth::user()->id_usuario);
     }
 
 }
