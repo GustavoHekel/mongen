@@ -58,9 +58,9 @@
 					</div>
 
                     <div class="form-group">
-						<label class="col-sm-2 control-label">Descripción del curso</label>
+						<label class="col-sm-2 control-label">Descripción</label>
 						<div class="col-sm-10">
-							<input type="text" name="detalle" placeholder="Descripción del curso" class="form-control" value="{{ $curso->detalle }}">
+							<input type="text" name="detalle" placeholder="Descripción" class="form-control" value="{{ $curso->detalle }}">
 						</div>
 					</div>
 				</div>

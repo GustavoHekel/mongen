@@ -151,8 +151,6 @@ class EstudioController extends Controller
 
         if ($estudio->delete()) {
             return response()->json(['mensaje' => 'Registro eliminado'], 200);
-        } else {
-            return response()->json(['mensaje' => 'Registro no encontrado'], 404);
         }
     }
 }
