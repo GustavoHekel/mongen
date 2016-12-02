@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
 
 use Auth;
 use Datatables;
 use Gate;
 use Carbon\Carbon;
-
-use App\Http\Requests;
 
 use App\Models\Usuario\Estudio as CvEstudio;
 
@@ -39,7 +38,7 @@ class EstudioController extends Controller
      * @return json
      */
     public function list(){
-        $estudios = CvEstudio::where('id_usuario', Auth::user()->id_usuario);
+        $estudios = CvEstudio::fromUser();
 
         return Datatables::of($estudios)
             ->addColumn('actions', function($estudio){

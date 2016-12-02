@@ -3,23 +3,23 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="card">
-			<form class="form-horizontal" id="new-trabajo">
+			<form class="form-horizontal" id="edit-curso">
 				<div class="header">
-					Nuevo trabajo
+					Detalle de curso
 					<input type="submit" class="btn btn-warning pull-right save-edit" value="Guardar">
 				</div>
 				<div class="content">
 					<div class="form-group">
-						<label class="col-sm-2 control-label">Lugar de trabajo</label>
+						<label class="col-sm-2 control-label">Instituto</label>
 						<div class="col-sm-10">
-							<input type="text" name="lugar" placeholder="Lugar de trabajo" class="form-control">
+							<input type="text" name="instituto" placeholder="Instituto" class="form-control" value="{{ $curso->instituto }}">
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-2 control-label">Puesto</label>
+						<label class="col-sm-2 control-label">Nombre</label>
 						<div class="col-sm-10">
-							<input type="text" name="puesto" placeholder="Puesto" class="form-control">
+							<input type="text" name="nombre" placeholder="nombre" class="form-control" value="{{ $curso->nombre }}">
 						</div>
 					</div>
 
@@ -29,8 +29,8 @@
 							@include('user-site-pro.includes.misc.select-period',
 							[
 							'name' => 'desde',
-							'anio' => null,
-							'mes' => null
+							'anio' => substr($curso->desde, 0, 4),
+							'mes' => substr($curso->desde, 4, 2)
 							])
 						</div>
 					</div>
@@ -41,8 +41,8 @@
 							@include('user-site-pro.includes.misc.select-period',
 							[
 							'name' => 'hasta',
-							'anio' => null,
-							'mes' => null
+							'anio' => substr($curso->hasta, 0, 4),
+							'mes' => substr($curso->hasta, 4, 2)
 							])
 						</div>
 
@@ -52,20 +52,24 @@
 									<span class="first-icon fa fa-square-o"></span>
 									<span class="second-icon fa fa-check-square-o"></span>
 								</span>
-								<input type="checkbox" name="trabajo_actual" data-toggle="checkbox">Trabajo actual
+								<input type="checkbox" name="en_curso" data-toggle="checkbox" @if(is_null($curso->hasta)) checked @endif>En curso
 							</label>
 						</div>
 					</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Descripción</label>
+                    <div class="form-group">
+						<label class="col-sm-2 control-label">Descripción del curso</label>
 						<div class="col-sm-10">
-							<input type="text" name="detalle" placeholder="Descripcion" class="form-control">
+							<input type="text" name="detalle" placeholder="Descripción del curso" class="form-control" value="{{ $curso->detalle }}">
 						</div>
 					</div>
 				</div>
 				<div class="footer">
-
+					<div class="stats">
+						<i class="fa fa-history"></i> Created {{ $curso->created_at->diffForHumans() }}
+						<br />
+						<i class="fa fa-history"></i> Updated {{ $curso->updated_at->diffForHumans() }}
+					</div>
 				</div>
 			</form>
 		</div>
@@ -77,21 +81,21 @@
 <script>
 $(function(){
 
-	if ($('input[name="trabajo_actual"]').is(':checked')) {
+	if ($('input[name="en_curso"]').is(':checked')) {
 		$('#anio-hasta, #mes-hasta').attr('disabled', 'disabled');
 	}
 
-	$('input[name="trabajo_actual"]').on('toggle', function(){
+	$('input[name="en_curso"]').on('toggle', function(){
 		$('#anio-hasta, #mes-hasta').prop('disabled', function(i, v) { return !v; });
 	});
 
 
-	$('#new-trabajo').validate({
-		lugar: {
+	$('#edit-curso').validate({
+		instituto: {
 			required: true,
 			maxlength: 255
 		},
-		puesto: {
+		nombre: {
 			required: true,
 			maxlength: 255
 		},
@@ -103,17 +107,17 @@ $(function(){
 		},
 		submitHandler: function(form) {
 			$.ajax({
-				method: 'post',
-				url: '/mi-cv/trabajos',
+				method: 'put',
+				url: '/mi-cv/cursos/{{ $curso->id_curso }}',
 				data: $(form).serialize(),
 				success: function (data) {
 					swal({
-						title: 'Ingresado',
-						text: 'Se ha agregado una nueva experiencia laboral!',
+						title: 'Actualizado',
+						text: 'Los datos fueron actualizados',
 						type: 'success',
 						confirmButtonText: 'Ok'
 					}, function (isConfirm) {
-						window.location.href = '/mi-cv/trabajos';
+						window.location.href = '/mi-cv/cursos';
 					});
 				}
 			})

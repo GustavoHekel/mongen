@@ -21,6 +21,7 @@ class CreateCvsCursos extends Migration
             $table->integer('hasta');
             $table->text('detalle')->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
         });

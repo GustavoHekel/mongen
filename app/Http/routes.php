@@ -36,33 +36,11 @@ Route::group(['middleware' => ['landing']] , function() {
 
 /*
 |--------------------------------------------------------------------------
-| User admin page Routes
-|--------------------------------------------------------------------------
-|
-| Las siguientes rutas son todas las que se van a utilizar para el
-| manejo de la parte de administración por parte del usuario.
-|
-*/
-
-
-/*
-|--------------------------------------------------------------------------
 | Admin page Routes
 |--------------------------------------------------------------------------
 |
 | Las siguientes rutas son todas las que se van a utilizar para el manejo
 | de la parte de administración por parte del administrador.
-|
-*/
-
-
-/*
-|--------------------------------------------------------------------------
-| Test Routes
-|--------------------------------------------------------------------------
-|
-| Las siguientes rutas son todas las que
-| se van a utilizar para testeo.
 |
 */
 
@@ -129,13 +107,26 @@ Route::group(['middleware' => ['web']], function () {
 		Route::put('idiomas/{id_idioma}', 'IdiomaController@update');
 		Route::delete('idiomas/{id_idioma}', 'IdiomaController@destroy');
 
+		Route::get('cursos', 'CursoController@index');
+		Route::get('cursos/nuevo', 'CursoController@create');
+		Route::get('cursos/listado', 'CursoController@list');
+		Route::get('cursos/{id_curso}', 'CursoController@show');
+		Route::get('cursos/{id_curso}/editar', 'CursoController@edit');
+		Route::post('cursos', 'CursoController@store');
+		Route::put('cursos/{id_curso}', 'CursoController@update');
+		Route::delete('cursos/{id_curso}', 'CursoController@destroy');
+
+	});
+
+	Route::get('logout', function(){
+		Session::flush();
 	});
 
 	// Intereses
 	Route::get('mi-cv/intereses', 'InteresController@getIntereses');
 	Route::get('mi-cv/intereses/listado', 'InteresController@getInteresesTable');
 
-	
+
 
 	// Referencias
 	Route::get('mi-cv/referencias', 'ReferenciaController@getReferencias');

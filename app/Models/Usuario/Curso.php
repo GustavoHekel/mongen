@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Auth;
 
-class Estudio extends Model
+class Curso extends Model
 {
     use SoftDeletes;
 
@@ -16,14 +16,14 @@ class Estudio extends Model
      *
      * @var string
      */
-    protected $table = 'cvs.estudios';
+    protected $table = 'cvs.cursos';
 
     /**
 	 * The table's primary key
 	 *
 	 * @var string
 	 */
-	protected $primaryKey = 'id_estudio';
+	protected $primaryKey = 'id_curso';
 
     /**
      * The attributes that should be mutated to dates.
@@ -43,13 +43,13 @@ class Estudio extends Model
     }
 
     /**
-     * Set the career attribute
+     * Set the course's name attribute
      *
-     * @param string $value career
+     * @param string $value name
      */
-    public function setCarreraAttribute($value)
+    public function setNombreAttribute($value)
     {
-        $this->attributes['carrera'] = mb_strtoupper($value);
+        $this->attributes['nombre'] = mb_strtoupper($value);
     }
 
     /**
@@ -61,5 +61,4 @@ class Estudio extends Model
     {
         return $query->where('id_usuario', Auth::user()->id_usuario);
     }
-
 }

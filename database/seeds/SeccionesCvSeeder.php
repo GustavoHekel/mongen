@@ -52,6 +52,11 @@ class SeccionesCvSeeder extends Seeder
         		'url' => 'mi-cv/idiomas',
         		'icono' => 'fa-language'
     		] ,
+            [
+        		'descripcion' => 'Cursos',
+        		'url' => 'mi-cv/cursos',
+        		'icono' => 'fa-book'
+    		] ,
         	[
         		'descripcion' => 'Referencias',
         		'url' => 'mi-cv/referencias',

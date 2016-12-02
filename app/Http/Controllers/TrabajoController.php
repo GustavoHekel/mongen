@@ -39,7 +39,7 @@ class TrabajoController extends Controller
      */
     public function list()
     {
-        $trabajos = CvTrabajo::where('id_usuario', Auth::user()->id_usuario);
+        $trabajos = CvTrabajo::fromUser();
 
         return Datatables::of($trabajos)
             ->addColumn('actions', function($trabajo){
