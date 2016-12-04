@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
-use Cache;
+use Session;
+use Auth;
 
 use App\Models\Modulo;
 
@@ -18,15 +19,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $modulos = Cache::get('menu', function(){
-            return Modulo::all();
-        });
-
-        $data = [
-            'modulos' => $modulos
-        ];
-
-        return view('user-site-pro.dashboard.index', $data);
+        Session::put('modulos', Modulo::all());
+        Session::put('nombre', Auth::user()->nombre);
+        return view('user-site-pro.dashboard.index');
     }
 
     /**
