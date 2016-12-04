@@ -25,11 +25,11 @@
         </div>
 
         <ul class="nav">
-          @foreach (session('menu') as $item)
+          @foreach ($modulos as $modulo)
               <li>
-                  <a href="{{ url($item->ruta) }}">
-                      <i class="{{ $item->icono }}"></i>
-                      <p>{{ $item->descripcion }}</p>
+                  <a href="{{ url($modulo->ruta) }}">
+                      <i class="{{ $modulo->icono }}"></i>
+                      <p>{{ $modulo->descripcion }}</p>
                   </a>
               </li>
           @endforeach

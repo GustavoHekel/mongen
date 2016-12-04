@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSistemaMenuUsuario extends Migration
+class CreateSistemaModulos extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class CreateSistemaMenuUsuario extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.menu_usuario', function (Blueprint $table) {
-            $table->increments('id_menu');
+        Schema::create('sistema.modulos', function (Blueprint $table) {
+            $table->increments('id_modulo');
             $table->string('descripcion')->unique();
             $table->string('icono')->unique();
             $table->string('ruta')->unique();
@@ -28,6 +28,6 @@ class CreateSistemaMenuUsuario extends Migration
      */
     public function down()
     {
-        Schema::drop('sistema.menu_usuario');
+        Schema::drop('sistema.modulos');
     }
 }

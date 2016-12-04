@@ -29,9 +29,7 @@ Route::group(['middleware' => ['landing']] , function() {
 	Route::get('recover', 'LandingController@getRecover')->name('recover');
 	Route::post('newsletter', 'LandingController@postNewsletter');
 	Route::get('registrar', 'LandingController@getRegistrar')->name('registrar');
-	Route::get('login', 'LandingController@getLogin')->name('login');
-	Route::post('login', 'UsuarioController@postLogin');
-
+	// Route::get('login', 'LandingController@getLogin')->name('login');
 });
 
 /*
@@ -58,7 +56,24 @@ Route::group(['middleware' => ['landing']] , function() {
 
 Route::group(['middleware' => ['web']], function () {
 
-	Route::get('dashboard', 'UsuarioController@getDashboard')->name('dashboard');
+	// Authentication Routes...
+	Route::get('login', 'LandingController@getLogin')->name('login');
+	Route::post('login', 'Auth\AuthController@login');
+	Route::get('logout', 'Auth\AuthController@logout');
+
+	// Registration Routes...
+	// $this->get('register', 'Auth\AuthController@showRegistrationForm');
+	// $this->post('register', 'Auth\AuthController@register');
+
+	// Password Reset Routes...
+	// $this->get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
+	// $this->post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
+	// $this->post('password/reset', 'Auth\PasswordController@reset');
+
+	// Route::auth();
+	// Route::get('/home', 'HomeController@index');
+
+	Route::get('dashboard', 'DashboardController@index');
 	Route::get('estadisticas', 'EstadisticaController@getIndex');
 	Route::get('mensajes', 'InboxController@getIndex');
 	Route::get('mi-cuenta', 'CuentasController@getIndex');
@@ -116,10 +131,6 @@ Route::group(['middleware' => ['web']], function () {
 		Route::put('cursos/{id_curso}', 'CursoController@update');
 		Route::delete('cursos/{id_curso}', 'CursoController@destroy');
 
-	});
-
-	Route::get('logout', function(){
-		Session::flush();
 	});
 
 	// Intereses

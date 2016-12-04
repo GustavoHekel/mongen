@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class MenuUsuarioSeeder extends Seeder
+class ModulosSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class MenuUsuarioSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('sistema.menu_usuario')->insert([
+        DB::table('sistema.modulos')->insert([
         	[
         		'descripcion' => 'DASHBOARD',
         		'icono' => 'pe-7s-leaf',
@@ -26,13 +26,13 @@ class MenuUsuarioSeeder extends Seeder
         		'created_at' => date('Y-m-d H:i:s'),
         		'updated_at' => date('Y-m-d H:i:s')
         	],
-        	[
-        		'descripcion' => 'ESTADISTICAS',
-        		'icono' => 'pe-7s-graph',
-        		'ruta' => 'estadisticas',
-        		'created_at' => date('Y-m-d H:i:s'),
-        		'updated_at' => date('Y-m-d H:i:s')
-        	],
+        	// [
+        	// 	'descripcion' => 'ESTADISTICAS',
+        	// 	'icono' => 'pe-7s-graph',
+        	// 	'ruta' => 'estadisticas',
+        	// 	'created_at' => date('Y-m-d H:i:s'),
+        	// 	'updated_at' => date('Y-m-d H:i:s')
+        	// ],
         	[
         		'descripcion' => 'MENSAJES',
         		'icono' => 'pe-7s-mail',

@@ -7,7 +7,8 @@
 					<h3 class="animate-box fadeInUp animated">Login</h3>
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3">
-							<form action="login" method="post" class="animate-box fadeInUp animated">
+							<form action="{{ url('/login') }}" method="post" class="animate-box fadeInUp animated">
+								{{ csrf_field() }}
 								@if (isset($errors))
 									@if (count($errors) > 0)
 										<div class="alert alert-danger">
@@ -21,11 +22,11 @@
 							    @endif
 								<div class="form-group" style="text-align: left !important">
 									<label>Email</label>
-									<input type="email" class="form-control" placeholder="Ingrese su email" id="email" name="email">
+									<input type="email" class="form-control" placeholder="Ingrese su email" id="email" name="email" value="{{ old('email') }}">
 								</div>
 								<div class="form-group" style="text-align: left !important">
 									<label>Contraseña</label>
-									<input type="password" class="form-control" placeholder="Contraseña" id="pass" name="pass">
+									<input type="password" class="form-control" placeholder="Contraseña" id="password" name="password">
 								</div>
 								<div class="form-group">
 									<label>
@@ -34,7 +35,6 @@
 									</label>
 								</div>
 								<input type="submit" value="Enviar" class="btn btn-primary">
-								{{ csrf_field() }}
 							</form>
 							<a href="{{ route('recover') }}">Olvidé mi contraseña</a>
 						</div>

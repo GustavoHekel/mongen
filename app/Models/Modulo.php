@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Models\Usuario;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Menu extends Model
+class Modulo extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'sistema.menu_usuario';
+    protected $table = 'sistema.modulos';
 
     /**
 	 * The table's primary key

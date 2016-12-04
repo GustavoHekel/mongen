@@ -46,16 +46,6 @@ class UsuarioController extends Controller
     }
 
     /**
-     * Devuelve la vista del dashboard
-     * @param null
-     * @return null
-     */
-    public function getDashboard(Request $r)
-    {
-        return view('user-site-pro.dashboard.index');
-    }
-
-    /**
      * [getPersonalInfoCv description]
      * @return [type]     [description]
      */
