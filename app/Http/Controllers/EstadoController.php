@@ -4,46 +4,31 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Route;
 use Auth;
 use Datatables;
+use Session;
 
 use App\Http\Requests;
 
 use App\Models\Seccion;
-use App\Models\EstadoUsuario;
+use App\Models\Estado;
 use App\Models\Usuario;
 use App\Models\Usuario\Estado as CvEstado;
 
 class EstadoController extends Controller
 {
-    private
-        $_return_success = [
-            'css' => 'success',
-            'info' => 'Se han realizado los cambios solicitados',
-            'icon' => 'fa fa-check'
-        ],
-        $_return_error = [
-            'css' => 'danger',
-            'info' => 'Ha ocurrido un error',
-            'icon' => 'fa fa-exclamation-triangle'
-        ];
-
     /**
-     * Devuelve la vista de "Estado"
-     * en las opciones de "Mi CV"
+     * Devuelve la vista de "Estado" en las opciones de "Mi CV"
      *
      * @return null
      */
-    public function getEstado(){
-        $estados = EstadoUsuario::orderBy('id_estado','desc')->get();
-        $usuario = Usuario::with('estado')->find(Auth::user()->id_usuario);
+    public function index()
+    {
+        Session::put('estados', Estado::orderBy('id_estado','desc')->get());
+        $estado_usuario = CvEstado::fromUser()->first();
         $data = [
-            'secciones' => Seccion::all(),
-            'estados' => $estados,
-            'usuario' => $usuario
+            'estado_usuario' => $estado_usuario
         ];
-
         return view('user-site-pro.mi-cv.secciones.estado', $data);
     }
 
@@ -52,13 +37,15 @@ class EstadoController extends Controller
      * @param Request $r
      * @return string
      */
-    public function postEstado(Request $r){
-        $estado = CvEstado::firstOrNew(['id_usuario' => Auth::user()->id]);
-        $estado->estado = $r->estado;
+    public function update(Request $r, $id_estado)
+    {
+        $estado = CvEstado::fromUser()->first();
+        $this->authorize('editar', $estado);
+        $estado->id_estado = $r->id_estado;
         if ($estado->save()){
-            return response()->json($this->_return_success);
+            return response()->success(['message' => 'Estado actualizado']);
         } else {
-            return response()->json($this->_return_error);
+            return response()->error(['message' => 'Error al actualizar el estado']);
         }
     }
 }

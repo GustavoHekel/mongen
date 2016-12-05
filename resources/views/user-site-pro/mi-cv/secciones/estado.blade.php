@@ -14,13 +14,13 @@
             <form id="cv-estado">
                 <div>
                     <ul class="list-group">
-                        @foreach($estados as $estado)
+                        @foreach(Session('estados') as $estado)
                             <li class="list-group-item">
                                 <span>
-                                    @if ($usuario->estado->estado == $estado->id)
-                                        <input value="{{$estado->id_estado}}" type="radio" name="estado" checked="checked">
+                                    @if (Auth::user()->estado->id_estado == $estado->id_estado)
+                                        <input value="{{$estado->id_estado}}" type="radio" name="id_estado" checked="checked">
                                     @else
-                                        <input value="{{$estado->id_estado}}" type="radio" name="estado">
+                                        <input value="{{$estado->id_estado}}" type="radio" name="id_estado">
                                     @endif
                                 </span>
                                 <span class="text-{{ $estado->estilo }}">
@@ -50,15 +50,19 @@
 
         $('#submit-cv-estado').click(function(event){
             event.preventDefault();
-            $.post('estado', $('#cv-estado').serialize(), function(data){
-                $.notify({
-                    icon: data.icon,
-                    message: data.info
-
-                },{
-                    type: data.css
-                });
-            })
+            $.ajax({
+                method: 'put',
+                url: 'estado/{{ $estado_usuario->id_estado_usuario }}',
+                data: $('#cv-estado').serialize(),
+                statusCode: {
+                    200: function (data) {
+                        swal('Felicidades', data.message, 'success');
+                    },
+                    400: function (data) {
+                        swal('Atención', data.message, 'danger');
+                    }
+                }
+            });
         });
     });
 </script>

@@ -20,7 +20,6 @@ class DashboardController extends Controller
     public function index()
     {
         Session::put('modulos', Modulo::all());
-        Session::put('nombre', Auth::user()->nombre);
         return view('user-site-pro.dashboard.index');
     }
 

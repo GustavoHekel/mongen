@@ -4,20 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EstadoUsuario extends Model
+class Estado extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'sistema.estados_usuarios';
+    protected $table = 'sistema.estados';
 
     /**
 	 * The table's primary key
 	 *
 	 * @var string
 	 */
-	protected $primaryKey = 'id_estado_usuario';
+	protected $primaryKey = 'id_estado';
 
 }

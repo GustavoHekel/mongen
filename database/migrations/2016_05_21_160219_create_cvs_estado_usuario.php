@@ -19,7 +19,7 @@ class CreateCvsEstadoUsuario extends Migration
             $table->timestamps();
 
             $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
-            $table->foreign('id_estado')->references('id_estado')->on('sistema.estados_usuarios');
+            $table->foreign('id_estado')->references('id_estado')->on('sistema.estados');
         });
     }
 

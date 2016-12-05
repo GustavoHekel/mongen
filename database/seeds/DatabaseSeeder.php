@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UsuariosSeeder::class);
         $this->call(ModulosSeeder::class);
         $this->call(SeccionesCvSeeder::class);
-        $this->call(EstadosUsuariosSeeder::class);
+        $this->call(EstadosSeeder::class);
         $this->call(CVEstadoUsuarioSeeder::class);
         $this->call(CvEstudiosUsuarioSeeder::class);
         $this->call(CvTrabajosUsuarioSeeder::class);

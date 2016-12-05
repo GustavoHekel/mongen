@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEstadosUsuario extends Migration
+class CreateEstados extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateEstadosUsuario extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.estados_usuarios', function (Blueprint $table) {
+        Schema::create('sistema.estados', function (Blueprint $table) {
             $table->increments('id_estado');
             $table->string('descripcion' , 255);
             $table->string('estilo' , 255);
@@ -27,6 +27,6 @@ class CreateEstadosUsuario extends Migration
      */
     public function down()
     {
-        Schema::drop('sistema.estados_usuarios');
+        Schema::drop('sistema.estados');
     }
 }

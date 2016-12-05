@@ -28,8 +28,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
     protected $dates = ['created_at', 'updated_at', 'fecha_nacimiento'];
 
 	/**
-     * Traigo el estado actual del usuario
-     * con la relación "estado".
+     * Traigo el estado actual del usuario con la relación "estado".
      * @param null
      * @return null
      */
@@ -38,8 +37,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
     }
 
     /**
-     * Traigo los estudios del usuario
-     * con la relación "estudios".
+     * Traigo los estudios del usuario con la relación "estudios".
      * @param null
      * @return null
      */

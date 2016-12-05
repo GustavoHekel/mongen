@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class EstadosUsuariosSeeder extends Seeder
+class EstadosSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class EstadosUsuariosSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('sistema.estados_usuarios')->insert([
+        DB::table('sistema.estados')->insert([
         	[
         		'descripcion' => 'NO ESTOY ESCUCHANDO PROPUESTAS',
                 'estilo' => 'danger'
