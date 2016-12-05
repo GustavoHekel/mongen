@@ -54,7 +54,11 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">URL personalizada</label>
                         <div class="col-md-9">
+                            @if (Auth::user()->id_plan == 1)
                             <input type="text" name="url" placeholder="URL" class="form-control" value="{{ Auth::user()->url }}">
+                            @else
+                            <input disabled type="text" name="url" placeholder="URL" class="form-control" value="{{ Auth::user()->url }}">
+                            @endif
                         </div>
                     </div>
                 </form>
