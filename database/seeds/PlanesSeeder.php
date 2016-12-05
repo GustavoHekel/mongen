@@ -12,12 +12,22 @@ class PlanesSeeder extends Seeder
     public function run()
     {
         DB::table('sistema.planes')->insert([
-        		'nombre' => 'MONGEN',
-        		'duracion' => '100 years',
-        		'invitacion' => '1 month',
-        		'precio_ars' => '399.99',
-        		'created_at' => date('Y-m-d H:i:s'),
-				'updated_at' => date('Y-m-d H:i:s')
-        	]);
+            [
+                'nombre' => 'PREMIUM',
+                'duracion' => '1 month',
+                'invitacion' => '1 month',
+                'precio_ars' => '9.99',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'nombre' => 'FREE',
+                'duracion' => '1 month',
+                'invitacion' => '1 month',
+                'precio_ars' => '0',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ]
+    	]);
     }
 }

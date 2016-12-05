@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use Session;
+use Cache;
 use Auth;
 
 use App\Models\Modulo;
+use App\Models\Pais;
+use App\Models\Provincia;
 
 class DashboardController extends Controller
 {
@@ -19,6 +22,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $paises = Cache::remember('paises', 60, function() {
+            return Pais::all();
+        });
+
+        $provincias = Cache::remember('provincias', 60, function() {
+            return Provincia::fromCountry(Auth::user()->id_pais)->get();
+        });
+
         Session::put('modulos', Modulo::all());
         return view('user-site-pro.dashboard.index');
     }

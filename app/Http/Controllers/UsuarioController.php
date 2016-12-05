@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Cache;
 use Illuminate\Http\Request;
 
 use App\Models\Usuario\Menu;
@@ -24,45 +25,27 @@ class UsuarioController extends Controller
     }
 
     /**
-     * Recibe los datos del
-     * formulario de login.
-     * @param $r Request
-     * @return bool
+     * [index description]
+     * @return [type] [description]
      */
-    public function postLogin(Request $r)
+    public function index()
     {
-        if (Auth::attempt(['email' => $r->email, 'password' => $r->pass])) {
-            $r->session()->put('menu', Menu::all());
-            $r->session()->put('name', Auth::user()->nombre);
-            return redirect('dashboard');
-        } else {
-            $data = [
-                'errors' => [
-                    'Falló la autenticación, revise sus datos',
-                ],
-            ];
-            return redirect('login')->with($data);
-        }
+        $data = [
+            'paises' => Cache::get('paises'),
+            'provincias' => Cache::get('provincias'),
+        ];
+        return view('user-site-pro.mi-cv.secciones.personal', $data);
     }
 
     /**
-     * [getPersonalInfoCv description]
-     * @return [type]     [description]
+     * [update description]
+     * @param  Request $r          [description]
+     * @param  [type]  $id_usuario [description]
+     * @return [type]              [description]
      */
-    public function getPersonalInfoCv()
+    public function update(Request $r, $id_usuario)
     {
-        $id_usuario = Auth::user()->id_usuario;
-        $usuario = Usuario::with([
-            'pais',
-            'provincia'
-        ])
-        ->firstOrFail();
 
-        $data = [
-            'usuario' => $usuario,
-        ];
-
-        return view('user-site-pro.mi-cv.secciones.personal', $data);
     }
 
     /**

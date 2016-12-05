@@ -12,7 +12,12 @@ class PaisesSeeder extends Seeder
     public function run()
     {
         DB::table('sistema.paises')->insert([
-        		'nombre' => 'ARGENTINA',
-        	]);
+            [
+                'nombre' => 'ARGENTINA',
+            ],
+            [
+                'nombre' => 'BRASIL 1 - ALEMANIA 7',
+            ]
+    	]);
     }
 }

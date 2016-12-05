@@ -29,7 +29,6 @@ Route::group(['middleware' => ['landing']] , function() {
 	Route::get('recover', 'LandingController@getRecover')->name('recover');
 	Route::post('newsletter', 'LandingController@postNewsletter');
 	Route::get('registrar', 'LandingController@getRegistrar')->name('registrar');
-	// Route::get('login', 'LandingController@getLogin')->name('login');
 });
 
 /*
@@ -90,6 +89,9 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('estado', 'EstadoController@index');
 		Route::put('estado/{id_estado}', 'EstadoController@update');
 
+		// Datos personales
+		Route::get('personal', 'UsuarioController@index');
+
 		// Estudios
 		Route::get('estudios', 'EstudioController@index');
 		Route::get('estudios/nuevo', 'EstudioController@create');
@@ -110,6 +112,16 @@ Route::group(['middleware' => ['web']], function () {
 		Route::put('trabajos/{id_trabajo}', 'TrabajoController@update');
 		Route::delete('trabajos/{id_trabajo}', 'TrabajoController@destroy');
 
+		// Cursos
+		Route::get('cursos', 'CursoController@index');
+		Route::get('cursos/nuevo', 'CursoController@create');
+		Route::get('cursos/listado', 'CursoController@list');
+		Route::get('cursos/{id_curso}', 'CursoController@show');
+		Route::get('cursos/{id_curso}/editar', 'CursoController@edit');
+		Route::post('cursos', 'CursoController@store');
+		Route::put('cursos/{id_curso}', 'CursoController@update');
+		Route::delete('cursos/{id_curso}', 'CursoController@destroy');
+
 		// Skills
 		Route::get('skills', 'SkillController@index');
 		Route::post('skills', 'SkillController@store');
@@ -122,30 +134,19 @@ Route::group(['middleware' => ['web']], function () {
 		Route::put('idiomas/{id_idioma}', 'IdiomaController@update');
 		Route::delete('idiomas/{id_idioma}', 'IdiomaController@destroy');
 
-		Route::get('cursos', 'CursoController@index');
-		Route::get('cursos/nuevo', 'CursoController@create');
-		Route::get('cursos/listado', 'CursoController@list');
-		Route::get('cursos/{id_curso}', 'CursoController@show');
-		Route::get('cursos/{id_curso}/editar', 'CursoController@edit');
-		Route::post('cursos', 'CursoController@store');
-		Route::put('cursos/{id_curso}', 'CursoController@update');
-		Route::delete('cursos/{id_curso}', 'CursoController@destroy');
 
 	});
+
+	Route::get('provincias/{id_pais}', 'ProvinciaController@index');
 
 	// Intereses
 	Route::get('mi-cv/intereses', 'InteresController@getIntereses');
 	Route::get('mi-cv/intereses/listado', 'InteresController@getInteresesTable');
 
-
-
 	// Referencias
 	Route::get('mi-cv/referencias', 'ReferenciaController@getReferencias');
 	Route::get('mi-cv/referencias/listado', 'ReferenciaController@getReferenciasTable');
 	Route::get('mi-cv/referencias/{id_referencia}', 'ReferenciaController@getReferencia');
-
-	// Personal
-	Route::get('mi-cv/personal', 'UsuarioController@getPersonalInfoCv');
 
 	// Contacto
 	Route::get('mi-cv/contacto', 'UsuarioController@getContacto');

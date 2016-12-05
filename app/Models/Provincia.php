@@ -19,4 +19,15 @@ class Provincia extends Model
 	 * @var string
 	 */
 	protected $primaryKey = 'id_provincia';
+
+    /**
+     * [scopeFromCountry description]
+     * @param  [type] $query   [description]
+     * @param  [type] $id_pais [description]
+     * @return [type]          [description]
+     */
+    public function scopeFromCountry($query, $id_pais)
+    {
+        return $query->where('id_pais', $id_pais);
+    }
 }
