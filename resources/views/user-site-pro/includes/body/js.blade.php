@@ -31,6 +31,9 @@
 <!--  Notifications Plugin    -->
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/bootstrap-notify.js")}}"></script>
 
+<!-- Cropper -->
+<script src="{{ asset("dist/bower_components/cropper/dist/cropper.js") }}"></script>
+
 <!-- Sweet Alert 2 plugin -->
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/sweetalert2.js")}}"></script>
 

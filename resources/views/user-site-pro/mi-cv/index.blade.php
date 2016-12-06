@@ -20,10 +20,8 @@
 $(function(){
 	var startSeccion = window.location.href.lastIndexOf("/") + 1;
 	var pageUrlSeccion = window.location.href.substr(startSeccion);
-	console.log(pageUrlSeccion);
 	$('.list-group a').each(function(){
 		var anchorUrlSeccion = $(this).attr('href').substr($(this).attr('href').lastIndexOf("/") + 1);
-		console.log(anchorUrlSeccion);
 		if (anchorUrlSeccion == pageUrlSeccion){
 			$(this).addClass('active');
 		}
