@@ -19,11 +19,11 @@
 @push('scripts')
 <script>
 
-    $(function(){
+$(function(){
 
-        $('#image').cropper({
-          aspectRatio: 16 / 9,
-          crop: function(e) {
+    $('#image').cropper({
+        aspectRatio: 16 / 9,
+        crop: function(e) {
             // Output the result data for cropping image.
             console.log(e.x);
             console.log(e.y);
@@ -32,10 +32,10 @@
             console.log(e.rotate);
             console.log(e.scaleX);
             console.log(e.scaleY);
-          }
-        });
-
+        }
     });
+
+});
 
 </script>
 @endpush

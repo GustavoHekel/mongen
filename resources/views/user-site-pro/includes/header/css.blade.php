@@ -23,6 +23,7 @@
 
 <!-- Cropper -->
 <link rel="stylesheet" type="text/css" href="{{ asset("dist/bower_components/cropper/dist/cropper.css") }}">
+<link rel="stylesheet" type="text/css" href="{{ asset("dist/bower_components/cropper/dist/main.css") }}">
 
 <!-- Loading -->
 <link rel="stylesheet" type="text/css" href="{{ asset("dist/css/loading.css")}}">

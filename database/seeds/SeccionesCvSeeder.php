@@ -17,11 +17,6 @@ class SeccionesCvSeeder extends Seeder
                 'url' => 'mi-cv/personal',
                 'icono' => 'fa-user'
             ] ,
-            [
-                'descripcion' => 'Foto de perfil',
-                'url' => 'mi-cv/foto-perfil',
-                'icono' => 'fa-camera-retro'
-            ] ,
         	[
                 'descripcion' => 'Estado',
                 'url' => 'mi-cv/estado',
