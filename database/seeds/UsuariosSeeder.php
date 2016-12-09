@@ -23,6 +23,7 @@ class UsuariosSeeder extends Seeder
 				'fecha_vencimiento' => '2100-01-01',
 				'id_pais' => 1,
 				'id_provincia' => 1,
+                'avatar' => 'gustavohekel.jpg',
 				'created_at' => date('Y-m-d H:i:s'),
 				'updated_at' => date('Y-m-d H:i:s')
         	],[
@@ -36,6 +37,7 @@ class UsuariosSeeder extends Seeder
 				'fecha_vencimiento' => '2100-01-01',
 				'id_pais' => 1,
 				'id_provincia' => 1,
+                'avatar' => 'gustavohekel.jpg',
 				'created_at' => date('Y-m-d H:i:s'),
 				'updated_at' => date('Y-m-d H:i:s')
         	]

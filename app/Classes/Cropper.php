@@ -4,7 +4,7 @@ namespace App\Classes;
 
 use Auth;
 
-class Crop
+class Cropper
 {
     private $src;
     private $data;
@@ -48,7 +48,7 @@ class Crop
     private function setFile($file)
     {
         $this->unique = uniqid();
-        $this->new_route = 'dist/img/usuarios/profile-pics/' . Auth::user()->id_usuario . '_' . $this->unique . '.png';
+        $this->new_route = '/dist/img/profile-pics/' . Auth::user()->id_usuario . '_' . $this->unique . '.png';
         $this->new_file = Auth::user()->id_usuario . '_' . $this->unique . '.png';
 
         $errorCode = $file->getError();
@@ -58,14 +58,14 @@ class Crop
 
             if ($type) {
                 $extension = image_type_to_extension($type);
-                $src = base_path().'/public/dist/img/usuarios/profile-pics/' . Auth::user()->id_usuario . '_' . $this->unique . '.png';
+                $src = base_path().'/public/dist/img/profile-pics/' . Auth::user()->id_usuario . '_' . $this->unique . '.png';
 
                 if ($type == IMAGETYPE_GIF || $type == IMAGETYPE_JPEG || $type == IMAGETYPE_PNG) {
                     if (file_exists($src)) {
                         unlink($src);
                     }
 
-                    $result = $file->move(base_path().'/public/dist/img/usuarios/profile-pics/', Auth::user()->id_usuario . '_' . $this->unique . '.png');
+                    $result = $file->move(base_path().'/public/dist/img/profile-pics/', Auth::user()->id_usuario . '_' . $this->unique . '.png');
                     // $result = move_uploaded_file($file->getPathName(), $src);
 
                     if ($result) {
@@ -89,7 +89,7 @@ class Crop
 
     private function setDst()
     {
-        $this->dst = base_path().'/public/dist/img/usuarios/profile-pics/' . Auth::user()->id_usuario . '_' . $this->unique . '.png';
+        $this->dst = base_path().'/public/dist/img/profile-pics/' . Auth::user()->id_usuario . '_' . $this->unique . '.png';
     }
 
     private function crop($src, $dst, $data)

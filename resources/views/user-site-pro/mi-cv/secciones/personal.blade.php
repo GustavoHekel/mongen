@@ -15,7 +15,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Foto de perfil</label>
                             <div class="col-md-9 avatar-view">
-                                <img class="img-responsive img-thumbnail" src="{{ asset("dist/img/profile-pics/" . Auth::user()->avatar) }}">
+                                <img class="img-responsive img-thumbnail" src="{{ asset("dist/img/profile-pics/" . Auth::user()->avatar)}}">
                             </div>
                         </div>
                         <div class="form-group">

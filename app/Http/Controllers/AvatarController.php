@@ -9,7 +9,7 @@ use Auth;
 
 use App\Models\Usuario;
 
-use App\Classes\Crop;
+use App\Classes\Cropper;
 
 class AvatarController extends Controller
 {
@@ -39,9 +39,9 @@ class AvatarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $r)
     {
-        $cropper = new Crop(
+        $cropper = new Cropper(
             ($r->file('avatar_src') !== null) ? $r->file('avatar_src') : null,
             $r->avatar_data,
             ($r->file('avatar_file') !== null) ? $r->file('avatar_file') : null
@@ -49,12 +49,12 @@ class AvatarController extends Controller
 
         $response = array(
           'state'  => 200,
-          'message' => $crop->getMsg(),
-          'result' => $crop->getNewRoute()
+          'message' => $cropper->getMsg(),
+          'result' => $cropper->getNewRoute()
         );
 
         $user = Auth::user();
-        $user->avatar = $crop->getNewFile();
+        $user->avatar = $cropper->getNewFile();
         $user->save();
 
         return response()->json($response);
