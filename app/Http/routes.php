@@ -134,9 +134,8 @@ Route::group(['middleware' => ['web']], function () {
 		Route::put('idiomas/{id_idioma}', 'IdiomaController@update');
 		Route::delete('idiomas/{id_idioma}', 'IdiomaController@destroy');
 
-		// Imagen
-		Route::get('foto-perfil', 'ImagenController@index');
-
+		// Avatar
+		Route::post('avatar', 'AvatarController@store');
 
 	});
 

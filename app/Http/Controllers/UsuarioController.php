@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use App\Models\Usuario\Menu;
 use App\Models\Usuario\Email as CvEmail;
 use App\Models\Usuario\Telefono as CvTelefono;
-
 use App\Models\Usuario;
 
 class UsuarioController extends Controller
