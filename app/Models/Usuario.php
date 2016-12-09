@@ -25,7 +25,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	/**
      * The attributes that should be mutated to dates.
      */
-    protected $dates = ['created_at', 'updated_at', 'fecha_nacimiento'];
+    protected $dates = ['created_at', 'updated_at', 'fecha_nacimiento', 'fecha_vencimiento', 'fecha_validado'];
 
 	/**
      * Traigo el estado actual del usuario con la relación "estado".

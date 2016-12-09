@@ -276,6 +276,7 @@
       if ($.isPlainObject(data) && data.state === 200) {
         if (data.result) {
           this.url = data.result;
+          $('.photo img').attr('src', data.result);
 
           if (this.support.datauri || this.uploaded) {
             this.uploaded = false;

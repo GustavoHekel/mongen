@@ -7,7 +7,7 @@
   <div class="sidebar-wrapper">
         <div class="user">
             <div class="photo">
-                <img src="{{ asset("dist/plugins/light_bootstrap_pro/img/default-avatar.png")}}" />
+                <img src="{{ asset('dist/img/profile-pics/' . Auth::user()->avatar)}}" />
             </div>
             <div class="info">
                 <a data-toggle="collapse" href="#collapseExample" class="collapsed">
