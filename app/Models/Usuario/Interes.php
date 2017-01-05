@@ -27,9 +27,9 @@ class Interes extends Model
      *
      * @param [type] $value [description]
      */
-    public function setNombreAttribute($value)
+    public function setDescripcionAttribute($value)
     {
-        $this->attributes['nombre'] = mb_strtoupper($value);
+        $this->attributes['descripcion'] = mb_strtoupper($value);
     }
 
     /**

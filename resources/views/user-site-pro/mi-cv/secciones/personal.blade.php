@@ -7,7 +7,7 @@
                 <div class="header">
                     <h4 class="title">
                         Datos personales
-                        <a href="/mi-cv/personal" class="btn btn-success pull-right actualizar">Actualizar</a>
+                        <a href="#" class="btn btn-success pull-right update">Actualizar</a>
                     </h4>
                 </div>
                 <div class="content">
@@ -133,12 +133,8 @@
                 </form>
             </div>
         </div>
-    </div><!-- /.modal -->
-
-
+    </div>
 </div>
-
-
 
 @endsection
 
@@ -154,13 +150,13 @@ $(function(){
             data: $('form').serialize(),
             statusCode: {
                 200: function(data) {
-
+                    swal('Felicidades', 'Sus datos fueron actualizados.', 'success');
                 },
                 400: function(data) {
-
+                    console.log(data);
                 },
                 402: function(data) {
-
+                    console.log(data);
                 }
             }
         });

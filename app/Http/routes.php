@@ -91,6 +91,7 @@ Route::group(['middleware' => ['web']], function () {
 
 		// Datos personales
 		Route::get('personal', 'UsuarioController@index');
+		Route::put('personal/{id_usuario}', 'UsuarioController@update');
 
 		// Estudios
 		Route::get('estudios', 'EstudioController@index');

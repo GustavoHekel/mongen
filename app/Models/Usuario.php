@@ -8,6 +8,8 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
+use Carbon\Carbon;
+
 class Usuario extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
 	use Authenticatable, CanResetPassword;
@@ -26,6 +28,29 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
      * The attributes that should be mutated to dates.
      */
     protected $dates = ['created_at', 'updated_at', 'fecha_nacimiento', 'fecha_vencimiento', 'fecha_validado'];
+
+	/****************
+	 * MUTATORS
+	 ***************/
+
+	 /**
+     * Set the user's birth date.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function setFechaNacimientoAttribute($value)
+    {
+        $this->attributes['fecha_nacimiento'] = Carbon::createFromFormat('d/m/Y', $value);
+    }
+
+	 /****************
+ 	 * ACCESSORS
+ 	 ***************/
+
+	/****************
+	 * RELATIONSHIPS
+	 ***************/
 
 	/**
      * Traigo el estado actual del usuario con la relación "estado".

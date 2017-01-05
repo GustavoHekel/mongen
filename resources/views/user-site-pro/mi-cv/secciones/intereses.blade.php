@@ -12,7 +12,6 @@
                 <thead>
                     <tr>
                         <th>Interés</th>
-                        <!-- <th>Nivel</th> -->
                         <th>Acciones</th>
                     </tr>
                 </thead>

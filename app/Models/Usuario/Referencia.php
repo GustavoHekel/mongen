@@ -25,7 +25,8 @@ class Referencia extends Model
      * Devuelve el referente
      * @return Json
      */
-    public function referente(){
+    public function referente()
+    {
     	return $this->hasOne('App\Models\Usuario', 'id_usuario', 'id_referente');
     }
 }
