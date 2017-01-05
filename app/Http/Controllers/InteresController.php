@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Auth;
-use Datatables;
 
 use App\Http\Requests;
 
@@ -14,28 +13,68 @@ use App\Models\Usuario\Interes as CvInteres;
 class InteresController extends Controller
 {
     /**
-     * [getIntereses description]
+     * [getintereses description]
      * @return [type] [description]
      */
-    public function getIntereses(){
-        return view('user-site-pro.mi-cv.secciones.intereses');
+    public function index()
+    {
+        $intereses = CvInteres::fromUser()->orderBy('id_interes', 'asc')->get();
+        $data = [
+            'intereses' => $intereses
+        ];
+
+        return view('user-site-pro.mi-cv.secciones.intereses', $data);
     }
 
     /**
-     * [getInteresesTable description]
-     * @return [type] [description]
+     * [update description]
+     * @param  Request $r        [description]
+     * @param  [type]  $id_interes [description]
+     * @return [type]            [description]
      */
-    public function getInteresesTable(){
-        $interes = CvInteres::where('id_usuario', Auth::user()->id_usuario);
+    public function update(Request $r, $id_interes)
+    {
+        $interes = CvInteres::findOrFail($id_interes);
+        $this->authorize('editar', $interes);
 
-        return Datatables::of($interes)
-            ->addColumn('actions', function($intere){
-                return '
-                <a rel="tooltip" title="Ver" class="btn btn-simple btn-info btn-icon table-action view" data-original-title="View"><i class="fa fa-image"></i></a>
-                <a rel="tooltip" title="Editar" class="btn btn-simple btn-warning btn-icon table-action edit" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                <a rel="tooltip" title="Eliminar" class="btn btn-simple btn-danger btn-icon table-action remove" data-original-title="Remove"><i class="fa fa-remove"></i></a>
-                ';
-            })
-            ->make(true);
+        $interes->nivel = $r->nivel;
+        if ($interes->save()) {
+            return response()->success(['message' => 'Interes updated']);
+        } else {
+            return response()->error(['message' => 'Interes not updated']);
+        }
+    }
+
+    /**
+     * [destroy description]
+     * @param  [type] $id_interes [description]
+     * @return [type]           [description]
+     */
+    public function destroy($id_interes)
+    {
+        $interes = CvInteres::findOrFail($id_interes);
+        if ($interes->delete()) {
+            return response()->success(['message' => 'Interes deleted']);
+        } else {
+            return response()->error(['message' => 'Interes not deleted']);
+        }
+    }
+
+    /**
+     * [store description]
+     * @param  Request $r [description]
+     * @return [type]     [description]
+     */
+    public function store(Request $r)
+    {
+        $interes = new CvInteres;
+        $interes->descripcion = $r->nombre;
+        // $interes->nivel = $r->nivel;
+        $interes->id_usuario = $r->user()->id_usuario;
+        if ($interes->save()) {
+            return response()->created(['message' => 'Interes created', 'data' => $interes]);
+        } else {
+            return response()->error(['message' => 'Interes not created']);
+        }
     }
 }

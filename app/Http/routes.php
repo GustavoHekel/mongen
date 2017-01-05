@@ -134,6 +134,12 @@ Route::group(['middleware' => ['web']], function () {
 		Route::put('idiomas/{id_idioma}', 'IdiomaController@update');
 		Route::delete('idiomas/{id_idioma}', 'IdiomaController@destroy');
 
+		// Intereses
+		Route::get('intereses', 'InteresController@index');
+		Route::post('intereses', 'InteresController@store');
+		Route::put('intereses/{id_interes}', 'InteresController@update');
+		Route::delete('intereses/{id_interes}', 'InteresController@destroy');
+
 		// Avatar
 		Route::post('avatar', 'AvatarController@store');
 
@@ -141,9 +147,7 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('provincias/{id_pais}', 'ProvinciaController@index');
 
-	// Intereses
-	Route::get('mi-cv/intereses', 'InteresController@getIntereses');
-	Route::get('mi-cv/intereses/listado', 'InteresController@getInteresesTable');
+
 
 	// Referencias
 	Route::get('mi-cv/referencias', 'ReferenciaController@getReferencias');

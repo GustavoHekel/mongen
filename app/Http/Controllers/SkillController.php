@@ -16,8 +16,8 @@ class SkillController extends Controller
      * [getSkills description]
      * @return [type] [description]
      */
-    public function index(){
-
+    public function index()
+    {
         $skills = CvSkill::fromUser()->orderBy('id_skill', 'asc')->get();
         $data = [
             'skills' => $skills

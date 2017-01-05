@@ -19,6 +19,7 @@ class AuthServiceProvider extends ServiceProvider
         'App\Models\Usuario\Idioma' => 'App\Policies\IdiomaPolicy',
         'App\Models\Usuario\Curso' => 'App\Policies\CursoPolicy',
         'App\Models\Usuario\Estado' => 'App\Policies\EstadoPolicy',
+        'App\Models\Usuario\Interes' => 'App\Policies\InteresPolicy',
     ];
 
     /**
