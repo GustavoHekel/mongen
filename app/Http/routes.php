@@ -146,9 +146,10 @@ Route::group(['middleware' => ['web']], function () {
 
 	});
 
+	// URL
+	Route::get('url/{url}', 'UrlController@show');
+
 	Route::get('provincias/{id_pais}', 'ProvinciaController@index');
-
-
 
 	// Referencias
 	Route::get('mi-cv/referencias', 'ReferenciaController@getReferencias');

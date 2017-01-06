@@ -11,7 +11,7 @@
                     </h4>
                 </div>
                 <div class="content">
-                    <form class="form-horizontal">
+                    <form id="personal-form" class="form-horizontal">
                         <div class="form-group">
                             <label class="col-md-3 control-label">Foto de perfil</label>
                             <div class="col-md-9 avatar-view">
@@ -27,7 +27,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Fecha de nacimiento</label>
                             <div class="col-md-9">
-                                <input type="text" name="fecha_nacimiento" placeholder="Fecha de nacimiento" class="form-control" value="{{ Auth::user()->fecha_nacimiento->format('d/m/Y')}}">
+                                <input type="text" name="fecha_nacimiento" placeholder="Fecha de nacimiento" class="form-control datepicker" value="{{ Auth::user()->fecha_nacimiento->format('d/m/Y')}}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -62,7 +62,7 @@
                             <label class="col-md-3 control-label">URL personalizada</label>
                             <div class="col-md-9">
                                 @if (Auth::user()->id_plan == 1)
-                                <input type="text" name="url" placeholder="URL" class="form-control" value="{{ Auth::user()->url }}">
+                                <input type="text" name="url" placeholder="URL" class="form-control user-url" value="{{ Auth::user()->url }}">
                                 @else
                                 <input disabled type="text" name="url" placeholder="URL" class="form-control" value="{{ Auth::user()->url }}">
                                 @endif
@@ -142,26 +142,97 @@
 <script>
 $(function(){
 
-    $('.update').click(function(event){
-        event.preventDefault();
-        $.ajax({
-            method: 'put',
-            url: 'personal/{{ Auth::user()->id_usuario}}',
-            data: $('form').serialize(),
-            statusCode: {
-                200: function(data) {
-                    swal('Felicidades', 'Sus datos fueron actualizados.', 'success');
-                },
-                400: function(data) {
-                    console.log(data);
-                },
-                402: function(data) {
-                    console.log(data);
-                }
-            }
-        });
-    })
+    $('.datepicker').datetimepicker({
+        format: 'DD/MM/YYYY',
+        icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar",
+            up: "fa fa-chevron-up",
+            down: "fa fa-chevron-down",
+            previous: 'fa fa-chevron-left',
+            next: 'fa fa-chevron-right',
+            today: 'fa fa-screenshot',
+            clear: 'fa fa-trash',
+            close: 'fa fa-remove'
+        }
+     });
 
+     $('#personal-form').validate({
+         rules: {
+            nombre: {
+                required: true
+            },
+            fecha_nacimiento: {
+                required: true,
+                date: true
+            },
+            id_pais: {
+                required: true
+            },
+            id_provincia: {
+                required: true
+            },
+            url: {
+                required: true
+            }
+         },
+         messages: {
+            nombre: {
+                required: 'Su nombre es requerido'
+            },
+            fecha_nacimiento: {
+                required: 'La fecha de nacimiento es requerida',
+                date: 'Debe ser una fecha válida'
+            },
+            url: {
+                required: 'Especifique una URL personalizada'
+            }
+         },
+         submitHandler: function (form) {
+             $.ajax({
+                 method: 'put',
+                 url: 'personal/{{ Auth::user()->id_usuario}}',
+                 data: $(form).serialize(),
+                 statusCode: {
+                     200: function(data) {
+                         swal('Felicidades', 'Sus datos fueron actualizados.', 'success');
+                     },
+                     400: function(data) {
+                         console.log(data);
+                     },
+                     402: function(data) {
+                         console.log(data);
+                     }
+                 }
+             });
+         }
+     });
+
+    $('.update').click(function(event){
+        $('#personal-form').submit();
+    });
+
+    $('.user-url').keyup(function(e){
+        url = $(this);
+
+        if (url.length != 0) {
+            $.ajax({
+                method: 'get',
+                url: '/url/' + url.val(),
+                global: false,
+                success: function(data) {
+                    url.removeClass('error');
+                },
+                error: function(data) {
+                    url.addClass('error');
+                    toastr.error('URL en uso');
+                }
+
+            });
+        } else {
+            url.removeClass('error');
+        }
+    });
 });
 </script>
 @endpush

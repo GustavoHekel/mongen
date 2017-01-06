@@ -33,7 +33,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	 * MUTATORS
 	 ***************/
 
-	 /**
+	/**
      * Set the user's birth date.
      *
      * @param  string  $value
@@ -44,6 +44,28 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
         $this->attributes['fecha_nacimiento'] = Carbon::createFromFormat('d/m/Y', $value);
     }
 
+	/**
+     * Set the user's name.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function setNombreAttribute($value)
+    {
+        $this->attributes['nombre'] = mb_strtoupper($value);
+    }
+
+	/**
+     * Set the user's url.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function setUrlAttribute($value)
+    {
+        $this->attributes['url'] = mb_strtolower($value);
+    }
+
 	 /****************
  	 * ACCESSORS
  	 ***************/
@@ -51,7 +73,6 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	/****************
 	 * RELATIONSHIPS
 	 ***************/
-
 	/**
      * Traigo el estado actual del usuario con la relación "estado".
      * @param null
@@ -84,5 +105,13 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	public function provincia()
 	{
 		return $this->hasOne('App\Models\Provincia', 'id_provincia', 'id_provincia');
+	}
+
+	/****************
+	 * SCOPES
+	 ***************/
+	public function scopeWhereUrl($query, $url)
+	{
+		return $query->where('url', $url);
 	}
 }
