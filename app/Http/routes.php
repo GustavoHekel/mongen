@@ -141,6 +141,12 @@ Route::group(['middleware' => ['web']], function () {
 		Route::put('intereses/{id_interes}', 'InteresController@update');
 		Route::delete('intereses/{id_interes}', 'InteresController@destroy');
 
+		// Email
+		Route::get('emails', 'EmailController@index');
+
+		// Teléfono
+		Route::get('telefonos', 'TelefonoController@index');
+
 		// Avatar
 		Route::post('avatar', 'AvatarController@store');
 

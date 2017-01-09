@@ -89,21 +89,22 @@ $(function(){
 		$('#anio-hasta, #mes-hasta').prop('disabled', function(i, v) { return !v; });
 	});
 
-
 	$('#edit-trabajo').validate({
-		lugar: {
-			required: true,
-			maxlength: 255
-		},
-		puesto: {
-			required: true,
-			maxlength: 255
-		},
-		mes_desde: {
-			required: true
-		},
-		anio_desde: {
-			required: true
+		rules: {
+			lugar: {
+				required: true,
+				maxlength: 255
+			},
+			puesto: {
+				required: true,
+				maxlength: 255
+			},
+			mes_desde: {
+				required: true
+			},
+			anio_desde: {
+				required: true
+			}
 		},
 		submitHandler: function(form) {
 			$.ajax({

@@ -64,9 +64,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="footer">
-
-				</div>
 			</form>
 		</div>
 	</div>
@@ -87,19 +84,21 @@ $(function(){
 
 
 	$('#new-curso').validate({
-		instituto: {
-			required: true,
-			maxlength: 255
-		},
-		carrera: {
-			required: true,
-			maxlength: 255
-		},
-		mes_desde: {
-			required: true
-		},
-		anio_desde: {
-			required: true
+		rules: {
+			instituto: {
+				required: true,
+				maxlength: 255
+			},
+			nombre: {
+				required: true,
+				maxlength: 255
+			},
+			mes_desde: {
+				required: true
+			},
+			anio_desde: {
+				required: true
+			}
 		},
 		submitHandler: function(form) {
 			$.ajax({
@@ -116,7 +115,7 @@ $(function(){
 						window.location.href = '/mi-cv/cursos';
 					});
 				}
-			})
+			});
 		}
 	});
 

@@ -16,10 +16,6 @@ class CvEmailsSeeder extends Seeder
                 'id_usuario' => 1,
                 'email' => 'gustavo.hekel@gmail.com'
             ],
-            [
-                'id_usuario' => 1,
-                'email' => 'gdhekel@gmail.com'
-            ]
         ]);
     }
 }

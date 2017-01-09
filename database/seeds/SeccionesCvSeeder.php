@@ -57,8 +57,18 @@ class SeccionesCvSeeder extends Seeder
         		'url' => 'mi-cv/referencias',
         		'icono' => 'fa-comments-o'
     		] ,
-        	[
-        		'descripcion' => 'Contacto',
+        	// [
+        	// 	'descripcion' => 'Contacto',
+        	// 	'url' => 'mi-cv/contacto',
+        	// 	'icono' => 'fa-mobile'
+    		// ],
+    		[
+        		'descripcion' => 'Email',
+        		'url' => 'mi-cv/emails',
+        		'icono' => 'fa-envelope-o'
+    		],
+    		[
+        		'descripcion' => 'Teléfonos',
         		'url' => 'mi-cv/contacto',
         		'icono' => 'fa-mobile'
     		],

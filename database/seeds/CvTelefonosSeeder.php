@@ -17,16 +17,6 @@ class CvTelefonosSeeder extends Seeder
                 'id_tipo_telefono' => 1,
                 'numero' => '541130121510'
             ],
-            [
-                'id_usuario' => 1,
-                'id_tipo_telefono' => 2,
-                'numero' => '01145821442'
-            ],
-            [
-                'id_usuario' => 1,
-                'id_tipo_telefono' => 2,
-                'numero' => '01145840316'
-            ]
         ]);
     }
 }

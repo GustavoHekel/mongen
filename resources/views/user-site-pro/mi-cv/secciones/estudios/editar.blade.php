@@ -89,21 +89,22 @@ $(function(){
 		$('#anio-hasta, #mes-hasta').prop('disabled', function(i, v) { return !v; });
 	});
 
-
 	$('#edit-estudio').validate({
-		instituto: {
-			required: true,
-			maxlength: 255
-		},
-		carrera: {
-			required: true,
-			maxlength: 255
-		},
-		mes_desde: {
-			required: true
-		},
-		anio_desde: {
-			required: true
+		rules: {
+			instituto: {
+				required: true,
+				maxlength: 255
+			},
+			carrera: {
+				required: true,
+				maxlength: 255
+			},
+			mes_desde: {
+				required: true
+			},
+			anio_desde: {
+				required: true
+			}
 		},
 		submitHandler: function(form) {
 			$.ajax({
