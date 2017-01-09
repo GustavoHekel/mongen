@@ -142,6 +142,9 @@
 <script>
 $(function(){
 
+    var userUrl = $('.user-url').val();
+    var regExp = /[^a-zA-Z0-9-_]/;
+
     $('.datepicker').datetimepicker({
         format: 'DD/MM/YYYY',
         icons: {
@@ -155,16 +158,23 @@ $(function(){
             clear: 'fa fa-trash',
             close: 'fa fa-remove'
         }
-     });
+    });
 
-     $('#personal-form').validate({
+    $('.datepicker').inputmask({
+        mask: '99/99/9999'
+    });
+
+    $.validator.addMethod("custom", function(value, element, param) {
+        return ! param.test(value)
+    }, 'No se admiten carateres especiales');
+
+    $('#personal-form').validate({
          rules: {
             nombre: {
                 required: true
             },
             fecha_nacimiento: {
-                required: true,
-                date: true
+                required: true
             },
             id_pais: {
                 required: true
@@ -173,7 +183,8 @@ $(function(){
                 required: true
             },
             url: {
-                required: true
+                required: true,
+                custom: regExp
             }
          },
          messages: {
@@ -185,7 +196,8 @@ $(function(){
                 date: 'Debe ser una fecha válida'
             },
             url: {
-                required: 'Especifique una URL personalizada'
+                required: 'Especifique una URL personalizada',
+                pattern: 'No se permiten caracteres especiales'
             }
          },
          submitHandler: function (form) {
@@ -213,9 +225,15 @@ $(function(){
     });
 
     $('.user-url').keyup(function(e){
-        url = $(this);
+        var key = e.key;
+        var patt = regExp;
+        var url = $(this);
 
-        if (url.length != 0) {
+        if ((! patt.test(key)) && (! patt.test($(this).val()))) {
+            return false;
+        }
+
+        if (url.length != 0 && url.val() != userUrl) {
             $.ajax({
                 method: 'get',
                 url: '/url/' + url.val(),

@@ -5,8 +5,10 @@
 		<div class="card">
 			<form class="form-horizontal" id="new-trabajo">
 				<div class="header">
-					Nuevo trabajo
-					<input type="submit" class="btn btn-warning pull-right save-edit" value="Guardar">
+					<h4 class="title">
+						Nuevo trabajo
+						<input type="submit" class="btn btn-warning pull-right" value="Guardar">
+					</h4>
 				</div>
 				<div class="content">
 					<div class="form-group">
@@ -64,9 +66,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="footer">
-
-				</div>
 			</form>
 		</div>
 	</div>
@@ -87,19 +86,21 @@ $(function(){
 
 
 	$('#new-trabajo').validate({
-		lugar: {
-			required: true,
-			maxlength: 255
-		},
-		puesto: {
-			required: true,
-			maxlength: 255
-		},
-		mes_desde: {
-			required: true
-		},
-		anio_desde: {
-			required: true
+		rules: {
+			lugar: {
+				required: true,
+				maxlength: 255
+			},
+			puesto: {
+				required: true,
+				maxlength: 255
+			},
+			mes_desde: {
+				required: true
+			},
+			anio_desde: {
+				required: true
+			}
 		},
 		submitHandler: function(form) {
 			$.ajax({
@@ -116,7 +117,7 @@ $(function(){
 						window.location.href = '/mi-cv/trabajos';
 					});
 				}
-			})
+			});
 		}
 	});
 

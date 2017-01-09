@@ -2,13 +2,18 @@
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery.min.js")}}"></script>
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery-ui.min.js")}}"></script>
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/bootstrap.min.js")}}"></script>
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
 
 <!-- Defaults y funciones -->
 <script src="{{ asset("dist/js/mongen.js")}}"></script>
 
 <!--  Forms Validations Plugin -->
-<script src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery.validate.min.js")}}"></script>
+<!-- <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery.validate.min.js")}}"></script> -->
+<script src="{{ asset("dist/bower_components/jquery-validation/dist/jquery.validate.min.js")}}"></script>
+<script src="{{ asset("dist/bower_components/jquery-validation/dist/additional-methods.js")}}"></script>
+
+<!-- jQuery input mask -->
+<script src="{{ asset("dist/bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.js")}}"></script>
 
 <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/moment.min.js")}}"></script>
