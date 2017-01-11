@@ -143,6 +143,7 @@ Route::group(['middleware' => ['web']], function () {
 
 		// Email
 		Route::get('emails', 'EmailController@index');
+		Route::put('emails/{id_email}', 'EmailController@update');
 
 		// Teléfono
 		Route::get('telefonos', 'TelefonoController@index');

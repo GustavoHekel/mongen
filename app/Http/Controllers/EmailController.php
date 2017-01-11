@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Models\Usuario\Email;
+use App\Models\Usuario\Email as CvEmail;
 
 class EmailController extends Controller
 {
@@ -17,21 +17,11 @@ class EmailController extends Controller
      */
     public function index()
     {
-        $email = Email::fromUser()->first();
+        $email = CvEmail::fromUser()->first();
         $data = [
             'email' => $email
         ];
         return view('user-site-pro.mi-cv.secciones.emails', $data);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -57,17 +47,6 @@ class EmailController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -76,7 +55,15 @@ class EmailController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cv = CvEmail::findOrFail($id);
+        $cv->email = $request->email_contacto ?: $cv->email;
+        $cv->email_registro = $request->email_default ?: 0;
+        $cv->solo_email = $request->solo_email ?: 0;
+        if ($cv->save()) {
+            return response()->success(['data' => 'Datos actualizados']);
+        } else {
+            return response()->error(['data' => 'Error al actualizar datos']);
+        }
     }
 
     /**
