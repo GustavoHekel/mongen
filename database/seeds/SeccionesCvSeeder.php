@@ -52,11 +52,11 @@ class SeccionesCvSeeder extends Seeder
         		'url' => 'mi-cv/cursos',
         		'icono' => 'fa-book'
     		] ,
-        	[
-        		'descripcion' => 'Referencias',
-        		'url' => 'mi-cv/referencias',
-        		'icono' => 'fa-comments-o'
-    		] ,
+        	// [
+        	// 	'descripcion' => 'Referencias',
+        	// 	'url' => 'mi-cv/referencias',
+        	// 	'icono' => 'fa-comments-o'
+    		// ] ,
         	// [
         	// 	'descripcion' => 'Contacto',
         	// 	'url' => 'mi-cv/contacto',
@@ -71,6 +71,11 @@ class SeccionesCvSeeder extends Seeder
         		'descripcion' => 'Teléfonos',
         		'url' => 'mi-cv/telefonos',
         		'icono' => 'fa-mobile'
+    		],
+            [
+        		'descripcion' => 'Redes sociales',
+        		'url' => 'mi-cv/redes',
+        		'icono' => 'fa-facebook'
     		],
             [
                 'descripcion' => 'Modelo CV',
