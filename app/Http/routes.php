@@ -147,6 +147,8 @@ Route::group(['middleware' => ['web']], function () {
 
 		// Teléfono
 		Route::get('telefonos', 'TelefonoController@index');
+		Route::post('telefonos', 'TelefonoController@store');
+		Route::put('telefonos/{id_telefono}', 'TelefonoController@update');
 
 		// Avatar
 		Route::post('avatar', 'AvatarController@store');
@@ -162,8 +164,4 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('mi-cv/referencias', 'ReferenciaController@getReferencias');
 	Route::get('mi-cv/referencias/listado', 'ReferenciaController@getReferenciasTable');
 	Route::get('mi-cv/referencias/{id_referencia}', 'ReferenciaController@getReferencia');
-
-	// Contacto
-	Route::get('mi-cv/contacto', 'UsuarioController@getContacto');
-
 });

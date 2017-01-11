@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use Auth;
+
+use App\Models\TipoTelefono;
+use App\Models\Usuario\Telefono as CvTelefono;
+
 class TelefonoController extends Controller
 {
     /**
@@ -15,7 +20,12 @@ class TelefonoController extends Controller
      */
     public function index()
     {
-        //
+        $telefono = CvTelefono::fromUser()->first();
+        $data = [
+            'telefono' => $telefono
+        ];
+
+        return view('user-site-pro.mi-cv.secciones.telefonos', $data);
     }
 
     /**
@@ -70,7 +80,15 @@ class TelefonoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cv = CvTelefono::findOrNew($id);
+        $cv->id_usuario = Auth::user()->id_usuario;
+        $cv->id_tipo_telefono = 1;
+        $cv->numero = $request->telefono_contacto;
+        if ($cv->save()) {
+            return response()->success(['data' => $cv]);
+        } else {
+            return response()->error(['data' => 'Error al actualizar datos']);
+        }
     }
 
     /**

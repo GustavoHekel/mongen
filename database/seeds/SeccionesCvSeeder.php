@@ -69,12 +69,12 @@ class SeccionesCvSeeder extends Seeder
     		],
     		[
         		'descripcion' => 'Teléfonos',
-        		'url' => 'mi-cv/contacto',
+        		'url' => 'mi-cv/telefonos',
         		'icono' => 'fa-mobile'
     		],
             [
                 'descripcion' => 'Modelo CV',
-                'url' => 'mi-cv/modelo',
+                'url' => 'mi-cv/modelos',
                 'icono' => 'fa-file-text'
             ] ,
         ]);
