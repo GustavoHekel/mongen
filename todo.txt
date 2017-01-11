@@ -1,3 +1,4 @@
-- jQuery validation en todos los formularios
-- Verificar que la url sea única
++ jQuery validation en todos los formularios
++ Verificar que la url sea única
 - FORM REQUESTS
+- LIMITAR A 5 LOS DATATABLES
