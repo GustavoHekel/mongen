@@ -14,6 +14,12 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 {
 	use Authenticatable, CanResetPassword;
 
+	/*
+    |--------------------------------------------------------------------------
+    | Properties
+    |--------------------------------------------------------------------------
+    */
+
     /**
      * The table associated with the model.
      */
@@ -29,9 +35,11 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
      */
     protected $dates = ['created_at', 'updated_at', 'fecha_nacimiento', 'fecha_vencimiento', 'fecha_validado'];
 
-	/****************
-	 * MUTATORS
-	 ***************/
+	/*
+    |--------------------------------------------------------------------------
+    | Mutators
+    |--------------------------------------------------------------------------
+    */
 
 	/**
      * Set the user's birth date.
@@ -66,13 +74,18 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
         $this->attributes['url'] = mb_strtolower($value);
     }
 
-	 /****************
- 	 * ACCESSORS
- 	 ***************/
+	/*
+	|--------------------------------------------------------------------------
+	| Acessors
+	|--------------------------------------------------------------------------
+	*/
 
-	/****************
-	 * RELATIONSHIPS
-	 ***************/
+	/*
+    |--------------------------------------------------------------------------
+    | Relationships
+    |--------------------------------------------------------------------------
+    */
+
 	/**
      * Traigo el estado actual del usuario con la relación "estado".
      * @param null
@@ -107,9 +120,11 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 		return $this->hasOne('App\Models\Provincia', 'id_provincia', 'id_provincia');
 	}
 
-	/****************
-	 * SCOPES
-	 ***************/
+	/*
+    |--------------------------------------------------------------------------
+    | Scopes
+    |--------------------------------------------------------------------------
+    */
 	public function scopeWhereUrl($query, $url)
 	{
 		return $query->where('url', $url);

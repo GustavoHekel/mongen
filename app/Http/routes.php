@@ -83,6 +83,8 @@ Route::group(['middleware' => ['web']], function () {
 	 * MI CV
 	 */
  	Route::get('mi-cv', 'CurriculumController@index');
+	Route::get('{url}', 'CurriculumController@show');
+
 	Route::group(['prefix' => 'mi-cv'], function () {
 
 		// Estado
