@@ -13,14 +13,14 @@ class Red extends Model
      *
      * @var string
      */
-    protected $table = 'cvs.intereses';
+    protected $table = 'cvs.redes_sociales';
 
     /**
 	 * The table's primary key
 	 *
 	 * @var string
 	 */
-	protected $primaryKey = 'id_interes';
+	protected $primaryKey = 'id_red_usuario';
 
     /**
      * [setFacebookAttribute description]
