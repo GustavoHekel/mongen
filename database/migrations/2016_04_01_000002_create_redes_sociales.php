@@ -12,12 +12,12 @@ class CreateRedesSociales extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.redes_sociales', function (Blueprint $table) {
-            $table->increments('id_red');
-            $table->string('nombre' , 255);
-            $table->string('icono' , 255);
-            // $table->timestamps();
-        });
+        // Schema::create('sistema.redes_sociales', function (Blueprint $table) {
+        //     $table->increments('id_red');
+        //     $table->string('nombre' , 255);
+        //     $table->string('icono' , 255);
+        //     // $table->timestamps();
+        // });
     }
 
     /**
@@ -27,6 +27,6 @@ class CreateRedesSociales extends Migration
      */
     public function down()
     {
-        Schema::drop('sistema.redes_sociales');
+        // Schema::drop('sistema.redes_sociales');
     }
 }

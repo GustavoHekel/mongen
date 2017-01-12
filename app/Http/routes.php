@@ -147,8 +147,10 @@ Route::group(['middleware' => ['web']], function () {
 
 		// Teléfono
 		Route::get('telefonos', 'TelefonoController@index');
-		Route::post('telefonos', 'TelefonoController@store');
 		Route::put('telefonos/{id_telefono}', 'TelefonoController@update');
+
+		// Red
+		Route::get('redes', 'RedesController@index');
 
 		// Avatar
 		Route::post('avatar', 'AvatarController@store');
