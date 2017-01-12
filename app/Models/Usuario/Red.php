@@ -8,6 +8,12 @@ use Auth;
 
 class Red extends Model
 {
+    /*
+    |--------------------------------------------------------------------------
+    | Properties
+    |--------------------------------------------------------------------------
+    */
+
     /**
      * The table associated with the model.
      *
@@ -22,13 +28,19 @@ class Red extends Model
 	 */
 	protected $primaryKey = 'id_red_usuario';
 
+    /*
+    |--------------------------------------------------------------------------
+    | Mutators
+    |--------------------------------------------------------------------------
+    */
+
     /**
      * [setFacebookAttribute description]
      * @param [type] $value [description]
      */
     public function setFacebookAttribute($value)
     {
-        $this->attributes['facebook'] = mb_strtoupper($value);
+        $this->attributes['facebook'] = mb_strtolower($value);
     }
 
     /**
@@ -37,7 +49,7 @@ class Red extends Model
      */
     public function setTwitterAttribute($value)
     {
-        $this->attributes['twitter'] = mb_strtoupper($value);
+        $this->attributes['twitter'] = mb_strtolower($value);
     }
 
     /**
@@ -46,7 +58,7 @@ class Red extends Model
      */
     public function setLinkedinAttribute($value)
     {
-        $this->attributes['linkedin'] = mb_strtoupper($value);
+        $this->attributes['linkedin'] = mb_strtolower($value);
     }
 
     /**
@@ -55,7 +67,7 @@ class Red extends Model
      */
     public function setGoogleAttribute($value)
     {
-        $this->attributes['google'] = mb_strtoupper($value);
+        $this->attributes['google'] = mb_strtolower($value);
     }
 
     /**
@@ -64,8 +76,14 @@ class Red extends Model
      */
     public function setGithubAttribute($value)
     {
-        $this->attributes['github'] = mb_strtoupper($value);
+        $this->attributes['github'] = mb_strtolower($value);
     }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Query scopes
+    |--------------------------------------------------------------------------
+    */
 
     /**
      * [scopeFromUser description]

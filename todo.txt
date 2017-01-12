@@ -2,3 +2,4 @@
 + Verificar que la url sea única
 - FORM REQUESTS
 - LIMITAR A 5 LOS DATATABLES
+- PLACEHOLDER PARA SECCION DE CV

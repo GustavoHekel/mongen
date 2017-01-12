@@ -24,7 +24,6 @@ class EstadoController extends Controller
      */
     public function index()
     {
-        Session::put('estados', Estado::orderBy('id_estado','desc')->get());
         $estado_usuario = CvEstado::fromUser()->first();
         $data = [
             'estado_usuario' => $estado_usuario
