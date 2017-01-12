@@ -153,6 +153,9 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('redes', 'RedController@index');
 		Route::put('redes/{id_red_usuario}', 'RedController@update');
 
+		// Modelos
+		Route::get('modelos', 'ModeloController@index');
+
 		// Avatar
 		Route::post('avatar', 'AvatarController@store');
 
@@ -161,10 +164,6 @@ Route::group(['middleware' => ['web']], function () {
 	// URL
 	Route::get('url/{url}', 'UrlController@show');
 
+	// Provincias
 	Route::get('provincias/{id_pais}', 'ProvinciaController@index');
-
-	// Referencias
-	Route::get('mi-cv/referencias', 'ReferenciaController@getReferencias');
-	Route::get('mi-cv/referencias/listado', 'ReferenciaController@getReferenciasTable');
-	Route::get('mi-cv/referencias/{id_referencia}', 'ReferenciaController@getReferencia');
 });

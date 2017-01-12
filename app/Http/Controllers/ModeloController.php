@@ -3,17 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Http\Requests;
 
-use Session;
-use Cache;
-use Auth;
-
-use App\Models\Modulo;
-use App\Models\Pais;
-use App\Models\Provincia;
-
-class DashboardController extends Controller
+class ModeloController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,16 +15,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $paises = Cache::remember('paises', 120, function() {
-            return Pais::all();
-        });
-
-        $provincias = Cache::remember('provincias', 120, function() {
-            return Provincia::fromCountry(Auth::user()->id_pais)->get();
-        });
-
-        Session::put('modulos', Modulo::all());
-        return view('user-site-pro.dashboard.index');
+        return view('user-site-pro.mi-cv.secciones.modelos');
     }
 
     /**
