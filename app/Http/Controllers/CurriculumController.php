@@ -30,10 +30,18 @@ class CurriculumController extends Controller
      */
     public function show($url)
     {
-        $user = Usuario::whereUrl($url)->first();
+        $user = Usuario::with([
+                'estudios',
+                'red'
+            ])
+            ->whereUrl($url)
+            ->first();
+
         $data = [
             'user' => $user
         ];
+
+        // return response()->json($data);
         return view('cvs.linkedin', $data);
     }
 }

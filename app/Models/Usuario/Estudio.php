@@ -11,6 +11,12 @@ class Estudio extends Model
 {
     use SoftDeletes;
 
+    /*
+    |--------------------------------------------------------------------------
+    | Properties
+    |--------------------------------------------------------------------------
+    */
+
     /**
      * The table associated with the model.
      *
@@ -33,6 +39,19 @@ class Estudio extends Model
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = ['year_from', 'year_to'];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Mutators
+    |--------------------------------------------------------------------------
+    */
+
+    /**
      * Set the institute attribute
      *
      * @param string $value institute
@@ -51,6 +70,36 @@ class Estudio extends Model
     {
         $this->attributes['carrera'] = mb_strtoupper($value);
     }
+
+    /*
+	|--------------------------------------------------------------------------
+	| Acessors
+	|--------------------------------------------------------------------------
+	*/
+
+    /**
+     * [getFromAttribute description]
+     * @return [type] [description]
+     */
+    public function getYearFromAttribute()
+    {
+        return $this->attributes['year_from'] = substr($this->desde, 0, 4);
+    }
+
+    /**
+     * [getYearToAttribute description]
+     * @return [type] [description]
+     */
+    public function getYearToAttribute()
+    {
+        return $this->attributes['year_to'] = substr($this->hasta, 0, 4) ?: null;
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Scopes
+    |--------------------------------------------------------------------------
+    */
 
     /**
      * [scopeFromUser description]

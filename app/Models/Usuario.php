@@ -88,20 +88,24 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 
 	/**
      * Traigo el estado actual del usuario con la relación "estado".
-     * @param null
-     * @return null
      */
     public function estado(){
     	return $this->hasOne('App\Models\Usuario\Estado', 'id_usuario', 'id_usuario');
     }
 
+	/**
+	 * Traigo las redes sociales del usuario
+	 */
+	public function red()
+	{
+		return $this->hasOne('App\Models\Usuario\Red', 'id_usuario', 'id_usuario');
+	}
+
     /**
      * Traigo los estudios del usuario con la relación "estudios".
-     * @param null
-     * @return null
      */
     public function estudios(){
-        return $this->hasMany('App\Models\Usuario\Estudio', 'id_usuario', 'id_usuario');
+        return $this->hasMany('App\Models\Usuario\Estudio', 'id_usuario', 'id_usuario')->orderBy('id_estudio', 'desc');
     }
 
 	/**

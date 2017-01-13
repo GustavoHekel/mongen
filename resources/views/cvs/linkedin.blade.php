@@ -16,8 +16,8 @@
 
                             <!-- FOTO DE PERFIL -->
                             <div class="row">
-                                <div class="col-md-12">
-                                    <img class="img-responsive img-thumbnail" src="{{ asset("dist/img/profile-pics/" . $user->avatar)}}">
+                                <div class="col-md-12 no-padding">
+                                    <img class="img-responsive" src="{{ asset("dist/img/profile-pics/" . $user->avatar)}}">
                                 </div>
                             </div>
 
@@ -30,9 +30,36 @@
                             </div>
 
                             <!-- EDUCACION -->
-                            <div class="row">
+                            <div class="row studies">
                                 <div class="col-md-12">
+                                    <p class="section">EDUCACIÓN</p>
+                                    <br>
+                                    @foreach($user->estudios as $estudio)
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p class="period">{{ $estudio->year_from }} - {{ $estudio->year_to or 'Actualidad'}}</p>
+                                            <p class="career">{{ $estudio->carrera }}</p>
+                                            <p class="institute">{{ $estudio->instituto }}</p>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    @endforeach
 
+                                </div>
+                            </div>
+
+                            <div class="row social-networks">
+                                <div class="col-md-12">
+                                    <p class="section">REDES SOCIALES</p>
+                                    <br>
+                                    @foreach($user->red->redes as $red => $link)
+                                        @if ($link != '')
+                                        <p>
+                                            <span class="network">{{ $red }}:</span>
+                                            <span class="link">{{ $link }}</span>
+                                        </p>
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
 

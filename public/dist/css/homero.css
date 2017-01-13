@@ -1,5 +1,6 @@
-.col-md-12 {
-    padding: 5px !important;
+.no-padding {
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .img-responsive {
@@ -10,6 +11,25 @@
     background-color: #dcddde;
 }
 
+.sidebar p {
+    margin-bottom: 7px;
+}
+
+.sidebar hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #a7a9ac;
+}
+
+.sidebar .section {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    border-bottom: solid 5px #31afd8;
+}
+
 .main-container {
     background-color: #f1f2f2;
 }
@@ -18,10 +38,44 @@
     background-color: #69a9c5;
     color: white;
     padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .my-data .name {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.my-data .ocupation {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.studies, .social-networks {
+    padding-left: 20px;
+}
+
+.studies .period, .studies .career {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.studies .institute {
+    text-transform: capitalize;
+    font-size: 11px;
+}
+
+.social-networks .network {
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.social-networks .link {
+    font-size: 11px;
 }

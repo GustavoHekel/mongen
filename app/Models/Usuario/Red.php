@@ -28,6 +28,13 @@ class Red extends Model
 	 */
 	protected $primaryKey = 'id_red_usuario';
 
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = ['redes'];
+
     /*
     |--------------------------------------------------------------------------
     | Mutators
@@ -77,6 +84,29 @@ class Red extends Model
     public function setGithubAttribute($value)
     {
         $this->attributes['github'] = mb_strtolower($value);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Accessor
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * [redes description]
+     * @return [type] [description]
+     */
+    public function getRedesAttribute()
+    {
+        $redes = [
+            'facebook' => $this->facebook,
+            'twitter' => $this->twitter,
+            'linkedin' => $this->linkedin,
+            'google' => $this->google,
+            'github' => $this->github
+        ];
+
+        return $this->attributes['redes'] = json_decode(json_encode($redes));
     }
 
     /*
