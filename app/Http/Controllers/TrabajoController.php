@@ -37,7 +37,7 @@ class TrabajoController extends Controller
      * [getTrabajosTable description]
      * @return [type] [description]
      */
-    public function list()
+    public function table()
     {
         $trabajos = CvTrabajo::fromUser();
 
