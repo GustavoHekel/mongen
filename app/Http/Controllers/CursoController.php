@@ -35,7 +35,8 @@ class CursoController extends Controller
      * Devuelve el listado de cursos para un usuario determinado.
      * @return json
      */
-    public function list(){
+    public function table()
+    {
         $cursos = CvCurso::fromUser();
 
         return Datatables::of($cursos)
