@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="{{ asset("dist/css/homero.css")}}">
     </head>
     <body>
-        <div class="container">
+        <div class="container" style="width: 900px !important">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="row" style="border: solid 1px red;">
