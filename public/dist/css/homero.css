@@ -9,6 +9,9 @@
 
 .sidebar {
     background-color: #dcddde;
+    min-height: 1095px;
+    max-height: 1095px;
+    overflow-y: hidden;
 }
 
 .sidebar p {

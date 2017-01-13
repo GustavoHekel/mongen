@@ -8,22 +8,22 @@
         <link rel="stylesheet" href="{{ asset("dist/css/homero.css")}}">
     </head>
     <body>
-        <div class="container" style="width: 900px !important">
+        <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="row" style="border: solid 1px red;">
-                        <div class="col-md-4 sidebar">
+                <div class="col-xs-12 ">
+                    <div class="row" style="border: solid 0px red;">
+                        <div class="col-xs-4 sidebar">
 
                             <!-- FOTO DE PERFIL -->
                             <div class="row">
-                                <div class="col-md-12 no-padding">
+                                <div class="col-xs-12 no-padding">
                                     <img class="img-responsive" src="{{ asset("dist/img/profile-pics/" . $user->avatar)}}">
                                 </div>
                             </div>
 
                             <!-- NOMBRE Y OCUPACION -->
                             <div class="row my-data">
-                                <div class="col-md-12">
+                                <div class="col-xs-12">
                                     <p class="name">{{ $user->nombre }}</p>
                                     <p class="ocupation">Full stack developer</p>
                                 </div>
@@ -31,12 +31,12 @@
 
                             <!-- EDUCACION -->
                             <div class="row studies">
-                                <div class="col-md-12">
+                                <div class="col-xs-12">
                                     <p class="section">EDUCACIÓN</p>
                                     <br>
                                     @foreach($user->estudios as $estudio)
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-xs-12">
                                             <p class="period">{{ $estudio->year_from }} - {{ $estudio->year_to or 'Actualidad'}}</p>
                                             <p class="career">{{ $estudio->carrera }}</p>
                                             <p class="institute">{{ $estudio->instituto }}</p>
@@ -49,7 +49,7 @@
                             </div>
 
                             <div class="row social-networks">
-                                <div class="col-md-12">
+                                <div class="col-xs-12">
                                     <p class="section">REDES SOCIALES</p>
                                     <br>
                                     @foreach($user->red->redes as $red => $link)
@@ -65,7 +65,7 @@
 
 
                         </div>
-                        <div class="col-md-8 main-container">
+                        <div class="col-xs-8 main-container">
                             hola
                         </div>
                     </div>
