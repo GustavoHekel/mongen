@@ -48,7 +48,7 @@
                             <i class="fa fa-google-plus"></i>
                         </label>
                         <div class="col-md-9">
-                            <input id="google_plus" name="google_plus" type="text" class="form-control" placeholder="/google_plus" value="{{ $red->google_plus or '' }}">
+                            <input id="google" name="google" type="text" class="form-control" placeholder="/google_plus" value="{{ $red->google_plus or '' }}">
                         </div>
                     </div>
 

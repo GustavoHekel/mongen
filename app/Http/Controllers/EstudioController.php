@@ -37,7 +37,8 @@ class EstudioController extends Controller
      * para un usuario determinado.
      * @return json
      */
-    public function list(){
+    public function table()
+    {
         $estudios = CvEstudio::fromUser();
 
         return Datatables::of($estudios)

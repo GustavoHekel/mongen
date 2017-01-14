@@ -62,7 +62,7 @@ class RedController extends Controller
         $cv->facebook = $request->facebook ?: $cv->facebook;
         $cv->twitter = $request->twitter ?: $cv->twitter;
         $cv->linkedin = $request->linkedin ?: $cv->linkedin;
-        $cv->google_plus = $request->google_plus ?: $cv->google_plus;
+        $cv->google = $request->google ?: $cv->google;
         $cv->github = $request->github ?: $cv->github;
         if ($cv->save()) {
             return response()->success(['data' => $cv]);

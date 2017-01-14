@@ -98,7 +98,7 @@ Route::group(['middleware' => ['web']], function () {
 		// Estudios
 		Route::get('estudios', 'EstudioController@index');
 		Route::get('estudios/nuevo', 'EstudioController@create');
-		Route::get('estudios/listado', 'EstudioController@list');
+		Route::get('estudios/listado', 'EstudioController@table');
 		Route::get('estudios/{id_estudio}', 'EstudioController@show');
 		Route::get('estudios/{id_estudio}/editar', 'EstudioController@edit');
 		Route::post('estudios', 'EstudioController@store');
@@ -108,7 +108,7 @@ Route::group(['middleware' => ['web']], function () {
 		// Trabajos
 		Route::get('trabajos', 'TrabajoController@index');
 		Route::get('trabajos/nuevo', 'TrabajoController@create');
-		Route::get('trabajos/listado', 'TrabajoController@list');
+		Route::get('trabajos/listado', 'TrabajoController@table');
 		Route::get('trabajos/{id_trabajo}', 'TrabajoController@show');
 		Route::get('trabajos/{id_trabajo}/editar', 'TrabajoController@edit');
 		Route::post('trabajos', 'TrabajoController@store');
@@ -118,7 +118,7 @@ Route::group(['middleware' => ['web']], function () {
 		// Cursos
 		Route::get('cursos', 'CursoController@index');
 		Route::get('cursos/nuevo', 'CursoController@create');
-		Route::get('cursos/listado', 'CursoController@list');
+		Route::get('cursos/listado', 'CursoController@table');
 		Route::get('cursos/{id_curso}', 'CursoController@show');
 		Route::get('cursos/{id_curso}/editar', 'CursoController@edit');
 		Route::post('cursos', 'CursoController@store');
