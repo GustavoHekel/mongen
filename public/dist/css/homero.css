@@ -82,3 +82,16 @@
 .social-networks .link {
     font-size: 11px;
 }
+
+.main-container .section {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    border-bottom: solid 5px #31afd8;
+    display: table-cell;
+}
+
+.main-container .presentation {
+    margin-top: 10px;
+}

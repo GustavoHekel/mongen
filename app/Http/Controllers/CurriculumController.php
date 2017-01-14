@@ -43,8 +43,16 @@ class CurriculumController extends Controller
         ];
         // return response()->json($data);
 
-        // return view('cvs.linkedin', $data);
-        $pdf = PDF::loadview('cvs.linkedin', $data);
-        return $pdf->download('resume.pdf');
+        return view('cvs.linkedin', $data);
+        return PDF::loadview('cvs.linkedin', $data)
+            ->setOption('dpi', 200)
+            ->setOption('margin-bottom', 0)
+            ->setOption('margin-left', 0)
+            ->setOption('margin-top', 0)
+            ->setOption('margin-right', 0)
+            ->setOption('page-height', 297)
+            ->setOption('page-width', 210)
+            ->inline('github.pdf');
+
     }
 }
