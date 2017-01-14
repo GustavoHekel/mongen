@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use Session;
+use PDF;
 
 use App\Models\Seccion;
 use App\Models\Usuario;
@@ -40,8 +41,10 @@ class CurriculumController extends Controller
         $data = [
             'user' => $user
         ];
-
         // return response()->json($data);
-        return view('cvs.linkedin', $data);
+
+        // return view('cvs.linkedin', $data);
+        $pdf = PDF::loadview('cvs.linkedin', $data);
+        return $pdf->download('resume.pdf');
     }
 }

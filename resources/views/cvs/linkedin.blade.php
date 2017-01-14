@@ -4,8 +4,14 @@
         <meta charset="utf-8">
         <title>{{ $user->nombre }}</title>
         <!-- Latest compiled and minified CSS -->
-    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{ asset("dist/css/homero.css")}}">
+    	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+        <!-- <link rel="stylesheet" href="http://localhost/mongen/public/dist/bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
+        <style>
+            {{ include(public_path() . '/dist/bower_components/bootstrap/dist/css/bootstrap.min.css') }}
+            /*{{ include(public_path() . '/dist/css/homero.css') }}*/
+        </style>
+        <!-- <link rel="stylesheet" href="{{ asset("dist/css/homero.css")}}"> -->
+        <!-- <link rel="stylesheet" href="http://localhost/mongen/public/dist/css/homero.css"> -->
     </head>
     <body>
         <div class="container">
