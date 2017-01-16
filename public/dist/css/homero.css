@@ -135,9 +135,9 @@ body {
     text-transform: uppercase;
     font-size: 10px;
     font-weight: bold;
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 10px;
-    border-bottom: solid 5px #31afd8;
+    border-bottom: solid 3px #31afd8;
     display: table-cell;
 }
 
@@ -178,6 +178,14 @@ body {
     font-size: 10px;
 }
 
+.skill-container {
+    height: 20px;
+}
+
 .skill-name {
+    font-size: 10px;
+}
+
+.hobbies-description {
     font-size: 10px;
 }

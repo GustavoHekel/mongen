@@ -159,11 +159,11 @@
                                 </p>
                                 <br>
                                 @foreach ($user->skills as $skill)
-                                <div class="row skill-container">
-                                    <div class="col-xs-4">
+                                <div class="row">
+                                    <div class="col-xs-4 skill-container">
                                         <p class="skill-name">{{ $skill->nombre }}</p>
                                     </div>
-                                    <div class="col-xs-8">
+                                    <div class="col-xs-8 skill-container">
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-linkedin" style="width: {{ $skill->nivel * 10 }}%;">
                                             </div>
@@ -180,8 +180,11 @@
                                 <p class="section">
                                     AFICIONES
                                 </p>
-                                <p>
-                                    COMER + CAGAR + BIRRA
+                                <br>
+                                <p class="hobbies-description">
+                                    @foreach($user->intereses as $interes)
+                                    {{ $interes->descripcion }} /
+                                    @endforeach
                                 </p>
                             </div>
                         </div>

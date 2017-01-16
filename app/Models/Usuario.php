@@ -134,6 +134,14 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	}
 
 	/**
+	 * Traigo todos los intereses
+	 */
+	public function intereses()
+	{
+		return $this->hasMany('App\Models\Usuario\Interes', 'id_usuario', 'id_usuario');
+	}
+
+	/**
 	 * Devuelve el pais
 	 */
 	public function pais()
