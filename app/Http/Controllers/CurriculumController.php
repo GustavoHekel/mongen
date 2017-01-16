@@ -31,19 +31,32 @@ class CurriculumController extends Controller
      */
     public function show($url)
     {
-        $user = Usuario::with([
-                'estudios',
-                'red'
-            ])
-            ->whereUrl($url)
+        $user = Usuario::whereUrl($url)
+            ->full()
             ->first();
 
         $data = [
-            'user' => $user
+            'user' => $user,
+            'col_config' => 'col-xs-8 col-xs-offset-2'
         ];
         // return response()->json($data);
 
         return view('cvs.linkedin', $data);
+
+
+    }
+
+    public function pdf($url)
+    {
+        $user = Usuario::whereUrl($url)
+            ->full()
+            ->first();
+
+        $data = [
+            'user' => $user,
+            'col_config' => 'col-xs-12'
+        ];
+
         return PDF::loadview('cvs.linkedin', $data)
             ->setOption('dpi', 200)
             ->setOption('margin-bottom', 0)
@@ -52,7 +65,7 @@ class CurriculumController extends Controller
             ->setOption('margin-right', 0)
             ->setOption('page-height', 297)
             ->setOption('page-width', 210)
+            // ->setOption('javascript-delay', 1000)
             ->inline('github.pdf');
-
     }
 }

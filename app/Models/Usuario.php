@@ -104,9 +104,34 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
     /**
      * Traigo los estudios del usuario con la relación "estudios".
      */
-    public function estudios(){
-        return $this->hasMany('App\Models\Usuario\Estudio', 'id_usuario', 'id_usuario')->orderBy('id_estudio', 'desc');
+    public function estudios()
+	{
+        return $this->hasMany('App\Models\Usuario\Estudio', 'id_usuario', 'id_usuario')->orderBy('desde', 'desc');
     }
+
+	/**
+	 * Traigo todos los trabajos
+	 */
+	public function trabajos()
+	{
+		return $this->hasMany('App\Models\Usuario\Trabajo', 'id_usuario', 'id_usuario')->orderBy('desde', 'desc');
+	}
+
+	/**
+	 * Traigo todos los cursos
+	 */
+	public function cursos()
+	{
+		return $this->hasMany('App\Models\Usuario\Curso', 'id_usuario', 'id_usuario')->orderBy('desde', 'desc');
+	}
+
+	/**
+	 * Traigo todos los skills
+	 */
+	public function skills()
+	{
+		return $this->hasMany('App\Models\Usuario\Skill', 'id_usuario', 'id_usuario');
+	}
 
 	/**
 	 * Devuelve el pais
@@ -129,8 +154,33 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
     | Scopes
     |--------------------------------------------------------------------------
     */
+
+   /**
+    * [scopeWhereUrl description]
+    * @param  [type] $query [description]
+    * @param  [type] $url   [description]
+    * @return [type]        [description]
+    */
 	public function scopeWhereUrl($query, $url)
 	{
 		return $query->where('url', $url);
+	}
+
+	/**
+	 * [scopeFull description]
+	 * @param  [type] $query [description]
+	 * @return [type]        [description]
+	 */
+	public function scopeFull($query)
+	{
+		return $query->with([
+			'estudios',
+			'trabajos',
+			'cursos',
+			'skills',
+			'red',
+			'pais',
+			'provincia'
+		]);
 	}
 }

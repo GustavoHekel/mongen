@@ -20,6 +20,28 @@ class Provincia extends Model
 	 */
 	protected $primaryKey = 'id_provincia';
 
+    /*
+	|--------------------------------------------------------------------------
+	| Acessors
+	|--------------------------------------------------------------------------
+	*/
+
+    /**
+     * [getNombreAttribute description]
+     * @param  [type] $value [description]
+     * @return [type]        [description]
+     */
+    public function getNombreAttribute($value)
+    {
+        return strtolower($value);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Query scopes
+    |--------------------------------------------------------------------------
+    */
+
     /**
      * [scopeFromCountry description]
      * @param  [type] $query   [description]

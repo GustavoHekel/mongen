@@ -84,6 +84,7 @@ Route::group(['middleware' => ['web']], function () {
 	 */
  	Route::get('mi-cv', 'CurriculumController@index');
 	Route::get('{url}', 'CurriculumController@show');
+	Route::get('{url}/pdf', 'CurriculumController@pdf');
 
 	Route::group(['prefix' => 'mi-cv'], function () {
 

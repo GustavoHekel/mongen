@@ -19,4 +19,20 @@ class Pais extends Model
 	 * @var string
 	 */
 	protected $primaryKey = 'id_pais';
+
+    /*
+	|--------------------------------------------------------------------------
+	| Acessors
+	|--------------------------------------------------------------------------
+	*/
+
+    /**
+     * [getNombreAttribute description]
+     * @param  [type] $value [description]
+     * @return [type]        [description]
+     */
+    public function getNombreAttribute($value)
+    {
+        return strtolower($value);
+    }
 }
