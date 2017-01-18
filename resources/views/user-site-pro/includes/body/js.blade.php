@@ -6,6 +6,7 @@
 
 <!-- Defaults y funciones -->
 <script src="{{ asset("dist/js/mongen.js")}}"></script>
+<script src="{{ asset("js/app.js")}}"></script>
 
 <!--  Forms Validations Plugin -->
 <!-- <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery.validate.min.js")}}"></script> -->

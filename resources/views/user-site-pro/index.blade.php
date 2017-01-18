@@ -6,7 +6,7 @@
 	@include('user-site-pro.includes.header.css')
 </head>
 <body>
-	<div class="wrapper">
+	<div id="app" class="wrapper">
 		@include('user-site-pro.includes.body.sidebar')
 		@include('user-site-pro.includes.body.main')
 	</div>

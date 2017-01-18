@@ -9,7 +9,8 @@
 			</div>
 		</div>
 		<div class="col-md-9">
-			@yield('seccion')
+			<!-- @yield('seccion') -->
+			<app-cv-table-with-actions></app-cv-table-with-actions>
 		</div>
 	</div>
 @endsection

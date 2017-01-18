@@ -153,7 +153,7 @@
 
                         <!-- SKILLS -->
                         <div class="row skills">
-                            <div class="col-xs-12">
+                            <div class="col-xs-6">
                                 <p class="section">
                                     HABILIDADES TÉCNICAS
                                 </p>
@@ -166,6 +166,29 @@
                                     <div class="col-xs-8 skill-container">
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-linkedin" style="width: {{ $skill->nivel * 10 }}%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        <!-- </div> -->
+
+                        <!-- SKILLS -->
+                        <!-- <div class="row idiomas"> -->
+                            <div class="col-xs-6">
+                                <p class="section">
+                                    IDIOMAS
+                                </p>
+                                <br>
+                                @foreach ($user->idiomas as $idioma)
+                                <div class="row">
+                                    <div class="col-xs-4 skill-container">
+                                        <p class="skill-name">{{ $idioma->idioma }}</p>
+                                    </div>
+                                    <div class="col-xs-8 skill-container">
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-linkedin" style="width: {{ $idioma->nivel * 10 }}%;">
                                             </div>
                                         </div>
                                     </div>

@@ -126,6 +126,14 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	}
 
 	/**
+	 * Traigo todos los idiomas
+	 */
+	public function idiomas()
+	{
+		return $this->hasMany('App\Models\Usuario\Idioma', 'id_usuario', 'id_usuario');
+	}
+
+	/**
 	 * Traigo todos los skills
 	 */
 	public function skills()
@@ -185,6 +193,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 			'estudios',
 			'trabajos',
 			'cursos',
+			'idiomas',
 			'skills',
 			'red',
 			'pais',
