@@ -129,7 +129,7 @@ class Trabajo extends Model
      */
     public function getDetalleAttribute($value)
     {
-        return $this->attributes['detalle'] = str_limit(mb_strtolower($value), 250);
+        return $this->attributes['detalle'] = str_limit(ucfirst(mb_strtolower($value)), 250);
     }
 
     /*
