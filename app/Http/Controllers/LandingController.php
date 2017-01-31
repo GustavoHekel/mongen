@@ -16,7 +16,8 @@ class LandingController extends Controller
 	 * @return null
 	 */
 	public function getIndex(){
-		return view ('landing-guide.index');
+		// return view ('landing-guide.index');
+		return view ('alpha.index');
 	}
 
 	/**

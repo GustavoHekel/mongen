@@ -1,9 +1,9 @@
 <!-- Banner -->
 <section id="banner">
-    <h2>Alpha</h2>
-    <p>Another fine responsive site template freebie by HTML5 UP.</p>
+    <h2>Mongen.</h2>
+    <p>Una nueva forma de armar y compartir tu Currículum Vitae.</p>
     <ul class="actions">
-        <li><a href="#" class="button special">Sign Up</a></li>
-        <li><a href="#" class="button">Learn More</a></li>
+        <li><a href="#" class="button special">Registrarse</a></li>
+        <li><a href="#" class="button">Conocénos</a></li>
     </ul>
 </section>
