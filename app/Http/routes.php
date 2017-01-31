@@ -169,4 +169,7 @@ Route::group(['middleware' => ['web']], function () {
 
 	// Provincias
 	Route::get('provincias/{id_pais}', 'ProvinciaController@index');
+
+	// Progreso
+	Route::get('progress/me', 'ProgresoUsuarioController@index');
 });

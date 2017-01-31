@@ -37,6 +37,11 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
     protected $dates = ['created_at', 'updated_at', 'fecha_nacimiento', 'fecha_vencimiento', 'fecha_validado'];
 
 	/**
+	 * User progress
+	 */
+	protected $progress = 0;
+
+	/**
 	 * Relationship names
 	 */
 	CONST RELATIONSHIPS = [
@@ -54,12 +59,12 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	/**
 	 * Number of sections a user can have
 	 */
-	CONST MAX_SECTIONS = sizeof(self::RELATIONSHIPS);
+	CONST SECTIONS = 9;
 
 	/**
 	 * Percentage for each relationship
 	 */
-	CONST RELATIONSHIP_VALUE = self::MAX_SECTIONS / 100;
+	CONST RELATIONSHIP_VALUE = 100 / self::SECTIONS;
 
 	/*
     |--------------------------------------------------------------------------
@@ -223,7 +228,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	 */
 	public function scopeFull($query)
 	{
-		return $query->with(self::RELATIONSHIPS);
+		return $query->with($this->relationships);
 	}
 
 	/**
@@ -246,8 +251,13 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	 * [progress description]
 	 * @return [type] [description]
 	 */
-	public function progress()
+	public function getProgress()
 	{
-
+		foreach (self::RELATIONSHIPS as $relationship) {
+			if ($this->has($relationship)) {
+				$this->progress += self::RELATIONSHIP_VALUE;
+			}
+		}
+		return $this->progress;
 	}
 }

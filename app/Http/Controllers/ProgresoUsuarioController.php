@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Models\Usuario;
+
+use Auth;
+
 class ProgresoUsuarioController extends Controller
 {
     /**
@@ -15,7 +19,8 @@ class ProgresoUsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $progress = Auth::user()->getProgress();
+        return $progress;
     }
 
     /**
