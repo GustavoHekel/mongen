@@ -36,6 +36,31 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
      */
     protected $dates = ['created_at', 'updated_at', 'fecha_nacimiento', 'fecha_vencimiento', 'fecha_validado'];
 
+	/**
+	 * Relationship names
+	 */
+	CONST RELATIONSHIPS = [
+		'estudios',
+		'trabajos',
+		'cursos',
+		'idiomas',
+		'skills',
+		'red',
+		'pais',
+		'provincia',
+		'extracto'
+	];
+
+	/**
+	 * Number of sections a user can have
+	 */
+	CONST MAX_SECTIONS = sizeof(self::RELATIONSHIPS);
+
+	/**
+	 * Percentage for each relationship
+	 */
+	CONST RELATIONSHIP_VALUE = self::MAX_SECTIONS / 100;
+
 	/*
     |--------------------------------------------------------------------------
     | Mutators
@@ -198,17 +223,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	 */
 	public function scopeFull($query)
 	{
-		return $query->with([
-			'estudios',
-			'trabajos',
-			'cursos',
-			'idiomas',
-			'skills',
-			'red',
-			'pais',
-			'provincia',
-			'extracto'
-		]);
+		return $query->with(self::RELATIONSHIPS);
 	}
 
 	/**
@@ -219,5 +234,20 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	public function scopeMe($query)
 	{
 		return $query->where('id_usuario', Auth::user()->id_usuario);
+	}
+
+	/*
+	|--------------------------------------------------------------------------
+	| Methods
+	|--------------------------------------------------------------------------
+	*/
+
+	/**
+	 * [progress description]
+	 * @return [type] [description]
+	 */
+	public function progress()
+	{
+
 	}
 }
