@@ -15,19 +15,31 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Foto de perfil</label>
                             <div class="col-md-9 avatar-view">
-                                <img class="img-responsive img-thumbnail" src="{{ asset("dist/img/profile-pics/" . Auth::user()->avatar)}}">
+                                <img class="img-responsive img-thumbnail" src="{{ asset("dist/img/profile-pics/" . $usuario->avatar)}}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Nombre</label>
                             <div class="col-md-9">
-                                <input type="text" name="nombre" placeholder="Nombre" class="form-control" value="{{ Auth::user()->nombre }}">
+                                <input type="text" name="nombre" placeholder="Nombre" class="form-control" value="{{ $usuario->nombre }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Profesión</label>
+                            <div class="col-md-9">
+                                <input type="text" name="profesion" placeholder="Profesión" class="form-control" value="{{ $usuario->extracto->profesion }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Extracto</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" name="extracto" placeholder="Extracto" rows="8" cols="40">{{ $usuario->extracto->extracto }}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Fecha de nacimiento</label>
                             <div class="col-md-9">
-                                <input type="text" name="fecha_nacimiento" placeholder="Fecha de nacimiento" class="form-control datepicker" value="{{ Auth::user()->fecha_nacimiento->format('d/m/Y')}}">
+                                <input type="text" name="fecha_nacimiento" placeholder="Fecha de nacimiento" class="form-control datepicker" value="{{ $usuario->fecha_nacimiento->format('d/m/Y')}}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -35,7 +47,7 @@
                             <div class="col-md-9">
                                 <select name="id_pais" id="id_pais" class="form-control">
                                     @foreach($paises as $pais)
-                                        @if ($pais->id_pais == Auth::user()->id_pais)
+                                        @if ($pais->id_pais == $usuario->id_pais)
                                         <option selected value="{{ $pais->id_pais }}">{{ $pais->nombre }}</option>
                                         @else
                                         <option value="{{ $pais->id_pais }}">{{ $pais->nombre }}</option>
@@ -49,7 +61,7 @@
                             <div class="col-md-9">
                                 <select name="id_provincia" id="id_provincia" class="form-control">
                                     @foreach($provincias as $provincia)
-                                        @if ($provincia->id_provincia == Auth::user()->id_provincia)
+                                        @if ($provincia->id_provincia == $usuario->id_provincia)
                                         <option selected value="{{ $provincia->id_provincia }}">{{ $provincia->nombre }}</option>
                                         @else
                                         <option value="{{ $provincia->id_provincia }}">{{ $provincia->nombre }}</option>
@@ -61,10 +73,10 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">URL personalizada</label>
                             <div class="col-md-9">
-                                @if (Auth::user()->id_plan == 1)
-                                <input type="text" name="url" placeholder="URL" class="form-control user-url" value="{{ Auth::user()->url }}">
+                                @if ($usuario->id_plan == 1)
+                                <input type="text" name="url" placeholder="URL" class="form-control user-url" value="{{ $usuario->url }}">
                                 @else
-                                <input disabled type="text" name="url" placeholder="URL" class="form-control" value="{{ Auth::user()->url }}">
+                                <input disabled type="text" name="url" placeholder="URL" class="form-control" value="{{ $usuario->url }}">
                                 @endif
                             </div>
                         </div>
@@ -185,6 +197,14 @@ $(function(){
             url: {
                 required: true,
                 custom: regExp
+            },
+            extracto: {
+                required: true,
+                maxlength: 500,
+            },
+            profesion: {
+                required: true,
+                maxlength: 50,
             }
          },
          messages: {
@@ -203,7 +223,7 @@ $(function(){
          submitHandler: function (form) {
              $.ajax({
                  method: 'put',
-                 url: 'personal/{{ Auth::user()->id_usuario}}',
+                 url: 'personal/{{ $usuario->id_usuario}}',
                  data: $(form).serialize(),
                  statusCode: {
                      200: function(data) {

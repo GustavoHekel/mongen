@@ -9,6 +9,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 use Carbon\Carbon;
+use Auth;
 
 class Usuario extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
@@ -165,6 +166,14 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 		return $this->hasOne('App\Models\Provincia', 'id_provincia', 'id_provincia');
 	}
 
+	/**
+	 * Devuelve el extracto
+	 */
+	public function extracto()
+	{
+		return $this->hasOne('App\Models\Usuario\Extracto', 'id_usuario', 'id_usuario');
+	}
+
 	/*
     |--------------------------------------------------------------------------
     | Scopes
@@ -197,7 +206,18 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 			'skills',
 			'red',
 			'pais',
-			'provincia'
+			'provincia',
+			'extracto'
 		]);
+	}
+
+	/**
+	 * [scopeMe description]
+	 * @param  [type] $query [description]
+	 * @return [type]        [description]
+	 */
+	public function scopeMe($query)
+	{
+		return $query->where('id_usuario', Auth::user()->id_usuario);
 	}
 }

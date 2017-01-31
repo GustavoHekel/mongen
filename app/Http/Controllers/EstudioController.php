@@ -105,7 +105,7 @@ class EstudioController extends Controller
         $estudio->instituto = $r->instituto;
         $estudio->carrera = $r->carrera;
         $estudio->desde = $r->anio_desde . $r->mes_desde;
-        $estudio->promedio = $r->promedio;
+        $estudio->promedio = $r->promedio != null ?: 0;
 
         if (isset ($r->en_curso)) {
             $estudio->hasta = null;
@@ -129,7 +129,7 @@ class EstudioController extends Controller
         $estudio->instituto = $r->instituto;
         $estudio->carrera = $r->carrera;
         $estudio->desde = $r->anio_desde . $r->mes_desde;
-        $estudio->promedio = $r->promedio;
+        $estudio->promedio = $r->promedio != null ?: 0;
 
         if (isset ($r->en_curso)) {
             $estudio->hasta = null;

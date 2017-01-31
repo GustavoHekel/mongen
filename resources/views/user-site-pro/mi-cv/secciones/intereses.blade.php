@@ -26,18 +26,18 @@
                         </td>
                     </tr>
                     @endforeach
-                    <tr id="new-interes">
-                        <form id="form-new-interes">
-                            <td>
-                                <input type="text" name="interes-name" id="interes-name" class="form-control" placeholder="Nuevo interes">
-                            </td>
-                            <td>
-                                <button title="Guardar" class="btn btn-simple btn-success btn-icon table-action save" data-original-title="Guardar">
-                                    <i class="fa fa-check"></i>
-                                </button>
-                            </td>
-                        </form>
-                    </tr>
+                    <form id="form-new-interes">
+                        <tr id="new-interes">
+                                <td>
+                                    <input type="text" name="interes-name" id="interes-name" class="form-control" placeholder="Nuevo interes">
+                                </td>
+                                <td>
+                                    <button title="Guardar" class="btn btn-simple btn-success btn-icon table-action save" data-original-title="Guardar">
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                </td>
+                        </tr>
+                    </form>
                 </tbody>
             </table>
         </div>
@@ -126,7 +126,7 @@ $(function() {
                 nombre: interesName
             },
             success: function(data) {
-                $('#form-new-interes').trigger('reset')
+                $('#interes-name').val('');
                 toastr.success(interesName + ' agregado');
                 interesRow(data.data.id_interes, data.data.descripcion).insertBefore('#new-interes');
                 checkInteresLength();

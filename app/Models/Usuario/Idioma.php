@@ -8,6 +8,12 @@ use Auth;
 
 class Idioma extends Model
 {
+    /*
+    |--------------------------------------------------------------------------
+    | Properties
+    |--------------------------------------------------------------------------
+    */
+
     /**
      * The table associated with the model.
      *
@@ -22,6 +28,12 @@ class Idioma extends Model
 	 */
 	protected $primaryKey = 'id_idioma';
 
+    /*
+    |--------------------------------------------------------------------------
+    | Mutators
+    |--------------------------------------------------------------------------
+    */
+
     /**
      * [setIdioma description]
      *
@@ -32,6 +44,12 @@ class Idioma extends Model
         $this->attributes['idioma'] = mb_strtoupper($value);
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | Query scopes
+    |--------------------------------------------------------------------------
+    */
+   
     /**
      * [scopeFromUser description]
      * @param  [type] $query [description]

@@ -60,7 +60,8 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Descripción del puesto</label>
 						<div class="col-sm-10">
-							<input type="text" name="detalle" placeholder="Descripción del puesto" class="form-control" value="{{ $trabajo->detalle }}">
+							<!-- <input type="text" name="detalle" placeholder="Descripción del puesto" class="form-control" value=""> -->
+							<textarea name="detalle" class="form-control" placeholder="Descripción" cols="30" rows="10">{{ $trabajo->detalle }}</textarea>
 						</div>
 					</div>
 				</div>
@@ -104,6 +105,9 @@ $(function(){
 			},
 			anio_desde: {
 				required: true
+			},
+			detalle: {
+				maxlength: 300
 			}
 		},
 		submitHandler: function(form) {

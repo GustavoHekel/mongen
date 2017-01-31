@@ -6,10 +6,8 @@ use Auth;
 use Cache;
 use Illuminate\Http\Request;
 
-use App\Models\Usuario\Menu;
-use App\Models\Usuario\Email as CvEmail;
-use App\Models\Usuario\Telefono as CvTelefono;
 use App\Models\Usuario;
+use App\Models\Usuario\Extracto;
 
 class UsuarioController extends Controller
 {
@@ -30,6 +28,7 @@ class UsuarioController extends Controller
     public function index()
     {
         $data = [
+            'usuario' => Usuario::full()->me()->first(),
             'paises' => Cache::get('paises'),
             'provincias' => Cache::get('provincias'),
         ];
@@ -50,24 +49,10 @@ class UsuarioController extends Controller
         $usuario->id_pais = $r->id_pais;
         $usuario->id_provincia = $r->id_provincia;
         $usuario->url = $r->url;
-        $usuario->save();
-    }
+        $usuario->extracto->profesion = $r->profesion;
+        $usuario->extracto->extracto = $r->extracto;
+        $usuario->push();
 
-    /**
-     * [getContacto description]
-     * @return [type] [description]
-     */
-    public function getContacto()
-    {
-        $id_usuario = Auth::user()->id_usuario;
-        $emails = CvEmail::where('id_usuario', $id_usuario)->get();
-        $telefonos = CvTelefono::where('id_usuario', $id_usuario)->get();
-
-        $data = [
-            'emails' => $emails,
-            'telefonos' => $telefonos
-        ];
-
-        return view('user-site-pro.mi-cv.secciones.contacto', $data);
+        return response()->success(['message' => 'User updated']);
     }
 }

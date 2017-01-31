@@ -30,8 +30,8 @@
                         </td>
                     </tr>
                     @endforeach
-                    <tr id="new-skill">
-                        <form id="form-new-skill">
+                    <form id="form-new-skill">
+                        <tr id="new-skill">
                             <td>
                                 <input type="text" name="skill-name" id="skill-name" class="form-control" placeholder="Nuevo skill">
                             </td>
@@ -43,8 +43,8 @@
                                     <i class="fa fa-check"></i>
                                 </button>
                             </td>
-                        </form>
-                    </tr>
+                        </tr>
+                    </form>
                 </tbody>
             </table>
         </div>
@@ -190,7 +190,7 @@ $(function() {
                 nivel: skillValue
             },
             success: function(data) {
-                $('#form-new-skill').trigger('reset')
+                $('#skill-name').val('');
                 toastr.success(skillName + ' agregado');
                 skillRow(data.data.id_skill, data.data.nombre, data.data.nivel).insertBefore('#new-skill');
                 checkSkillLenght();

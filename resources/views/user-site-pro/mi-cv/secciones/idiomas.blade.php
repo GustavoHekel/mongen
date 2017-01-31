@@ -30,8 +30,8 @@
                         </td>
                     </tr>
                     @endforeach
-                    <tr id="new-idioma">
-                        <form id="form-new-idioma">
+                    <form id="form-new-idioma">
+                        <tr id="new-idioma">
                             <td>
                                 <input type="text" name="idioma-name" id="idioma-name" class="form-control" placeholder="Nuevo idioma">
                             </td>
@@ -43,8 +43,8 @@
                                     <i class="fa fa-check"></i>
                                 </button>
                             </td>
-                        </form>
-                    </tr>
+                        </tr>
+                    </form>
                 </tbody>
             </table>
         </div>
@@ -190,7 +190,7 @@ $(function() {
                 nivel: idiomaValue
             },
             success: function(data) {
-                $('#form-new-idioma').trigger('reset')
+                $('#idioma-name').val('');
                 toastr.success(idiomaName + ' agregado');
                 idiomaRow(data.data.id_idioma, data.data.idioma, data.data.nivel).insertBefore('#new-idioma');
                 checkIdiomaLength();

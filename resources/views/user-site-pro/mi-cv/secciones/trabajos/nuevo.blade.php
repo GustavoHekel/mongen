@@ -62,7 +62,7 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Descripción</label>
 						<div class="col-sm-10">
-							<input type="text" name="detalle" placeholder="Descripcion" class="form-control">
+							<textarea name="detalle" class="form-control" placeholder="Descripción" cols="30" rows="10"></textarea>
 						</div>
 					</div>
 				</div>
