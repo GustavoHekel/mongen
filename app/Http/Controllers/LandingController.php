@@ -15,16 +15,16 @@ class LandingController extends Controller
 	 * Devuelve la vista principal de la landing page
 	 * @return null
 	 */
-	public function getIndex(){
+	public function index(){
 		// return view ('landing-guide.index');
-		return view ('alpha.index');
+		return view('alpha.index');
 	}
 
 	/**
 	 * Devuelve la vista de precios
 	 * @return null
 	 */
-	public function getPrecios(){
+	public function precios(){
 		return view('landing-guide.pricing');
 	}
 
@@ -32,7 +32,7 @@ class LandingController extends Controller
 	 * Devuelve el formulario de login
 	 * @return null
 	 */
-	public function getLogin(){
+	public function login(){
 	    return view('landing-guide.login');
 	}
 
@@ -40,15 +40,16 @@ class LandingController extends Controller
 	 * Devuelve el formulario de registro
 	 * @return null
 	 */
-	public function getRegistrar(){
-	    return view('landing-guide.register');
+	public function registrar(){
+	    // return view('landing-guide.register');
+	    return view('alpha.registro');
 	}
 
 	/**
 	 * Devuelve la vista de about
 	 * @return null
 	 */
-	public function getAbout(){
+	public function acerca(){
 		return view('landing-guide.about');
 	}
 

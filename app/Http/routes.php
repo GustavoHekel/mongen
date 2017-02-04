@@ -23,12 +23,12 @@ Route::get('zohoverify/verifyforzoho.html' , function(){
 |
 */
 Route::group(['middleware' => ['landing']] , function() {
-	Route::get('/', 'LandingController@getIndex')->name('index');
-	Route::get('precios', 'LandingController@getPrecios')->name('precios');
-	Route::get('about', 'LandingController@getAbout')->name('about');
-	Route::get('recover', 'LandingController@getRecover')->name('recover');
+	Route::get('/', 'LandingController@index')->name('index');
+	Route::get('precios', 'LandingController@precios')->name('precios');
+	Route::get('about', 'LandingController@acerca')->name('about');
+	// Route::get('recover', 'LandingController@getRecover')->name('recover');
 	Route::post('newsletter', 'LandingController@postNewsletter');
-	Route::get('registrar', 'LandingController@getRegistrar')->name('registrar');
+	Route::get('registrar', 'LandingController@registrar')->name('registrar');
 });
 
 /*
@@ -56,7 +56,7 @@ Route::group(['middleware' => ['landing']] , function() {
 Route::group(['middleware' => ['web']], function () {
 
 	// Authentication Routes...
-	Route::get('login', 'LandingController@getLogin')->name('login');
+	Route::get('login', 'LandingController@login')->name('login');
 	Route::post('login', 'Auth\AuthController@login');
 	Route::get('logout', 'Auth\AuthController@logout');
 

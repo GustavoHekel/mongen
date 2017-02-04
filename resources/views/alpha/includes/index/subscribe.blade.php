@@ -1,16 +1,16 @@
 <!-- CTA -->
 <section id="cta">
 
-    <h2>Sign up for beta access</h2>
-    <p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc.</p>
+    <h2>Subscribite a nuestro newsletter</h2>
+    <p>Dejanos tu email para recibir noticias del mundo laboral, invitaciones a eventos, cupones de descuento y más.</p>
 
     <form>
         <div class="row uniform 50%">
             <div class="8u 12u(mobilep)">
-                <input type="email" name="email" id="email" placeholder="Email Address" />
+                <input type="email" name="email" id="email" placeholder="Dirección de correo electrónico" />
             </div>
             <div class="4u 12u(mobilep)">
-                <input type="submit" value="Sign Up" class="fit" />
+                <input type="submit" value="Enviar" class="fit" />
             </div>
         </div>
     </form>

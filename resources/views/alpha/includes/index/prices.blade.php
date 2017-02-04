@@ -3,10 +3,14 @@
 
         <section class="box special">
             <span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
-            <h3>Sed lorem adipiscing</h3>
-            <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+            <h3>Free</h3>
+            <p>3 meses sin cargo</p>
+            <p>URL personalizada <i class="fa fa-times"></i></p>
+            <p>mongen.io al pie de tu CV <i class="fa fa-check"></i></p>
+            <p>Publicidad <i class="fa fa-check"></i></p>
+            <p>Gana tiempo adicional invitando amigos</i></p>
             <ul class="actions">
-                <li><a href="#" class="button alt">Learn More</a></li>
+                <li><a href="#" class="button alt">Más información</a></li>
             </ul>
         </section>
 
@@ -15,10 +19,14 @@
 
         <section class="box special">
             <span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
-            <h3>Accumsan integer</h3>
-            <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+            <h3>Premium</h3>
+            <p>Uso ilimitado</p>
+            <p>URL personalizada <i class="fa fa-check"></i></p>
+            <p>mongen.io al pie de tu CV <i class="fa fa-times"></i></p>
+            <p>Publicidad <i class="fa fa-times"></i></p>
+            <p><strong>U$D 1 por mes</strong></i></p>
             <ul class="actions">
-                <li><a href="#" class="button alt">Learn More</a></li>
+                <li><a href="#" class="button alt">Más información</a></li>
             </ul>
         </section>
 
