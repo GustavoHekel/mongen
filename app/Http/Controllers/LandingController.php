@@ -37,15 +37,6 @@ class LandingController extends Controller
 	}
 
 	/**
-	 * Devuelve el formulario de registro
-	 * @return null
-	 */
-	public function registrar(){
-	    // return view('landing-guide.register');
-	    return view('alpha.registro');
-	}
-
-	/**
 	 * Devuelve la vista de about
 	 * @return null
 	 */

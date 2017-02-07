@@ -13,15 +13,14 @@ use App\Models\Provincia;
 class ProvinciaController extends Controller
 {
     /**
-     * [index description]
-     * @return [type] [description]
+     * Display the specified resource.
+     *
+     * @param  int  $id_pais
+     * @return \Illuminate\Http\Response
      */
-    public function index($id_pais)
+    public function show($id_pais)
     {
-        $provincias = Cache::remember('provincias', 60, function() use($id_pais){
-            return Provincia::fromCountry($id_pais);
-        });
-
-        return response()->success(['provincias' => $provincias]);
+        $provincias = Provincia::fromCountry($id_pais)->get();
+        return response()->success(compact('provincias'));
     }
 }

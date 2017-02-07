@@ -17,10 +17,10 @@ class CreateUsuarios extends Migration
             $table->string('email' , 255)->unique();
             $table->string('password' , 255);
             $table->string('nombre' , 255);
-            $table->date('fecha_nacimiento');
-            $table->smallInteger('id_modelo');
-            $table->string('url')->unique();
-            $table->smallInteger('id_plan');
+            $table->date('fecha_nacimiento')->nullable();
+            $table->smallInteger('id_modelo')->nullable();
+            $table->string('url')->nullable()->unique();
+            $table->smallInteger('id_plan')->default(1);
             $table->timestamp('fecha_vencimiento');
             $table->smallInteger('id_pais');
             $table->smallInteger('id_provincia');

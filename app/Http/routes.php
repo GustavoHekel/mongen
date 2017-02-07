@@ -28,7 +28,8 @@ Route::group(['middleware' => ['landing']] , function() {
 	Route::get('about', 'LandingController@acerca')->name('about');
 	// Route::get('recover', 'LandingController@getRecover')->name('recover');
 	Route::post('newsletter', 'LandingController@postNewsletter');
-	Route::get('registrar', 'LandingController@registrar')->name('registrar');
+	Route::get('registrar', 'RegistroController@create')->name('registrar');
+	Route::post('registrar', 'RegistroController@store');
 });
 
 /*
@@ -168,7 +169,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('url/{url}', 'UrlController@show');
 
 	// Provincias
-	Route::get('provincias/{id_pais}', 'ProvinciaController@index');
+	Route::get('provincias/{id_pais}', 'ProvinciaController@show');
 
 	// Progreso
 	Route::get('progress/me', 'ProgresoUsuarioController@index');

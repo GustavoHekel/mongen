@@ -25,5 +25,6 @@
 			@include('alpha.includes.footer')
 		</div>
 		@include('alpha.includes.js')
+		@stack('scripts')
 	</body>
 </html>
