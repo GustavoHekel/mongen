@@ -73,17 +73,6 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
     */
 
 	/**
-     * Set the user's birth date.
-     *
-     * @param  string  $value
-     * @return string
-     */
-    public function setFechaNacimientoAttribute($value)
-    {
-        $this->attributes['fecha_nacimiento'] = Carbon::createFromFormat('d/m/Y', $value);
-    }
-
-	/**
      * Set the user's name.
      *
      * @param  string  $value

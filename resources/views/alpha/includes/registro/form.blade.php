@@ -3,15 +3,27 @@
         <h2>Completá los siguientes datos</h2>
     </header> -->
     <!-- <span class="image featured"><img src="images/pic01.jpg" alt="" /></span> -->
+    @if (count($errors) > 0)
+    <div class="row uniform 50%">
+        <div class="8u -2u 12u(mobilep)">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+    @endif
     <form method="post" action="registrar">
+        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
         <div class="row uniform 50%">
             <div class="8u -2u 12u(mobilep)">
-                <input type="text" name="nombre" placeholder="Nombre completo">
+                <input type="text" name="nombre" placeholder="Nombre completo" maxlength="255" value="{{ old('nombre') }}">
             </div>
         </div>
         <div class="row uniform 50%">
             <div class="8u -2u 12u(mobilep)">
-                <input type="text" name="email" placeholder="Email">
+                <input type="text" name="email" placeholder="Email" maxlength="255" value="{{ old('email') }}">
             </div>
         </div>
 
@@ -21,7 +33,7 @@
                     <select name="pais">
                         <option value="">- País -</option>
                         @foreach($paises as $pais)
-                        <option value="{{ $pais->id_pais }}">{{ $pais->nombre }}</option>
+                            <option value="{{ $pais->id_pais }}">{{ $pais->nombre }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -40,7 +52,7 @@
 
         <div class="row uniform 50%">
             <div class="8u -2u 12u(mobilep)">
-                <input type="password" name="password" placeholder="Contraseña">
+                <input type="password" name="password" placeholder="Contraseña" maxlenght="255">
             </div>
         </div>
 
@@ -54,7 +66,7 @@
                                 <select name="dia">
                                     <option value="">- Dia -</option>
                                     @for($i = 1; $i <= 31; $i ++)
-                                    <option value="{{ $i }}">{{ $i }}</option>
+                                    <option {{ old('dia') != $i ?: 'selected' }} value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                 </select>
                             </div>
@@ -64,7 +76,7 @@
                                 <select name="mes">
                                     <option value="">- Mes -</option>
                                     @foreach($meses as $key => $mes)
-                                    <option value="{{ $key++ }}">{{ $mes }}</option>
+                                    <option {{ old('mes') != $key+1 ?: 'selected' }} value="{{ $key+1 }}">{{ $mes }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -74,7 +86,7 @@
                                 <select name="ano">
                                     <option value="">- Año -</option>
                                     @for($i = date('Y'); $i >= 1905 ; $i --)
-                                    <option value="{{ $i }}">{{ $i }}</option>
+                                    <option {{ old('ano') != $i ?: 'selected' }} value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                 </select>
                             </div>
@@ -104,11 +116,13 @@
         $('form').validate({
             rules: {
                 nombre: {
-                    required: true
+                    required: true,
+                    maxlength: 255
                 },
                 email: {
                     required: true,
-                    email: true
+                    email: true,
+                    maxlength: 255
                 },
                 pais: {
                     required: true
@@ -117,7 +131,9 @@
                     required: true
                 },
                 password: {
-                    required: true
+                    required: true,
+                    minlength: 6,
+                    maxlength: 255
                 },
                 dia: {
                     required: true
@@ -130,38 +146,58 @@
                 }
             },
             submitHandler: function(form){
-                $.ajax({
-                    method: 'post',
-                    url: 'registrar',
-                    data: $(form).serialize(),
-                    success: function(data){
-                        console.log(data);
-                    }
-                })
+                form.submit();
             }
         });
 
-        $('select[name=pais]').change(function(){
-            $.get('provincias/' + $(this).val(), function(data){
-
-                $('select[name=provincia]').empty();
-
-                $('<option>', {
-                    value: '',
-                    text: '- Provincia -'
-                })
-                .appendTo('select[name=provincia]');
-
-                $.each(data.provincias, function(index, provincia){
-                    $('<option>', {
-                        value: provincia.id_provincia,
-                        text: provincia.nombre
-                    })
-                    .appendTo('select[name=provincia]');
-                });
-            });
+        $('select[name=provincia]').change(function(){
+            localStorage.setItem('provincia', $(this).val());
         });
 
+        $('select[name=pais]').change(function(){
+            var pais = $(this).val();
+            if (localStorage.provincias === undefined || localStorage.pais !== pais) {
+                localStorage.setItem('pais', pais);
+                $.get('provincias/' + $(this).val(), function(data){
+                    localStorage.setItem('provincias', JSON.stringify(data));
+                    populateProvincias();
+                });
+            } else {
+                populateProvincias();
+            }
+        });
+
+        function populateProvincias()
+        {
+            $('select[name=provincia]').empty();
+            $('<option>', {
+                value: '',
+                text: '- Provincia -'
+            })
+            .appendTo('select[name=provincia]');
+
+            var provincias = JSON.parse(localStorage.provincias);
+            $.each(provincias.provincias, function(index, provincia){
+                $('<option>', {
+                    value: provincia.id_provincia,
+                    text: provincia.nombre,
+                    selected: provincia.id_provincia == localStorage.provincia
+                })
+                .appendTo('select[name=provincia]');
+            });
+        }
+
+        function checkPais()
+        {
+            if (localStorage.pais === undefined) {
+                return
+            }
+
+            $('select[name=pais]').val(localStorage.pais);
+            $('select[name=pais]').trigger('change');
+        }
+
+        checkPais();
     });
 </script>
 @endpush

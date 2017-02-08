@@ -26,9 +26,10 @@ Route::group(['middleware' => ['landing']] , function() {
 	Route::get('/', 'LandingController@index')->name('index');
 	Route::get('precios', 'LandingController@precios')->name('precios');
 	Route::get('about', 'LandingController@acerca')->name('about');
-	// Route::get('recover', 'LandingController@getRecover')->name('recover');
+	Route::get('recover', 'LandingController@getRecover')->name('recover');
 	Route::post('newsletter', 'LandingController@postNewsletter');
-	Route::get('registrar', 'RegistroController@create')->name('registrar');
+
+	Route::get('registrar', 'RegistroController@create');
 	Route::post('registrar', 'RegistroController@store');
 });
 
@@ -62,6 +63,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('logout', 'Auth\AuthController@logout');
 
 	// Registration Routes...
+
 	// $this->get('register', 'Auth\AuthController@showRegistrationForm');
 	// $this->post('register', 'Auth\AuthController@register');
 

@@ -5,10 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\UsuarioRequest;
+
 use App\Models\Pais;
+use App\Models\Usuario;
+
+use Carbon\Carbon;
 
 class RegistroController extends Controller
 {
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['create', 'store']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -34,12 +49,24 @@ class RegistroController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Requests\UsuarioRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsuarioRequest $request)
     {
-        return response()->json($request->all());
+        $dt = Carbon::now();
+
+        $usuario = new Usuario;
+        $usuario->nombre = $request->nombre;
+        $usuario->fecha_nacimiento = Carbon::createFromDate($request->ano, $request->mes, $request->dia);
+        // $usuario->fecha_nacimiento = $dt;
+        $usuario->email = $request->email;
+        $usuario->id_pais = $request->pais;
+        $usuario->id_provincia = $request->provincia;
+        $usuario->password = bcrypt($request->password);
+        $usuario->fecha_vencimiento = $dt;
+        $usuario->url = substr(md5(microtime()),rand(0,26),10);
+        $usuario->save();
     }
 
     /**

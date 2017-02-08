@@ -6,21 +6,13 @@ use Auth;
 use Cache;
 use Illuminate\Http\Request;
 
+use App\Http\Requests;
+
 use App\Models\Usuario;
 use App\Models\Usuario\Extracto;
 
 class UsuarioController extends Controller
 {
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth', ['except' => ['postLogin']]);
-    }
-
     /**
      * [index description]
      * @return [type] [description]
@@ -41,7 +33,7 @@ class UsuarioController extends Controller
      * @param  [type]  $id_usuario [description]
      * @return [type]              [description]
      */
-    public function update(Request $r, $id_usuario)
+    public function update(UsuarioRequest $r, $id_usuario)
     {
         $usuario = Usuario::findOrFail($id_usuario);
         $usuario->nombre = $r->nombre;
