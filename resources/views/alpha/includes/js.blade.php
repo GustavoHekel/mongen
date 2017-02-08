@@ -6,3 +6,4 @@
 <script src="{{ asset('dist/plugins/alpha/js/util.js')}}"></script>
 <!--[if lte IE 8]><script src="{{ asset('dist/plugins/alpha/js/ie/respond.min.js')}}"></script><![endif]-->
 <script src="{{ asset('dist/plugins/alpha/js/main.js')}}"></script>
+<script src="{{ asset('dist/bower_components/jquery-validation/dist/jquery.validate.min.js')}}"></script>

@@ -53,7 +53,7 @@
                             <div class="select-wrapper">
                                 <select name="dia">
                                     <option value="">- Dia -</option>
-                                    @for($i = 0; $i <= 31; $i ++)
+                                    @for($i = 1; $i <= 31; $i ++)
                                     <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                 </select>
@@ -88,7 +88,7 @@
             <div class="12u">
                 <ul class="actions">
                     <li>
-                        <input type="submit" value="Enviar">
+                        <input type="submit" value="Crear cuenta">
                     </li>
                 </ul>
             </div>
@@ -100,6 +100,46 @@
 @push('scripts')
 <script>
     $(function(){
+
+        $('form').validate({
+            rules: {
+                nombre: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                pais: {
+                    required: true
+                },
+                provincia: {
+                    required: true
+                },
+                password: {
+                    required: true
+                },
+                dia: {
+                    required: true
+                },
+                mes: {
+                    required: true
+                },
+                ano: {
+                    required: true
+                }
+            },
+            submitHandler: function(form){
+                $.ajax({
+                    method: 'post',
+                    url: 'registrar',
+                    data: $(form).serialize(),
+                    success: function(data){
+                        console.log(data);
+                    }
+                })
+            }
+        });
 
         $('select[name=pais]').change(function(){
             $.get('provincias/' + $(this).val(), function(data){
