@@ -15,7 +15,7 @@
     </div>
     @endif
     <form method="post" action="registro">
-        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+        {{ csrf_field() }}
         <div class="row uniform 50%">
             <div class="8u -2u 12u(mobilep)">
                 <input type="text" name="nombre" placeholder="Nombre completo" maxlength="255" value="{{ old('nombre') }}">
@@ -122,7 +122,11 @@
                 email: {
                     required: true,
                     email: true,
-                    maxlength: 255
+                    maxlength: 255,
+                    remote: {
+                        method: 'get',
+                        url: 'usuario' + $(this).val()
+                    }
                 },
                 pais: {
                     required: true
@@ -143,6 +147,11 @@
                 },
                 ano: {
                     required: true
+                }
+            },
+            messages: {
+                email: {
+                    remote: 'Email en uso'
                 }
             },
             submitHandler: function(form){

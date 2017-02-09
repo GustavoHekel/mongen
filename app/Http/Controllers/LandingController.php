@@ -76,7 +76,7 @@ class LandingController extends Controller
 		if ($status) {
 			return view('alpha.complete');
 		} else {
-			return view('505');
+			return view('errors.500');
 		}
 	}
 

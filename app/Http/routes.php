@@ -30,12 +30,14 @@ Route::group(['middleware' => ['landing']] , function() {
 	Route::get('about', 'LandingController@acerca')->name('acerca');
 	Route::get('recover', 'LandingController@getRecover')->name('recover');
 	Route::post('newsletter', 'LandingController@postNewsletter');
-	Route::get('registro-completo/{$status}', 'LandingController@completo')->name('completo');
+	Route::get('registro-completo/{status}', 'LandingController@completo');
 
-	Route::get('registro', 'RegistroController@create')->name('registro');
-	Route::post('registro', 'RegistroController@store');
+	Route::get('registro', 'UsuarioController@create')->name('registro');
+	Route::post('registro', 'UsuarioController@store');
 
 	Route::get('ejemplos', 'LandingController@ejemplos');
+
+	Route::get('usuario', 'UsuarioController@index');
 
 });
 
@@ -100,7 +102,7 @@ Route::group(['middleware' => ['web']], function () {
 		Route::put('estado/{id_estado}', 'EstadoController@update');
 
 		// Datos personales
-		Route::get('personal', 'UsuarioController@index');
+		Route::get('personal', 'UsuarioController@show');
 		Route::put('personal/{id_usuario}', 'UsuarioController@update');
 
 		// Estudios
