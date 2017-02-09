@@ -7,5 +7,4 @@
             Dejá de usar programas complejos para obtener resultados aburridos.<br />
             Con Mongen. marcá la diferencia y hacete notar.</p>
     </header>
-    <span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
 </section>

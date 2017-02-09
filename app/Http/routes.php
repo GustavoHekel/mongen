@@ -24,13 +24,19 @@ Route::get('zohoverify/verifyforzoho.html' , function(){
 */
 Route::group(['middleware' => ['landing']] , function() {
 	Route::get('/', 'LandingController@index')->name('index');
-	Route::get('precios', 'LandingController@precios')->name('precios');
-	Route::get('about', 'LandingController@acerca')->name('about');
+	Route::get('planes', 'LandingController@planes')->name('planes');
+	Route::get('planes/free', 'LandingController@free');
+	Route::get('planes/premium', 'LandingController@premium');
+	Route::get('about', 'LandingController@acerca')->name('acerca');
 	Route::get('recover', 'LandingController@getRecover')->name('recover');
 	Route::post('newsletter', 'LandingController@postNewsletter');
+	Route::get('registro-completo/{$status}', 'LandingController@completo')->name('completo');
 
-	Route::get('registrar', 'RegistroController@create');
-	Route::post('registrar', 'RegistroController@store');
+	Route::get('registro', 'RegistroController@create')->name('registro');
+	Route::post('registro', 'RegistroController@store');
+
+	Route::get('ejemplos', 'LandingController@ejemplos');
+
 });
 
 /*
@@ -86,8 +92,6 @@ Route::group(['middleware' => ['web']], function () {
 	 * MI CV
 	 */
  	Route::get('mi-cv', 'CurriculumController@index');
-	Route::get('{url}', 'CurriculumController@show');
-	Route::get('{url}/pdf', 'CurriculumController@pdf');
 
 	Route::group(['prefix' => 'mi-cv'], function () {
 
@@ -164,6 +168,10 @@ Route::group(['middleware' => ['web']], function () {
 
 		// Avatar
 		Route::post('avatar', 'AvatarController@store');
+
+		// Mi cv
+		Route::get('{url}', 'CurriculumController@show');
+		Route::get('{url}/pdf', 'CurriculumController@pdf');
 
 	});
 

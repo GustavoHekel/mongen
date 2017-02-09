@@ -1,11 +1,12 @@
 <!-- Header -->
 <header id="header" class="alt">
-    <h1><a href="index.html">Mongen.</a></h1>
+    <h1><a href="/">Mongen.</a></h1>
     <nav id="nav">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="index.html">Planes</a></li>
-            <li><a href="#" class="button">Login</a></li>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/planes">Planes</a></li>
+            <li><a href="/ejemplos">Ejemplos</a></li>
+            <li><a href="/login" class="button">Login</a></li>
         </ul>
     </nav>
 </header>

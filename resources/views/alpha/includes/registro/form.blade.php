@@ -14,7 +14,7 @@
         </div>
     </div>
     @endif
-    <form method="post" action="registrar">
+    <form method="post" action="registro">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
         <div class="row uniform 50%">
             <div class="8u -2u 12u(mobilep)">

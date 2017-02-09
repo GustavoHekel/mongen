@@ -54,19 +54,17 @@ class RegistroController extends Controller
      */
     public function store(UsuarioRequest $request)
     {
-        $dt = Carbon::now();
-
         $usuario = new Usuario;
         $usuario->nombre = $request->nombre;
         $usuario->fecha_nacimiento = Carbon::createFromDate($request->ano, $request->mes, $request->dia);
-        // $usuario->fecha_nacimiento = $dt;
         $usuario->email = $request->email;
         $usuario->id_pais = $request->pais;
         $usuario->id_provincia = $request->provincia;
         $usuario->password = bcrypt($request->password);
-        $usuario->fecha_vencimiento = $dt;
+        $usuario->fecha_vencimiento = Carbon::now();
         $usuario->url = substr(md5(microtime()),rand(0,26),10);
-        $usuario->save();
+
+        return redirect()->route('registro-completo', $usuario->save());
     }
 
     /**

@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="es">
 <head>
-	<title>Mongen</title>
 	@include('user-site-pro.includes.header.meta')
 	@include('user-site-pro.includes.header.css')
+	<title>Mongen</title>
 </head>
 <body>
 	<div id="app" class="wrapper">

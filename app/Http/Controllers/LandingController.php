@@ -15,8 +15,8 @@ class LandingController extends Controller
 	 * Devuelve la vista principal de la landing page
 	 * @return null
 	 */
-	public function index(){
-		// return view ('landing-guide.index');
+	public function index()
+	{
 		return view('alpha.index');
 	}
 
@@ -24,24 +24,69 @@ class LandingController extends Controller
 	 * Devuelve la vista de precios
 	 * @return null
 	 */
-	public function precios(){
-		return view('landing-guide.pricing');
+	public function planes()
+	{
+		// return view('landing-guide.pricing');
+		return view('alpha.plans');
+	}
+
+	/**
+	 * Devuelve la información del plan FREE
+	 * @return null
+	 */
+	public function free()
+	{
+		return view('alpha.free');
+	}
+
+	/**
+	 * Devuelve la información del plan FREE
+	 * @return null
+	 */
+	public function premium()
+	{
+		return view('alpha.premium');
 	}
 
 	/**
 	 * Devuelve el formulario de login
 	 * @return null
 	 */
-	public function login(){
-	    return view('landing-guide.login');
+	public function login()
+	{
+	    return view('user-site-pro.login');
 	}
 
 	/**
 	 * Devuelve la vista de about
 	 * @return null
 	 */
-	public function acerca(){
-		return view('landing-guide.about');
+	public function acerca()
+	{
+		// return view('landing-guide.about');
+	}
+
+	/**
+	 * Devuelve el estado del registro
+	 * @param int $status
+	 * @return null
+	 */
+	public function completo($status)
+	{
+		if ($status) {
+			return view('alpha.complete');
+		} else {
+			return view('505');
+		}
+	}
+
+	/**
+	 * Devuelve algunos ejemplos de CV
+	 * @return null
+	 */
+	public function ejemplos()
+	{
+		return view('alpha.examples');
 	}
 
 	/**

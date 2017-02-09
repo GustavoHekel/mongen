@@ -2,7 +2,6 @@
     <div class="6u 12u(narrower)">
 
         <section class="box special">
-            <span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
             <h3>Free</h3>
             <p>3 meses sin cargo</p>
             <p>URL personalizada <i class="fa fa-times"></i></p>
@@ -18,7 +17,6 @@
     <div class="6u 12u(narrower)">
 
         <section class="box special">
-            <span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
             <h3>Premium</h3>
             <p>Uso ilimitado</p>
             <p>URL personalizada <i class="fa fa-check"></i></p>
