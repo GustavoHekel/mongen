@@ -97,13 +97,14 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::group(['prefix' => 'mi-cv'], function () {
 
-		// Estado
-		Route::get('estado', 'EstadoController@index');
-		Route::put('estado/{id_estado}', 'EstadoController@update');
-
 		// Datos personales
 		Route::get('personal', 'UsuarioController@show');
 		Route::put('personal/{id_usuario}', 'UsuarioController@update');
+
+		// Estado
+		Route::get('estado', 'EstadoController@index');
+		Route::post('estado', 'EstadoController@store');
+		Route::put('estado/{id_estado}', 'EstadoController@update');
 
 		// Estudios
 		Route::get('estudios', 'EstudioController@index');

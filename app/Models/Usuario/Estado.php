@@ -20,7 +20,7 @@ class Estado extends Model
 	 *
 	 * @var string
 	 */
-	protected $primaryKey = 'id_estado';
+	protected $primaryKey = 'id_estado_usuario';
 
     /**
      * [scopeFromUser description]

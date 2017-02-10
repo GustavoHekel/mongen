@@ -1,4 +1,4 @@
-@extends('user-site-pro.mi-cv.index')
+@extends('user-site-pro.mi-cv')
 @section('seccion')
 
 <div class="row">
@@ -11,19 +11,31 @@
             <div class="content">
                 <div class="nav-container">
                     <ul class="nav nav-icons" role="tablist">
-                        <li  @if($estado_usuario->id_estado == 1) class="active" @endif >
+                        @if (isset ($estado_usuario))
+                        <li @if($estado_usuario->id_estado == 1) class="active" @endif >
+                        @else
+                        <li>
+                        @endif
                             <a href="#description-logo" role="tab" data-toggle="tab">
                                 <i class="fa fa-bullhorn"></i><br>
                                 Escuchando
                             </a>
                         </li>
+                        @if (isset ($estado_usuario))
                         <li @if($estado_usuario->id_estado == 2) class="active" @endif>
+                        @else
+                        <li>
+                        @endif
                             <a href="#map-logo" role="tab" data-toggle="tab">
                                 <i class="fa fa-calculator"></i><br>
                                 Analizando
                             </a>
                         </li>
-                        <li  @if($estado_usuario->id_estado == 3) class="active" @endif>
+                        @if (isset ($estado_usuario))
+                        <li @if($estado_usuario->id_estado == 3) class="active" @endif>
+                        @else
+                        <li>
+                        @endif
                             <a href="#legal-logo" role="tab" data-toggle="tab">
                                 <i class="fa fa-anchor"></i><br>
                                 Despreocupado
@@ -32,7 +44,11 @@
                     </ul>
                 </div>
                 <div class="tab-content">
-                    <div class="tab-pane  @if($estado_usuario->id_estado == 1) active @endif" id="description-logo">
+                    @if (isset ($estado_usuario))
+                    <div class="tab-pane @if($estado_usuario->id_estado == 1) active @endif" id="description-logo">
+                    @else
+                    <div class="tab-pane" id="description-logo">
+                    @endif
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Escuchando propuestas</h4>
@@ -50,8 +66,11 @@
                         </div>
                     </div>
 
-
+                    @if (isset ($estado_usuario))
                     <div class="tab-pane @if($estado_usuario->id_estado == 2) active @endif" id="map-logo">
+                    @else
+                    <div class="tab-pane" id="map-logo">
+                    @endif
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Analizando un cambio</h4>
@@ -69,8 +88,11 @@
                         </div>
                     </div>
 
-
+                    @if (isset ($estado_usuario))
                     <div class="tab-pane @if($estado_usuario->id_estado == 3) active @endif" id="legal-logo">
+                    @else
+                    <div class="tab-pane" id="legal-logo">
+                    @endif
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Sin necesidad de un cambio</h4>
@@ -99,6 +121,14 @@
 <script>
 $(function(){
 
+    @if (isset($estado_usuario))
+    var method = 'put';
+    var url = 'estado/{{ $estado_usuario->id_estado_usuario}}';
+    @else
+    var method = 'post';
+    var url = 'estado';
+    @endif
+
     $('input').iCheck({
         checkboxClass: 'icheckbox_minimal-green',
         radioClass: 'iradio_minimal-green',
@@ -108,14 +138,20 @@ $(function(){
     $('.status').click(function(event){
         event.preventDefault();
         $.ajax({
-            method: 'put',
-            url: 'estado/{{ $estado_usuario->id_estado_usuario }}',
+            method: method,
+            url: url,
             data: {
                 id_estado: $(this).val()
             },
             statusCode: {
                 200: function (data) {
                     swal('Felicidades', data.message, 'success');
+                },
+                201: function (data) {
+                    swal('Felicidades', data.message, 'success');
+                    method = 'put';
+                    url = 'estado/' + data.data.id_estado_usuario;
+                    console.log(url);
                 },
                 400: function (data) {
                     swal('Atención', data.message, 'danger');

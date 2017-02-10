@@ -32,6 +32,23 @@ class EstadoController extends Controller
     }
 
     /**
+     * [store description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
+    public function store(Request $request)
+    {
+        $estado = new CvEstado;
+        $estado->id_usuario = Auth::user()->id_usuario;
+        $estado->id_estado = $request->id_estado;
+        if ($estado->save()){
+            return response()->created(['message' => 'Estado guardado', 'data' => $estado]);
+        } else {
+            return response()->error(['message' => 'Error al guardar el estado']);
+        }
+    }
+
+    /**
      * Actualiza el estado del usuario
      * @param Request $r
      * @return string

@@ -44,7 +44,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	/**
 	 * Relationship names
 	 */
-	CONST RELATIONSHIPS = [
+	public $relationships = [
 		'estudios',
 		'trabajos',
 		'cursos',
@@ -59,12 +59,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	/**
 	 * Number of sections a user can have
 	 */
-	CONST SECTIONS = 9;
-
-	/**
-	 * Percentage for each relationship
-	 */
-	CONST RELATIONSHIP_VALUE = 100 / self::SECTIONS;
+	public $sections = 9;
 
 	/*
     |--------------------------------------------------------------------------
@@ -244,7 +239,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	{
 		foreach (self::RELATIONSHIPS as $relationship) {
 			if ($this->has($relationship)) {
-				$this->progress += self::RELATIONSHIP_VALUE;
+				$this->progress += (100/$this->sections);
 			}
 		}
 		return $this->progress;

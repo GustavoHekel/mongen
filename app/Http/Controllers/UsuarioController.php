@@ -11,6 +11,7 @@ use App\Http\Requests;
 
 use App\Models\Pais;
 use App\Models\Usuario;
+use App\Models\Usuario\Extracto;
 
 use Carbon\Carbon;
 
@@ -95,15 +96,40 @@ class UsuarioController extends Controller
     public function update(UsuarioRequest $r, $id_usuario)
     {
         $usuario = Usuario::findOrFail($id_usuario);
-        $usuario->nombre = $r->nombre;
-        $usuario->fecha_nacimiento = $r->fecha_nacimiento;
-        $usuario->id_pais = $r->id_pais;
-        $usuario->id_provincia = $r->id_provincia;
-        $usuario->url = $r->url;
-        $usuario->extracto->profesion = $r->profesion;
-        $usuario->extracto->extracto = $r->extracto;
-        $usuario->push();
 
-        return response()->success(['message' => 'User updated']);
+        try {
+            if ($usuario->extracto) {
+                $usuario->extracto->profesion = $r->profesion;
+                $usuario->extracto->extracto = $r->extracto;
+                $usuario->push();
+            } else {
+                $extracto = new Extracto;
+                $extracto->profesion = $r->profesion;
+                $extracto->extracto = $r->extracto;
+                $usuario->extracto()->save($extracto);
+            }
+
+            $usuario->nombre = $r->nombre;
+            $usuario->fecha_nacimiento = Carbon::createFromFormat('d/m/Y', $r->fecha_nacimiento);
+            $usuario->id_pais = $r->id_pais;
+            $usuario->id_provincia = $r->id_provincia;
+
+            if (Auth::user()->id_plan == 1) {
+                $usuario->url = $r->url;
+            }
+
+            if ($usuario->save()) {
+
+                return response()->success(['message' => 'User updated']);
+            } else {
+                return response()->error(['message' => 'User not updated']);
+            }
+
+        } catch (Exception $r) {
+            throw new Exception('Error while saving relationship');
+        }
+
+
+
     }
 }

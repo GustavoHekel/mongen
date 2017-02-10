@@ -21,7 +21,7 @@ class CurriculumController extends Controller
      */
     public function index(Request $r){
         Session::put('secciones', Seccion::all());
-        return view('user-site-pro.mi-cv.index');
+        return view('user-site-pro.mi-cv');
     }
 
     /**

@@ -24,7 +24,7 @@ class CreateUsuarios extends Migration
             $table->timestamp('fecha_vencimiento');
             $table->smallInteger('id_pais');
             $table->smallInteger('id_provincia');
-            $table->string('avatar', 255)->nullable();
+            $table->string('avatar', 255)->nullable()->default('default-user.png');
             $table->timestamp('fecha_validado')->nullable();
             $table->rememberToken();
             $table->timestamps();

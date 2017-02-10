@@ -1,4 +1,4 @@
-@extends('user-site-pro.mi-cv.index')
+@extends('user-site-pro.mi-cv')
 @section('seccion')
 <div class="" id="crop-avatar">
     <div class="row">
@@ -27,13 +27,13 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Profesión</label>
                             <div class="col-md-9">
-                                <input type="text" name="profesion" placeholder="Profesión" class="form-control" value="{{ $usuario->extracto->profesion }}">
+                                <input type="text" name="profesion" placeholder="Profesión" class="form-control" value="{{ $usuario->extracto->profesion or '' }}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Extracto</label>
                             <div class="col-md-9">
-                                <textarea class="form-control" name="extracto" placeholder="Extracto" rows="8" cols="40">{{ $usuario->extracto->extracto }}</textarea>
+                                <textarea class="form-control" name="extracto" placeholder="Extracto" rows="8" cols="40">{{ $usuario->extracto->extracto or '' }}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
