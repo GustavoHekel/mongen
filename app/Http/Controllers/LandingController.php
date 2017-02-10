@@ -10,6 +10,13 @@ use App\Models\Subscripcion;
 
 class LandingController extends Controller
 {
+	/**
+	 * [__construct description]
+	 */
+	public function __construct()
+	{
+		$this->middleware('guest', ['only' => 'login']);
+	}
 
 	/**
 	 * Devuelve la vista principal de la landing page

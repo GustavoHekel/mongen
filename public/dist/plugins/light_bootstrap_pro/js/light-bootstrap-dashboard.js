@@ -208,8 +208,7 @@ lbd = {
 
     initSidebarMenu: debounce(function(){
         $sidebar_wrapper = $('.sidebar-wrapper');
-
-        //console.log('aici se face meniu in dreapta');
+        // console.log('aici se face meniu in dreapta');
 
         if(!mobile_menu_initialized){
 
@@ -246,14 +245,16 @@ lbd = {
             });
 
             mobile_menu_initialized = true;
+            $('.dropdown-toggle').dropdown();
         } else {
-            console.log('window with:' + $(window).width());
+            // console.log('window with:' + $(window).width());
+
             if($(window).width() > 991){
                 // reset all the additions that we made for the sidebar wrapper only if the screen is bigger than 991px
                 $sidebar_wrapper.find('.navbar-form').remove();
                 $sidebar_wrapper.find('.nav-mobile-menu').remove();
 
-                console.log(lbd.misc.sidebar_mini_active);
+                // console.log(lbd.misc.sidebar_mini_active);
 
                 // if(lbd.misc.sidebar_mini_active == true){
                 //     $('body').addClass('sidebar-mini');

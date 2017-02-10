@@ -6,7 +6,6 @@
 
 <!-- Defaults y funciones -->
 <script src="{{ asset("dist/js/mongen.js")}}"></script>
-<script src="{{ asset("js/app.js")}}"></script>
 
 <!--  Forms Validations Plugin -->
 <!-- <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/jquery.validate.min.js")}}"></script> -->
@@ -68,11 +67,12 @@
 <!-- Light Bootstrap Dashboard Core javascript and methods -->
 <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/light-bootstrap-dashboard.js")}}"></script>
 
-<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
-<!-- <script src="dist/plugins/light_bootstrap_pro/js/demo.js"></script> -->
+<script src="{{ asset("js/app.js")}}"></script>
 
 <!-- Seteo de directivas -->
 <script type="text/javascript">
+
+    $('.dropdown-toggle').dropdown();
 
  	$.ajaxSetup({
         headers: {
