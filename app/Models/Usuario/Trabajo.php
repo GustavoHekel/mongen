@@ -66,9 +66,19 @@ class Trabajo extends Model
      *
      * @param string $value position
      */
-    public function setPuestoAttribute($value)
+    public function setPuestoEsAttribute($value)
     {
-        $this->attributes['puesto'] = mb_strtoupper($value);
+        $this->attributes['puesto_es'] = mb_strtoupper($value);
+    }
+
+    /**
+     * Set the position attribute
+     *
+     * @param string $value position
+     */
+    public function setPuestoEnAttribute($value)
+    {
+        $this->attributes['puesto_en'] = mb_strtoupper($value);
     }
 
     /**
@@ -76,9 +86,19 @@ class Trabajo extends Model
      *
      * @param string $value detail
      */
-    public function setDetalleAttribute($value)
+    public function setDetalleEsAttribute($value)
     {
-        $this->attributes['detalle'] = mb_strtoupper($value);
+        $this->attributes['detalle_es'] = mb_strtoupper($value);
+    }
+
+    /**
+     * Set the detail attribute
+     *
+     * @param string $value detail
+     */
+    public function setDetalleEnAttribute($value)
+    {
+        $this->attributes['detalle_en'] = mb_strtoupper($value);
     }
 
     /*

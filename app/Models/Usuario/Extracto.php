@@ -30,18 +30,36 @@ class Extracto extends Model
      * [setProfesionAttribute description]
      * @param [type] $value [description]
      */
-    public function setProfesionAttribute($value)
+    public function setProfesionEsAttribute($value)
     {
-        $this->attributes['profesion'] = mb_strtoupper($value);
+        $this->attributes['profesion_es'] = mb_strtoupper($value);
     }
 
     /**
      * [setProfesionAttribute description]
      * @param [type] $value [description]
      */
-    public function setExtractoAttribute($value)
+    public function setProfesionEnAttribute($value)
     {
-        $this->attributes['extracto'] = mb_strtoupper($value);
+        $this->attributes['profesion_en'] = mb_strtoupper($value);
+    }
+
+    /**
+     * [setProfesionAttribute description]
+     * @param [type] $value [description]
+     */
+    public function setExtractoEsAttribute($value)
+    {
+        $this->attributes['extracto_es'] = mb_strtoupper($value);
+    }
+
+    /**
+     * [setProfesionAttribute description]
+     * @param [type] $value [description]
+     */
+    public function setExtractoEnAttribute($value)
+    {
+        $this->attributes['extracto_en'] = mb_strtoupper($value);
     }
 
     /*

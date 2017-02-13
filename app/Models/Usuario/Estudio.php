@@ -56,9 +56,19 @@ class Estudio extends Model
      *
      * @param string $value institute
      */
-    public function setInstitutoAttribute($value)
+    public function setInstitutoEsAttribute($value)
     {
-        $this->attributes['instituto'] = mb_strtoupper($value);
+        $this->attributes['instituto_es'] = mb_strtoupper($value);
+    }
+
+    /**
+     * Set the institute attribute
+     *
+     * @param string $value institute
+     */
+    public function setInstitutoEnAttribute($value)
+    {
+        $this->attributes['instituto_en'] = mb_strtoupper($value);
     }
 
     /**
@@ -66,9 +76,19 @@ class Estudio extends Model
      *
      * @param string $value career
      */
-    public function setCarreraAttribute($value)
+    public function setCarreraEsAttribute($value)
     {
-        $this->attributes['carrera'] = mb_strtoupper($value);
+        $this->attributes['carrera_es'] = mb_strtoupper($value);
+    }
+
+    /**
+     * Set the career attribute
+     *
+     * @param string $value career
+     */
+    public function setCarreraEnAttribute($value)
+    {
+        $this->attributes['carrera_en'] = mb_strtoupper($value);
     }
 
     /*

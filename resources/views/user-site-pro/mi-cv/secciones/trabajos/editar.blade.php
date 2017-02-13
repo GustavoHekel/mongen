@@ -1,12 +1,20 @@
-@extends('user-site-pro.index')
+@extends('user-site-pro.layout')
 @section('content')
 <div class="row">
 	<div class="col-md-12">
 		<div class="card">
 			<form class="form-horizontal" id="edit-trabajo">
 				<div class="header">
-					Detalle de trabajo
-					<input type="submit" class="btn btn-warning pull-right save-edit" value="Guardar">
+					<h4 class="title">
+						Detalle trabajo
+						<a href="" class="pull-right es-flag">
+							<img src="{{ asset("dist/img/flags/ES.png")}}" alt="es" title="Versión en español">
+						</a>
+						<a href="" class="pull-right en-flag">
+							<img src="{{ asset("dist/img/flags/GB.png")}}" alt="en" title="Versión en inglés">
+						</a>
+					</h4>
+					<!-- <input type="submit" class="btn btn-warning pull-right save-edit" value="Guardar"> -->
 				</div>
 				<div class="content">
 					<div class="form-group">
@@ -16,10 +24,17 @@
 						</div>
 					</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Puesto</label>
+					<div class="form-group es">
+						<label class="col-sm-2 control-label">Puesto (español)</label>
 						<div class="col-sm-10">
-							<input type="text" name="puesto" placeholder="Puesto" class="form-control" value="{{ $trabajo->puesto }}">
+							<input type="text" name="puesto_es" placeholder="Puesto" class="form-control" value="{{ $trabajo->puesto_es }}">
+						</div>
+					</div>
+
+					<div class="form-group en">
+						<label class="col-sm-2 control-label">Puesto (inglés)</label>
+						<div class="col-sm-10">
+							<input type="text" name="puesto_en" placeholder="Puesto" class="form-control" value="{{ $trabajo->puesto_en }}">
 						</div>
 					</div>
 
@@ -57,13 +72,20 @@
 						</div>
 					</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Descripción del puesto</label>
+					<div class="form-group es">
+						<label class="col-sm-2 control-label">Descripción del puesto (español)</label>
 						<div class="col-sm-10">
-							<!-- <input type="text" name="detalle" placeholder="Descripción del puesto" class="form-control" value=""> -->
-							<textarea name="detalle" class="form-control" placeholder="Descripción" cols="30" rows="10">{{ $trabajo->detalle }}</textarea>
+							<textarea name="detalle_es" class="form-control" placeholder="Descripción" cols="30" rows="10">{{ $trabajo->detalle_es }}</textarea>
 						</div>
 					</div>
+
+					<div class="form-group en">
+						<label class="col-sm-2 control-label">Descripción del puesto (inglés)</label>
+						<div class="col-sm-10">
+							<textarea name="detalle_en" class="form-control" placeholder="Descripción" cols="30" rows="10">{{ $trabajo->detalle_en }}</textarea>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-fill btn-success">Guardar</button>
 				</div>
 				<div class="footer">
 					<div class="stats">
@@ -129,6 +151,15 @@ $(function(){
 		}
 	});
 
+	$('.en').hide();
+    $('.es-flag').hide();
+
+    $('.en-flag, .es-flag').click(function(event){
+        event.preventDefault();
+        $('.en-flag, .es-flag').toggle();
+        $('.es').toggle();
+        $('.en').toggle();
+    });
 
 });
 </script>

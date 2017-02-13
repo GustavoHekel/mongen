@@ -34,9 +34,9 @@
                                 @foreach($user->estudios as $estudio)
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <p class="period">{{ $estudio->year_from }} - {{ $estudio->year_to or 'Actualidad'}}</p>
-                                        <p class="career">{{ $estudio->carrera }}</p>
-                                        <p class="institute">{{ $estudio->instituto }}</p>
+                                        <p class="period">{{ $estudio->year_from }} - {{ $estudio->year_to or trans('cvs.actualidad')}}</p>
+                                        <p class="career">{{ App::getLocale() == 'es' ? $estudio->carrera_es : $estudio->carrera_en }}</p>
+                                        <p class="institute">{{ App::getLocale() == 'es' ? $estudio->instituto_es : $estudio->instituto_en }}</p>
                                         <hr>
                                     </div>
                                 </div>
@@ -150,15 +150,15 @@
                                     {{ trans('cvs.experiencia') }}
                                 </p>
                                 @foreach($user->trabajos as $trabajo)
-                                <p class="short-description">{{ $trabajo->puesto }} - {{ $trabajo->lugar }}</p>
+                                <p class="short-description">{{ App::getLocale() == 'es' ? $trabajo->puesto_es : $trabajo->puesto_en }} - {{ $trabajo->lugar }}</p>
                                 <p class="period">{{ $trabajo->month_from}}/{{ $trabajo->year_from}} -
                                     @if ($trabajo->year_to != null)
                                     {{ $trabajo->month_to }}/{{ $trabajo->year_to}}
                                     @else
-                                    ACTUALIDAD
+                                    {{ trans('cvs.actualidad') }}
                                     @endif
                                 </p>
-                                <p class="description">{{ $trabajo->detalle }}</p>
+                                <p class="description">{{ App::getLocale() == 'es' ? $trabajo->detalle_es : $trabajo->detalle_en }}</p>
                                 @endforeach
                             </div>
                         </div>

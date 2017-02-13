@@ -8,5 +8,6 @@ return [
     'experiencia' => 'experience',
     'habilidades' => 'skills',
     'idiomas' => 'languages',
-    'aficiones' => 'hobbies'
+    'aficiones' => 'hobbies',
+    'actualidad' => 'nowadays'
 ];

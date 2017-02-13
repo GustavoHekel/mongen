@@ -33,7 +33,7 @@ $(function() {
         ajax: 'trabajos/listado',
         columns: [
             { data: 'lugar' },
-            { data: 'puesto' },
+            { data: 'puesto_es' },
             { data: 'actions', className: 'td-actions text-right'}
         ]
     })

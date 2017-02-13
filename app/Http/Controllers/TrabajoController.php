@@ -103,9 +103,11 @@ class TrabajoController extends Controller
         $trabajo = new CvTrabajo;
         $trabajo->id_usuario = Auth::user()->id_usuario;
         $trabajo->lugar = $r->lugar;
-        $trabajo->puesto = $r->puesto;
+        $trabajo->puesto_es = $r->puesto_es;
+        $trabajo->puesto_en = $r->puesto_en;
         $trabajo->desde = $r->anio_desde . $r->mes_desde;
-        $trabajo->detalle = $r->detalle;
+        $trabajo->detalle_es = $r->detalle_es;
+        $trabajo->detalle_en = $r->detalle_en;
 
         if (isset ($r->trabajo_actual)) {
             $trabajo->hasta = null;
@@ -127,9 +129,11 @@ class TrabajoController extends Controller
         $this->authorize('editar', $trabajo);
 
         $trabajo->lugar = $r->lugar;
-        $trabajo->puesto = $r->puesto;
+        $trabajo->puesto_es = $r->puesto_es;
+        $trabajo->puesto_en = $r->puesto_en;
         $trabajo->desde = $r->anio_desde . $r->mes_desde;
-        $trabajo->detalle = $r->detalle;
+        $trabajo->detalle_es = $r->detalle_es;
+        $trabajo->detalle_en = $r->detalle_en;
 
         if (isset ($r->trabajo_actual)) {
             $trabajo->hasta = null;
