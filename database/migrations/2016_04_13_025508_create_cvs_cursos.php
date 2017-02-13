@@ -16,10 +16,12 @@ class CreateCvsCursos extends Migration
             $table->increments('id_curso');
             $table->integer('id_usuario');
             $table->string('instituto' , 255);
-            $table->string('nombre' , 255);
+            $table->string('nombre_es' , 255);
+            $table->string('nombre_en' , 255)->nullable();
             $table->integer('desde');
             $table->integer('hasta');
-            $table->text('detalle')->nullable();
+            $table->text('detalle_es')->nullable();
+            $table->text('detalle_en')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

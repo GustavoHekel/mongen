@@ -118,8 +118,11 @@ $(function(){
 				required: true,
 				maxlength: 255
 			},
-			puesto: {
+			puesto_es: {
 				required: true,
+				maxlength: 255
+			},
+			puesto_en: {
 				maxlength: 255
 			},
 			mes_desde: {
@@ -128,7 +131,10 @@ $(function(){
 			anio_desde: {
 				required: true
 			},
-			detalle: {
+			detalle_es: {
+				maxlength: 300
+			},
+			detalle_en: {
 				maxlength: 300
 			}
 		},

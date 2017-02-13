@@ -5,9 +5,18 @@
 		<div class="card">
 			<form class="form-horizontal" id="new-trabajo">
 				<div class="header">
-					<h4 class="title">
+					<!-- <h4 class="title">
 						Nuevo trabajo
 						<input type="submit" class="btn btn-warning pull-right" value="Guardar">
+					</h4> -->
+					<h4 class="title">
+						Nuevo trabajo
+						<a href="" class="pull-right es-flag">
+							<img src="{{ asset("dist/img/flags/ES.png")}}" alt="es" title="Versión en español">
+						</a>
+						<a href="" class="pull-right en-flag">
+							<img src="{{ asset("dist/img/flags/GB.png")}}" alt="en" title="Versión en inglés">
+						</a>
 					</h4>
 				</div>
 				<div class="content">
@@ -18,10 +27,17 @@
 						</div>
 					</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Puesto</label>
+					<div class="form-group es">
+						<label class="col-sm-2 control-label">Puesto (español)</label>
 						<div class="col-sm-10">
-							<input type="text" name="puesto" placeholder="Puesto" class="form-control">
+							<input type="text" name="puesto_es" placeholder="Puesto" class="form-control">
+						</div>
+					</div>
+
+					<div class="form-group en">
+						<label class="col-sm-2 control-label">Puesto (inglés)</label>
+						<div class="col-sm-10">
+							<input type="text" name="puesto_en" placeholder="Puesto" class="form-control">
 						</div>
 					</div>
 
@@ -59,12 +75,20 @@
 						</div>
 					</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Descripción</label>
+					<div class="form-group es">
+						<label class="col-sm-2 control-label">Descripción (español)</label>
 						<div class="col-sm-10">
-							<textarea name="detalle" class="form-control" placeholder="Descripción" cols="30" rows="10"></textarea>
+							<textarea name="detalle_es" class="form-control" placeholder="Descripción" cols="30" rows="10"></textarea>
 						</div>
 					</div>
+
+					<div class="form-group en">
+						<label class="col-sm-2 control-label">Descripción (inglés)</label>
+						<div class="col-sm-10">
+							<textarea name="detalle_en" class="form-control" placeholder="Descripción" cols="30" rows="10"></textarea>
+						</div>
+					</div>
+					<input type="submit" class="btn btn-success btn-fill" value="Guardar">
 				</div>
 			</form>
 		</div>
@@ -91,8 +115,11 @@ $(function(){
 				required: true,
 				maxlength: 255
 			},
-			puesto: {
+			puesto_es: {
 				required: true,
+				maxlength: 255
+			},
+			puesto_en: {
 				maxlength: 255
 			},
 			mes_desde: {
@@ -100,6 +127,12 @@ $(function(){
 			},
 			anio_desde: {
 				required: true
+			},
+			detalle_es: {
+				maxlength: 300
+			},
+			detalle_en: {
+				maxlength: 300
 			}
 		},
 		submitHandler: function(form) {
@@ -121,6 +154,15 @@ $(function(){
 		}
 	});
 
+	$('.en').hide();
+    $('.es-flag').hide();
+
+    $('.en-flag, .es-flag').click(function(event){
+        event.preventDefault();
+        $('.en-flag, .es-flag').toggle();
+        $('.es').toggle();
+        $('.en').toggle();
+    });
 
 });
 </script>
