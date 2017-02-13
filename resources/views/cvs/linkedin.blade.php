@@ -53,7 +53,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <p class="period">{{ $curso->year_from }}</p>
-                                        <p class="career">{{ $curso->nombre }}</p>
+                                        <p class="career">{{ App::getLocale() == 'es' ? $curso->nombre_es : $curso->nombre_en }}</p>
                                         <p class="institute">{{ $curso->instituto }}</p>
                                         <hr>
                                     </div>

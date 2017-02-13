@@ -1,12 +1,20 @@
-@extends('user-site-pro.index')
+@extends('user-site-pro.layout')
 @section('content')
 <div class="row">
 	<div class="col-md-12">
 		<div class="card">
 			<form class="form-horizontal" id="new-curso">
 				<div class="header">
-					Nuevo curso
-					<input type="submit" class="btn btn-warning pull-right save-edit" value="Guardar">
+					<h4 class="title">
+						Nuevo curso
+						<a href="" class="pull-right es-flag">
+							<img src="{{ asset("dist/img/flags/ES.png")}}" alt="es" title="Versión en español">
+						</a>
+						<a href="" class="pull-right en-flag">
+							<img src="{{ asset("dist/img/flags/GB.png")}}" alt="en" title="Versión en inglés">
+						</a>
+					</h4>
+
 				</div>
 				<div class="content">
 					<div class="form-group">
@@ -16,10 +24,17 @@
 						</div>
 					</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Nombre</label>
+					<div class="form-group es">
+						<label class="col-sm-2 control-label">Nombre (español)</label>
 						<div class="col-sm-10">
-							<input type="text" name="nombre" placeholder="Nombre" class="form-control">
+							<input type="text" name="nombre_es" placeholder="Nombre" class="form-control">
+						</div>
+					</div>
+
+					<div class="form-group en">
+						<label class="col-sm-2 control-label">Nombre (inglés)</label>
+						<div class="col-sm-10">
+							<input type="text" name="nombre_en" placeholder="Nombre" class="form-control">
 						</div>
 					</div>
 
@@ -57,12 +72,20 @@
 						</div>
 					</div>
 
-                    <div class="form-group">
-						<label class="col-sm-2 control-label">Descripción</label>
+                    <div class="form-group es">
+						<label class="col-sm-2 control-label">Descripción (español)</label>
 						<div class="col-sm-10">
-							<input type="text" name="detalle" placeholder="Descripcion" class="form-control">
+							<input type="text" name="detalle_es" placeholder="Descripcion" class="form-control">
 						</div>
 					</div>
+
+					<div class="form-group en">
+						<label class="col-sm-2 control-label">Descripción (inglés)</label>
+						<div class="col-sm-10">
+							<input type="text" name="detalle_en" placeholder="Descripcion" class="form-control">
+						</div>
+					</div>
+					<input type="submit" class="btn btn-success btn-fill save-edit" value="Guardar">
 				</div>
 			</form>
 		</div>
@@ -89,8 +112,11 @@ $(function(){
 				required: true,
 				maxlength: 255
 			},
-			nombre: {
+			nombre_es: {
 				required: true,
+				maxlength: 255
+			},
+			nombre_en: {
 				maxlength: 255
 			},
 			mes_desde: {
@@ -98,6 +124,12 @@ $(function(){
 			},
 			anio_desde: {
 				required: true
+			},
+			detalle_es: {
+				maxlength: 255
+			},
+			detalle_en: {
+				maxlength: 255
 			}
 		},
 		submitHandler: function(form) {
@@ -119,6 +151,15 @@ $(function(){
 		}
 	});
 
+	$('.en').hide();
+    $('.es-flag').hide();
+
+    $('.en-flag, .es-flag').click(function(event){
+        event.preventDefault();
+        $('.en-flag, .es-flag').toggle();
+        $('.es').toggle();
+        $('.en').toggle();
+    });
 
 });
 </script>

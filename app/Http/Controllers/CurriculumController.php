@@ -49,8 +49,15 @@ class CurriculumController extends Controller
 
     }
 
-    public function pdf($url)
+    /**
+     * [pdf description]
+     * @param  [type]  $url     [description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
+    public function pdf($url, Request $request)
     {
+        App::setLocale($request->locale);
         $user = Usuario::whereUrl($url)
             ->full()
             ->first();

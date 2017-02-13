@@ -33,7 +33,7 @@ $(function() {
         ajax: 'cursos/listado',
         columns: [
             { data: 'instituto' },
-            { data: 'nombre' },
+            { data: 'nombre_es' },
             { data: 'actions', className: 'td-actions text-right'}
         ]
     });

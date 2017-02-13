@@ -101,9 +101,11 @@ class CursoController extends Controller
         $curso = new CvCurso;
         $curso->id_usuario = Auth::user()->id_usuario;
         $curso->instituto = $r->instituto;
-        $curso->nombre = $r->nombre;
+        $curso->nombre_es = $r->nombre_es;
+        $curso->nombre_en = $r->nombre_en;
         $curso->desde = $r->anio_desde . $r->mes_desde;
-        $curso->detalle = $r->detalle;
+        $curso->detalle_es = $r->detalle_es;
+        $curso->detalle_en = $r->detalle_en;
 
         if (isset ($r->en_curso)) {
             $curso->hasta = null;
@@ -125,9 +127,11 @@ class CursoController extends Controller
         $this->authorize('editar', $curso);
 
         $curso->instituto = $r->instituto;
-        $curso->nombre = $r->nombre;
+        $curso->nombre_es = $r->nombre_es;
+        $curso->nombre_en = $r->nombre_en;
         $curso->desde = $r->anio_desde . $r->mes_desde;
-        $curso->detalle = $r->detalle;
+        $curso->detalle_es = $r->detalle_es;
+        $curso->detalle_en = $r->detalle_en;
 
         if (isset ($r->en_curso)) {
             $curso->hasta = null;
