@@ -32,8 +32,8 @@ $(function() {
     var estudiosTable = $('#table').DataTable({
         ajax: 'estudios/listado',
         columns: [
-            { data: 'instituto' },
-            { data: 'carrera' },
+            { data: 'instituto_es' },
+            { data: 'carrera_es' },
             { data: 'actions', className: 'td-actions text-right'}
         ]
     });

@@ -109,7 +109,13 @@
                             </div>
                         </div>
                     </div>
-
+                </div>
+            </div>
+            <div class="footer">
+                <div class="stats">
+                    <i class="fa fa-history"></i> Created {{ $estado_usuario->created_at->diffForHumans() }}
+                    <br />
+                    <i class="fa fa-history"></i> Updated {{ $estado_usuario->updated_at->diffForHumans() }}
                 </div>
             </div>
         </div>

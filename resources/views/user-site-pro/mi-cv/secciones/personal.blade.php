@@ -109,14 +109,16 @@
                         </div>
 
                         <!-- <a href="#" class="btn btn-success pull-right update">Actualizar</a> -->
-                        <button type="submit" class="btn btn-fill btn-success">Actualizar</button>
+                        <button type="submit" class="btn btn-fill btn-success">Guardar</button>
                     </form>
                 </div>
                 <div class="footer">
-                    <div class="legend">
-                        <!-- <i class="fa fa-circle text-info"></i> Open -->
-                    </div>
-                </div>
+					<div class="stats">
+						<i class="fa fa-history"></i> Created {{ $usuario->created_at->diffForHumans() }}
+						<br />
+						<i class="fa fa-history"></i> Updated {{ $usuario->updated_at->diffForHumans() }}
+					</div>
+				</div>
             </div>
         </div>
     </div>

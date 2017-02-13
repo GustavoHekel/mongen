@@ -5,21 +5,44 @@
 		<div class="card">
 			<form class="form-horizontal" id="new-estudio">
 				<div class="header">
-					Nuevo estudio
-					<input type="submit" class="btn btn-warning pull-right save-edit" value="Guardar">
+					<h4 class="title">
+						Nuevo estudio
+						<a href="" class="pull-right es-flag">
+							<img src="{{ asset("dist/img/flags/ES.png")}}" alt="es" title="Versión en español">
+						</a>
+						<a href="" class="pull-right en-flag">
+							<img src="{{ asset("dist/img/flags/GB.png")}}" alt="en" title="Versión en inglés">
+						</a>
+					</h4>
+					<!-- <input type="submit" class="btn btn-warning pull-right save-edit" value="Guardar"> -->
 				</div>
 				<div class="content">
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Instituto</label>
+
+					<div class="form-group es">
+						<label class="col-sm-2 control-label">Instituto (español)</label>
 						<div class="col-sm-10">
-							<input type="text" name="instituto" placeholder="Instituto" class="form-control">
+							<input type="text" name="instituto_es" placeholder="Instituto" class="form-control">
 						</div>
 					</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Carrera</label>
+					<div class="form-group en">
+						<label class="col-sm-2 control-label">Instituto (inglés)</label>
 						<div class="col-sm-10">
-							<input type="text" name="carrera" placeholder="Carrera" class="form-control">
+							<input type="text" name="instituto_en" placeholder="Instituto" class="form-control">
+						</div>
+					</div>
+
+					<div class="form-group es">
+						<label class="col-sm-2 control-label">Carrera (español)</label>
+						<div class="col-sm-10">
+							<input type="text" name="carrera_es" placeholder="Carrera" class="form-control">
+						</div>
+					</div>
+
+					<div class="form-group en">
+						<label class="col-sm-2 control-label">Carrera (inglés)</label>
+						<div class="col-sm-10">
+							<input type="text" name="carrera_en" placeholder="Carrera" class="form-control">
 						</div>
 					</div>
 
@@ -63,6 +86,7 @@
 							<input type="text" name="promedio" placeholder="Promedio" class="form-control">
 						</div>
 					</div>
+					<button type="submit" class="btn btn-fill btn-success">Guardar</button>
 				</div>
 			</form>
 		</div>
@@ -84,11 +108,19 @@ $(function(){
 
 	$('#new-estudio').validate({
 		rules: {
-			instituto: {
+			instituto_es: {
 				required: true,
 				maxlength: 255
 			},
-			carrera: {
+			carrera_es: {
+				required: true,
+				maxlength: 255
+			},
+			instituto_en: {
+				required: true,
+				maxlength: 255
+			},
+			carrera_en: {
 				required: true,
 				maxlength: 255
 			},
@@ -118,6 +150,15 @@ $(function(){
 		}
 	});
 
+	$('.en').hide();
+    $('.es-flag').hide();
+
+    $('.en-flag, .es-flag').click(function(event){
+        event.preventDefault();
+        $('.en-flag, .es-flag').toggle();
+        $('.es').toggle();
+        $('.en').toggle();
+    });
 
 });
 </script>

@@ -102,8 +102,10 @@ class EstudioController extends Controller
     {
         $estudio = new CvEstudio;
         $estudio->id_usuario = Auth::user()->id_usuario;
-        $estudio->instituto = $r->instituto;
-        $estudio->carrera = $r->carrera;
+        $estudio->instituto_es = $r->instituto_es;
+        $estudio->carrera_es = $r->carrera_es;
+        $estudio->instituto_en = $r->instituto_en;
+        $estudio->carrera_en = $r->carrera_en;
         $estudio->desde = $r->anio_desde . $r->mes_desde;
         $estudio->promedio = $r->promedio != null ?: 0;
 
@@ -126,8 +128,10 @@ class EstudioController extends Controller
         $estudio = CvEstudio::findOrFail($id_estudio);
         $this->authorize('editar', $estudio);
 
-        $estudio->instituto = $r->instituto;
-        $estudio->carrera = $r->carrera;
+        $estudio->instituto_es = $r->instituto_es;
+        $estudio->carrera_es = $r->carrera_es;
+        $estudio->instituto_en = $r->instituto_en;
+        $estudio->carrera_en = $r->carrera_en;
         $estudio->desde = $r->anio_desde . $r->mes_desde;
         $estudio->promedio = $r->promedio != null ?: 0;
 

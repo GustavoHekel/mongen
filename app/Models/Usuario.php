@@ -188,6 +188,14 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 		return $this->hasOne('App\Models\Usuario\Extracto', 'id_usuario', 'id_usuario');
 	}
 
+	/**
+	 * Devuelve el telefono
+	 */
+	public function telefono()
+	{
+		return $this->hasOne('App\Models\Usuario\Telefono', 'id_usuario', 'id_usuario');
+	}
+
 	/*
     |--------------------------------------------------------------------------
     | Scopes

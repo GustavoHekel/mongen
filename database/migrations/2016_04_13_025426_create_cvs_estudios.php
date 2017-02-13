@@ -15,8 +15,10 @@ class CreateCvsEstudios extends Migration
         Schema::create('cvs.estudios', function (Blueprint $table) {
             $table->increments('id_estudio');
             $table->integer('id_usuario');
-            $table->string('instituto' , 255);
-            $table->string('carrera' , 255);
+            $table->string('instituto_es' , 255);
+            $table->string('carrera_es' , 255);
+            $table->string('instituto_en' , 255)->nullable();
+            $table->string('carrera_en' , 255)->nullable();
             $table->integer('desde');
             $table->integer('hasta')->nullable();
             $table->float('promedio')->nullable();

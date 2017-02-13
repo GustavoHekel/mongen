@@ -17,8 +17,8 @@ class CreateCvsExtractos extends Migration
             $table->integer('id_usuario');
             $table->string('profesion_es', 50);
             $table->string('extracto_es', 700);
-            $table->string('proresion_en', 50);
-            $table->string('extracto_en', 700);
+            $table->string('proresion_en', 50)->nullable();
+            $table->string('extracto_en', 700)->nullable();
             $table->timestamps();
 
             $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');

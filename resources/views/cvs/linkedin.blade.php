@@ -48,7 +48,7 @@
                         <!-- CURSOS -->
                         <div class="row studies">
                             <div class="col-xs-12">
-                                <p class="section">CURSOS</p>
+                                <p class="section">{{ trans('cvs.cursos') }}</p>
                                 @foreach($user->cursos as $curso)
                                 <div class="row">
                                     <div class="col-xs-12">
@@ -65,7 +65,7 @@
 
                         <div class="row social-networks">
                             <div class="col-xs-12">
-                                <p class="section">REDES SOCIALES</p>
+                                <p class="section">{{ trans('cvs.redes') }}</p>
                                 @foreach($user->red->redes as $red => $link)
                                 @if ($link != '')
                                 <p class="network-detail">
@@ -85,7 +85,7 @@
                         <div class="row extract">
                             <div class="col-xs-12">
                                 <p class="section">
-                                    EXTRACTO
+                                    {{ trans('cvs.extracto') }}
                                 </p>
                                 <p class="presentation">
                                     {{ App::getLocale() == 'es' ? $user->extracto->extracto_es : $user->extracto->extracto_en }}
@@ -120,7 +120,7 @@
                                     <i class="fa fa-square fa-stack-2x"></i>
                                     <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
                                 </span>
-                                011 3012 1510
+                                {{ $user->telefono->numero }}
                                 <br>
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-square fa-stack-2x"></i>
@@ -147,7 +147,7 @@
                         <div class="row experience">
                             <div class="col-xs-12">
                                 <p class="section">
-                                    EXPERIENCIA
+                                    {{ trans('cvs.experiencia') }}
                                 </p>
                                 @foreach($user->trabajos as $trabajo)
                                 <p class="short-description">{{ $trabajo->puesto }} - {{ $trabajo->lugar }}</p>
@@ -167,7 +167,7 @@
                         <div class="row skills">
                             <div class="col-xs-6">
                                 <p class="section">
-                                    HABILIDADES TÉCNICAS
+                                    {{ trans('cvs.habilidades') }}
                                 </p>
                                 <br>
                                 @foreach ($user->skills as $skill)
@@ -190,7 +190,7 @@
                         <!-- <div class="row idiomas"> -->
                             <div class="col-xs-6">
                                 <p class="section">
-                                    IDIOMAS
+                                    {{ trans('cvs.idiomas') }}
                                 </p>
                                 <br>
                                 @foreach ($user->idiomas as $idioma)
@@ -213,7 +213,7 @@
                         <div class="row hobbies">
                             <div class="col-xs-12">
                                 <p class="section">
-                                    AFICIONES
+                                    {{ trans('cvs.aficiones') }}
                                 </p>
                                 <br>
                                 <p class="hobbies-description">
