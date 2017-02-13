@@ -1,4 +1,4 @@
-@extends('user-site-pro.mi-cv')
+@extends('user-site-pro.mi-cv.index')
 @section('seccion')
 <div class="row">
     <div class="card">

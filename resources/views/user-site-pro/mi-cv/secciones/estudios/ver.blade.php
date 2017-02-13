@@ -1,4 +1,4 @@
-@extends('user-site-pro.index')
+@extends('user-site-pro.layout')
 @section('content')
 	<div class="row">
 		<div class="col-md-12">

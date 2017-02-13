@@ -237,7 +237,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	 */
 	public function getProgress()
 	{
-		foreach (self::RELATIONSHIPS as $relationship) {
+		foreach ($this->relationships as $relationship) {
 			if ($this->has($relationship)) {
 				$this->progress += (100/$this->sections);
 			}

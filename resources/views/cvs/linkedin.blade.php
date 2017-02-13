@@ -3,12 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>{{ $user->nombre }}</title>
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset("dist/css/homero.css")}}">
     <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
 <body>
@@ -18,26 +15,22 @@
                 <div class="row" style="height: 100%">
                     <div class="col-xs-3 sidebar">
 
-                        <!-- FOTO DE PERFIL -->
                         <div class="row profile-pic">
                             <div class="col-xs-12 no-padding">
                                 <img class="img-responsive" src="{{ asset("dist/img/profile-pics/" . $user->avatar)}}">
                             </div>
                         </div>
 
-                        <!-- NOMBRE Y OCUPACION -->
                         <div class="row my-data">
                             <div class="col-xs-12">
                                 <p class="name">{{ $user->nombre }}</p>
-                                <!-- <p class="ocupation">Full stack developer</p> -->
-                                <p class="ocupation">Hincha de Racing</p>
+                                <p class="ocupation">{{ App::getLocale() == 'es' ? $user->extracto->profesion_es : $user->extracto->profesion_en }}</p>
                             </div>
                         </div>
 
-                        <!-- EDUCACION -->
                         <div class="row studies">
                             <div class="col-xs-12">
-                                <p class="section">EDUCACIÓN</p>
+                                <p class="section">{{ trans('cvs.educacion')}}</p>
                                 @foreach($user->estudios as $estudio)
                                 <div class="row">
                                     <div class="col-xs-12">
@@ -95,7 +88,9 @@
                                     EXTRACTO
                                 </p>
                                 <p class="presentation">
-                                    Actualmente me desempeño en el area de operaciones fluviales de una compañia naviera.
+                                    {{ App::getLocale() == 'es' ? $user->extracto->extracto_es : $user->extracto->extracto_en }}
+
+                                    <!-- Actualmente me desempeño en el area de operaciones fluviales de una compañia naviera.
                                     Analista de operaciones de carga y descarga de barcazas con carga liquida y seca traccionadas por remolcadores en varios puertos Argentinos upriver, Uruguay, Paraguay Brasil y Bolivia.
                                     Entrega de provisiones a los remolcadores.
                                     Actualizacion a los clientes sobre las posiciones de sus cargas.
@@ -106,7 +101,7 @@
                                     Cursando el 3º año de la Licenciatura en Transporte y logistica
                                     adquiriendo nuevos conocimientos y aptitudes que me van a dejar cumplir
                                     con los objetivos de la mejor manera posible a nivel profesional.
-                                    Abierto a escuchar nuevas propuestas
+                                    Abierto a escuchar nuevas propuestas -->
 
                                     <!-- Desarrollador Full Stack con más de 6 años de experiencia en el rubro.
                                     Siempre estoy buscando nuevos desafíos que me lleven a conocer las mejores prácticas, las últimas tecnologías y los mejores talentos.

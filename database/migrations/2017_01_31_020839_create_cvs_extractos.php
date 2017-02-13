@@ -15,8 +15,10 @@ class CreateCvsExtractos extends Migration
         Schema::create('cvs.extractos', function (Blueprint $table) {
             $table->increments('id_extracto');
             $table->integer('id_usuario');
-            $table->string('profesion', 50);
-            $table->string('extracto', 500);
+            $table->string('profesion_es', 50);
+            $table->string('extracto_es', 700);
+            $table->string('proresion_en', 50);
+            $table->string('extracto_en', 700);
             $table->timestamps();
 
             $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');

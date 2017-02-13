@@ -7,41 +7,66 @@
                 <div class="header">
                     <h4 class="title">
                         Datos personales
-                        <a href="#" class="btn btn-success pull-right update">Actualizar</a>
+                        <a href="" class="pull-right es-flag">
+                            <img src="{{ asset("dist/img/flags/ES.png")}}" alt="es" title="Versión en español">
+                        </a>
+                        <a href="" class="pull-right en-flag">
+                            <img src="{{ asset("dist/img/flags/GB.png")}}" alt="en" title="Versión en inglés">
+                        </a>
                     </h4>
                 </div>
                 <div class="content">
                     <form id="personal-form" class="form-horizontal">
+
                         <div class="form-group">
                             <label class="col-md-3 control-label">Foto de perfil</label>
                             <div class="col-md-9 avatar-view">
                                 <img class="img-responsive img-thumbnail" src="{{ asset("dist/img/profile-pics/" . $usuario->avatar)}}">
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="col-md-3 control-label">Nombre</label>
                             <div class="col-md-9">
                                 <input type="text" name="nombre" placeholder="Nombre" class="form-control" value="{{ $usuario->nombre }}">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Profesión</label>
+
+                        <div class="form-group es">
+                            <label class="col-md-3 control-label">Profesión (español)</label>
                             <div class="col-md-9">
-                                <input type="text" name="profesion" placeholder="Profesión" class="form-control" value="{{ $usuario->extracto->profesion or '' }}">
+                                <input type="text" name="profesion_es" placeholder="Profesión" class="form-control" value="{{ $usuario->extracto->profesion_es or '' }}">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Extracto</label>
+
+                        <div class="form-group en">
+                            <label class="col-md-3 control-label">Profesión (inglés)</label>
                             <div class="col-md-9">
-                                <textarea class="form-control" name="extracto" placeholder="Extracto" rows="8" cols="40">{{ $usuario->extracto->extracto or '' }}</textarea>
+                                <input type="text" name="profesion_en" placeholder="Profesión" class="form-control" value="{{ $usuario->extracto->profesion_en or '' }}">
                             </div>
                         </div>
+
+                        <div class="form-group es">
+                            <label class="col-md-3 control-label">Extracto (español)</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" name="extracto_es" placeholder="Extracto" rows="8" cols="40">{{ $usuario->extracto->extracto_es or '' }}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group en">
+                            <label class="col-md-3 control-label">Extracto (inglés)</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" name="extracto_en" placeholder="Extracto" rows="8" cols="40">{{ $usuario->extracto->extracto_en or '' }}</textarea>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label class="col-md-3 control-label">Fecha de nacimiento</label>
                             <div class="col-md-9">
                                 <input type="text" name="fecha_nacimiento" placeholder="Fecha de nacimiento" class="form-control datepicker" value="{{ $usuario->fecha_nacimiento->format('d/m/Y')}}">
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="col-md-3 control-label">País</label>
                             <div class="col-md-9">
@@ -56,6 +81,7 @@
                                 </select>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="col-md-3 control-label">Provincia</label>
                             <div class="col-md-9">
@@ -70,6 +96,7 @@
                                 </select>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="col-md-3 control-label">URL personalizada</label>
                             <div class="col-md-9">
@@ -80,7 +107,15 @@
                                 @endif
                             </div>
                         </div>
+
+                        <!-- <a href="#" class="btn btn-success pull-right update">Actualizar</a> -->
+                        <button type="submit" class="btn btn-fill btn-success">Actualizar</button>
                     </form>
+                </div>
+                <div class="footer">
+                    <div class="legend">
+                        <!-- <i class="fa fa-circle text-info"></i> Open -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -198,12 +233,20 @@ $(function(){
                 required: true,
                 custom: regExp
             },
-            extracto: {
+            extracto_es: {
                 required: true,
-                maxlength: 500,
+                maxlength: 700,
             },
-            profesion: {
+            profesion_es: {
                 required: true,
+                maxlength: 50,
+            },
+            extracto_es: {
+                // required: true,
+                maxlength: 700,
+            },
+            profesion_es: {
+                // required: true,
                 maxlength: 50,
             }
          },
@@ -271,6 +314,17 @@ $(function(){
             url.removeClass('error');
         }
     });
+
+    $('.en').hide();
+    $('.es-flag').hide();
+
+    $('.en-flag, .es-flag').click(function(event){
+        event.preventDefault();
+        $('.en-flag, .es-flag').toggle();
+        $('.es').toggle();
+        $('.en').toggle();
+    });
+
 });
 </script>
 @endpush

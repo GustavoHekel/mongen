@@ -7,6 +7,7 @@ use App\Http\Requests;
 
 use Session;
 use PDF;
+use App;
 
 use App\Models\Seccion;
 use App\Models\Usuario;
@@ -26,11 +27,13 @@ class CurriculumController extends Controller
 
     /**
      * [show description]
-     * @param  [type] $url [description]
-     * @return [type]      [description]
+     * @param  [type]  $url     [description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
      */
-    public function show($url)
+    public function show($url, Request $request)
     {
+        App::setLocale($request->locale);
         $user = Usuario::whereUrl($url)
             ->full()
             ->first();

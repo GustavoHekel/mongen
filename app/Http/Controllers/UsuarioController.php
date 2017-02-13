@@ -99,13 +99,17 @@ class UsuarioController extends Controller
 
         try {
             if ($usuario->extracto) {
-                $usuario->extracto->profesion = $r->profesion;
-                $usuario->extracto->extracto = $r->extracto;
+                $usuario->extracto->profesion_es = $r->profesion_es;
+                $usuario->extracto->extracto_es = $r->extracto_es;
+                $usuario->extracto->profesion_en = $r->profesion_en;
+                $usuario->extracto->extracto_en = $r->extracto_en;
                 $usuario->push();
             } else {
                 $extracto = new Extracto;
-                $extracto->profesion = $r->profesion;
-                $extracto->extracto = $r->extracto;
+                $usuario->extracto->profesion_es = $r->profesion_es;
+                $usuario->extracto->extracto_es = $r->extracto_es;
+                $usuario->extracto->profesion_en = $r->profesion_en;
+                $usuario->extracto->extracto_en = $r->extracto_en;
                 $usuario->extracto()->save($extracto);
             }
 
@@ -128,8 +132,5 @@ class UsuarioController extends Controller
         } catch (Exception $r) {
             throw new Exception('Error while saving relationship');
         }
-
-
-
     }
 }
