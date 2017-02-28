@@ -16,7 +16,7 @@ class CreateModelosCv extends Migration
             $table->increments('id_modelo');
             $table->string('nombre' , 255)->unique();
             $table->string('ruta' , 255);
-            $table->jsonb('descripcion');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }

@@ -33,7 +33,7 @@
                     <select name="pais">
                         <option value="">- País -</option>
                         @foreach($paises as $pais)
-                            <option value="{{ $pais->id_pais }}">{{ $pais->nombre }}</option>
+                            <option value="{{ $pais->id_pais }}">{{ ucwords($pais->nombre) }}</option>
                         @endforeach
                     </select>
                 </div>

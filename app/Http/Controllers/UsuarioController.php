@@ -43,7 +43,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        $paises = Pais::all();
+        $paises = Pais::orderBy('nombre')->get();
         $meses = getMonthsArray();
         return view('alpha.registro', compact('paises', 'meses'));
     }
