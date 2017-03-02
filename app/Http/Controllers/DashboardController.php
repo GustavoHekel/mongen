@@ -31,7 +31,7 @@ class DashboardController extends Controller
             'estudios',
             'skills',
             'cursos',
-            'estado',
+            'estado.estado',
             'intereses',
             'idiomas'
         ])->first();

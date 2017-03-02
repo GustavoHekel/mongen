@@ -113,9 +113,11 @@
             </div>
             <div class="footer">
                 <div class="stats">
+                    @if (isset ($estado_usuario))
                     <i class="fa fa-history"></i> Created {{ $estado_usuario->created_at->diffForHumans() }}
                     <br />
                     <i class="fa fa-history"></i> Updated {{ $estado_usuario->updated_at->diffForHumans() }}
+                    @endif
                 </div>
             </div>
         </div>

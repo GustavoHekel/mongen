@@ -31,4 +31,9 @@ class Estado extends Model
     {
         return $query->where('id_usuario', Auth::user()->id_usuario);
     }
+
+    public function estado()
+    {
+        return $this->hasOne('App\Models\Estado', 'id_estado', 'id_estado');
+    }
 }
