@@ -185,5 +185,5 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('provincias/{id_pais}', 'ProvinciaController@show');
 
 	// Progreso
-	Route::get('progress/me', 'ProgresoUsuarioController@index');
+	Route::get('progreso/me', 'ProgresoUsuarioController@index');
 });

@@ -20,6 +20,21 @@ class CreatePlanes extends Migration
             $table->float('precio_ars');
             $table->timestamps();
         });
+
+        DB::table('sistema.planes')->insert([
+            [
+                'nombre' => 'FREE',
+                'duracion' => '3 months',
+                'invitacion' => '1 month',
+                'precio_ars' => '0'
+            ],
+            [
+                'nombre' => 'PREMIUM',
+                'duracion' => '1 month',
+                'invitacion' => '0 month',
+                'precio_ars' => '9.99'
+            ]
+        ]);
     }
 
     /**

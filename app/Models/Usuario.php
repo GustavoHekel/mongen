@@ -37,29 +37,9 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
     protected $dates = ['created_at', 'updated_at', 'fecha_nacimiento', 'fecha_vencimiento', 'fecha_validado'];
 
 	/**
-	 * User progress
+	 * [$appends description]
 	 */
-	protected $progress = 0;
-
-	/**
-	 * Relationship names
-	 */
-	public $relationships = [
-		'estudios',
-		'trabajos',
-		'cursos',
-		'idiomas',
-		'skills',
-		'red',
-		'pais',
-		'provincia',
-		'extracto'
-	];
-
-	/**
-	 * Number of sections a user can have
-	 */
-	public $sections = 9;
+	protected $appends = [];
 
 	/*
     |--------------------------------------------------------------------------
@@ -238,18 +218,4 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	| Methods
 	|--------------------------------------------------------------------------
 	*/
-
-	/**
-	 * [progress description]
-	 * @return [type] [description]
-	 */
-	public function getProgress()
-	{
-		foreach ($this->relationships as $relationship) {
-			if ($this->has($relationship)) {
-				$this->progress += (100/$this->sections);
-			}
-		}
-		return $this->progress;
-	}
 }

@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Cache;
+use Mail;
+
 use Illuminate\Http\Request;
 use App\Http\Requests\UsuarioRequest;
-
 use App\Http\Requests;
+
+use App\Events\NewUser;
 
 use App\Models\Pais;
 use App\Models\Usuario;
@@ -24,7 +27,7 @@ class UsuarioController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['create', 'store']]);
+        $this->middleware('auth', ['except' => ['create', 'store', 'index']]);
     }
 
     /**
@@ -67,6 +70,7 @@ class UsuarioController extends Controller
         $usuario->url = substr(md5(microtime()),rand(0,26),10);
 
         if ($usuario->save()) {
+            event(new NewUser($usuario));
             return view('alpha.complete');
         } else {
             return view('errors.500');

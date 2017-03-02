@@ -22,16 +22,22 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $paises = Cache::remember('paises', 120, function() {
-            return Pais::all();
-        });
-
-        $provincias = Cache::remember('provincias', 120, function() {
-            return Provincia::fromCountry(Auth::user()->id_pais)->get();
-        });
-
+        // TODO: cambiar esto de lugar!!!
         Session::put('modulos', Modulo::all());
-        return view('user-site-pro.dashboard.index');
+
+        $usuario = Auth::user();
+        $usuario = $usuario::with([
+            'trabajos',
+            'estudios',
+            'skills',
+            'cursos',
+            'estado',
+            'intereses',
+            'idiomas'
+        ])->first();
+
+        // return response()->json($usuario->idiomas->count());
+        return view('user-site-pro.dashboard.index', compact('usuario'));
     }
 
     /**

@@ -14,7 +14,7 @@
         </div>
     </div>
     @endif
-    <form method="post" action="registro">
+    <form method="post" action="registro" id="new-user">
         {{ csrf_field() }}
         <div class="row uniform 50%">
             <div class="8u -2u 12u(mobilep)">
@@ -113,7 +113,7 @@
 <script>
     $(function(){
 
-        $('form').validate({
+        $('#new-user').validate({
             rules: {
                 nombre: {
                     required: true,

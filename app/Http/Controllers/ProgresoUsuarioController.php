@@ -19,8 +19,7 @@ class ProgresoUsuarioController extends Controller
      */
     public function index()
     {
-        $progress = Auth::user()->getProgress();
-        return $progress;
+        // 
     }
 
     /**
