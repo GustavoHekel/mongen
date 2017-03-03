@@ -37,9 +37,18 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
     protected $dates = ['created_at', 'updated_at', 'fecha_nacimiento', 'fecha_vencimiento', 'fecha_validado'];
 
 	/**
-	 * [$appends description]
+	 * Attributes to append to JSON
 	 */
 	protected $appends = [];
+
+	/**
+	 * Relationships
+	 */
+	public $relationships = [
+		'estudios',
+		'trabajos',
+		'cursos'
+	];
 
 	/*
     |--------------------------------------------------------------------------

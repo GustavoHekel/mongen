@@ -13,6 +13,7 @@ use App\Http\Requests;
 use App\Events\NewUser;
 
 use App\Models\Pais;
+use App\Models\Provincia;
 use App\Models\Usuario;
 use App\Models\Usuario\Extracto;
 
@@ -85,8 +86,8 @@ class UsuarioController extends Controller
     {
         $data = [
             'usuario' => Usuario::full()->me()->first(),
-            'paises' => Cache::get('paises'),
-            'provincias' => Cache::get('provincias'),
+            'paises' => Pais::all(),
+            'provincias' => Provincia::whereIdPais(Auth::user()->id_pais)->get()
         ];
         return view('user-site-pro.mi-cv.secciones.personal', $data);
     }
@@ -110,10 +111,10 @@ class UsuarioController extends Controller
                 $usuario->push();
             } else {
                 $extracto = new Extracto;
-                $usuario->extracto->profesion_es = $r->profesion_es;
-                $usuario->extracto->extracto_es = $r->extracto_es;
-                $usuario->extracto->profesion_en = $r->profesion_en;
-                $usuario->extracto->extracto_en = $r->extracto_en;
+                $extracto->profesion_es = $r->profesion_es;
+                $extracto->extracto_es = $r->extracto_es;
+                $extracto->profesion_en = $r->profesion_en;
+                $extracto->extracto_en = $r->extracto_en;
                 $usuario->extracto()->save($extracto);
             }
 
@@ -122,7 +123,7 @@ class UsuarioController extends Controller
             $usuario->id_pais = $r->id_pais;
             $usuario->id_provincia = $r->id_provincia;
 
-            if (Auth::user()->id_plan == 1) {
+            if (Auth::user()->id_plan == 2) {
                 $usuario->url = $r->url;
             }
 

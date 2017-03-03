@@ -100,7 +100,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">URL personalizada</label>
                             <div class="col-md-9">
-                                @if ($usuario->id_plan == 1)
+                                @if ($usuario->id_plan == 2)
                                 <input type="text" name="url" placeholder="URL" class="form-control user-url" value="{{ $usuario->url }}">
                                 @else
                                 <input disabled type="text" name="url" placeholder="URL" class="form-control" value="{{ $usuario->url }}">
@@ -158,16 +158,16 @@
                             <div class="row avatar-btns">
                                 <div class="col-md-9">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="-90" title="Rotate -90 degrees">Rotate Left</button>
-                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="-15">-15deg</button>
-                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="-30">-30deg</button>
-                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="-45">-45deg</button>
+                                        <button type="button" class="btn btn-primary btn-sm" data-method="rotate" data-option="-90" title="Rotate -90 degrees">Rotate Left</button>
+                                        <button type="button" class="btn btn-primary btn-sm" data-method="rotate" data-option="-15">-15deg</button>
+                                        <button type="button" class="btn btn-primary btn-sm" data-method="rotate" data-option="-30">-30deg</button>
+                                        <button type="button" class="btn btn-primary btn-sm" data-method="rotate" data-option="-45">-45deg</button>
                                     </div>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="90" title="Rotate 90 degrees">Rotate Right</button>
-                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="15">15deg</button>
-                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="30">30deg</button>
-                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="45">45deg</button>
+                                        <button type="button" class="btn btn-primary btn-sm" data-method="rotate" data-option="90" title="Rotate 90 degrees">Rotate Right</button>
+                                        <button type="button" class="btn btn-primary btn-sm" data-method="rotate" data-option="15">15deg</button>
+                                        <button type="button" class="btn btn-primary btn-sm" data-method="rotate" data-option="30">30deg</button>
+                                        <button type="button" class="btn btn-primary btn-sm" data-method="rotate" data-option="45">45deg</button>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -243,11 +243,11 @@ $(function(){
                 required: true,
                 maxlength: 50,
             },
-            extracto_es: {
+            extracto_en: {
                 // required: true,
                 maxlength: 700,
             },
-            profesion_es: {
+            profesion_en: {
                 // required: true,
                 maxlength: 50,
             }
@@ -294,11 +294,11 @@ $(function(){
         var patt = regExp;
         var url = $(this);
 
-        if ((! patt.test(key)) && (! patt.test($(this).val()))) {
+        if (patt.test(key) && patt.test(url.val())) {
             return false;
         }
 
-        if (url.length != 0 && url.val() != userUrl) {
+        if (url.val().length != 0 && url.val() != userUrl) {
             $.ajax({
                 method: 'get',
                 url: '/url/' + url.val(),

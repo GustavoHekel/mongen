@@ -66,14 +66,16 @@
                         <div class="row social-networks">
                             <div class="col-xs-12">
                                 <p class="section">{{ trans('cvs.redes') }}</p>
-                                @foreach($user->red->redes as $red => $link)
-                                @if ($link != '')
-                                <p class="network-detail">
-                                    <span class="network">{{ $red }}:</span>
-                                    <span class="link">{{ $link }}</span>
-                                </p>
+                                @if ($user->red)
+                                    @foreach($user->red->redes as $red => $link)
+                                    @if ($link != '')
+                                    <p class="network-detail">
+                                        <span class="network">{{ $red }}:</span>
+                                        <span class="link">{{ $link }}</span>
+                                    </p>
+                                    @endif
+                                    @endforeach
                                 @endif
-                                @endforeach
                             </div>
                         </div>
 
@@ -89,26 +91,6 @@
                                 </p>
                                 <p class="presentation">
                                     {{ App::getLocale() == 'es' ? $user->extracto->extracto_es : $user->extracto->extracto_en }}
-
-                                    <!-- Actualmente me desempeño en el area de operaciones fluviales de una compañia naviera.
-                                    Analista de operaciones de carga y descarga de barcazas con carga liquida y seca traccionadas por remolcadores en varios puertos Argentinos upriver, Uruguay, Paraguay Brasil y Bolivia.
-                                    Entrega de provisiones a los remolcadores.
-                                    Actualizacion a los clientes sobre las posiciones de sus cargas.
-                                    Ingreso y analisis de facturas dentro del sistema de la compañia de todos los gastos portuarios de las operaciones llevadas adelante por la flota en Argentina y Uruguay.
-                                    En los últimos 8 años he trabajado en el rubro maritimo desempeñando mis actividades en una Agencia Maritima con oficina central en Buenos Aires y sucursales en Rosario, San Lorenzo y Campana.
-                                    Me considero una persona comprometida, responsable, optimista, sociable, con capacidad de gestión y coordinación, con muchas ganas de progresar y tener nuevas responsabilidades para poder dejar lo mejor de mi en cada proyecto o tareas que lleve a cabo.
-                                    En constante crecimiento personal y profesionalmente,
-                                    Cursando el 3º año de la Licenciatura en Transporte y logistica
-                                    adquiriendo nuevos conocimientos y aptitudes que me van a dejar cumplir
-                                    con los objetivos de la mejor manera posible a nivel profesional.
-                                    Abierto a escuchar nuevas propuestas -->
-
-                                    <!-- Desarrollador Full Stack con más de 6 años de experiencia en el rubro.
-                                    Siempre estoy buscando nuevos desafíos que me lleven a conocer las mejores prácticas, las últimas tecnologías y los mejores talentos.
-                                    Mis tareas habituales incluyen desarrollo tanto del frontend como del backend, diseño de bases de datos y análisis de código.
-                                    Me considero una persona muy exigente conmigo mismo lo que me lleva a buscar un nivel de excelencia en todo lo que hago.
-                                    Mi principal objetivo personal es mantenerme actualizado en un mundo tan cambiante y demandante como es el de el desarrollo web.
-                                    Actualmente me encuentro cursando el 3er año de la carrera Ingeniería en Sistemas de Información en la Universidad Tecnológi -->
                                 </p>
                             </div>
                         </div>
@@ -120,7 +102,7 @@
                                     <i class="fa fa-square fa-stack-2x"></i>
                                     <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
                                 </span>
-                                {{ $user->telefono->numero }}
+                                {{ $user->telefono->numero or '' }}
                                 <br>
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-square fa-stack-2x"></i>
