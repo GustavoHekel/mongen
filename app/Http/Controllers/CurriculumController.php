@@ -42,11 +42,8 @@ class CurriculumController extends Controller
             'user' => $user,
             'col_config' => 'col-xs-8 col-xs-offset-2'
         ];
-        // return response()->json($data);
 
         return view('cvs.linkedin', $data);
-
-
     }
 
     /**

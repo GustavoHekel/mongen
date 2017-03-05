@@ -15,9 +15,6 @@
 <!-- iCheck -->
 <link rel="stylesheet" type="text/css" href="{{ asset("dist/bower_components/iCheck/skins/minimal/green.css")}}" >
 
-<!-- DataTables -->
-<!-- <link rel="stylesheet" type="text/css" href="{{ asset("dist/bower_components/datatables.net-bs/css/dataTables.bootstrap.css") }}"> -->
-
 <!-- Toastr -->
 <link rel="stylesheet" type="text/css" href="{{ asset("dist/bower_components/toastr/toastr.css")}}">
 
@@ -27,3 +24,6 @@
 
 <!-- Loading -->
 <link rel="stylesheet" type="text/css" href="{{ asset("dist/css/loading.css")}}">
+
+<!-- App css -->
+<link rel="stylesheet" type="text/css" href="{{ asset("css/all.css ")}}">

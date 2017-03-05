@@ -13,6 +13,10 @@ require('laravel-elixir-vue-2');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss')
+    mix.copy('node_modules/sweetalert/dist/sweetalert.css', 'resources/assets/css/sweetalert.css')
+        .sass('app.scss')
+        .styles([
+            'sweetalert.css'
+        ])
         .webpack('app.js');
 });

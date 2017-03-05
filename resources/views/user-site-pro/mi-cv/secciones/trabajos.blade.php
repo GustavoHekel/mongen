@@ -1,6 +1,7 @@
 @extends('user-site-pro.mi-cv.index')
 @section('seccion')
 <div class="row">
+
     <div class="card">
         <div class="header">
             <h4 class="title">
@@ -12,15 +13,7 @@
             </p>
         </div>
         <div class="content">
-            <table class="table table-hover" id="table">
-                <thead>
-                    <tr>
-                        <th>Empresa</th>
-                        <th>Puesto</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-            </table>
+            <app-trabajos></app-trabajos>
         </div>
     </div>
 </div>

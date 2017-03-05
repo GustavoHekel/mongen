@@ -4,9 +4,10 @@ import Vue from 'vue';
 import VueResource from 'vue-resource';
 
 Vue.use(VueResource);
+Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#csrf-token').getAttribute('content');
 
-import CvTableWithActions from './vue/components/mi-cv/CvTableWithActions.vue';
-Vue.component('appCvTableWithActions', CvTableWithActions);
+import Trabajos from './vue/components/mi-cv/Trabajos.vue';
+Vue.component('AppTrabajos', Trabajos);
 
 new Vue({
   el: '#app',

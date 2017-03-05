@@ -1,5 +1,5 @@
 <template lang="html">
-    <table>
+    <table class="">
         <thead>
             <tr>
                 <th v-for="head in headers">{{ head }}</th>
@@ -19,15 +19,14 @@
 
 <script>
 export default {
-    // props: ['rows', 'headers'],
+    props: ['rows', 'headers'],
     data() {
         return {
-            headers: ['Instituto', 'Carrera', 'Aciones'],
-            rows: [{
-                instituto: 'UTN',
-                carrera: 'Paseador de perros',
-                acciones: 'Me hago caca'
-            }]
+            // rows: [{
+            //     instituto: 'UTN',
+            //     carrera: 'Paseador de perros',
+            //     acciones: 'Me hago caca'
+            // }]
 
         }
     }
