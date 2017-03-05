@@ -52,15 +52,15 @@ export default {
                 showLoaderOnConfirm: true
             }, function(isConfirm) {
                 if (isConfirm) {
-                    // this.$http.delete(`trabajos/${id}`).then(response => {
-                    //     if (response.ok) {
-                    //         swal(
-                    //             'Eliminado!',
-                    //             'El trabajo fue borrado.',
-                    //             'success'
-                    //         );
-                    //     }
-                    // })
+                    this.$http.delete(`trabajos/${id}`).then(response => {
+                        if (response.ok) {
+                            swal(
+                                'Eliminado!',
+                                'El trabajo fue borrado.',
+                                'success'
+                            );
+                        }
+                    })
                 } else {
                     swal("Cancelado", "Tu trabajo no fue eliminado :)", "error");
                 }
