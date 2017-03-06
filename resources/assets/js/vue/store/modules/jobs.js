@@ -6,10 +6,10 @@ const mutations = {
     'JOBS_SET_JOBS_COUNT' (state, jobs) {
         state.jobsCount = jobs.length
     },
-    'JOBS_INCREMENT_JOB_COUNT' (state) {
+    'JOBS_INCREMENT_JOBS_COUNT' (state) {
         state.jobsCount++
     },
-    'JOBS_DECREMENT_JOB_COUNT' (state) {
+    'JOBS_DECREMENT_JOBS_COUNT' (state) {
         state.jobsCount--
     }
 }
@@ -19,10 +19,10 @@ const actions = {
         commit('JOBS_SET_JOBS_COUNT', jobs)
     },
     incrementJobsCount({ commit }) {
-        commit('JOBS_INCREMENT_JOB_COUNT')
+        commit('JOBS_INCREMENT_JOBS_COUNT')
     },
     decrementJobsCount({ commit }) {
-        commit('JOBS_DECREMENT_JOB_COUNT')
+        commit('JOBS_DECREMENT_JOBS_COUNT')
     }
 }
 

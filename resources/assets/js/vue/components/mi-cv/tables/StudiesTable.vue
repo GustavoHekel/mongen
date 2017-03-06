@@ -6,14 +6,14 @@
             </tr>
         </thead>
         <tbody>
-            <template v-for="job in jobs">
+            <template v-for="study in studies">
                 <tr>
-                    <td>{{ job.lugar }}</td>
-                    <td>{{ job.puesto_es }}</td>
+                    <td>{{ study.instituto_es }}</td>
+                    <td>{{ study.carrera_es }}</td>
                     <td class="td-actions">
-                        <button @click="view(job.id_trabajo)" class="btn btn-simple btn-info btn-icon table-action" title="Ver"><i class="fa fa-image"></i></button>
-                        <button @click="edit(job.id_trabajo)" class="btn btn-simple btn-warning btn-icon table-action" title="Editar"><i class="fa fa-edit"></i></button>
-                        <button @click="remove(job.id_trabajo)" class="btn btn-simple btn-danger btn-icon table-action" title="Eliminar"><i class="fa fa-remove"></i></button>
+                        <button @click="view(study.id_estudio)" class="btn btn-simple btn-info btn-icon table-action" title="Ver"><i class="fa fa-image"></i></button>
+                        <button @click="edit(study.id_estudio)" class="btn btn-simple btn-warning btn-icon table-action" title="Editar"><i class="fa fa-edit"></i></button>
+                        <button @click="remove(study.id_estudio)" class="btn btn-simple btn-danger btn-icon table-action" title="Eliminar"><i class="fa fa-remove"></i></button>
                     </td>
                 </tr>
             </template>
@@ -27,16 +27,16 @@ import swal from 'sweetalert'
 export default {
     data () {
         return {
-            headers: ['EMPRESA', 'PUESTO', 'ACCIONES'],
-            jobs: null
+            headers: ['INSTITUTO', 'CARRERA', 'ACCIONES'],
+            studies: null
         }
     },
     methods: {
         view (id) {
-            location.href = `trabajos/${id}`
+            location.href = `estudios/${id}`
         },
         edit (id) {
-            location.href = `trabajos/${id}/editar`
+            location.href = `estudios/${id}/editar`
         },
         remove (id) {
             const vm = this
@@ -52,30 +52,30 @@ export default {
                 showLoaderOnConfirm: true
             }, function(isConfirm) {
                 if (isConfirm) {
-                    vm.$http.delete(`trabajos/${id}`).then(response => {
+                    vm.$http.delete(`estudios/${id}`).then(response => {
                         if (response.ok) {
-                            vm.$store.dispatch('decrementJobsCount')
-                            let job = vm.jobs.find(job => job.id_trabajo === id)
-                            vm.jobs.splice(vm.jobs.indexOf(job), 1)
+                            vm.$store.dispatch('decrementStudiesCount')
+                            let study = vm.studies.find(study => study.id_estudio === id)
+                            vm.studies.splice(vm.studies.indexOf(study), 1)
                             swal(
                                 'Eliminado!',
-                                'El trabajo fue borrado.',
+                                'El estudio fue borrado.',
                                 'success'
                             );
                         }
                     })
                 } else {
-                    swal("Cancelado", "Tu trabajo no fue eliminado :)", "error");
+                    swal("Cancelado", "Tu estudio no fue eliminado :)", "error");
                 }
             });
         }
     },
     mounted () {
-        this.$http.get('trabajos/listado').then(response => {
+        this.$http.get('estudios/listado').then(response => {
             return response.json()
         }).then(data => {
-            this.$store.dispatch('setJobsCounter', data.data)
-            this.jobs = data.data
+            this.$store.dispatch('setStudiesCounter', data.data)
+            this.studies = data.data
         })
     }
 }
