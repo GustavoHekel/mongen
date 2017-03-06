@@ -41,7 +41,7 @@
 <script src="{{ asset("dist/bower_components/cropper/dist/main.js") }}"></script>
 
 <!-- Sweet Alert 2 plugin -->
-<script src="{{ asset("dist/plugins/light_bootstrap_pro/js/sweetalert2.js")}}"></script>
+<!-- <script src="{{ asset("dist/plugins/light_bootstrap_pro/js/sweetalert2.js")}}"></script> -->
 
 <!-- Toastr -->
 <script src="{{ asset("dist/bower_components/toastr/toastr.js")}}"></script>

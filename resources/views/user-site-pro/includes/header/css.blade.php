@@ -4,9 +4,6 @@
 <!--  Light Bootstrap Dashboard core CSS    -->
 <link rel="stylesheet" type="text/css" href="{{ asset ("dist/plugins/light_bootstrap_pro/css/light-bootstrap-dashboard.css")}}" />
 
-<!--  CSS for Demo Purpose, don't include it in your project     -->
-<!-- <link href="../assets/css/demo.css" rel="stylesheet" /> -->
-
 <!--     Fonts and icons     -->
 <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' >
