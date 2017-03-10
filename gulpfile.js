@@ -19,8 +19,8 @@ elixir(function(mix) {
         .styles([
             'client/bootstrap.min.css',
             'client/light-bootstrap-dashboard.css',
-            'pre-icon-7-stroke.css',
-            'client/sweetalert.css'
+            'client/pre-icon-7-stroke.css',
+            // 'client/sweetalert.css'
         ], 'public/assets/client/css')
         .webpack('app.js');
 
