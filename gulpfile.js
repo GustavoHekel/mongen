@@ -13,10 +13,27 @@ require('laravel-elixir-vue-2');
  */
 
 elixir(function(mix) {
-    mix.copy('node_modules/sweetalert/dist/sweetalert.css', 'resources/assets/css/sweetalert.css')
+    // Client site
+    mix.copy('node_modules/sweetalert/dist/sweetalert.css', 'resources/assets/css/client/sweetalert.css')
         .sass('app.scss')
         .styles([
-            'sweetalert.css'
-        ])
+            'client/sweetalert.css'
+        ], 'public/assets/client/css')
         .webpack('app.js');
+
+    // Landing page
+    mix.scripts([
+        'landing/jquery.min.js',
+        'landing/jquery.dropotron.min.js',
+        'landing/jquery.scrollgress.min.js',
+        'landing/skel.min.js',
+        'landing/util.js',
+        'landing/main.js'
+    ], 'public/assets/landing/js');
+    mix.scripts([
+        'landing/ie/respond.min.js'
+    ], 'public/assets/landing/js/ie/respond.min.js');
+    mix.scripts([
+        'landing/ie/html5shiv.js'
+    ], 'public/assets/landing/js/ie/html5shiv.js')
 });
