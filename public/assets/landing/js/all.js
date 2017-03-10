@@ -699,4 +699,12 @@ var skel=function(){"use strict";var t={breakpointIds:null,events:{},isInit:!1,o
 	});
 
 })(jQuery);
+$(function(){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+});
+
 //# sourceMappingURL=all.js.map

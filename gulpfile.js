@@ -17,6 +17,9 @@ elixir(function(mix) {
     mix.copy('node_modules/sweetalert/dist/sweetalert.css', 'resources/assets/css/client/sweetalert.css')
         .sass('app.scss')
         .styles([
+            'client/bootstrap.min.css',
+            'client/light-bootstrap-dashboard.css',
+            'pre-icon-7-stroke.css',
             'client/sweetalert.css'
         ], 'public/assets/client/css')
         .webpack('app.js');
@@ -28,7 +31,8 @@ elixir(function(mix) {
         'landing/jquery.scrollgress.min.js',
         'landing/skel.min.js',
         'landing/util.js',
-        'landing/main.js'
+        'landing/main.js',
+        'landing/custom.js'
     ], 'public/assets/landing/js');
     mix.scripts([
         'landing/ie/respond.min.js'
@@ -36,4 +40,6 @@ elixir(function(mix) {
     mix.scripts([
         'landing/ie/html5shiv.js'
     ], 'public/assets/landing/js/ie/html5shiv.js')
+
+    mix.browserSync();
 });
