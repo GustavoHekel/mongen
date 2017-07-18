@@ -17,7 +17,15 @@
                                 <span class="first-icon fa fa-square-o"></span>
                                 <span class="second-icon fa fa-check-square-o"></span>
                             </span>
-                            <input value="1" type="checkbox" name="solo_email" id="solo_email" data-toggle="checkbox" @if($email->solo_email) checked @endif>&nbsp; Sólo contactarme por email.
+                            @if (isset($email))
+                                @if ($email->solo_email)
+                                    <input value="1" type="checkbox" name="solo_email" id="solo_email" data-toggle="checkbox" checked="checked">&nbsp; Sólo contactarme por email.
+                                @else
+                                    <input value="1" type="checkbox" name="solo_email" id="solo_email" data-toggle="checkbox">&nbsp; Sólo contactarme por <email class=""></email>
+                                @endif
+                            @else
+                                <input value="1" type="checkbox" name="solo_email" id="solo_email" data-toggle="checkbox">&nbsp; Sólo contactarme por <email class=""></email>
+                            @endif
                         </label>
                     </div>
 
@@ -27,14 +35,22 @@
                                 <span class="first-icon fa fa-square-o"></span>
                                 <span class="second-icon fa fa-check-square-o"></span>
                             </span>
-                            <input value="1" type="checkbox" name="email_default" id="email_default" data-toggle="checkbox" @if($email->email_registro) checked @endif>&nbsp; Usar mi mismo email de registro ({{ Auth::user()->email }})
+                            @if (isset($email))
+                                <input value="1" type="checkbox" name="email_default" id="email_default" data-toggle="checkbox" @if($email->email_registro) checked @endif>&nbsp; Usar mi mismo email de registro ({{ Auth::user()->email }})
+                            @else
+                                <input value="1" type="checkbox" name="email_default" id="email_default" data-toggle="checkbox">&nbsp; Usar mi mismo email de registro ({{ Auth::user()->email }})
+                            @endif
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="email" class="col-md-3 control-label">Email</label>
                         <div class="col-md-9">
-                            <input id="email-contacto" name="email_contacto" type="text" class="form-control" placeholder="Email de contacto" value="{{ $email->email }}" @if($email->email_registro) disabled @endif>
+                            @if (isset($email))
+                                <input id="email-contacto" name="email_contacto" type="text" class="form-control" placeholder="Email de contacto" value="{{ $email->email }}" @if($email->email_registro) disabled @endif>
+                            @else
+                                <input id="email-contacto" name="email_contacto" type="text" class="form-control" placeholder="Email de contacto">
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -49,6 +65,14 @@
 <script>
 $(function(){
 
+    @if (isset($email))
+    var method = 'put'
+    var url = 'emails/{{ $email->id_email}}'
+    @else
+    var method = 'post'
+    var url = 'emails'
+    @endif
+
     $('#email_default').on('toggle', function(){
         $('#email-contacto').prop('disabled', function(i, v) { return !v; });
     });
@@ -59,8 +83,8 @@ $(function(){
         },
         submitHandler: function(form) {
             $.ajax({
-                method: 'put',
-                url: 'emails/{{ $email->id_email }}',
+                method: method,
+                url: url,
                 data: $(form).serialize(),
                 statusCode: {
                     200: function (data) {

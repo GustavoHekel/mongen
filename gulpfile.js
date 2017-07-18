@@ -14,12 +14,13 @@ require('laravel-elixir-vue-2');
 
 elixir(function(mix) {
     // Cvs styles
-    mix.less([
-        'cvs/homero.less'
-    ], 'public/assets/cvs/homero.css');
+    // mix.less([
+    //     'cvs/homero.less'
+    // ], 'public/assets/cvs/homero.css');
 
     // Client site
     mix.copy('node_modules/sweetalert/dist/sweetalert.css', 'resources/assets/css/client/sweetalert.css')
+        .copy('resources/assets/fonts/client', 'public/assets/client/css/fonts')
         // .sass('app.scss')
         .styles([
             'client/bootstrap.min.css',
