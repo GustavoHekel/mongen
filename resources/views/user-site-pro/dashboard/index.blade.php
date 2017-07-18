@@ -47,8 +47,11 @@
                             @elseif ($usuario->estado->id_estado == 3)
                             <div class="alert alert-success">
                             @endif
-                        @endif
                             {{ $usuario->estado->estado->descripcion }}
+                        @else
+                            <div class="alert alert-info">
+                                Aún no hay datos
+                        @endif
                         </div>
                     </div>
                 </div>

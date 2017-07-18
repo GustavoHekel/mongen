@@ -26,7 +26,7 @@ class DashboardController extends Controller
         Session::put('modulos', Modulo::all());
 
         $usuario = Auth::user();
-        $usuario = $usuario::with([
+        $usuario->load([
             'trabajos',
             'estudios',
             'skills',
@@ -34,7 +34,7 @@ class DashboardController extends Controller
             'estado.estado',
             'intereses',
             'idiomas'
-        ])->first();
+        ]);
 
         // return response()->json($usuario->idiomas->count());
         return view('user-site-pro.dashboard.index', compact('usuario'));

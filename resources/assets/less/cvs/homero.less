@@ -1,0 +1,210 @@
+@import 'node_modules/bootstrap/less/bootstrap.less';
+
+@progress-bar-color: #F85658;
+@horizontal-row-color: #F85658;
+@vertical-line-color: #F97476;
+@fill-color: #F85658;
+
+// Este color tiene que ser más claro
+@companies-color: #F85658;
+
+@sidebar-background-color: #d9d9d9;
+@sidebar-text-color: #393939;
+
+@main-background-color: #2A2A2A;
+@main-text-color: #b8b6ae;
+
+@my-name-color-background: #F97476;
+
+.progress-bar-linkedin {
+    .progress-bar-variant(@progress-bar-color)
+};
+
+body {
+    /*font-family: 'Roboto Condensed', sans-serif;*/
+    /*font-family: 'Muli', sans-serif;*/
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    min-height: 1095px;
+    max-height: 1095px;
+}
+
+.no-padding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.fa {
+    color: @fill-color;
+}
+
+.img-responsive {
+    width: 100%;
+}
+
+.country, .state {
+    text-transform: capitalize;
+}
+
+.progress {
+    border-radius: 0px;
+    height: 12px;
+}
+
+.sidebar {
+    background-color: @sidebar-background-color;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 1095px;
+
+    p {
+        margin-bottom: 2px;
+    }
+
+    hr {
+        margin-top: 7px;
+        margin-bottom: 7px;
+        border: 0;
+        border-top: 1px solid #a7a9ac;
+    }
+
+    .section {
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-top: 15px;
+        padding-bottom: 7px;
+        border-bottom: solid 3px @horizontal-row-color;
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+}
+
+.my-data {
+    background-color: @my-name-color-background;
+    color: white;
+    padding-left: 20px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+
+    .name {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+
+    .ocupation {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 11px;
+    }
+}
+
+.studies, .social-networks {
+    padding-left: 20px;
+}
+
+.studies .period, .studies .career {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 9px;
+}
+
+.studies .institute {
+    text-transform: capitalize;
+    font-size: 8px;
+}
+
+.social-networks {
+    min-height: 280px;
+    max-height: 280px;
+}
+
+.social-networks .network {
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 8px;
+}
+
+.social-networks .link {
+    font-size: 8px;
+}
+
+.network-detail {
+    margin-bottom: 0px;
+    line-height: 9px;
+}
+
+.main-container {
+    color: @main-text-color;
+    background-color: @main-background-color;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 1095px;
+
+    .extract {
+        min-height: 17.8%;
+        max-height: 17.8%;
+    }
+
+    .section {
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: bold;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        border-bottom: solid 3px @fill-color;
+        display: table-cell;
+    }
+
+    .presentation {
+        margin-top: 10px;
+        font-size: 9px;
+        line-height: 15px;
+    }
+
+    .contact {
+        font-size: 9px;
+        margin-left: 10px;
+    }
+
+    .contact .col-xs-6 {
+        border-left: solid 3px @vertical-line-color;
+    }
+
+    .experience {
+
+    }
+
+    .short-description {
+        color: @fill-color;
+        font-size: 10px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 3px;
+    }
+
+    .period {
+        font-size: 10px;
+        font-weight: bold;
+        margin-bottom: 3px;
+    }
+
+    .description {
+        font-size: 10px;
+    }
+}
+
+.skill-container {
+    height: 20px;
+}
+
+.skill-name {
+    font-size: 10px;
+}
+
+.hobbies-description {
+    font-size: 10px;
+}

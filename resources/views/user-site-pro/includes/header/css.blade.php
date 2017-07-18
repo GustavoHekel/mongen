@@ -23,4 +23,4 @@
 <link rel="stylesheet" type="text/css" href="{{ asset("dist/css/loading.css")}}">
 
 <!-- App css -->
-<link rel="stylesheet" type="text/css" href="{{ asset("css/all.css ")}}">
+<link rel="stylesheet" type="text/css" href="{{ asset("assets/client/css/all.css ")}}">

@@ -13,6 +13,11 @@ require('laravel-elixir-vue-2');
  */
 
 elixir(function(mix) {
+    // Cvs styles
+    mix.less([
+        'cvs/homero.less'
+    ], 'public/assets/cvs/homero.css');
+
     // Client site
     mix.copy('node_modules/sweetalert/dist/sweetalert.css', 'resources/assets/css/client/sweetalert.css')
         // .sass('app.scss')
@@ -44,7 +49,8 @@ elixir(function(mix) {
         'landing/skel.min.js',
         'landing/util.js',
         'landing/main.js',
-        'landing/custom.js'
+        'landing/custom.js',
+        'landing/jquery.validate.min.js'
     ], 'public/assets/landing/js');
     mix.scripts([
         'landing/ie/respond.min.js'
@@ -52,6 +58,4 @@ elixir(function(mix) {
     mix.scripts([
         'landing/ie/html5shiv.js'
     ], 'public/assets/landing/js/ie/html5shiv.js');
-
-    mix.browserSync();
 });

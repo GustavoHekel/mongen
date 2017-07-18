@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>{{ $user->nombre }}</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset("dist/css/homero.css")}}">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="{{ asset("dist/css/homero.css")}}"> -->
+    <link rel="stylesheet" href="{{ asset("assets/cvs/homero.css")}}">
     <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
@@ -211,7 +212,5 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-    <script type="text/javascript" src="{{ asset("dist/js/homero.js") }}"></script>
 </body>
 </html>
