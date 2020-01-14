@@ -11,7 +11,7 @@ class Extracto extends Model
      *
      * @var string
      */
-    protected $table = 'cvs.extractos';
+    protected $table = 'extractos';
 
     /**
 	 * The table's primary key

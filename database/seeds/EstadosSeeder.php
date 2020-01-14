@@ -11,19 +11,19 @@ class EstadosSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('sistema.estados')->insert([
-        	[
-        		'descripcion' => 'NO ESTOY ESCUCHANDO PROPUESTAS',
-                'estilo' => 'danger'
-        	],
-        	[
-        		'descripcion' => 'ESTOY ESCUCHANDO PROPUESTAS',
-                'estilo' => 'warning'
-        	],
-        	[
-        		'descripcion' => 'EN BÚSQUEDA ACTIVA',
-                'estilo' => 'success'
-        	]
-    	]);
+//        DB::table('estados')->insert([
+//        	[
+//        		'descripcion' => 'NO ESTOY ESCUCHANDO PROPUESTAS',
+//                'estilo' => 'danger'
+//        	],
+//        	[
+//        		'descripcion' => 'ESTOY ESCUCHANDO PROPUESTAS',
+//                'estilo' => 'warning'
+//        	],
+//        	[
+//        		'descripcion' => 'EN BÚSQUEDA ACTIVA',
+//                'estilo' => 'success'
+//        	]
+//    	]);
     }
 }

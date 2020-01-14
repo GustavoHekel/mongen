@@ -11,7 +11,7 @@ class TipoTelefono extends Model
      *
      * @var string
      */
-    protected $table = 'sistema.tipo_telefono';
+    protected $table = 'tipo_telefono';
 
     /**
 	 * The table's primary key

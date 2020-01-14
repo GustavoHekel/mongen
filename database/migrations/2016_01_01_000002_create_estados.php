@@ -12,7 +12,7 @@ class CreateEstados extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.estados', function (Blueprint $table) {
+        Schema::create('estados', function (Blueprint $table) {
             $table->increments('id_estado');
             $table->string('descripcion' , 255);
             // $table->string('estilo' , 255);
@@ -27,6 +27,6 @@ class CreateEstados extends Migration
      */
     public function down()
     {
-        Schema::drop('sistema.estados');
+        Schema::drop('estados');
     }
 }

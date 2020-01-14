@@ -12,15 +12,15 @@ class CreateCvsReferencias extends Migration
      */
     public function up()
     {
-        Schema::create('cvs.referencias', function (Blueprint $table) {
+        Schema::create('referencias', function (Blueprint $table) {
             $table->increments('id_referencia');
-            $table->integer('id_usuario');
-            $table->integer('id_referente');
+            $table->unsignedInteger('id_usuario');
+            $table->unsignedInteger('id_referente');
             $table->text('mensaje');
             $table->timestamps();
 
-            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
-            $table->foreign('id_referente')->references('id_usuario')->on('sistema.usuarios');
+            $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
+            $table->foreign('id_referente')->references('id_usuario')->on('usuarios');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateCvsReferencias extends Migration
      */
     public function down()
     {
-        Schema::drop('cvs.referencias');
+        Schema::drop('referencias');
     }
 }

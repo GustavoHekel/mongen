@@ -12,7 +12,7 @@ class CreateCvsAccesos extends Migration
      */
     public function up()
     {
-        Schema::create('cvs.accesos', function (Blueprint $table) {
+        Schema::create('accesos', function (Blueprint $table) {
             $table->increments('id_acceso');
             $table->ipAddress('visitante');
             $table->timestamps();
@@ -26,6 +26,6 @@ class CreateCvsAccesos extends Migration
      */
     public function down()
     {
-        Schema::drop('cvs.accesos');
+        Schema::drop('accesos');
     }
 }

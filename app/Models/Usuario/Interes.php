@@ -13,7 +13,7 @@ class Interes extends Model
      *
      * @var string
      */
-    protected $table = 'cvs.intereses';
+    protected $table = 'intereses';
 
     /**
 	 * The table's primary key

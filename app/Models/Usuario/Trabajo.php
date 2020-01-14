@@ -22,7 +22,7 @@ class Trabajo extends Model
      *
      * @var string
      */
-    protected $table = 'cvs.trabajos';
+    protected $table = 'trabajos';
 
     /**
 	 * The table's primary key

@@ -12,7 +12,7 @@ class CreateSistemaSeccionesCv extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.secciones_cv', function (Blueprint $table) {
+        Schema::create('secciones_cv', function (Blueprint $table) {
             $table->increments('id_seccion');
             $table->string('descripcion' , 255);
             $table->string('url' , 255);
@@ -20,7 +20,7 @@ class CreateSistemaSeccionesCv extends Migration
             $table->timestamps();
         });
 
-        DB::table('sistema.secciones_cv')->insert([
+        DB::table('secciones_cv')->insert([
             [
                 'descripcion' => 'Datos personales',
                 'url' => 'mi-cv/personal',
@@ -101,6 +101,6 @@ class CreateSistemaSeccionesCv extends Migration
      */
     public function down()
     {
-        Schema::drop('sistema.secciones_cv');
+        Schema::drop('secciones_cv');
     }
 }

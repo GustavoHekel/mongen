@@ -4,10 +4,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.container {
-    min-height: 1095px;
-    max-height: 1095px;
-}
+/*.container {*/
+/*    min-height: 1100px;*/
+/*    max-height: 1100px;*/
+/*}*/
 
 .no-padding {
     padding: 0 !important;
@@ -27,7 +27,7 @@ body {
 }
 
 .progress {
-    border-radius: 0px;
+    border-radius: 0;
     height: 12px;
 }
 
@@ -39,7 +39,7 @@ body {
     background-color: #dcddde;
     overflow-y: hidden;
     overflow-x: hidden;
-    height: 1095px;
+    height: 1140px;
 }
 
 .sidebar p {
@@ -59,7 +59,7 @@ body {
     margin-top: 15px;
     padding-bottom: 7px;
     border-bottom: solid 3px #31afd8;
-    font-size: 11px;
+    font-size: 14px;
     margin-bottom: 10px;
 }
 
@@ -91,12 +91,12 @@ body {
 .studies .period, .studies .career {
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 9px;
+    font-size: 12px;
 }
 
 .studies .institute {
     text-transform: capitalize;
-    font-size: 8px;
+    font-size: 9px;
 }
 
 .social-networks {
@@ -107,11 +107,12 @@ body {
 .social-networks .network {
     text-transform: capitalize;
     font-weight: bold;
-    font-size: 8px;
+    font-size: 12px;
+    line-height: 30px;
 }
 
 .social-networks .link {
-    font-size: 8px;
+    font-size: 12px;
 }
 
 .network-detail {
@@ -123,7 +124,7 @@ body {
     background-color: #f1f2f2;
     overflow-y: hidden;
     overflow-x: hidden;
-    height: 1095px;
+    height: 1140px;
 }
 
 .main-container .extract {
@@ -133,7 +134,7 @@ body {
 
 .main-container .section {
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: bold;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -143,12 +144,12 @@ body {
 
 .main-container .presentation {
     margin-top: 10px;
-    font-size: 9px;
+    font-size: 12px;
     line-height: 15px;
 }
 
 .main-container .contact {
-    font-size: 9px;
+    font-size: 12px;
     margin-left: 10px;
 }
 
@@ -162,7 +163,7 @@ body {
 
 .main-container .short-description {
     color: #31afd8;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 3px;
@@ -175,17 +176,17 @@ body {
 }
 
 .main-container .description {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .skill-container {
-    height: 20px;
+    height: 24px;
 }
 
 .skill-name {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .hobbies-description {
-    font-size: 10px;
+    font-size: 12px;
 }

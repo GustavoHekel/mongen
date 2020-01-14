@@ -11,12 +11,12 @@ class CvReferenciasUsuarioSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cvs.referencias')->insert([
-        	[
-        		'id_usuario' => 1,
-        		'id_referente' => 2,
-        		'mensaje' => 'GUSTAVO ES UN VAGO DE MIERDA. SE LA RASCA A MAS NO PODER.'
-        	],
-    	]);
+//        DB::table('referencias')->insert([
+//        	[
+//        		'id_usuario' => 1,
+//        		'id_referente' => 2,
+//        		'mensaje' => 'GUSTAVO ES UN VAGO DE MIERDA. SE LA RASCA A MAS NO PODER.'
+//        	],
+//    	]);
     }
 }

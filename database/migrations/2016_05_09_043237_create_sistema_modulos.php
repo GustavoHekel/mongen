@@ -12,7 +12,7 @@ class CreateSistemaModulos extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.modulos', function (Blueprint $table) {
+        Schema::create('modulos', function (Blueprint $table) {
             $table->increments('id_modulo');
             $table->string('descripcion')->unique();
             $table->string('icono')->unique();
@@ -20,7 +20,7 @@ class CreateSistemaModulos extends Migration
             $table->timestamps();
         });
 
-        DB::table('sistema.modulos')->insert([
+        DB::table('modulos')->insert([
         	[
         		'descripcion' => 'DASHBOARD',
         		'icono' => 'pe-7s-leaf',
@@ -80,6 +80,6 @@ class CreateSistemaModulos extends Migration
      */
     public function down()
     {
-        Schema::drop('sistema.modulos');
+        Schema::drop('modulos');
     }
 }

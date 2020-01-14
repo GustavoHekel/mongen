@@ -12,7 +12,7 @@ class AddModeloCv extends Migration
      */
     public function up()
     {
-        DB::table('sistema.modelos_cv')->insert([
+        DB::table('modelos_cv')->insert([
             [
                 'nombre' => 'Linkedin',
                 'ruta' => 'linkedin',
@@ -28,7 +28,7 @@ class AddModeloCv extends Migration
      */
     public function down()
     {
-        Schema::table('sistema.modelos_cv', function (Blueprint $table) {
+        Schema::table('modelos_cv', function (Blueprint $table) {
             //
         });
     }

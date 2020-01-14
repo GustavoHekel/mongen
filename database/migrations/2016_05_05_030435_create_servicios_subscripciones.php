@@ -12,7 +12,7 @@ class CreateServiciosSubscripciones extends Migration
      */
     public function up()
     {
-        Schema::create('servicios.subscripciones', function (Blueprint $table) {
+        Schema::create('subscripciones', function (Blueprint $table) {
             $table->increments('id_subscripcion');
             $table->string('email' , 255);
             $table->smallInteger('activo');
@@ -27,6 +27,6 @@ class CreateServiciosSubscripciones extends Migration
      */
     public function down()
     {
-        Schema::drop('servicios.subscripciones');
+        Schema::drop('subscripciones');
     }
 }

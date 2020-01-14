@@ -33,11 +33,11 @@ class UsuarioRequest extends Request
             case 'POST':
                 $this->rules = [
                     'nombre' => 'required|string|max:255',
-                    'email' => 'required|email|max:255|unique:sistema.usuarios,email',
+                    'email' => 'required|email|max:255|unique:usuarios,email',
                     'ano' => 'required|size:4',
                     'mes' => 'required',
                     'dia' => 'required',
-                    'pais' => 'required|exists:sistema.paises,id_pais',
+                    'pais' => 'required|exists:paises,id_pais',
                     'password' => 'required|min:6'
                 ];
         }

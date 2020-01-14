@@ -19,7 +19,7 @@ class Idioma extends Model
      *
      * @var string
      */
-    protected $table = 'cvs.idiomas';
+    protected $table = 'idiomas';
 
     /**
 	 * The table's primary key

@@ -13,11 +13,11 @@ class CvEstudiosUsuarioSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cvs.estudios')->insert([
+        DB::table('estudios')->insert([
         	[
         		'id_usuario' => 1,
-        		'instituto' => 'ENET 24',
-        		'carrera' => 'TÉCNICO EN ADMINISTRACIÓN DE EMPRESAS',
+        		'instituto_es' => 'ENET 24',
+        		'carrera_es' => 'TÉCNICO EN ADMINISTRACIÓN DE EMPRESAS',
         		'desde' => 200203,
         		'hasta' => 200712,
         		'promedio' => 7.8,
@@ -25,17 +25,8 @@ class CvEstudiosUsuarioSeeder extends Seeder
                 'updated_at' => Carbon::now(),
         	],[
         		'id_usuario' => 1,
-        		'instituto' => 'UNIVERSIDAD TECNOLÓGICA NACIONAL',
-        		'carrera' => 'INGENIERÍA EN SISTEMAS DE INFORMACIÓN',
-        		'desde' => 201203,
-        		'hasta' => null,
-        		'promedio' => null,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-        	],[
-        		'id_usuario' => 2,
-        		'instituto' => 'UNIVERSIDAD TECNOLÓGICA NACIONAL',
-        		'carrera' => 'INGENIERÍA EN SISTEMAS DE INFORMACIÓN',
+        		'instituto_es' => 'UNIVERSIDAD TECNOLÓGICA NACIONAL',
+        		'carrera_es' => 'INGENIERÍA EN SISTEMAS DE INFORMACIÓN',
         		'desde' => 201203,
         		'hasta' => null,
         		'promedio' => null,

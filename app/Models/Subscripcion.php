@@ -11,7 +11,7 @@ class Subscripcion extends Model
      *
      * @var string
      */
-    protected $table = 'servicios.subscripciones';
+    protected $table = 'subscripciones';
 
     /**
 	 * The table's primary key

@@ -5,7 +5,7 @@
     <title>{{ $user->nombre }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset("dist/css/homero.css")}}">
-    <!-- <link rel="stylesheet" href="{{ asset("assets/cvs/homero.css")}}"> -->
+{{--    <link rel="stylesheet" href="{{ asset("assets/cvs/homero.css")}}">--}}
     <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
@@ -15,10 +15,9 @@
             <div class="{{ $col_config }}">
                 <div class="row" style="height: 100%">
                     <div class="col-xs-3 sidebar">
-
                         <div class="row profile-pic">
                             <div class="col-xs-12 no-padding">
-                                <img class="img-responsive" src="{{ asset("dist/img/profile-pics/" . $user->avatar)}}">
+                                <img class="img-responsive" src="{{ asset("dist/img/profile-pics/gustavo-hekel.jpg")}}">
                             </div>
                         </div>
 
@@ -31,11 +30,11 @@
 
                         <div class="row studies">
                             <div class="col-xs-12">
-                                <p class="section">{{ trans('cvs.educacion')}}</p>
+                                <p class="section">education</p>
                                 @foreach($user->estudios as $estudio)
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <p class="period">{{ $estudio->year_from }} - {{ $estudio->year_to or trans('cvs.actualidad')}}</p>
+                                        <p class="period">{{ $estudio->year_from }} - {{ $estudio->year_to or trans('actualidad')}}</p>
                                         <p class="career">{{ App::getLocale() == 'es' ? $estudio->carrera_es : $estudio->carrera_en }}</p>
                                         <p class="institute">{{ App::getLocale() == 'es' ? $estudio->instituto_es : $estudio->instituto_en }}</p>
                                         <hr>
@@ -49,7 +48,7 @@
                         <!-- CURSOS -->
                         <div class="row studies">
                             <div class="col-xs-12">
-                                <p class="section">{{ trans('cvs.cursos') }}</p>
+                                <p class="section">courses</p>
                                 @foreach($user->cursos as $curso)
                                 <div class="row">
                                     <div class="col-xs-12">
@@ -66,7 +65,7 @@
 
                         <div class="row social-networks">
                             <div class="col-xs-12">
-                                <p class="section">{{ trans('cvs.redes') }}</p>
+                                <p class="section">social networks</p>
                                 @if ($user->red)
                                     @foreach($user->red->redes as $red => $link)
                                     @if ($link != '')
@@ -88,7 +87,7 @@
                         <div class="row extract">
                             <div class="col-xs-12">
                                 <p class="section">
-                                    {{ trans('cvs.extracto') }}
+                                    about myself
                                 </p>
                                 <p class="presentation">
                                     {{ App::getLocale() == 'es' ? $user->extracto->extracto_es : $user->extracto->extracto_en }}
@@ -130,7 +129,7 @@
                         <div class="row experience">
                             <div class="col-xs-12">
                                 <p class="section">
-                                    {{ trans('cvs.experiencia') }}
+                                    experience
                                 </p>
                                 @foreach($user->trabajos as $trabajo)
                                 <p class="short-description">{{ App::getLocale() == 'es' ? $trabajo->puesto_es : $trabajo->puesto_en }} - {{ $trabajo->lugar }}</p>
@@ -138,7 +137,7 @@
                                     @if ($trabajo->year_to != null)
                                     {{ $trabajo->month_to }}/{{ $trabajo->year_to}}
                                     @else
-                                    {{ trans('cvs.actualidad') }}
+                                    nowadays
                                     @endif
                                 </p>
                                 <p class="description">{{ App::getLocale() == 'es' ? $trabajo->detalle_es : $trabajo->detalle_en }}</p>
@@ -150,7 +149,7 @@
                         <div class="row skills">
                             <div class="col-xs-6">
                                 <p class="section">
-                                    {{ trans('cvs.habilidades') }}
+                                    skills
                                 </p>
                                 <br>
                                 @foreach ($user->skills as $skill)
@@ -173,7 +172,7 @@
                         <!-- <div class="row idiomas"> -->
                             <div class="col-xs-6">
                                 <p class="section">
-                                    {{ trans('cvs.idiomas') }}
+                                    languages
                                 </p>
                                 <br>
                                 @foreach ($user->idiomas as $idioma)
@@ -196,7 +195,7 @@
                         <div class="row hobbies">
                             <div class="col-xs-12">
                                 <p class="section">
-                                    {{ trans('cvs.aficiones') }}
+                                    hobbies
                                 </p>
                                 <br>
                                 <p class="hobbies-description">

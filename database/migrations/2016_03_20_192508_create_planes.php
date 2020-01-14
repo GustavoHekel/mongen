@@ -12,7 +12,7 @@ class CreatePlanes extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.planes', function (Blueprint $table) {
+        Schema::create('planes', function (Blueprint $table) {
             $table->increments('id_plan');
             $table->string('nombre' , 50)->unique();
             $table->string('duracion');
@@ -21,7 +21,7 @@ class CreatePlanes extends Migration
             $table->timestamps();
         });
 
-        DB::table('sistema.planes')->insert([
+        DB::table('planes')->insert([
             [
                 'nombre' => 'FREE',
                 'duracion' => '3 months',
@@ -44,6 +44,6 @@ class CreatePlanes extends Migration
      */
     public function down()
     {
-        Schema::drop('sistema.planes');
+        Schema::drop('planes');
     }
 }

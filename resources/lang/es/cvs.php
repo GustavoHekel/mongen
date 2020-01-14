@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'educacion' => 'educación',
-    'cursos' => 'cursos',
-    'redes' => 'redes sociales',
-    'extracto' => 'extracto',
-    'experiencia' => 'experiencia',
-    'habilidades' => 'habilidades',
-    'idiomas' => 'idiomas',
-    'aficiones' => 'aficiones',
-    'actualidad' => 'actualidad'
+    'educacion'   => 'education',
+    'cursos'      => 'courses',
+    'redes'       => 'social networks',
+    'extracto'    => 'extract',
+    'experiencia' => 'experience',
+    'habilidades' => 'skills',
+    'idiomas'     => 'languages',
+    'aficiones'   => 'hobbies',
+    'actualidad'  => 'nowadays'
 ];

@@ -13,7 +13,7 @@ class Email extends Model
      *
      * @var string
      */
-    protected $table = 'cvs.emails';
+    protected $table = 'emails';
 
     /**
 	 * The table's primary key

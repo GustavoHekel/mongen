@@ -13,7 +13,7 @@ class Telefono extends Model
      *
      * @var string
      */
-    protected $table = 'cvs.telefonos';
+    protected $table = 'telefonos';
 
     /**
 	 * The table's primary key

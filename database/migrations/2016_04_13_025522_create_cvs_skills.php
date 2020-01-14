@@ -12,14 +12,14 @@ class CreateCvsSkills extends Migration
      */
     public function up()
     {
-        Schema::create('cvs.skills', function (Blueprint $table) {
+        Schema::create('skills', function (Blueprint $table) {
             $table->increments('id_skill');
-            $table->integer('id_usuario');
+            $table->unsignedInteger('id_usuario');
             $table->string('nombre' , 255);
             $table->smallInteger('nivel');
             $table->timestamps();
 
-            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
+            $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateCvsSkills extends Migration
      */
     public function down()
     {
-        Schema::drop('cvs.skills');
+        Schema::drop('skills');
     }
 }

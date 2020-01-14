@@ -11,7 +11,7 @@ class Referencia extends Model
      *
      * @var string
      */
-    protected $table = 'cvs.referencias';
+    protected $table = 'referencias';
 
     /**
 	 * The table's primary key

@@ -11,13 +11,10 @@ class CVEstadoUsuarioSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cvs.estados_usuarios')->insert([
+        DB::table('estados_usuarios')->insert([
         	[
         		'id_usuario' => 1,
                 'id_estado' => 1
-        	],[
-        		'id_usuario' => 2,
-        		'id_estado' => 2
         	]
     	]);
     }

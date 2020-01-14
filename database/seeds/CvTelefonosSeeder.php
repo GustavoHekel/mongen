@@ -11,7 +11,7 @@ class CvTelefonosSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cvs.telefonos')->insert([
+        DB::table('telefonos')->insert([
             [
                 'id_usuario' => 1,
                 'id_tipo_telefono' => 1,

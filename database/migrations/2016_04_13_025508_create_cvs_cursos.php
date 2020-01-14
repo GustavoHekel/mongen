@@ -12,9 +12,9 @@ class CreateCvsCursos extends Migration
      */
     public function up()
     {
-        Schema::create('cvs.cursos', function (Blueprint $table) {
+        Schema::create('cursos', function (Blueprint $table) {
             $table->increments('id_curso');
-            $table->integer('id_usuario');
+            $table->unsignedInteger('id_usuario');
             $table->string('instituto' , 255);
             $table->string('nombre_es' , 255);
             $table->string('nombre_en' , 255)->nullable();
@@ -25,7 +25,7 @@ class CreateCvsCursos extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
+            $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
         });
     }
 
@@ -36,6 +36,6 @@ class CreateCvsCursos extends Migration
      */
     public function down()
     {
-        Schema::drop('cvs.cursos');
+        Schema::drop('cursos');
     }
 }

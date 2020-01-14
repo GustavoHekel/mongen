@@ -12,15 +12,15 @@ class CreateCvsTelefonos extends Migration
      */
     public function up()
     {
-        Schema::create('cvs.telefonos', function (Blueprint $table) {
+        Schema::create('telefonos', function (Blueprint $table) {
             $table->increments('id_telefono');
-            $table->integer('id_usuario');
-            $table->integer('id_tipo_telefono');
+            $table->unsignedInteger('id_usuario');
+            $table->unsignedInteger('id_tipo_telefono');
             $table->string('numero' , 15);
             $table->timestamps();
 
-            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
-            $table->foreign('id_tipo_telefono')->references('id_tipo_telefono')->on('sistema.tipo_telefono');
+            $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
+            $table->foreign('id_tipo_telefono')->references('id_tipo_telefono')->on('tipo_telefono');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateCvsTelefonos extends Migration
      */
     public function down()
     {
-        Schema::drop('cvs.telefonos');
+        Schema::drop('telefonos');
     }
 }

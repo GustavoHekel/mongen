@@ -11,7 +11,7 @@ class Estado extends Model
      *
      * @var string
      */
-    protected $table = 'sistema.estados';
+    protected $table = 'estados';
 
     /**
 	 * The table's primary key

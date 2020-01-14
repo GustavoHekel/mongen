@@ -12,14 +12,14 @@ class CreateProvincias extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.provincias', function (Blueprint $table) {
+        Schema::create('provincias', function (Blueprint $table) {
             $table->increments('id_provincia');
             $table->integer('id_pais');
             $table->string('nombre' , 255);
             // $table->timestamps();
         });
 
-        DB::table('sistema.provincias')->insert([
+        DB::table('provincias')->insert([
             ['id_provincia' => 1, 'id_pais' => 3, 'nombre' => 'Azerbaijan'],
             ['id_provincia' => 2, 'id_pais' => 3, 'nombre' => 'Nargorni Karabakh'],
             ['id_provincia' => 3, 'id_pais' => 3, 'nombre' => 'Nakhichevanskaya Region'],
@@ -2014,6 +2014,6 @@ class CreateProvincias extends Migration
      */
     public function down()
     {
-        Schema::drop('sistema.provincias');
+        Schema::drop('provincias');
     }
 }

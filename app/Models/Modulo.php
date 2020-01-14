@@ -11,7 +11,7 @@ class Modulo extends Model
      *
      * @var string
      */
-    protected $table = 'sistema.modulos';
+    protected $table = 'modulos';
 
     /**
 	 * The table's primary key

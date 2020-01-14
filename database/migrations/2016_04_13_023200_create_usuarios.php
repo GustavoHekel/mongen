@@ -12,27 +12,27 @@ class CreateUsuarios extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.usuarios', function (Blueprint $table) {
+        Schema::create('usuarios', function (Blueprint $table) {
             $table->increments('id_usuario');
             $table->string('email' , 255)->unique();
             $table->string('password' , 255);
             $table->string('nombre' , 255);
             $table->date('fecha_nacimiento')->nullable();
-            $table->smallInteger('id_modelo')->nullable();
+            $table->unsignedInteger('id_modelo')->nullable();
             $table->string('url')->nullable()->unique();
-            $table->smallInteger('id_plan')->default(1);
+            $table->unsignedInteger('id_plan')->default(1);
             $table->timestamp('fecha_vencimiento');
-            $table->smallInteger('id_pais');
-            $table->smallInteger('id_provincia');
+            $table->unsignedInteger('id_pais');
+            $table->unsignedInteger('id_provincia');
             $table->string('avatar', 255)->nullable()->default('default-user.png');
             $table->timestamp('fecha_validado')->nullable();
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('id_modelo')->references('id_modelo')->on('sistema.modelos_cv');
-            $table->foreign('id_plan')->references('id_plan')->on('sistema.planes');
-            $table->foreign('id_pais')->references('id_pais')->on('sistema.paises');
-            $table->foreign('id_provincia')->references('id_provincia')->on('sistema.provincias');
+            $table->foreign('id_modelo')->references('id_modelo')->on('modelos_cv');
+            $table->foreign('id_plan')->references('id_plan')->on('planes');
+            $table->foreign('id_pais')->references('id_pais')->on('paises');
+            $table->foreign('id_provincia')->references('id_provincia')->on('provincias');
         });
     }
 
@@ -43,6 +43,6 @@ class CreateUsuarios extends Migration
      */
     public function down()
     {
-        Schema::drop('sistema.usuarios');
+        Schema::drop('usuarios');
     }
 }

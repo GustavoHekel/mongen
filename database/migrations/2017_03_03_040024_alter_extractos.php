@@ -12,7 +12,7 @@ class AlterExtractos extends Migration
      */
     public function up()
     {
-        Schema::table('cvs.extractos', function (Blueprint $table) {
+        Schema::table('extractos', function (Blueprint $table) {
             $table->renameColumn('proresion_en', 'profesion_en');
         });
     }
@@ -24,7 +24,7 @@ class AlterExtractos extends Migration
      */
     public function down()
     {
-        Schema::table('cvs.extractos', function (Blueprint $table) {
+        Schema::table('extractos', function (Blueprint $table) {
             $table->renameColumn('profesion_en', 'proresion_en');
         });
     }

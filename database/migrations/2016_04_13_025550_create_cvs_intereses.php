@@ -12,13 +12,13 @@ class CreateCvsIntereses extends Migration
      */
     public function up()
     {
-        Schema::create('cvs.intereses', function (Blueprint $table) {
+        Schema::create('intereses', function (Blueprint $table) {
             $table->increments('id_interes');
-            $table->integer('id_usuario');
+            $table->unsignedInteger('id_usuario');
             $table->string('descripcion');
             $table->timestamps();
 
-            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
+            $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
         });
     }
 
@@ -29,6 +29,6 @@ class CreateCvsIntereses extends Migration
      */
     public function down()
     {
-        Schema::drop('cvs.intereses');
+        Schema::drop('intereses');
     }
 }

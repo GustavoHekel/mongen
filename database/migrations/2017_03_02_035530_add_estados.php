@@ -12,7 +12,7 @@ class AddEstados extends Migration
      */
     public function up()
     {
-        DB::table('sistema.estados')->insert([
+        DB::table('estados')->insert([
         	[
         		'descripcion' => 'NO ESTOY ESCUCHANDO PROPUESTAS',
         	],

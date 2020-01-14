@@ -12,14 +12,14 @@ class CreateCvsIdiomas extends Migration
      */
     public function up()
     {
-        Schema::create('cvs.idiomas', function (Blueprint $table) {
+        Schema::create('idiomas', function (Blueprint $table) {
             $table->increments('id_idioma');
-            $table->integer('id_usuario');
+            $table->unsignedInteger('id_usuario');
             $table->string('idioma' , 255);
             $table->smallInteger('nivel');
             $table->timestamps();
 
-            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
+            $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateCvsIdiomas extends Migration
      */
     public function down()
     {
-        Schema::drop('cvs.idiomas');
+        Schema::drop('idiomas');
     }
 }

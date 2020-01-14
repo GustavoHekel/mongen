@@ -11,7 +11,7 @@ class Provincia extends Model
      *
      * @var string
      */
-    protected $table = 'sistema.provincias';
+    protected $table = 'provincias';
 
     /**
 	 * The table's primary key

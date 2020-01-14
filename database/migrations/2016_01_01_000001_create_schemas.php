@@ -12,9 +12,7 @@ class CreateSchemas extends Migration
      */
     public function up()
     {
-        DB::statement('create schema sistema');
-        DB::statement('create schema cvs');
-        DB::statement('create schema servicios');
+        
     }
 
     /**
@@ -24,8 +22,6 @@ class CreateSchemas extends Migration
      */
     public function down()
     {
-        DB::statement('drop schema sistema cascade');
-        DB::statement('drop schema cvs cascade');
-        DB::statement('drop schema servicios');
+
     }
 }

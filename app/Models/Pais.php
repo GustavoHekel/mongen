@@ -11,7 +11,7 @@ class Pais extends Model
      *
      * @var string
      */
-    protected $table = 'sistema.paises';
+    protected $table = 'paises';
 
     /**
 	 * The table's primary key

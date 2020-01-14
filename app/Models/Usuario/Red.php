@@ -19,7 +19,7 @@ class Red extends Model
      *
      * @var string
      */
-    protected $table = 'cvs.redes_sociales';
+    protected $table = 'redes_sociales';
 
     /**
 	 * The table's primary key

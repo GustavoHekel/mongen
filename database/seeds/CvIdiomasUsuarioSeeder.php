@@ -11,7 +11,7 @@ class CvIdiomasUsuarioSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cvs.idiomas')->insert([
+        DB::table('idiomas')->insert([
         	[
         		'id_usuario' => 1,
         		'idioma' => 'INGLÉS',

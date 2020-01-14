@@ -11,7 +11,7 @@ class CvSkillsUsuarioSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cvs.skills')->insert([
+        DB::table('skills')->insert([
         	[
         		'id_usuario' => 1,
         		'nombre' => 'PHP',

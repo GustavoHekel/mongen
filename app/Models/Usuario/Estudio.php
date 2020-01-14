@@ -22,7 +22,7 @@ class Estudio extends Model
      *
      * @var string
      */
-    protected $table = 'cvs.estudios';
+    protected $table = 'estudios';
 
     /**
 	 * The table's primary key

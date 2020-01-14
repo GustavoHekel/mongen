@@ -22,7 +22,7 @@ class Curso extends Model
      *
      * @var string
      */
-    protected $table = 'cvs.cursos';
+    protected $table = 'cursos';
 
     /**
 	 * The table's primary key

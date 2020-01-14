@@ -24,7 +24,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
     /**
      * The table associated with the model.
      */
-    protected $table = 'sistema.usuarios';
+    protected $table = 'usuarios';
 
 	/**
 	 * The table's primary key

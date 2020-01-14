@@ -11,7 +11,7 @@ class SeccionesCvSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('sistema.secciones_cv')->insert([
+        DB::table('secciones_cv')->insert([
             [
                 'descripcion' => 'Datos personales',
                 'url' => 'mi-cv/personal',

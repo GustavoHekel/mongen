@@ -12,14 +12,14 @@ class CreateCvsEstadoUsuario extends Migration
      */
     public function up()
     {
-        Schema::create('cvs.estados_usuarios', function (Blueprint $table) {
+        Schema::create('estados_usuarios', function (Blueprint $table) {
             $table->increments('id_estado_usuario');
-            $table->integer('id_usuario');
-            $table->integer('id_estado');
+            $table->unsignedInteger('id_usuario');
+            $table->unsignedInteger('id_estado');
             $table->timestamps();
 
-            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
-            $table->foreign('id_estado')->references('id_estado')->on('sistema.estados');
+            $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
+            $table->foreign('id_estado')->references('id_estado')->on('estados');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateCvsEstadoUsuario extends Migration
      */
     public function down()
     {
-        Schema::drop('cvs.estados_usuarios');
+        Schema::drop('estados_usuarios');
     }
 }

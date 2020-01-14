@@ -11,7 +11,7 @@ class CvEmailsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cvs.emails')->insert([
+        DB::table('emails')->insert([
             [
                 'id_usuario' => 1,
                 'email' => 'gustavo.hekel@gmail.com'

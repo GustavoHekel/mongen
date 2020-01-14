@@ -33,10 +33,10 @@ class CurriculumController extends Controller
      */
     public function show($url, Request $request)
     {
-        App::setLocale($request->locale);
-        $user = Usuario::whereUrl($url)
-            ->full()
-            ->first();
+        App::setLocale('en');
+//        $user = Usuario::whereUrl($url)
+//            ->first();
+        $user = Usuario::find(1);
 
         $data = [
             'user' => $user,
@@ -54,10 +54,12 @@ class CurriculumController extends Controller
      */
     public function pdf($url, Request $request)
     {
-        App::setLocale($request->locale);
-        $user = Usuario::whereUrl($url)
-            ->full()
-            ->first();
+        App::setLocale('en');
+//        $user = Usuario::whereUrl($url)
+//            ->full()
+//            ->first();
+
+        $user = Usuario::find(1);
 
         $data = [
             'user' => $user,
@@ -70,7 +72,7 @@ class CurriculumController extends Controller
             ->setOption('margin-left', 0)
             ->setOption('margin-top', 0)
             ->setOption('margin-right', 0)
-            ->setOption('page-height', 297)
+            ->setOption('page-height', 242)
             ->setOption('page-width', 210)
             // ->setOption('javascript-delay', 1000)
             ->inline('github.pdf');

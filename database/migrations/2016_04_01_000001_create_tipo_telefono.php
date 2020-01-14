@@ -12,7 +12,7 @@ class CreateTipoTelefono extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.tipo_telefono', function (Blueprint $table) {
+        Schema::create('tipo_telefono', function (Blueprint $table) {
             $table->increments('id_tipo_telefono');
             $table->string('descripcion')->unique();
             // $table->timestamps();
@@ -26,6 +26,6 @@ class CreateTipoTelefono extends Migration
      */
     public function down()
     {
-        Schema::drop('sistema.tipo_telefono');
+        Schema::drop('tipo_telefono');
     }
 }

@@ -12,13 +12,13 @@ class CreatePaises extends Migration
      */
     public function up()
     {
-        Schema::create('sistema.paises', function (Blueprint $table) {
+        Schema::create('paises', function (Blueprint $table) {
             $table->increments('id_pais');
             $table->string('nombre' , 255);
             // $table->timestamps();
         });
 
-        DB::table('sistema.paises')->insert([
+        DB::table('paises')->insert([
             ['id_pais' => 1, 'nombre' => 'Australia'],
             ['id_pais' => 2, 'nombre' => 'Austria'],
             ['id_pais' => 3, 'nombre' => 'Azerbaiyán'],
@@ -243,6 +243,6 @@ class CreatePaises extends Migration
      */
     public function down()
     {
-        Schema::drop('sistema.paises');
+        Schema::drop('paises');
     }
 }

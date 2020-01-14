@@ -12,9 +12,9 @@ class CreateCvsTrabajos extends Migration
      */
     public function up()
     {
-        Schema::create('cvs.trabajos', function (Blueprint $table) {
+        Schema::create('trabajos', function (Blueprint $table) {
             $table->increments('id_trabajo');
-            $table->integer('id_usuario');
+            $table->unsignedInteger('id_usuario');
             $table->string('lugar', 255);
             $table->string('puesto_es', 255);
             $table->string('puesto_en', 255)->nullable();
@@ -25,7 +25,7 @@ class CreateCvsTrabajos extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
+            $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
         });
     }
 
@@ -36,6 +36,6 @@ class CreateCvsTrabajos extends Migration
      */
     public function down()
     {
-        Schema::drop('cvs.trabajos');
+        Schema::drop('trabajos');
     }
 }

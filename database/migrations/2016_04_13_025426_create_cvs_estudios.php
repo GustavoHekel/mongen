@@ -12,9 +12,9 @@ class CreateCvsEstudios extends Migration
      */
     public function up()
     {
-        Schema::create('cvs.estudios', function (Blueprint $table) {
+        Schema::create('estudios', function (Blueprint $table) {
             $table->increments('id_estudio');
-            $table->integer('id_usuario');
+            $table->unsignedInteger('id_usuario');
             $table->string('instituto_es' , 255);
             $table->string('carrera_es' , 255);
             $table->string('instituto_en' , 255)->nullable();
@@ -25,7 +25,7 @@ class CreateCvsEstudios extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('id_usuario')->references('id_usuario')->on('sistema.usuarios');
+            $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
 
         });
     }
@@ -37,6 +37,6 @@ class CreateCvsEstudios extends Migration
      */
     public function down()
     {
-        Schema::drop('cvs.estudios');
+        Schema::drop('estudios');
     }
 }
